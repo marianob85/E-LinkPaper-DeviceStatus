@@ -4,7 +4,7 @@ After=multi-user.target
  
 [Service]
 Type=simple
-ExecStart=/usr/bin/StatusProject
+ExecStart=/usr/bin/E-LinkStatus
 Restart=on-abort
  
 [Install]
