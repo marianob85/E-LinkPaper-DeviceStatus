@@ -1,5 +1,4 @@
 import sys
-
 sys.path.append('4.2inch_e-paper')
 import epd4in2
 import DS18B20
@@ -10,9 +9,6 @@ from PIL import ImageFont
 import glob
 import threading
 import signal
-import PageMikrotik
-import PagePrinter
-import PageMariano
 import PageStatus
 
 
@@ -132,19 +128,20 @@ if __name__ == '__main__':
     signal.signal(signal.SIGTERM, service_shutdown)
     signal.signal(signal.SIGINT, service_shutdown)
 
-    pageManager = PageManager()
-
-    pageTimeOut = 30
-    pageManager.add(PageStatus.Device(),60)
-    #pageManager.add(PageMariano.Mariano(),pageTimeOut )
-    #pageManager.add(PageMikrotik.Mikrotik(), pageTimeOut)
-    #pageManager.add(PagePrinter.Printer(), pageTimeOut)
-    pageManager.setPage((0,0))
-    pageManager.autoChange(True)
-
     try:
+        pageManager = PageManager()
+
+        pageTimeOut = 30
+        pageManager.add(PageStatus.Device(), 60)
+        # pageManager.add(PageMariano.Mariano(),pageTimeOut )
+        # pageManager.add(PageMikrotik.Mikrotik(), pageTimeOut)
+        # pageManager.add(PagePrinter.Printer(), pageTimeOut)
+        pageManager.setPage((0, 0))
+        pageManager.autoChange(True)
+
         while True:
             sleep(1)
     except ServiceExit:
         pageManager.close()
-        exit()
+
+    sys.exit()
