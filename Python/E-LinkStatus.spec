@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['Project/E-LinkStatus.py'],
-             pathex=['./Project/4.2inch_e-paper/'],
+a = Analysis(['E-LinkStatus.py'],
+             pathex=['./4.2inch_e-paper/'],
              binaries=[],
              datas=[],
              hiddenimports=[],
