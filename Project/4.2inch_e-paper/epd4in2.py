@@ -244,7 +244,7 @@ class EPD:
         self.delay_ms(2)
         self.send_command(DATA_START_TRANSMISSION_2)
         for i in range(0, self.width * self.height / 8):
-            self.send_data(0)  # bit set: white, bit reset: black
+            self.send_data(0xFF)  # bit set: white, bit reset: black
         self.delay_ms(2)
 
         self.set_lut()

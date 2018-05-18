@@ -19,6 +19,7 @@ class PageManager():
     def __init__(self):
         self.epd = epd4in2.EPD()
         self.epd.init()
+        self.epd.clear()
         self.pages = []
         self.headerHeight = 20
         self.headerFont = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf', 14)
@@ -32,6 +33,7 @@ class PageManager():
             None
 
     def close(self):
+        self.epd.clear()
         if self.timer:
             self.timer.cancel()
         for page in self.pages:
