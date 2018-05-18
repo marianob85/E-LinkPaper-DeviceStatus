@@ -1,0 +1,8 @@
+apt-get install python-dev python-pip libjpeg-dev ttf-liberation
+pip install --upgrade pip
+pip install -U setuptools
+pip install -U wheel
+pip install -U argparse --force-reinstall
+pip install spidev
+pip install Pillow
+pip install pyping
