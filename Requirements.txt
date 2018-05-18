@@ -6,3 +6,11 @@ pip install -U argparse --force-reinstall
 pip install spidev
 pip install Pillow
 pip install pyping
+
+/lib/systemd/system/
+sudo chmod 644 /lib/systemd/system/E-LinkStatus.service
+chmod +x /home/pi/hello_world.py
+sudo systemctl daemon-reload
+sudo systemctl enable E-LinkStatus.service
+sudo systemctl start E-LinkStatus.service
+
