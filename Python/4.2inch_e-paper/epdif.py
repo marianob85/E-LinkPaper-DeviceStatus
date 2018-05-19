@@ -31,11 +31,11 @@ import time
 # Pin definition
 RST_PIN = 13
 DC_PIN = 26
-CS_PIN = 16
+CS_PIN = 7
 BUSY_PIN = 6
 
 # SPI device, bus = 0, device = 0
-SPI = spidev.SpiDev(1, 0)
+SPI = spidev.SpiDev(0, 1)
 
 
 def epd_digital_write(pin, value):
