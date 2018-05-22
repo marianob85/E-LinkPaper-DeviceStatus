@@ -3,6 +3,7 @@
 #include <vector>
 #include <epdpaint.h>
 #include <epd4in2.h>
+#include "Timer.hpp"
 
 class StatusPage
 {
@@ -31,6 +32,8 @@ public:
 
 	bool add( std::unique_ptr< StatusPage > statusPage, unsigned intervalSeconds );
 	void setNext();
+	bool setPage( unsigned page );
+	void autoChange( bool set );
 
 private:
 	void refreshPage();
@@ -46,4 +49,5 @@ private:
 	ContainerT::const_iterator m_currentPage;
 	Epd4in2 m_epd;
 	std::unique_ptr< Paint > m_painter;
+	TimerEvent m_timerEvent;
 };

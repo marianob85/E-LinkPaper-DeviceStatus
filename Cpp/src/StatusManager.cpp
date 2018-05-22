@@ -50,6 +50,10 @@ void StatusManager::setNext()
 	refreshPage();
 }
 
+bool StatusManager::setPage( unsigned page ) {}
+
+void StatusManager::autoChange( bool set ) {}
+
 void StatusManager::refreshPage()
 {
 	// m_epd.reset();

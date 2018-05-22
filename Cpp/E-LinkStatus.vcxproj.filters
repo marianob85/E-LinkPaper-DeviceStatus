@@ -36,6 +36,9 @@
     <ClInclude Include="src\DeviceDef.hpp">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="src\Timer.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\e-link_4in2\epd4in2.cpp">

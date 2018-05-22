@@ -18,6 +18,7 @@
     <ClInclude Include="src\painter\epdpaint.h" />
     <ClInclude Include="src\StatusManager.hpp" />
     <ClInclude Include="src\StatusPing.hpp" />
+    <ClInclude Include="src\Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\e-link_4in2\epd4in2.cpp" />

@@ -20,10 +20,11 @@ int main( void )
 
 	statusManager.add( make_unique< StatusPing >(), 60 );
 
-	statusManager.setNext();
+	statusManager.setPage( 0 );
+	statusManager.autoChange( true );
 
-	//while( true )
-		//std::this_thread::sleep_for( std::chrono::milliseconds( 1000 ) );
+	// while( true )
+	// std::this_thread::sleep_for( std::chrono::milliseconds( 1000 ) );
 
 	// Epd4in2 epd( make_unique< EpdWiringPi >( CHANNEL ), RST_PIN, DC_PIN, CS_PIN, BUSY_PIN, EPD_WIDTH, EPD_HEIGHT );
 
