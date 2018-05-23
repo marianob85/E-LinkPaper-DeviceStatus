@@ -5,7 +5,6 @@
 #include <iostream>
 #include "StatusManager.hpp"
 #include "StatusPing.hpp"
-#include <DS18B20.h>
 
 using namespace std;
 
@@ -29,17 +28,6 @@ int main( void )
 	signal( SIGABRT, sig_handler );
 	signal( SIGTERM, sig_handler );
 	signal( SIGINT, sig_handler );
-
-	DS18B20Mgr ds18B20Mgr( BUS );
-	auto sensor = ds18B20Mgr[ 0 ];
-
-	while( true )
-	{
-		std::this_thread::sleep_for( std::chrono::milliseconds( 1000 ) );
-		auto temp = sensor.getTemp();
-		temp = temp;
-	}
-	return 0;
 
 	StatusManager statusManager;
 

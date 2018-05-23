@@ -51,10 +51,12 @@ public:
 	void setUnits( TemperatureType temperatureType );
 	float getTemp();
 	float CtoF( float );
+	std::string id() const;
 
 private:
 	TemperatureType m_temperatureType{ TemperatureType::Celcius };
 	std::string m_sensorPath;
+	std::string m_id;
 };
 
 class DS18B20Mgr

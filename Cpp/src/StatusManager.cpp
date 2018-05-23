@@ -12,6 +12,13 @@ StatusManager::StatusManager()
 {
 	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_epd.width() / 8 * m_epd.height() );
 	m_painter = make_unique< Paint >( move( frameBuffer ), m_epd.width(), m_epd.height() );
+
+	DS18B20Mgr ds18B20Mgr( BUS );
+	if( ds18B20Mgr.count() > 0 )
+	{
+		m_tempSensor = make_unique< DS18B20 >( ds18B20Mgr[ 0 ] );
+		cout << "Found DS18B20 sensor. ID: " << m_tempSensor->id();
+	}
 }
 
 StatusManager::~StatusManager() {}
@@ -108,6 +115,12 @@ void StatusManager::printHeader()
 	size			 = m_painter->getStringSize( description.c_str(), font );
 	y				 = ( s_headeWHeight - 0 - size.second ) / 2 + 1;
 	m_painter->drawStringAt( 2, y, description.c_str(), font, UNCOLORED );
+
+	// Print temp
+	if( m_tempSensor )
+	{
+		m_painter->drawStringAt( 200, y, std::to_string( m_tempSensor->getTemp() ).c_str(), font, UNCOLORED );
+	}
 }
 
 unsigned StatusManager::pagesNo() const

@@ -32,10 +32,10 @@ using namespace std;
 
 // start: ------------------- DS18B20 -------------------
 
-DS18B20::DS18B20( const std::string address )
+DS18B20::DS18B20( const std::string address ) : m_id( address )
 {
-	m_temperatureType		 = TemperatureType::Celcius;
-	m_sensorPath = BUS + address + TEMPFILE;
+	m_temperatureType = TemperatureType::Celcius;
+	m_sensorPath	  = BUS + address + TEMPFILE;
 }
 
 float DS18B20::getTemp()
@@ -84,6 +84,11 @@ void DS18B20::setUnits( TemperatureType temperatureType )
 float DS18B20::CtoF( float temp )
 {
 	return temp * 1.8f + 32;
+}
+
+std::string DS18B20::id() const
+{
+	return m_id;
 }
 
 // end: --------------------- DS18B20 -------------------

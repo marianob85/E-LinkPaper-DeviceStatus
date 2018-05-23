@@ -4,6 +4,7 @@
 #include <epdpaint.h>
 #include <epd4in2.h>
 #include "Timer.hpp"
+#include <DS18B20.h>
 
 class StatusPage
 {
@@ -51,4 +52,5 @@ private:
 	Epd4in2 m_epd;
 	std::unique_ptr< Paint > m_painter;
 	TimerEvent m_timerEvent;
+	std::unique_ptr< DS18B20 > m_tempSensor;
 };
