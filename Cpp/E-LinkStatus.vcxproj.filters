@@ -16,6 +16,9 @@
     <Filter Include="Source\Ping">
       <UniqueIdentifier>{8cb348cc-424e-4313-af23-531b3af98d8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\DS18B20">
+      <UniqueIdentifier>{7059d089-0e6f-4321-809e-365704c3dd55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\e-link_4in2\epd.h">
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="src\ping\ping.h">
       <Filter>Source\Ping</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DS18B20\DS18B20.h">
+      <Filter>Source\DS18B20</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="src\ping\ping.cpp">
       <Filter>Source\Ping</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DS18B20\DS18B20.cpp">
+      <Filter>Source\DS18B20</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,6 +1,4 @@
-#ifndef PING_H
-#define PING_H
-
+#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -72,4 +70,3 @@ private:
 	struct sockaddr_in m_from_addr;
 	pid_t m_pid;
 };
-#endif

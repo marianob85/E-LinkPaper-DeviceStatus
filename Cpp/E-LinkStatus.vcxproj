@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DeviceDef.hpp" />
+    <ClInclude Include="src\DS18B20\DS18B20.h" />
     <ClInclude Include="src\e-link_4in2\epd.h" />
     <ClInclude Include="src\e-link_4in2\epd4in2.h" />
     <ClInclude Include="src\fonts\fonts.h" />
@@ -22,6 +23,7 @@
     <ClInclude Include="src\Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\DS18B20\DS18B20.cpp" />
     <ClCompile Include="src\e-link_4in2\epd4in2.cpp" />
     <ClCompile Include="src\e-link_4in2\epdBcm2835.cpp" />
     <ClCompile Include="src\e-link_4in2\epdWiringPi.cpp" />
@@ -83,13 +85,14 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>.\src\Fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\Fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
+      <CppLanguageStandard>c++1y</CppLanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\src\Fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\Fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
     </ClCompile>

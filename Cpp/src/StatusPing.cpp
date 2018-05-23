@@ -47,7 +47,8 @@ map< string, bool > StatusPing::getDeviceStatus() const
 		bool status = ping.ping( address, 4, pingResult );
 		status &= std::count_if( pingResult.icmpEchoReplys.begin(),
 								 pingResult.icmpEchoReplys.end(),
-								 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } ) > 0;
+								 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } )
+			> 0;
 
 		return { address, status };
 	};
@@ -63,32 +64,6 @@ map< string, bool > StatusPing::getDeviceStatus() const
 	return deviceStatus;
 }
 
-// std::map< std::string, bool > StatusPing::getDeviceStatus() const
-//{
-//	vector< thread > threads;
-//	std::map< std::string, bool > deviceStatus;
-//
-//	auto pingSingleIP = [deviceStatus]( const char* address ) {
-//		PingResult pingResult;
-//		Ping ping   = Ping();
-//		bool status = ping.ping( address, 4, pingResult );
-//		status &= std::count_if( pingResult.icmpEchoReplys.begin(),
-//								 pingResult.icmpEchoReplys.end(),
-//								 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } );
-//
-//		// Sync
-//		deviceStatus.insert( make_pair( string( "" ), true ) );
-//	};
-//
-//	for( const auto& device : deviceAddress )
-//		threads.push_back( std::thread( pingSingleIP, device.ip ) );
-//
-//	for( auto& th : threads )
-//		th.join();
-//
-//	return deviceStatus;
-//}
-
 Paint StatusPing::currentPage() const
 {
 	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_width / 8 * m_height );
@@ -103,14 +78,14 @@ Paint StatusPing::currentPage() const
 	unsigned startLine = 5;
 	for( const auto& device : deviceAddress )
 	{
-		auto status = devicestatus.find( device.ip );
+		auto status = devicestatus.at( device.ip );
 
 		const char* text = m_currentPage == 0 ? device.ip : device.name;
 
 		auto size = painter.getStringSize( text, font );
 		painter.drawStringAt( 2, startLine, text, font, UNCOLORED );
 
-		if( status->second )
+		if( status )
 		{
 			size = painter.getStringSize( online, font );
 			painter.drawStringAt( m_width / 2 - size.first - 2, startLine, online, font, UNCOLORED );

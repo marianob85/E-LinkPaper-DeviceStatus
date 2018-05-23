@@ -25,6 +25,7 @@ bool StatusManager::init()
 	}
 
 	m_epd.clear();
+	m_epd.waitUntilIdle();
 
 	return true;
 }
@@ -32,9 +33,7 @@ bool StatusManager::init()
 bool StatusManager::add( std::unique_ptr< StatusPage > statusPage, unsigned intervalSeconds )
 {
 	if( !statusPage->init( m_epd.width(), m_epd.height() - s_headeWHeight ) )
-	{
 		return false;
-	}
 
 	m_pages.push_back( make_pair( move( statusPage ), intervalSeconds ) );
 
@@ -77,7 +76,7 @@ void StatusManager::onTimer()
 
 void StatusManager::refreshPage()
 {
-	// m_epd.reset();
+	m_epd.init();
 	m_painter->clear( UNCOLORED );
 
 	printHeader();
@@ -89,7 +88,7 @@ void StatusManager::refreshPage()
 	m_painter->drawVerticalLine( m_epd.width() / 2, s_headeWHeight, m_epd.height(), COLORED );
 
 	m_epd.displayFrame( m_painter->rawImage() );
-	// m_epd.sleep();
+	m_epd.sleep();
 }
 
 void StatusManager::printHeader()
