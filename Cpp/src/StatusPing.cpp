@@ -1,7 +1,10 @@
 #include <memory>
+#include <algorithm>
+#include <future>
 #include <epdpaint.h>
 #include "StatusPing.hpp"
 #include "DeviceDef.hpp"
+#include <ping.h>
 
 using namespace std;
 
@@ -9,28 +12,82 @@ using namespace std;
 
 bool StatusPing::setPage( unsigned page )
 {
-	return false;
+	m_currentPage = page % pageNo();
+	return true;
 }
 
 bool StatusPing::setNext()
 {
-	return false;
+	m_currentPage = ( m_currentPage + 1 ) % pageNo();
+	return true;
 }
 
-std::string StatusPing::getDescription() const
+string StatusPing::getDescription() const
 {
 	return "Device status";
 }
 
 unsigned StatusPing::pageNo() const
 {
-	return 1;
+	return 2;
 }
 
 unsigned StatusPing::currentPageNo() const
 {
-	return 0;
+	return m_currentPage;
 }
+
+map< string, bool > StatusPing::getDeviceStatus() const
+{
+	vector< future< std::pair< string, bool > > > values;
+
+	auto pingSingleIP = []( const char* address ) -> pair< string, bool > {
+		PingResult pingResult;
+		Ping ping   = Ping();
+		bool status = ping.ping( address, 4, pingResult );
+		status &= std::count_if( pingResult.icmpEchoReplys.begin(),
+								 pingResult.icmpEchoReplys.end(),
+								 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } ) > 0;
+
+		return { address, status };
+	};
+
+	for( const auto& device : deviceAddress )
+		values.push_back( std::async( std::launch::async, pingSingleIP, device.ip ) );
+
+	std::map< std::string, bool > deviceStatus;
+
+	for( auto& val : values )
+		deviceStatus.insert( val.get() );
+
+	return deviceStatus;
+}
+
+// std::map< std::string, bool > StatusPing::getDeviceStatus() const
+//{
+//	vector< thread > threads;
+//	std::map< std::string, bool > deviceStatus;
+//
+//	auto pingSingleIP = [deviceStatus]( const char* address ) {
+//		PingResult pingResult;
+//		Ping ping   = Ping();
+//		bool status = ping.ping( address, 4, pingResult );
+//		status &= std::count_if( pingResult.icmpEchoReplys.begin(),
+//								 pingResult.icmpEchoReplys.end(),
+//								 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } );
+//
+//		// Sync
+//		deviceStatus.insert( make_pair( string( "" ), true ) );
+//	};
+//
+//	for( const auto& device : deviceAddress )
+//		threads.push_back( std::thread( pingSingleIP, device.ip ) );
+//
+//	for( auto& th : threads )
+//		th.join();
+//
+//	return deviceStatus;
+//}
 
 Paint StatusPing::currentPage() const
 {
@@ -41,15 +98,19 @@ Paint StatusPing::currentPage() const
 	static const char* online  = "online";
 	static const char* offline = "offline";
 
+	auto devicestatus = getDeviceStatus();
+
 	unsigned startLine = 5;
 	for( const auto& device : deviceAddress )
 	{
-		auto size = painter.getStringSize( device.ip, font );
-		painter.drawStringAt( 2, startLine, device.ip, font, UNCOLORED );
+		auto status = devicestatus.find( device.ip );
 
-		bool status = rand() % 3;
+		const char* text = m_currentPage == 0 ? device.ip : device.name;
 
-		if( status )
+		auto size = painter.getStringSize( text, font );
+		painter.drawStringAt( 2, startLine, text, font, UNCOLORED );
+
+		if( status->second )
 		{
 			size = painter.getStringSize( online, font );
 			painter.drawStringAt( m_width / 2 - size.first - 2, startLine, online, font, UNCOLORED );
@@ -61,8 +122,8 @@ Paint StatusPing::currentPage() const
 
 			painter.drawFilledRectangle( position.first - 2,
 										 position.second - 2,
-										 position.first + size.first ,
-										 position.second + size.second ,
+										 position.first + size.first,
+										 position.second + size.second,
 										 UNCOLORED );
 
 			painter.drawStringAt( position.first, position.second, offline, font, COLORED );

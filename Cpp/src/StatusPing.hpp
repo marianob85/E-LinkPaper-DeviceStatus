@@ -1,4 +1,6 @@
+#include <map>
 #include "StatusManager.hpp"
+#include "DeviceDef.hpp"
 
 class StatusPing : public StatusPage
 {
@@ -11,4 +13,10 @@ public:
 	virtual unsigned pageNo() const override;
 	virtual unsigned currentPageNo() const override;
 	// end: --------------------- StatusPage -------------------
+
+private:
+	std::map< std::string, bool > getDeviceStatus() const;
+
+private:
+	unsigned m_currentPage{ 0 };
 };

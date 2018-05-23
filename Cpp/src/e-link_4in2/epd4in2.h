@@ -87,7 +87,7 @@ public:
 			 uint8_t csPin,
 			 uint8_t bussyPin,
 			 int width,
-			 int height);
+			 int height );
 	~Epd4in2();
 
 	bool init( void );
@@ -100,6 +100,7 @@ public:
 	void sleep( void );
 	int width() const;
 	int height() const;
+	void clear( bool colored = false );
 
 private:
 	std::unique_ptr< Epd > m_epd;

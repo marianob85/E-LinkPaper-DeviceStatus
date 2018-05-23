@@ -165,6 +165,7 @@ void Epd4in2::displayFrame( const uint8_t* frame_buffer )
 	setLut();
 
 	sendCommand( DISPLAY_REFRESH );
+	m_epd->delayMs( 100 );
 }
 
 /**
@@ -206,6 +207,39 @@ int Epd4in2::width() const
 int Epd4in2::height() const
 {
 	return m_height;
+}
+
+void Epd4in2::clear( bool colored /*= false */ )
+{
+	waitUntilIdle();
+	sendCommand( RESOLUTION_SETTING );
+	sendData( static_cast< unsigned char >( m_width >> 8 ) );
+	sendData( static_cast< unsigned char >( m_width & 0xff ) );
+	sendData( static_cast< unsigned char >( m_height >> 8 ) );
+	sendData( static_cast< unsigned char >( m_height & 0xff ) );
+	sendCommand( VCM_DC_SETTING );
+	sendData( 0x12 );
+
+	sendCommand( VCOM_AND_DATA_INTERVAL_SETTING );
+	sendCommand( 0x97 ); // VBDF 17|D7 VBDW 97  VBDB 57  VBDF F7  VBDW 77  VBDB 37  VBDR B7
+
+	sendCommand( DATA_START_TRANSMISSION_1 );
+	for( int i = 0; i < m_width * m_height / 8; i++ )
+	{
+		sendData( 0xFF ); // bit set: white, bit reset: black
+	}
+	m_epd->delayMs( 2 );
+	sendCommand( DATA_START_TRANSMISSION_2 );
+	for( int i = 0; i < m_width * m_height / 8; i++ )
+	{
+		sendData( colored ? 0x00 : 0xFF );
+	}
+	m_epd->delayMs( 2 );
+
+	setLut();
+
+	sendCommand( DISPLAY_REFRESH );
+	m_epd->delayMs( 100 );
 }
 
 const unsigned char lut_vcom0[] = {

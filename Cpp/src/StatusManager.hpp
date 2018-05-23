@@ -32,7 +32,7 @@ public:
 
 	bool add( std::unique_ptr< StatusPage > statusPage, unsigned intervalSeconds );
 	void setNext();
-	bool setPage( unsigned page );
+	bool setPage( unsigned page, unsigned subPage );
 	void autoChange( bool set );
 
 private:
@@ -40,6 +40,7 @@ private:
 	void printHeader();
 	unsigned pagesNo() const;
 	unsigned currentPageNo() const;
+	void onTimer();
 
 private:
 	static const unsigned s_headeWHeight = 20;

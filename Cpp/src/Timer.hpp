@@ -7,24 +7,23 @@ class TimerEvent
 public:
 	TimerEvent() {}
 
-	template< class callable, class... arguments >
-	TimerEvent( int after, bool async, callable&& f, arguments&&... args )
+	TimerEvent( int after, bool async, std::function< void() > func )
 	{
-		std::function< typename std::result_of< callable( arguments... ) >::type() > task(
-			std::bind( std::forward< callable >( f ), std::forward< arguments >( args )... ) );
+		// std::function< typename std::result_of< callable( arguments... ) >::type() > task(
+		//	std::bind( std::forward< callable >( f ), std::forward< arguments >( args )... ) );
 
 		if( async )
 		{
-			std::thread( [after, task]() {
+			std::thread( [after, func]() {
 				std::this_thread::sleep_for( std::chrono::milliseconds( after ) );
-				task();
+				func();
 			} )
 				.detach();
 		}
 		else
 		{
 			std::this_thread::sleep_for( std::chrono::milliseconds( after ) );
-			task();
+			func();
 		}
 	}
 };

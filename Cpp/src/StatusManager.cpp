@@ -24,6 +24,8 @@ bool StatusManager::init()
 		return false;
 	}
 
+	m_epd.clear();
+
 	return true;
 }
 
@@ -37,7 +39,6 @@ bool StatusManager::add( std::unique_ptr< StatusPage > statusPage, unsigned inte
 	m_pages.push_back( make_pair( move( statusPage ), intervalSeconds ) );
 
 	m_currentPage = m_pages.begin();
-	m_currentPage->first->setPage( 0 );
 	return true;
 }
 
@@ -50,9 +51,29 @@ void StatusManager::setNext()
 	refreshPage();
 }
 
-bool StatusManager::setPage( unsigned page ) {}
+bool StatusManager::setPage( unsigned page, unsigned subPage )
+{
+	if( page < m_pages.size() )
+	{
+		m_pages[ 0 ].first->setPage( subPage );
+		refreshPage();
+		return true;
+	}
+	return false;
+}
 
-void StatusManager::autoChange( bool set ) {}
+void StatusManager::autoChange( bool set )
+{
+	auto timeMS  = m_currentPage->second * 1000;
+	m_timerEvent = TimerEvent( timeMS, true, std::bind( &StatusManager::onTimer, this ) );
+}
+
+void StatusManager::onTimer()
+{
+	setNext();
+	auto timeMS  = m_currentPage->second * 1000;
+	m_timerEvent = TimerEvent( timeMS, true, std::bind( &StatusManager::onTimer, this ) );
+}
 
 void StatusManager::refreshPage()
 {

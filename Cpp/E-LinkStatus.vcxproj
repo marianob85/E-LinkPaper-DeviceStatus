@@ -16,6 +16,7 @@
     <ClInclude Include="src\e-link_4in2\epd4in2.h" />
     <ClInclude Include="src\fonts\fonts.h" />
     <ClInclude Include="src\painter\epdpaint.h" />
+    <ClInclude Include="src\ping\ping.h" />
     <ClInclude Include="src\StatusManager.hpp" />
     <ClInclude Include="src\StatusPing.hpp" />
     <ClInclude Include="src\Timer.hpp" />
@@ -31,6 +32,7 @@
     <ClCompile Include="src\fonts\font8.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\painter\epdpaint.cpp" />
+    <ClCompile Include="src\ping\ping.cpp" />
     <ClCompile Include="src\StatusManager.cpp" />
     <ClCompile Include="src\StatusPing.cpp" />
   </ItemGroup>
@@ -64,7 +66,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
-      <LibraryDependencies>bcm2835;wiringPi</LibraryDependencies>
+      <LibraryDependencies>bcm2835;wiringPi;pthread</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -74,20 +76,22 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <Link>
-      <LibraryDependencies>bcm2835;wiringPi</LibraryDependencies>
+      <LibraryDependencies>bcm2835;wiringPi;pthread</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>gpio export 17 out</Command>
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>.\src\Fonts;.\src\e-link_4in2;.\src\painter;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\Fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\src\Fonts;.\src\e-link_4in2;.\src\painter;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\Fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
+      <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
