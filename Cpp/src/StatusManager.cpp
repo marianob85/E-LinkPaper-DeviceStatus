@@ -119,7 +119,9 @@ void StatusManager::printHeader()
 	// Print temp
 	if( m_tempSensor )
 	{
-		m_painter->drawStringAt( 200, y, std::to_string( m_tempSensor->getTemp() ).c_str(), font, UNCOLORED );
+		char text[20];
+		sprintf(text, "T:%4.2f'C", m_tempSensor->getTemp());
+		m_painter->drawStringAt( 170, y, text, font, UNCOLORED );
 	}
 }
 
