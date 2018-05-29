@@ -12,12 +12,15 @@ private:
 	struct CharData
 	{
 		const unsigned short width;
-		const unsigned short data[1];
+		const unsigned short data[ 1 ];
 	};
 #pragma pack( pop )
 
 public:
 	FontPainterKS0108( FontData fontData, DrawPixel drawPixel );
 
+	// start: ------------------- FontPainter -------------------
 	virtual Size drawChar( unsigned startX, unsigned startY, char character, bool color ) override;
+	virtual Size drawString( unsigned startX, unsigned startY, std::string text, bool color ) override;
+	// end: --------------------- FontPainter -------------------
 };

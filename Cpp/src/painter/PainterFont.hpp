@@ -19,7 +19,8 @@ protected:
 	virtual ~FontPainter() = default;
 
 public:
-	virtual Size drawChar( unsigned startX, unsigned startY, char character, bool color ) = 0;
+	virtual Size drawChar( unsigned startX, unsigned startY, char character, bool color )	 = 0;
+	virtual Size drawString( unsigned startX, unsigned startY, std::string text, bool color ) = 0;
 
 protected:
 	DrawPixel m_drawPixel;

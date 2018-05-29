@@ -31,10 +31,10 @@ void test()
 
 	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( epd.width() / 8 * epd.height() );
 	auto painter							 = make_unique< Paint >( move( frameBuffer ), epd.width(), epd.height() );
-	painter->clear(false);
+	painter->clear( false );
 	auto font12 = painter->createFonter< FontPainterKS0108 >( fontGeorgia12 );
 
-	font12->drawChar( 0, 0, 'A', UNCOLORED );
+	font12->drawChar( 10, 20, 'A', UNCOLORED );
 
 	epd.displayFrame( painter->rawImage() );
 }
