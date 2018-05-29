@@ -10,8 +10,8 @@ protected:
 public:
 	struct Size
 	{
-		uint8_t width;
-		uint8_t height;
+		unsigned width;
+		unsigned height;
 	};
 
 protected:

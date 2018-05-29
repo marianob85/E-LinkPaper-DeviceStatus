@@ -111,4 +111,4 @@ const unsigned short Georgia15x15[] = {
         };
 // clang-format on
 
-FontData fontGeorgia12 = { Georgia15x15, 15, 15 };
+FontData fontGeorgia12 = { Georgia15x15, 15, 15, ' ', 2 };
