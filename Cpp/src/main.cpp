@@ -34,7 +34,8 @@ void test()
 	painter->clear( false );
 	auto font12 = painter->createFonter< FontPainterKS0108 >( fontGeorgia12 );
 
-	font12->drawChar( 10, 20, 'A', UNCOLORED );
+	auto size = font12->drawChar( 10, 20, 'A', UNCOLORED );
+	font12->drawString( 10, 20 + size.height, "Hello world !", UNCOLORED );
 
 	epd.displayFrame( painter->rawImage() );
 }

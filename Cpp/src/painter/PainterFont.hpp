@@ -21,6 +21,8 @@ protected:
 public:
 	virtual Size drawChar( unsigned startX, unsigned startY, char character, bool color )	 = 0;
 	virtual Size drawString( unsigned startX, unsigned startY, std::string text, bool color ) = 0;
+	virtual Size getCharSize( char character )												  = 0;
+	virtual Size getStringSize( std::string text )											  = 0;
 
 protected:
 	DrawPixel m_drawPixel;
