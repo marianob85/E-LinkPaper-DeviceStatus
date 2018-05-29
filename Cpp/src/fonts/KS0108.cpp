@@ -65,6 +65,6 @@ FontPainter::Size FontPainterKS0108::getStringSize( std::string text )
 {
 	return drawString( 0, 0, text, false, DrawPixel() );
 }
-}
+
 
 // end: --------------------- FontPainterKS0108 -------------------

@@ -34,6 +34,8 @@ void test()
 	painter->clear( false );
 	auto font12 = painter->createFonter< FontPainterKS0108 >( fontGeorgia12 );
 
+	auto test = font12->getStringSize("Ala ma kota");
+
 	auto size = font12->drawChar( 10, 20, 'A', UNCOLORED );
 	font12->drawString( 10, 20 + size.height, "Hello world !", UNCOLORED );
 
