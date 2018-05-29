@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  */
 #include <cstring>
-#include "epdpaint.h"
+#include "Painter.hpp"
 
 using namespace std;
 
@@ -59,7 +59,7 @@ Paint& Paint::operator=( const Paint& right )
 /**
  *  @brief: clear the image
  */
-void Paint::clear( int colored )
+void Paint::clear( bool colored )
 {
 	for( int x = 0; x < this->m_width; x++ )
 	{
@@ -74,7 +74,7 @@ void Paint::clear( int colored )
  *  @brief: this draws a pixel by absolute coordinates.
  *          this function won't be affected by the rotate parameter.
  */
-void Paint::drawAbsolutePixel( int x, int y, int colored )
+void Paint::drawAbsolutePixel( int x, int y, bool colored )
 {
 	if( x < 0 || x >= this->m_width || y < 0 || y >= this->m_height )
 	{
@@ -132,7 +132,7 @@ void Paint::setRotate( Rotate rotate )
 /**
  *  @brief: this draws a pixel by the coordinates
  */
-void Paint::drawPixel( int x, int y, int colored )
+void Paint::drawPixel( int x, int y, bool colored )
 {
 	int point_temp;
 	if( this->m_rotate == Rotate::Rotate0 )
@@ -180,66 +180,66 @@ void Paint::drawPixel( int x, int y, int colored )
 /**
  *  @brief: this draws a charactor on the frame buffer but not refresh
  */
-void Paint::drawCharAt( int x, int y, char ascii_char, const sFONT* font, int colored )
-{
-	int i, j;
-	unsigned int char_offset = ( ascii_char - ' ' ) * font->Height * ( font->Width / 8 + ( font->Width % 8 ? 1 : 0 ) );
-	const unsigned char* ptr = &font->table[ char_offset ];
+// void Paint::drawCharAt( int x, int y, char ascii_char, const FontPainter& font, int colored )
+//{
+// int i, j;
+// unsigned int char_offset = ( ascii_char - ' ' ) * font->Height * ( font->Width / 8 + ( font->Width % 8 ? 1 : 0 ) );
+// const unsigned char* ptr = &font->table[ char_offset ];
 
-	for( j = 0; j < font->Height; j++ )
-	{
-		for( i = 0; i < font->Width; i++ )
-		{
-			if( *ptr & ( 0x80 >> ( i % 8 ) ) )
-			{
-				drawPixel( x + i, y + j, colored );
-			}
-			if( i % 8 == 7 )
-			{
-				ptr++;
-			}
-		}
-		if( font->Width % 8 != 0 )
-		{
-			ptr++;
-		}
-	}
-}
+// for( j = 0; j < font->Height; j++ )
+//{
+//	for( i = 0; i < font->Width; i++ )
+//	{
+//		if( *ptr & ( 0x80 >> ( i % 8 ) ) )
+//		{
+//			drawPixel( x + i, y + j, colored );
+//		}
+//		if( i % 8 == 7 )
+//		{
+//			ptr++;
+//		}
+//	}
+//	if( font->Width % 8 != 0 )
+//	{
+//		ptr++;
+//	}
+//}
+//}
 
 /**
  *  @brief: this displays a string on the frame buffer but not refresh
  */
-void Paint::drawStringAt( int x, int y, const char* text, const sFONT* font, int colored )
-{
-	int refcolumn = x;
+// void Paint::drawStringAt( int x, int y, const char* text, const FontPainter& font, int colored )
+//{
+// int refcolumn = x;
 
-	/* Send the string character by character on EPD */
-	while( *text != 0 )
-	{
-		/* Display one character on EPD */
-		drawCharAt( refcolumn, y, *text, font, colored );
-		/* Decrement the column position by 16 */
-		refcolumn += font->Width;
-		/* Point on the next character */
-		text++;
-	}
-}
+///* Send the string character by character on EPD */
+// while( *text != 0 )
+//{
+//	/* Display one character on EPD */
+//	drawCharAt( refcolumn, y, *text, font, colored );
+//	/* Decrement the column position by 16 */
+//	refcolumn += font->Width;
+//	/* Point on the next character */
+//	text++;
+//}
+//}
 
-std::pair< unsigned, unsigned > Paint::getStringSize( const char* text, const sFONT* font ) const
-{
-	unsigned refcolumn = 0;
+// std::pair< unsigned, unsigned > Paint::getStringSize( const char* text, const FontPainter& font ) const
+//{
+// unsigned refcolumn = 0;
 
-	/* Send the string character by character on EPD */
-	while( *text++ != 0 )
-	{
-		/* Decrement the column position by 16 */
-		refcolumn += font->Width;
-		/* Point on the next character */
-	}
+///* Send the string character by character on EPD */
+// while( *text++ != 0 )
+//{
+//	/* Decrement the column position by 16 */
+//	refcolumn += font->Width;
+//	/* Point on the next character */
+//}
 
-	// font->Height
-	return { refcolumn, font->Height };
-}
+//// font->Height
+// return { refcolumn, font->Height };
+//}
 
 uint8_t* Paint::rawImage() const
 {
@@ -258,7 +258,7 @@ bool Paint::merge( unsigned offsetX, unsigned offsetY, const Paint& painter )
 /**
  *  @brief: this draws a line on the frame buffer
  */
-void Paint::drawLine( int x0, int y0, int x1, int y1, int colored )
+void Paint::drawLine( int x0, int y0, int x1, int y1, bool colored )
 {
 	/* Bresenham algorithm */
 	int dx  = x1 - x0 >= 0 ? x1 - x0 : x0 - x1;
@@ -286,7 +286,7 @@ void Paint::drawLine( int x0, int y0, int x1, int y1, int colored )
 /**
  *  @brief: this draws a horizontal line on the frame buffer
  */
-void Paint::drawHorizontalLine( int x, int y, int line_width, int colored )
+void Paint::drawHorizontalLine( int x, int y, int line_width, bool colored )
 {
 	int i;
 	for( i = x; i < x + line_width; i++ )
@@ -298,7 +298,7 @@ void Paint::drawHorizontalLine( int x, int y, int line_width, int colored )
 /**
  *  @brief: this draws a vertical line on the frame buffer
  */
-void Paint::drawVerticalLine( int x, int y, int line_height, int colored )
+void Paint::drawVerticalLine( int x, int y, int line_height, bool colored )
 {
 	int i;
 	for( i = y; i < y + line_height; i++ )
@@ -310,7 +310,7 @@ void Paint::drawVerticalLine( int x, int y, int line_height, int colored )
 /**
  *  @brief: this draws a rectangle
  */
-void Paint::drawRectangle( int x0, int y0, int x1, int y1, int colored )
+void Paint::drawRectangle( int x0, int y0, int x1, int y1, bool colored )
 {
 	int min_x, min_y, max_x, max_y;
 	min_x = x1 > x0 ? x0 : x1;
@@ -327,7 +327,7 @@ void Paint::drawRectangle( int x0, int y0, int x1, int y1, int colored )
 /**
  *  @brief: this draws a filled rectangle
  */
-void Paint::drawFilledRectangle( int x0, int y0, int x1, int y1, int colored )
+void Paint::drawFilledRectangle( int x0, int y0, int x1, int y1, bool colored )
 {
 	int min_x, min_y, max_x, max_y;
 	int i;
@@ -345,7 +345,7 @@ void Paint::drawFilledRectangle( int x0, int y0, int x1, int y1, int colored )
 /**
  *  @brief: this draws a circle
  */
-void Paint::drawCircle( int x, int y, int radius, int colored )
+void Paint::drawCircle( int x, int y, int radius, bool colored )
 {
 	/* Bresenham algorithm */
 	int x_pos = -radius;
@@ -378,7 +378,7 @@ void Paint::drawCircle( int x, int y, int radius, int colored )
 /**
  *  @brief: this draws a filled circle
  */
-void Paint::drawFilledCircle( int x, int y, int radius, int colored )
+void Paint::drawFilledCircle( int x, int y, int radius, bool colored )
 {
 	/* Bresenham algorithm */
 	int x_pos = -radius;

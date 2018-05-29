@@ -100,29 +100,29 @@ void StatusManager::refreshPage()
 
 void StatusManager::printHeader()
 {
-	const auto* font = &Font16;
+	//const auto* font = &Font16;
 
-	// Print pages
-	char text[ 128 ] = {};
-	sprintf( text, "Page %d/%d", currentPageNo() + 1, pagesNo() );
-	auto size = m_painter->getStringSize( text, font );
-	auto y	= ( s_headeWHeight - 0 - size.second ) / 2 + 1;
-	m_painter->drawFilledRectangle( 0, 0, m_epd.width(), s_headeWHeight, COLORED );
-	m_painter->drawStringAt( m_epd.width() - size.first - 2, y, text, font, UNCOLORED );
+	//// Print pages
+	//char text[ 128 ] = {};
+	//sprintf( text, "Page %d/%d", currentPageNo() + 1, pagesNo() );
+	//auto size = m_painter->getStringSize( text, font );
+	//auto y	= ( s_headeWHeight - 0 - size.second ) / 2 + 1;
+	//m_painter->drawFilledRectangle( 0, 0, m_epd.width(), s_headeWHeight, COLORED );
+	//m_painter->drawStringAt( m_epd.width() - size.first - 2, y, text, font, UNCOLORED );
 
-	// Print description
-	auto description = m_currentPage->first->getDescription();
-	size			 = m_painter->getStringSize( description.c_str(), font );
-	y				 = ( s_headeWHeight - 0 - size.second ) / 2 + 1;
-	m_painter->drawStringAt( 2, y, description.c_str(), font, UNCOLORED );
+	//// Print description
+	//auto description = m_currentPage->first->getDescription();
+	//size			 = m_painter->getStringSize( description.c_str(), font );
+	//y				 = ( s_headeWHeight - 0 - size.second ) / 2 + 1;
+	//m_painter->drawStringAt( 2, y, description.c_str(), font, UNCOLORED );
 
-	// Print temp
-	if( m_tempSensor )
-	{
-		char text[20];
-		sprintf(text, "T:%4.2f'C", m_tempSensor->getTemp());
-		m_painter->drawStringAt( 170, y, text, font, UNCOLORED );
-	}
+	//// Print temp
+	//if( m_tempSensor )
+	//{
+	//	char text[20];
+	//	sprintf(text, "T:%4.2f'C", m_tempSensor->getTemp());
+	//	m_painter->drawStringAt( 170, y, text, font, UNCOLORED );
+	//}
 }
 
 unsigned StatusManager::pagesNo() const

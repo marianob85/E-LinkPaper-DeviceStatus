@@ -1,10 +1,11 @@
 #pragma once
 #include <memory>
 #include <vector>
-#include <epdpaint.h>
-#include <epd4in2.h>
-#include "Timer.hpp"
 #include <DS18B20.h>
+#include <epd4in2.h>
+#include <Painter.hpp>
+#include "Timer.hpp"
+
 
 class StatusPage
 {

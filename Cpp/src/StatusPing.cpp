@@ -1,10 +1,11 @@
 #include <memory>
 #include <algorithm>
 #include <future>
-#include <epdpaint.h>
+#include <ping.h>
+#include <Painter.hpp>
 #include "StatusPing.hpp"
 #include "DeviceDef.hpp"
-#include <ping.h>
+
 
 using namespace std;
 
@@ -68,7 +69,7 @@ Paint StatusPing::currentPage() const
 {
 	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_width / 8 * m_height );
 	auto painter							 = Paint( move( frameBuffer ), m_width, m_height );
-
+	/*
 	const auto* font		   = &Font12;
 	static const char* online  = "online";
 	static const char* offline = "offline";
@@ -106,7 +107,7 @@ Paint StatusPing::currentPage() const
 
 		startLine += size.second + 5;
 	}
-
+	*/
 	return painter;
 }
 
