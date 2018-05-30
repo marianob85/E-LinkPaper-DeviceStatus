@@ -74,9 +74,7 @@ Paint StatusPing::currentPage() const
 
 	static const string online  = "online";
 	static const string offline = "offline";
-
-	auto devicestatus = getDeviceStatus();
-
+	const auto devicestatus = getDeviceStatus();
 	const unsigned startLineDef = 5;
 
 	unsigned startLine		   = startLineDef;
