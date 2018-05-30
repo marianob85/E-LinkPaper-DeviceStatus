@@ -101,7 +101,7 @@ void StatusManager::refreshPage()
 
 void StatusManager::printHeader()
 {
-	auto font = m_painter->createFonter< FontPainterKS0108 >( liberationMono10Bold );
+	auto font = m_painter->createFonter< FontPainterKS0108 >( liberationMono11Bold );
 
 	// Print pages
 	char text[ 128 ] = {};
@@ -123,7 +123,7 @@ void StatusManager::printHeader()
 	if( m_tempSensor )
 	{
 		char text[ 20 ];
-		sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0);
+		sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0 );
 		font->drawString( 170, y, text, UNCOLORED );
 	}
 }

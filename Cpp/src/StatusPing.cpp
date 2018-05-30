@@ -77,25 +77,35 @@ Paint StatusPing::currentPage() const
 
 	auto devicestatus = getDeviceStatus();
 
-	unsigned startLine = 5;
+	const unsigned startLineDef = 5;
+
+	unsigned startLine		   = startLineDef;
+	unsigned columnOffset	  = 0;
+	const unsigned columnWidth = m_width / 2;
 	for( const auto& device : deviceAddress )
 	{
-		auto status = devicestatus.at( device.ip );
+		const auto status = devicestatus.at( device.ip );
+		const char* text  = m_currentPage == 0 ? device.ip : device.name;
+		auto size		  = font->getStringSize( text );
 
-		const char* text = m_currentPage == 0 ? device.ip : device.name;
+		if( size.height + startLine > m_height )
+		{
+			// Next column
+			startLine = startLineDef;
+			columnOffset += columnWidth;
+		}
 
-		auto size = font->getStringSize( text );
-		font->drawString( 2, startLine, text, UNCOLORED );
+		font->drawString( columnOffset + 2, startLine, text, UNCOLORED );
 
 		if( status )
 		{
 			size = font->getStringSize( online );
-			font->drawString( m_width / 2 - size.width - 2, startLine, online, UNCOLORED );
+			font->drawString( columnOffset + columnWidth - size.width - 2, startLine, online, UNCOLORED );
 		}
 		else
 		{
 			size		  = font->getStringSize( offline );
-			auto position = make_pair( m_width / 2 - size.width - 2, startLine );
+			auto position = make_pair( columnOffset + columnWidth - size.width - 2, startLine );
 
 			painter.drawFilledRectangle( position.first - 2,
 										 position.second - 2,

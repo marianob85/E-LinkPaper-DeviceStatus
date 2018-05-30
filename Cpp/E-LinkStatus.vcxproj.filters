@@ -116,5 +116,8 @@
     <ClCompile Include="src\fonts\KS0108\Liberation_Mono12.cpp">
       <Filter>Source\fonts\KS0108</Filter>
     </ClCompile>
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono11Bold.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -34,4 +34,5 @@ extern FontData liberationMono9;
 extern FontData liberationMono9Bold;
 extern FontData liberationMono10;
 extern FontData liberationMono10Bold;
+extern FontData liberationMono11Bold;
 extern FontData liberationMono12;
