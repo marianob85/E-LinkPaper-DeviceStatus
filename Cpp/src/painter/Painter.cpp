@@ -1,28 +1,3 @@
-/**
- *  @filename   :   epdpaint.cpp
- *  @brief      :   Paint tools
- *  @author     :   Yehui from Waveshare
- *
- *  Copyright (C) Waveshare     September 9 2017
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documnetation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to  whom the Software is
- * furished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS OR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
 #include <cstring>
 #include "Painter.hpp"
 
@@ -176,70 +151,6 @@ void Paint::drawPixel( int x, int y, bool colored )
 		drawAbsolutePixel( x, y, colored );
 	}
 }
-
-/**
- *  @brief: this draws a charactor on the frame buffer but not refresh
- */
-// void Paint::drawCharAt( int x, int y, char ascii_char, const FontPainter& font, int colored )
-//{
-// int i, j;
-// unsigned int char_offset = ( ascii_char - ' ' ) * font->Height * ( font->Width / 8 + ( font->Width % 8 ? 1 : 0 ) );
-// const unsigned char* ptr = &font->table[ char_offset ];
-
-// for( j = 0; j < font->Height; j++ )
-//{
-//	for( i = 0; i < font->Width; i++ )
-//	{
-//		if( *ptr & ( 0x80 >> ( i % 8 ) ) )
-//		{
-//			drawPixel( x + i, y + j, colored );
-//		}
-//		if( i % 8 == 7 )
-//		{
-//			ptr++;
-//		}
-//	}
-//	if( font->Width % 8 != 0 )
-//	{
-//		ptr++;
-//	}
-//}
-//}
-
-/**
- *  @brief: this displays a string on the frame buffer but not refresh
- */
-// void Paint::drawStringAt( int x, int y, const char* text, const FontPainter& font, int colored )
-//{
-// int refcolumn = x;
-
-///* Send the string character by character on EPD */
-// while( *text != 0 )
-//{
-//	/* Display one character on EPD */
-//	drawCharAt( refcolumn, y, *text, font, colored );
-//	/* Decrement the column position by 16 */
-//	refcolumn += font->Width;
-//	/* Point on the next character */
-//	text++;
-//}
-//}
-
-// std::pair< unsigned, unsigned > Paint::getStringSize( const char* text, const FontPainter& font ) const
-//{
-// unsigned refcolumn = 0;
-
-///* Send the string character by character on EPD */
-// while( *text++ != 0 )
-//{
-//	/* Decrement the column position by 16 */
-//	refcolumn += font->Width;
-//	/* Point on the next character */
-//}
-
-//// font->Height
-// return { refcolumn, font->Height };
-//}
 
 uint8_t* Paint::rawImage() const
 {

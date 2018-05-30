@@ -1,6 +1,7 @@
 #include <iostream>
 #include <tuple>
 #include <epd.h>
+#include <KS0108.hpp>
 #include "DeviceDef.hpp"
 #include "StatusManager.hpp"
 
@@ -100,29 +101,31 @@ void StatusManager::refreshPage()
 
 void StatusManager::printHeader()
 {
-	//const auto* font = &Font16;
+	auto font = m_painter->createFonter< FontPainterKS0108 >( liberationMono10Bold );
 
-	//// Print pages
-	//char text[ 128 ] = {};
-	//sprintf( text, "Page %d/%d", currentPageNo() + 1, pagesNo() );
-	//auto size = m_painter->getStringSize( text, font );
-	//auto y	= ( s_headeWHeight - 0 - size.second ) / 2 + 1;
-	//m_painter->drawFilledRectangle( 0, 0, m_epd.width(), s_headeWHeight, COLORED );
-	//m_painter->drawStringAt( m_epd.width() - size.first - 2, y, text, font, UNCOLORED );
+	// Print pages
+	char text[ 128 ] = {};
+	sprintf( text, "Page %d/%d", currentPageNo() + 1, pagesNo() );
+	auto size = font->getStringSize( text );
+	auto y	= ( s_headeWHeight - 0 - size.height ) / 2 + 1;
+	m_painter->drawFilledRectangle( 0, 0, m_epd.width(), s_headeWHeight, COLORED );
 
-	//// Print description
-	//auto description = m_currentPage->first->getDescription();
-	//size			 = m_painter->getStringSize( description.c_str(), font );
-	//y				 = ( s_headeWHeight - 0 - size.second ) / 2 + 1;
-	//m_painter->drawStringAt( 2, y, description.c_str(), font, UNCOLORED );
+	font->drawString( m_epd.width() - size.width - 2, y, text, UNCOLORED );
 
-	//// Print temp
-	//if( m_tempSensor )
-	//{
-	//	char text[20];
-	//	sprintf(text, "T:%4.2f'C", m_tempSensor->getTemp());
-	//	m_painter->drawStringAt( 170, y, text, font, UNCOLORED );
-	//}
+	// Print description
+	auto description = m_currentPage->first->getDescription();
+	size			 = font->getStringSize( description );
+	y				 = ( s_headeWHeight - 0 - size.height ) / 2 + 1;
+
+	font->drawString( 2, y, description, UNCOLORED );
+
+	// Print temp
+	if( m_tempSensor )
+	{
+		char text[ 20 ];
+		sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0);
+		font->drawString( 170, y, text, UNCOLORED );
+	}
 }
 
 unsigned StatusManager::pagesNo() const

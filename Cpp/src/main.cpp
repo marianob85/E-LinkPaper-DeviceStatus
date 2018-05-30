@@ -24,32 +24,11 @@ void sig_handler( int sig )
 	}
 }
 
-void test()
-{
-	Epd4in2 epd( make_unique< EpdWiringPi >( CHANNEL ), RST_PIN, DC_PIN, CS_PIN, BUSY_PIN, EPD_WIDTH, EPD_HEIGHT );
-	epd.init();
-
-	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( epd.width() / 8 * epd.height() );
-	auto painter							 = make_unique< Paint >( move( frameBuffer ), epd.width(), epd.height() );
-	painter->clear( false );
-	auto font12 = painter->createFonter< FontPainterKS0108 >( fontGeorgia12 );
-
-	auto test = font12->getStringSize("Ala ma kota");
-
-	auto size = font12->drawChar( 10, 20, 'A', UNCOLORED );
-	font12->drawString( 10, 20 + size.height, "Hello world !", UNCOLORED );
-
-	epd.displayFrame( painter->rawImage() );
-}
-
 int main( void )
 {
 	signal( SIGABRT, sig_handler );
 	signal( SIGTERM, sig_handler );
 	signal( SIGINT, sig_handler );
-
-	test();
-	return 0;
 
 	StatusManager statusManager;
 

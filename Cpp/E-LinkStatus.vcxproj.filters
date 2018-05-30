@@ -92,11 +92,29 @@
     <ClCompile Include="src\painter\PainterFont.cpp">
       <Filter>Source\painter</Filter>
     </ClCompile>
-    <ClCompile Include="src\fonts\KS0108\Georgia15x15.cpp">
-      <Filter>Source\fonts\KS0108</Filter>
-    </ClCompile>
     <ClCompile Include="src\fonts\KS0108.cpp">
       <Filter>Source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fonts\KS0108\Georgia12.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono8.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono9.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono9Bold.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono10Bold.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono10.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono12.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

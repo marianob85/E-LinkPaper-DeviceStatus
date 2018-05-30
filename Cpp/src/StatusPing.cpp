@@ -3,9 +3,9 @@
 #include <future>
 #include <ping.h>
 #include <Painter.hpp>
+#include <KS0108.hpp>
 #include "StatusPing.hpp"
 #include "DeviceDef.hpp"
-
 
 using namespace std;
 
@@ -69,10 +69,11 @@ Paint StatusPing::currentPage() const
 {
 	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_width / 8 * m_height );
 	auto painter							 = Paint( move( frameBuffer ), m_width, m_height );
-	/*
-	const auto* font		   = &Font12;
-	static const char* online  = "online";
-	static const char* offline = "offline";
+
+	auto font = painter.createFonter< FontPainterKS0108 >( liberationMono10 );
+
+	static const string online  = "online";
+	static const string offline = "offline";
 
 	auto devicestatus = getDeviceStatus();
 
@@ -83,31 +84,31 @@ Paint StatusPing::currentPage() const
 
 		const char* text = m_currentPage == 0 ? device.ip : device.name;
 
-		auto size = painter.getStringSize( text, font );
-		painter.drawStringAt( 2, startLine, text, font, UNCOLORED );
+		auto size = font->getStringSize( text );
+		font->drawString( 2, startLine, text, UNCOLORED );
 
 		if( status )
 		{
-			size = painter.getStringSize( online, font );
-			painter.drawStringAt( m_width / 2 - size.first - 2, startLine, online, font, UNCOLORED );
+			size = font->getStringSize( online );
+			font->drawString( m_width / 2 - size.width - 2, startLine, online, UNCOLORED );
 		}
 		else
 		{
-			size		  = painter.getStringSize( offline, font );
-			auto position = make_pair( m_width / 2 - size.first - 2, startLine );
+			size		  = font->getStringSize( offline );
+			auto position = make_pair( m_width / 2 - size.width - 2, startLine );
 
 			painter.drawFilledRectangle( position.first - 2,
 										 position.second - 2,
-										 position.first + size.first,
-										 position.second + size.second,
+										 position.first + size.width,
+										 position.second + size.height,
 										 UNCOLORED );
 
-			painter.drawStringAt( position.first, position.second, offline, font, COLORED );
+			font->drawString( position.first, position.second, offline, COLORED );
 		}
 
-		startLine += size.second + 5;
+		startLine += size.height + 3;
 	}
-	*/
+
 	return painter;
 }
 

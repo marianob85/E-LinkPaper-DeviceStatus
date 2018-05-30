@@ -29,7 +29,7 @@ FontPainter::Size FontPainterKS0108::drawChar(
 		for( size_t x = 0; x < charData->width; ++x, dataPtr += heightBytes )
 			for( size_t y = 0; y < m_fontData.height; ++y )
 				if( 0x01 & ( *( dataPtr + ( y / 8 ) ) >> y % 8 ) )
-					drawPixel( startX + x, startY + y, !color );
+					drawPixel( startX + x, startY + y, color );
 	}
 
 	return { charData->width, m_fontData.height };

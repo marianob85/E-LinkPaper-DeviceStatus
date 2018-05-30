@@ -30,7 +30,13 @@
     <ClCompile Include="src\e-link_4in2\epdBcm2835.cpp" />
     <ClCompile Include="src\e-link_4in2\epdWiringPi.cpp" />
     <ClCompile Include="src\fonts\KS0108.cpp" />
-    <ClCompile Include="src\fonts\KS0108\Georgia15x15.cpp" />
+    <ClCompile Include="src\fonts\KS0108\Georgia12.cpp" />
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono12.cpp" />
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono8.cpp" />
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono9.cpp" />
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono9Bold.cpp" />
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono10Bold.cpp" />
+    <ClCompile Include="src\fonts\KS0108\Liberation_Mono10.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\painter\Painter.cpp" />
     <ClCompile Include="src\painter\PainterFont.cpp" />
