@@ -122,7 +122,7 @@ bool Ping::sendPacket()
 
 bool Ping::recvPacket( PingResult& pingResult )
 {
-	int len;
+	int len{ 0 };
 	extern int errno;
 	struct IcmpEchoReply icmpEchoReply;
 	int maxfds = m_sockfd + 1;
