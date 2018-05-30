@@ -36,7 +36,6 @@ Epd4in2::Epd4in2(
 	: m_epd( move( epd ) ),
 	  m_resetPin( resetPin ),
 	  m_dcPin( dcPin ),
-	  m_csPin( csPin ),
 	  m_busyPin( bussyPin ),
 	  m_width( width ),
 	  m_height( height ){};

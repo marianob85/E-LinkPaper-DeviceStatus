@@ -107,7 +107,6 @@ private:
 
 	uint8_t m_resetPin{ 0 };
 	uint8_t m_dcPin{ 0 };
-	uint8_t m_csPin{ 0 };
 	uint8_t m_busyPin{ 0 };
 	int m_width{ 0 };
 	int m_height{ 0 };
