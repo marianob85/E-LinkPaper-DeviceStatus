@@ -28,7 +28,10 @@ void sig_handler( int sig )
 
 int main( int argc, char** argv )
 {
-	path xmlPath( "E-LinkStatusConfig.xml" );
+	path xmlPath( argv[ 0 ] );
+
+	xmlPath = xmlPath.parent_path();
+	xmlPath /= "E-LinkStatusConfig.xml";
 
 	if( argc > 1 )
 		xmlPath = argv[ 1 ];
@@ -37,7 +40,7 @@ int main( int argc, char** argv )
 	signal( SIGTERM, sig_handler );
 	signal( SIGINT, sig_handler );
 
-	StatusManager statusManager(xmlPath);
+	StatusManager statusManager( xmlPath );
 
 	if( !statusManager.init() )
 		return -1;
