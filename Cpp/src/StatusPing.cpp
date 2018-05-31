@@ -27,8 +27,12 @@ StatusPing::StatusPing( std::experimental::filesystem::path xmlPath )
 		throw std::exception();
 	}
 
-	for( auto device : doc.child( "Config" ).child( "DeviceStatus" ).child( "Devices" ).children() )
+	auto config = doc.child( "Config" );
+
+	for( auto device : config.child( "DeviceStatus" ).child( "Devices" ).children() )
 		m_devices.push_back( { device.text().as_string(), device.attribute( "Name" ).as_string() } );
+
+	m_pingCount = config.child( "Ping" ).child( "Count" ).text().as_int( 4 );
 }
 
 bool StatusPing::setPage( unsigned page )
@@ -62,10 +66,10 @@ map< string, bool > StatusPing::getDeviceStatus() const
 {
 	vector< future< std::pair< string, bool > > > values;
 
-	auto pingSingleIP = []( string address ) -> pair< string, bool > {
+	auto pingSingleIP = [m_pingCount = m_pingCount]( string address ) -> pair< string, bool > {
 		PingResult pingResult;
 		Ping ping   = Ping();
-		bool status = ping.ping( address.c_str(), 4, pingResult );
+		bool status = ping.ping( address.c_str(), m_pingCount, pingResult );
 		status &= std::count_if( pingResult.icmpEchoReplys.begin(),
 								 pingResult.icmpEchoReplys.end(),
 								 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } )

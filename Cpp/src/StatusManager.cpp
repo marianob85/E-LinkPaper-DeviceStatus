@@ -94,6 +94,12 @@ void StatusManager::autoChange( bool set )
 	m_timerEvent = TimerEvent( timeMS, true, std::bind( &StatusManager::onTimer, this ) );
 }
 
+void StatusManager::close()
+{
+	m_epd->init();
+	m_epd->clear();
+}
+
 void StatusManager::onTimer()
 {
 	setNext();

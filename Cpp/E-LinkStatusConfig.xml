@@ -1,4 +1,7 @@
 <Config>
+  <Ping>
+    <Count>8</Count>
+  </Ping>
   <Epd>
     <RS_PIN>13</RS_PIN>
     <DC_PIN>26</DC_PIN>

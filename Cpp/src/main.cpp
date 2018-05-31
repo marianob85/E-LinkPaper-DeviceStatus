@@ -3,6 +3,8 @@
 #include <chrono>
 #include <thread>
 #include <iostream>
+#include <mutex>
+#include <condition_variable>
 #include <experimental/filesystem>
 #include "StatusManager.hpp"
 #include "StatusPing.hpp"
@@ -11,6 +13,9 @@
 using namespace std;
 using namespace std::experimental::filesystem;
 
+std::mutex m;
+std::condition_variable cv;
+
 void sig_handler( int sig )
 {
 	switch( sig )
@@ -18,7 +23,8 @@ void sig_handler( int sig )
 	case SIGTERM:
 	case SIGABRT:
 	case SIGINT:
-		exit( 0 );
+		std::cout << "SIG" << sig << endl;
+		cv.notify_one();
 		break;
 	default:
 		fprintf( stderr, "wasn't expecting that!\n" );
@@ -50,8 +56,11 @@ int main( int argc, char** argv )
 	statusManager.setPage( 0, 0 );
 	statusManager.autoChange( true );
 
-	while( true )
-		std::this_thread::sleep_for( std::chrono::milliseconds( 1000 ) );
+	std::unique_lock< std::mutex > lk( m );
+	cv.wait( lk );
+
+	std::cout << "close" << endl;
+	statusManager.close();
 
 	return 0;
 }

@@ -22,6 +22,7 @@ private:
 
 private:
 	unsigned m_currentPage{ 0 };
+	unsigned m_pingCount{ 4 };
 	struct Device
 	{
 		std::string Ip;

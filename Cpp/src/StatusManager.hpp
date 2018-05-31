@@ -37,6 +37,8 @@ public:
 	bool setPage( unsigned page, unsigned subPage );
 	void autoChange( bool set );
 
+	void close();
+
 private:
 	void refreshPage();
 	void printHeader();
