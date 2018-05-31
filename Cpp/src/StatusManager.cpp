@@ -54,8 +54,6 @@ bool StatusManager::init()
 		wcout << L"e-Paper init failed\n";
 		return false;
 	}
-
-	m_epd->clear();
 	return true;
 }
 
