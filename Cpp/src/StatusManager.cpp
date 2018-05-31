@@ -98,6 +98,8 @@ void StatusManager::close()
 {
 	m_epd->init();
 	m_epd->clear();
+	m_epd->waitUntilIdle();
+	m_epd->sleep();
 }
 
 void StatusManager::onTimer()
