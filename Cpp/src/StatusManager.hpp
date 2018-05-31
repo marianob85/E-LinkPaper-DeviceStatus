@@ -1,11 +1,11 @@
 #pragma once
 #include <memory>
 #include <vector>
+#include <experimental/filesystem>
 #include <DS18B20.h>
 #include <epd4in2.h>
 #include <Painter.hpp>
 #include "Timer.hpp"
-
 
 class StatusPage
 {
@@ -27,7 +27,7 @@ protected:
 class StatusManager
 {
 public:
-	StatusManager();
+	StatusManager( std::experimental::filesystem::path xmlPath );
 	virtual ~StatusManager();
 
 	bool init();
@@ -50,7 +50,7 @@ private:
 	using ContainerT = std::vector< std::pair< std::unique_ptr< StatusPage >, unsigned > >;
 	ContainerT m_pages;
 	ContainerT::const_iterator m_currentPage;
-	Epd4in2 m_epd;
+	std::unique_ptr< Epd4in2 > m_epd;
 	std::unique_ptr< Paint > m_painter;
 	TimerEvent m_timerEvent;
 	std::unique_ptr< DS18B20 > m_tempSensor;

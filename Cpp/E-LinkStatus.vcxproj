@@ -15,6 +15,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="lib\pugi\pugiconfig.hpp" />
+    <ClInclude Include="lib\pugi\pugixml.hpp" />
     <ClInclude Include="src\DeviceDef.hpp" />
     <ClInclude Include="src\DS18B20\DS18B20.h" />
     <ClInclude Include="src\e-link_4in2\epd.h" />
@@ -29,6 +31,7 @@
     <ClInclude Include="src\Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="lib\pugi\pugixml.cpp" />
     <ClCompile Include="src\DS18B20\DS18B20.cpp" />
     <ClCompile Include="src\e-link_4in2\epd4in2.cpp" />
     <ClCompile Include="src\e-link_4in2\epdBcm2835.cpp" />
@@ -48,6 +51,9 @@
     <ClCompile Include="src\ping\ping.cpp" />
     <ClCompile Include="src\StatusManager.cpp" />
     <ClCompile Include="src\StatusPing.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="E-LinkStatusConfig.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{17212035-e085-42cf-bd40-c3592b7c6098}</ProjectGuid>
@@ -97,7 +103,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <Link>
-      <LibraryDependencies>bcm2835;wiringPi;pthread</LibraryDependencies>
+      <LibraryDependencies>bcm2835;wiringPi;pthread;stdc++fs</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -114,27 +120,28 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>.\src\fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;.\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\src\fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;.\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\src\fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;.\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <CppAdditionalWarning>
       </CppAdditionalWarning>
-      <AdditionalOptions>-Wno-sign-conversion</AdditionalOptions>
+      <AdditionalOptions>-Wno-sign-conversion -std=c++17 </AdditionalOptions>
       <CAdditionalWarning />
     </ClCompile>
+    <Link />
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -3,11 +3,13 @@
 #include <chrono>
 #include <thread>
 #include <iostream>
+#include <experimental/filesystem>
 #include "StatusManager.hpp"
 #include "StatusPing.hpp"
 #include <KS0108.hpp>
 
 using namespace std;
+using namespace std::experimental::filesystem;
 
 void sig_handler( int sig )
 {
@@ -24,18 +26,23 @@ void sig_handler( int sig )
 	}
 }
 
-int main( void )
+int main( int argc, char** argv )
 {
+	path xmlPath( "E-LinkStatusConfig.xml" );
+
+	if( argc > 1 )
+		xmlPath = argv[ 1 ];
+
 	signal( SIGABRT, sig_handler );
 	signal( SIGTERM, sig_handler );
 	signal( SIGINT, sig_handler );
 
-	StatusManager statusManager;
+	StatusManager statusManager(xmlPath);
 
 	if( !statusManager.init() )
 		return -1;
 
-	statusManager.add( make_unique< StatusPing >(), 60 );
+	statusManager.add( make_unique< StatusPing >( xmlPath ), 60 );
 
 	statusManager.setPage( 0, 0 );
 	statusManager.autoChange( true );

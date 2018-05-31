@@ -1,6 +1,7 @@
 #include <iostream>
 #include <tuple>
 #include <epd.h>
+#include <pugixml.hpp>
 #include <KS0108.hpp>
 #include "DeviceDef.hpp"
 #include "StatusManager.hpp"
@@ -8,11 +9,33 @@
 using namespace std;
 
 // start: ------------------- StatusManager -------------------
-StatusManager::StatusManager()
-	: m_epd( make_unique< EpdWiringPi >( CHANNEL ), RST_PIN, DC_PIN, CS_PIN, BUSY_PIN, EPD_WIDTH, EPD_HEIGHT )
+StatusManager::StatusManager( std::experimental::filesystem::path xmlPath )
 {
-	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_epd.width() / 8 * m_epd.height() );
-	m_painter = make_unique< Paint >( move( frameBuffer ), m_epd.width(), m_epd.height() );
+	pugi::xml_document doc;
+	pugi::xml_parse_result result = doc.load_file( xmlPath.string().c_str() );
+
+	if( !result )
+	{
+		std::cout << "XML [" << xmlPath.string().c_str() << "] parsed with errors, attr value: ["
+				  << doc.child( "node" ).attribute( "attr" ).value() << "]\n";
+		std::cout << "Error description: " << result.description() << "\n";
+		std::cout << "Error offset: " << result.offset << " (error at [..."
+				  << ( xmlPath.string().c_str() + result.offset ) << "]\n\n";
+		throw std::exception();
+	}
+
+	auto epdConfig = doc.child( "Config" ).child( "Epd" );
+
+	m_epd = make_unique< Epd4in2 >( make_unique< EpdWiringPi >( epdConfig.child( "SPIChannel" ).text().as_int() ),
+									epdConfig.child( "RS_PIN" ).text().as_int(),
+									epdConfig.child( "DC_PIN" ).text().as_int(),
+									epdConfig.child( "CS_PIN" ).text().as_int(),
+									epdConfig.child( "BUSY_PIN" ).text().as_int(),
+									epdConfig.child( "Width" ).text().as_int(),
+									epdConfig.child( "Height" ).text().as_int() );
+
+	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_epd->width() / 8 * m_epd->height() );
+	m_painter = make_unique< Paint >( move( frameBuffer ), m_epd->width(), m_epd->height() );
 
 	DS18B20Mgr ds18B20Mgr( BUS );
 	if( ds18B20Mgr.count() > 0 )
@@ -26,21 +49,19 @@ StatusManager::~StatusManager() {}
 
 bool StatusManager::init()
 {
-	if( m_epd.init() == false )
+	if( m_epd->init() == false )
 	{
 		wcout << L"e-Paper init failed\n";
 		return false;
 	}
 
-	m_epd.clear();
-	m_epd.waitUntilIdle();
-
+	m_epd->clear();
 	return true;
 }
 
 bool StatusManager::add( std::unique_ptr< StatusPage > statusPage, unsigned intervalSeconds )
 {
-	if( !statusPage->init( m_epd.width(), m_epd.height() - s_headeWHeight ) )
+	if( !statusPage->init( m_epd->width(), m_epd->height() - s_headeWHeight ) )
 		return false;
 
 	m_pages.push_back( make_pair( move( statusPage ), intervalSeconds ) );
@@ -84,7 +105,7 @@ void StatusManager::onTimer()
 
 void StatusManager::refreshPage()
 {
-	m_epd.init();
+	m_epd->init();
 	m_painter->clear( UNCOLORED );
 
 	printHeader();
@@ -93,10 +114,10 @@ void StatusManager::refreshPage()
 	m_painter->merge( 0, s_headeWHeight, m_currentPage->first->currentPage() );
 
 	// Draw vertical line
-	m_painter->drawVerticalLine( m_epd.width() / 2, s_headeWHeight, m_epd.height(), COLORED );
+	m_painter->drawVerticalLine( m_epd->width() / 2, s_headeWHeight, m_epd->height(), COLORED );
 
-	m_epd.displayFrame( m_painter->rawImage() );
-	m_epd.sleep();
+	m_epd->displayFrame( m_painter->rawImage() );
+	m_epd->sleep();
 }
 
 void StatusManager::printHeader()
@@ -108,9 +129,9 @@ void StatusManager::printHeader()
 	sprintf( text, "Page %d/%d", currentPageNo() + 1, pagesNo() );
 	auto size = font->getStringSize( text );
 	auto y	= ( s_headeWHeight - 0 - size.height ) / 2 + 1;
-	m_painter->drawFilledRectangle( 0, 0, m_epd.width(), s_headeWHeight, COLORED );
+	m_painter->drawFilledRectangle( 0, 0, m_epd->width(), s_headeWHeight, COLORED );
 
-	font->drawString( m_epd.width() - size.width - 2, y, text, UNCOLORED );
+	font->drawString( m_epd->width() - size.width - 2, y, text, UNCOLORED );
 
 	// Print description
 	auto description = m_currentPage->first->getDescription();
