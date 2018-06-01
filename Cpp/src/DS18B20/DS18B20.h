@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
 #include <vector>
 
 #define BUS "/sys/bus/w1/devices/"
