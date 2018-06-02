@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <future>
 #include <iostream>
+#include <mutex>
+#include <chrono>
 #include <ping.h>
 #include <Painter.hpp>
 #include <KS0108.hpp>
@@ -33,6 +35,8 @@ StatusPing::StatusPing( std::experimental::filesystem::path xmlPath )
 		m_devices.push_back( { device.text().as_string(), device.attribute( "Name" ).as_string() } );
 
 	m_pingCount = config.child( "Ping" ).child( "Count" ).text().as_int( 4 );
+
+	m_pinger = thread( std::bind( &StatusPing::pinger, this ) );
 }
 
 bool StatusPing::setPage( unsigned page )
@@ -89,6 +93,42 @@ map< string, bool > StatusPing::getDeviceStatus() const
 	return deviceStatus;
 }
 
+void StatusPing::pinger()
+{
+	while( true )
+	{
+		for( auto device : m_devices )
+		{
+			PingResult pingResult;
+			Ping ping   = Ping();
+			bool status = ping.ping( device.Ip.c_str(), m_pingCount, pingResult );
+			status &= std::count_if( pingResult.icmpEchoReplys.begin(),
+									 pingResult.icmpEchoReplys.end(),
+									 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } )
+				> 0;
+
+			std::lock_guard< std::mutex > lock( m_statusMutex );
+
+			if( m_status.find( device.Ip ) != m_status.end() )
+				m_status.at( device.Ip ) |= status;
+			else
+				m_status[ device.Ip ] = status;
+		}
+	}
+}
+
+std::map< std::string, bool > StatusPing::getDeviceStatusV2() const
+{
+	while( m_devices.size() != m_status.size() )
+		this_thread::sleep_for( 1s );
+
+	std::lock_guard< std::mutex > lock( m_statusMutex );
+
+	auto retVal = m_status;
+	m_status.clear();
+	return retVal;
+}
+
 Paint StatusPing::currentPage() const
 {
 	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_width / 8 * m_height );
@@ -98,7 +138,7 @@ Paint StatusPing::currentPage() const
 
 	static const string online  = "online";
 	static const string offline = "offline";
-	const auto devicestatus		= getDeviceStatus();
+	const auto devicestatus		= getDeviceStatusV2();
 	const unsigned startLineDef = 5;
 
 	unsigned startLine		   = startLineDef;

@@ -166,11 +166,12 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <ClCompile>
       <AdditionalIncludeDirectories>.\src\fonts;.\src\e-link_4in2;.\src\painter;.\src\ping;.\src\DS18B20;.\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppLanguageStandard>c++1y</CppLanguageStandard>
       <CppAdditionalWarning>
       </CppAdditionalWarning>
-      <AdditionalOptions>-Wno-sign-conversion -std=c++17 </AdditionalOptions>
+      <AdditionalOptions>-Wno-sign-conversion %(AdditionalOptions)</AdditionalOptions>
       <CAdditionalWarning />
+      <CppLanguageStandard>c++1y</CppLanguageStandard>
+      <CLanguageStandard>c11</CLanguageStandard>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>

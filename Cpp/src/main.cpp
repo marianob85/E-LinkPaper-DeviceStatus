@@ -9,7 +9,6 @@
 #include "StatusManager.hpp"
 #include "StatusPing.hpp"
 #include <KS0108.hpp>
-#include <pingv3.hpp>
 
 using namespace std;
 using namespace std::experimental::filesystem;
@@ -35,11 +34,6 @@ void sig_handler( int sig )
 
 int main( int argc, char** argv )
 {
-		cout << "ping returned " << PingV3::ping( "192.168.1.1" ) << endl;
-		return 0;
-
-	return 0;
-
 	path xmlPath( argv[ 0 ] );
 
 	xmlPath = xmlPath.parent_path();
