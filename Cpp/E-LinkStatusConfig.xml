@@ -26,7 +26,6 @@
       <Device Name="O:STB-Zgemma">192.168.10.160</Device>
       <Device Name="O:MotionEyeOS">192.168.10.172</Device>
       <Device Name="O:NanoPiNeo2">192.168.10.174</Device>
-      <Device Name="O:Huawei-HiLink">192.168.13.1</Device>
       <Device Name="P:MT-Gateway">192.168.20.1</Device>
     </Devices>
   </DeviceStatus>
