@@ -24,6 +24,7 @@
       <Device Name="O:MT-AP2">192.168.10.3</Device>
       <Device Name="O:MT-AP3">192.168.10.4</Device>
       <Device Name="O:STB-Zgemma">192.168.10.160</Device>
+      <Device Name="O:NG-GS108Ev3">192.168.10.161</Device>
       <Device Name="O:MotionEyeOS">192.168.10.172</Device>
       <Device Name="O:NanoPiNeo2">192.168.10.174</Device>
       <Device Name="P:MT-Gateway">192.168.20.1</Device>
