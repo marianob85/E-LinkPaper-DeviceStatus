@@ -27,6 +27,7 @@
       <Device Name="O:MotionEyeOS">192.168.10.172</Device>
       <Device Name="O:NanoPiNeo2">192.168.10.174</Device>
       <Device Name="P:MT-Gateway">192.168.20.1</Device>
+      <Device Name="P:NG-GS105Ev2">192.168.20.111</Device>
     </Devices>
   </DeviceStatus>
 </Config>
