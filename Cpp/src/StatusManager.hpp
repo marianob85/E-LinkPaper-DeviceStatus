@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include <vector>
+#include <mutex>
 #include <experimental/filesystem>
 #include <DS18B20.h>
 #include <epd4in2.h>
@@ -40,6 +41,7 @@ public:
 	void close();
 
 private:
+	void refreshRequest();
 	void refreshPage();
 	void printHeader();
 	unsigned pagesNo() const;
@@ -56,4 +58,5 @@ private:
 	std::unique_ptr< Paint > m_painter;
 	TimerEvent m_timerEvent;
 	std::unique_ptr< DS18B20 > m_tempSensor;
+	std::mutex m_refreshMutex;
 };

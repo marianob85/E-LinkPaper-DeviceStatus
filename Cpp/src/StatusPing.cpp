@@ -66,32 +66,32 @@ unsigned StatusPing::currentPageNo() const
 	return m_currentPage;
 }
 
-map< string, bool > StatusPing::getDeviceStatus() const
-{
-	vector< future< std::pair< string, bool > > > values;
-
-	auto pingSingleIP = [m_pingCount = m_pingCount]( string address ) -> pair< string, bool > {
-		PingResult pingResult;
-		Ping ping   = Ping();
-		bool status = ping.ping( address.c_str(), m_pingCount, pingResult );
-		status &= std::count_if( pingResult.icmpEchoReplys.begin(),
-								 pingResult.icmpEchoReplys.end(),
-								 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } )
-			> 0;
-
-		return { address, status };
-	};
-
-	for( const auto& device : m_devices )
-		values.push_back( std::async( std::launch::async, pingSingleIP, device.Ip ) );
-
-	std::map< std::string, bool > deviceStatus;
-
-	for( auto& val : values )
-		deviceStatus.insert( val.get() );
-
-	return deviceStatus;
-}
+//map< string, bool > StatusPing::getDeviceStatus() const
+//{
+//	vector< future< std::pair< string, bool > > > values;
+//
+//	auto pingSingleIP = [m_pingCount = m_pingCount]( string address ) -> pair< string, bool > {
+//		PingResult pingResult;
+//		Ping ping   = Ping();
+//		bool status = ping.ping( address.c_str(), m_pingCount, pingResult );
+//		status &= std::count_if( pingResult.icmpEchoReplys.begin(),
+//								 pingResult.icmpEchoReplys.end(),
+//								 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } )
+//			> 0;
+//
+//		return { address, status };
+//	};
+//
+//	for( const auto& device : m_devices )
+//		values.push_back( std::async( std::launch::async, pingSingleIP, device.Ip ) );
+//
+//	std::map< std::string, bool > deviceStatus;
+//
+//	for( auto& val : values )
+//		deviceStatus.insert( val.get() );
+//
+//	return deviceStatus;
+//}
 
 void StatusPing::pinger()
 {

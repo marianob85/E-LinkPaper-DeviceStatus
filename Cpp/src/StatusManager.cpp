@@ -1,4 +1,5 @@
 #include <iostream>
+#include <future>
 #include <tuple>
 #include <epd.h>
 #include <pugixml.hpp>
@@ -109,8 +110,15 @@ void StatusManager::onTimer()
 	m_timerEvent = TimerEvent( timeMS, true, std::bind( &StatusManager::onTimer, this ) );
 }
 
+void StatusManager::refreshRequest()
+{
+	std::async( std::launch::async, &StatusManager::refreshPage, this );
+}
+
 void StatusManager::refreshPage()
 {
+	std::lock_guard< std::mutex > lock( m_refreshMutex );
+
 	m_epd->init();
 	m_painter->clear( UNCOLORED );
 
