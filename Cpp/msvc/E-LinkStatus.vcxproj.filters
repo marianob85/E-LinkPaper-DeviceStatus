@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{173428a6-8298-4165-9eee-b801f4934812}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{7c80eb64-4acf-400d-986d-63f0f11ed940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\pugi">
+      <UniqueIdentifier>{e4f0e48f-8b7b-40d6-a182-ebc2d72a28d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\DS18B20">
+      <UniqueIdentifier>{b3141783-644f-4b17-9452-be55292f1344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\e-link_4in2">
+      <UniqueIdentifier>{c5e617c7-20b5-4697-9946-b41f3d9ecd2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\fonts">
+      <UniqueIdentifier>{a0f7f06e-d6b1-4fe2-a5f3-8bc838c75da3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\fonts\KS0108">
+      <UniqueIdentifier>{872556f1-c81a-4c1f-99e3-68d9726684f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\painter">
+      <UniqueIdentifier>{35251a0c-fd4e-4654-8859-f786f87565d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ping">
+      <UniqueIdentifier>{b225c946-7737-478f-9b13-a9a3441baa90}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\StatusManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\StatusPing.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\pugi\pugixml.cpp">
+      <Filter>Library\pugi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DS18B20\DS18B20.cpp">
+      <Filter>Source\DS18B20</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\e-link_4in2\epd4in2.cpp">
+      <Filter>Source\e-link_4in2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\e-link_4in2\epdBcm2835.cpp">
+      <Filter>Source\e-link_4in2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\e-link_4in2\epdWiringPi.cpp">
+      <Filter>Source\e-link_4in2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108.cpp">
+      <Filter>Source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Liberation_Mono8.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Liberation_Mono9.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Liberation_Mono9Bold.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Liberation_Mono10.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Liberation_Mono10Bold.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Liberation_Mono11Bold.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Liberation_Mono12.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Georgia12.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\painter\Painter.cpp">
+      <Filter>Source\painter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\painter\PainterFont.cpp">
+      <Filter>Source\painter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ping\ping.cpp">
+      <Filter>Source\ping</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\DeviceDef.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StatusManager.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StatusPing.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Timer.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\pugi\pugixml.hpp">
+      <Filter>Library\pugi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\pugi\pugiconfig.hpp">
+      <Filter>Library\pugi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DS18B20\DS18B20.h">
+      <Filter>Source\DS18B20</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\e-link_4in2\epd.h">
+      <Filter>Source\e-link_4in2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\e-link_4in2\epd4in2.h">
+      <Filter>Source\e-link_4in2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\fonts\KS0108.hpp">
+      <Filter>Source\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\painter\FontDef.hpp">
+      <Filter>Source\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\painter\Painter.hpp">
+      <Filter>Source\painter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\painter\PainterFont.hpp">
+      <Filter>Source\painter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ping\ping.h">
+      <Filter>Source\ping</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\E-LinkStatusConfig.xml" />
+  </ItemGroup>
+</Project>
