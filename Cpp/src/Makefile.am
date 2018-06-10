@@ -1,11 +1,14 @@
 bin_PROGRAMS = eLinkDisplayStatus
 
-AM_CXXFLAGS = -I"DS18B20"
-AM_CXXFLAGS += -I"e-link_4in2"
-AM_CXXFLAGS += -I"fonts"
-AM_CXXFLAGS += -I"lib/pugi"
-AM_CXXFLAGS += -I"painter"
-AM_CXXFLAGS += -I"ping"
+eLinkDisplayStatus_CXXFLAGS = -I"DS18B20"
+eLinkDisplayStatus_CXXFLAGS += -I"e-link_4in2"
+eLinkDisplayStatus_CXXFLAGS += -I"fonts"
+eLinkDisplayStatus_CXXFLAGS += -I"lib/pugi"
+eLinkDisplayStatus_CXXFLAGS += -I"painter"
+eLinkDisplayStatus_CXXFLAGS += -I"ping"
+eLinkDisplayStatus_CXXFLAGS += -O2 -Wall -W"no-psabi"
+
+eLinkDisplayStatus_LDADD = bcm2835 wiringPi pthread stdc++fs
 
 
 eLinkDisplayStatus_SOURCES = StatusManager.cpp \
@@ -29,4 +32,3 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				painter/Painter.cpp \
 				ping/ping.cpp
 
-LDADDS = bcm2835 wiringPi pthread stdc++fs
