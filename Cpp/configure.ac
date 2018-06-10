@@ -10,7 +10,7 @@ AM_INIT_AUTOMAKE([subdir-objects])
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
-CFLAGS="-std=c++14"
+CXXFLAGS="-std=c++14"
 
 # Checks for libraries.
 

@@ -28,3 +28,5 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				painter/PainterFont.cpp \
 				painter/Painter.cpp \
 				ping/ping.cpp
+
+LDADDS = bcm2835 wiringPi pthread stdc++fs
