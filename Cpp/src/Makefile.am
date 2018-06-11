@@ -29,3 +29,5 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				painter/Painter.cpp \
 				ping/ping.cpp
 
+eLinkDisplayStatus_dir = /usr/local/etc
+eLinkDisplayStatus__DATA = ../E-LinkStatusConfig.xml
