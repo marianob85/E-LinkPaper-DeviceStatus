@@ -34,10 +34,7 @@ void sig_handler( int sig )
 
 int main( int argc, char** argv )
 {
-	path xmlPath( argv[ 0 ] );
-
-	xmlPath = xmlPath.parent_path();
-	xmlPath /= "E-LinkStatusConfig.xml";
+	path xmlPath( "usr/local/etc/E-LinkStatusConfig.xml" );
 
 	if( argc > 1 )
 		xmlPath = argv[ 1 ];
