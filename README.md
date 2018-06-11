@@ -4,4 +4,9 @@ Use e-paper display as status information.
 # Usage 
 
 cd Cpp
-make && make install
+
+./configure
+
+make
+
+make install
