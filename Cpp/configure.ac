@@ -7,6 +7,7 @@ AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([subdir-objects])
 AC_CONFIG_MACRO_DIRS([m4])
+
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
@@ -17,7 +18,8 @@ CXXFLAGS="-std=c++14 -O2 -Wall"
 LDFLAGS="-lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined -shared"
 
 # Checks for libraries.
-#AC_CHECK_LIB
+AC_CHECK_LIB(wiringPi,[wiringPiSetupGpio,wiringPiSPIDataRW])
+AC_CHECK_LIB(bcm2835,[bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern])
 
 # Check for compilator
 AX_CXX_COMPILE_STDCXX(14)

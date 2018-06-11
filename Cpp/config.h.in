@@ -27,6 +27,12 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
+/* Define to 1 if you have the `bcm2835' library (-lbcm2835). */
+#undef HAVE_LIBBCM2835
+
+/* Define to 1 if you have the `wiringPi' library (-lwiringPi). */
+#undef HAVE_LIBWIRINGPI
+
 /* Define to 1 if you have the <limits.h> header file. */
 #undef HAVE_LIMITS_H
 
