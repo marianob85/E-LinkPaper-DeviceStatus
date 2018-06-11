@@ -8,7 +8,6 @@ eLinkDisplayStatus_CXXFLAGS += -I"painter"
 eLinkDisplayStatus_CXXFLAGS += -I"ping"
 eLinkDisplayStatus_CXXFLAGS += -W"no-psabi"
 
-
 eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				StatusPing.cpp \
 				main.cpp \
