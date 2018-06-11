@@ -30,6 +30,12 @@
 /* Define to 1 if you have the `bcm2835' library (-lbcm2835). */
 #undef HAVE_LIBBCM2835
 
+/* Define to 1 if you have the `pthread' library (-lpthread). */
+#undef HAVE_LIBPTHREAD
+
+/* Define to 1 if you have the `stdc++fs' library (-lstdc++fs). */
+#undef HAVE_LIBSTDC__FS
+
 /* Define to 1 if you have the `wiringPi' library (-lwiringPi). */
 #undef HAVE_LIBWIRINGPI
 

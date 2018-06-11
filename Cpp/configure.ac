@@ -15,11 +15,13 @@ AC_LANG(C++)
 
 # Additional flags
 CXXFLAGS="-std=c++14 -O2 -Wall"
-LDFLAGS="-lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined -shared"
+LDFLAGS="-lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined"
 
 # Checks for libraries.
 AC_CHECK_LIB(wiringPi,[wiringPiSetupGpio,wiringPiSPIDataRW])
 AC_CHECK_LIB(bcm2835,[bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern])
+AC_CHECK_LIB(stdc++fs,[main])
+AC_CHECK_LIB(pthread,[pthread_mutex_init])
 
 # Check for compilator
 AX_CXX_COMPILE_STDCXX(14)
