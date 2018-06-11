@@ -6,7 +6,7 @@ eLinkDisplayStatus_CXXFLAGS += -I"fonts"
 eLinkDisplayStatus_CXXFLAGS += -I"lib/pugi"
 eLinkDisplayStatus_CXXFLAGS += -I"painter"
 eLinkDisplayStatus_CXXFLAGS += -I"ping"
-eLinkDisplayStatus_CXXFLAGS += -O2 -Wall -W"no-psabi"
+eLinkDisplayStatus_CXXFLAGS += -W"no-psabi"
 
 
 eLinkDisplayStatus_SOURCES = StatusManager.cpp \

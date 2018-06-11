@@ -13,7 +13,7 @@ AC_PROG_CC
 AC_LANG(C++)
 
 # Additional flags
-CXXFLAGS="-std=c++14"
+CXXFLAGS="-std=c++14 -O2 -Wall"
 LDFLAGS="-lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined -shared"
 
 # Checks for libraries.
