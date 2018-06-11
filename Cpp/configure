@@ -4359,7 +4359,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
 
 # Additional flags
 CXXFLAGS="-std=c++14 -O2 -Wall"
-LDFLAGS="-lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined"
+LDFLAGS="-Wno-undefined"
 
 # Checks for libraries.
 

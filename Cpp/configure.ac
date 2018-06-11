@@ -15,7 +15,7 @@ AC_LANG(C++)
 
 # Additional flags
 CXXFLAGS="-std=c++14 -O2 -Wall"
-LDFLAGS="-lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined"
+LDFLAGS="-Wno-undefined"
 
 # Checks for libraries.
 AC_CHECK_LIB(wiringPi,[wiringPiSetupGpio,wiringPiSPIDataRW])
