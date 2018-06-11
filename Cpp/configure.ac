@@ -10,9 +10,16 @@ AM_INIT_AUTOMAKE([subdir-objects])
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
+AC_LANG(C++)
+
+# Additional flags
 CXXFLAGS="-std=c++14"
+LDFLAGS="-lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined -shared"
 
 # Checks for libraries.
+
+# Check for compilator
+# AX_CXX_COMPILE_STDCXX(14)
 
 # Checks for header files.
 AC_CHECK_HEADERS([arpa/inet.h float.h inttypes.h limits.h netdb.h netinet/in.h stddef.h stdint.h stdlib.h string.h sys/socket.h sys/time.h unistd.h wchar.h])

@@ -8,8 +8,6 @@ eLinkDisplayStatus_CXXFLAGS += -I"painter"
 eLinkDisplayStatus_CXXFLAGS += -I"ping"
 eLinkDisplayStatus_CXXFLAGS += -O2 -Wall -W"no-psabi"
 
-eLinkDisplayStatus_LDFLAGS = -lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined -shared
-
 
 eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				StatusPing.cpp \
