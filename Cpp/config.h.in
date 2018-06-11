@@ -6,6 +6,9 @@
 /* Define to 1 if you have the `bzero' function. */
 #undef HAVE_BZERO
 
+/* define if the compiler supports basic C++14 syntax */
+#undef HAVE_CXX14
+
 /* Define to 1 if you have the <float.h> header file. */
 #undef HAVE_FLOAT_H
 

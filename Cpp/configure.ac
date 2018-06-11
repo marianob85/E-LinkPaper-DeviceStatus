@@ -2,11 +2,11 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_INIT([E-LinkDisplayStatus], [1.0], [marianob85@gmail.com])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([subdir-objects])
-
+AC_CONFIG_MACRO_DIRS([m4])
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
@@ -17,9 +17,10 @@ CXXFLAGS="-std=c++14 -O2 -Wall"
 LDFLAGS="-lbcm2835 -lwiringPi -lpthread -lstdc++fs -Wno-undefined -shared"
 
 # Checks for libraries.
+#AC_CHECK_LIB
 
 # Check for compilator
-# AX_CXX_COMPILE_STDCXX(14)
+AX_CXX_COMPILE_STDCXX(14)
 
 # Checks for header files.
 AC_CHECK_HEADERS([arpa/inet.h float.h inttypes.h limits.h netdb.h netinet/in.h stddef.h stdint.h stdlib.h string.h sys/socket.h sys/time.h unistd.h wchar.h])
