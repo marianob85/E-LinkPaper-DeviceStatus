@@ -1,2 +1,7 @@
 # E-PaperProjectStatus
-Use e-paper display as status information. Data are taken from InfluxDB
+Use e-paper display as status information. 
+
+# Usage 
+
+cd Cpp
+make && make install
