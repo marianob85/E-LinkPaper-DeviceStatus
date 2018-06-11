@@ -4406,6 +4406,8 @@ _ACEOF
 
   LIBS="-lwiringPi $LIBS"
 
+else
+  as_fn_error $? "Could  not find wiringPi library" "$LINENO" 5
 fi
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern in -lbcm2835" >&5
@@ -4451,6 +4453,8 @@ _ACEOF
 
   LIBS="-lbcm2835 $LIBS"
 
+else
+  as_fn_error $? "Could  not find bcm2835 library" "$LINENO" 5
 fi
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lstdc++fs" >&5

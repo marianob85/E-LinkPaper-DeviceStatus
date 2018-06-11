@@ -18,8 +18,8 @@ CXXFLAGS="-std=c++14 -O2 -Wall"
 LDFLAGS="-Wno-undefined"
 
 # Checks for libraries.
-AC_CHECK_LIB(wiringPi,[wiringPiSetupGpio,wiringPiSPIDataRW])
-AC_CHECK_LIB(bcm2835,[bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern])
+AC_CHECK_LIB(wiringPi,[wiringPiSetupGpio,wiringPiSPIDataRW],, AC_MSG_ERROR(Could  not find wiringPi library))
+AC_CHECK_LIB(bcm2835,[bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern],,AC_MSG_ERROR(Could  not find bcm2835 library))
 AC_CHECK_LIB(stdc++fs,[main])
 AC_CHECK_LIB(pthread,[pthread_mutex_init])
 
