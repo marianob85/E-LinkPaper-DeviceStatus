@@ -22,6 +22,8 @@ pipeline
 		}
 		stage('Package'){
 			steps {
+				sh '''
+				'''
 			}
 		}
 		
