@@ -13,7 +13,6 @@ pipeline
 		stage('Build'){
 			steps {
 				sh '''
-					cd Cpp
 					./configure
 					make
 				'''
@@ -29,7 +28,7 @@ pipeline
 		
 		stage('Archive'){
 			steps {
-				archiveArtifacts artifacts: 'Cpp/src/eLinkDisplayStatus', onlyIfSuccessful: true
+				archiveArtifacts artifacts: 'src/eLinkDisplayStatus', onlyIfSuccessful: true
 			}
 		}
 		
