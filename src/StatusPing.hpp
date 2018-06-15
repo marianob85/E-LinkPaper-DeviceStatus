@@ -11,7 +11,7 @@ public:
 	StatusPing( std::experimental::filesystem::path xmlPath );
 
 	// start: ------------------- StatusPage -------------------
-	virtual Paint currentPage() const override;
+	virtual std::unique_ptr< Paint > currentPage() const override;
 	virtual bool setPage( unsigned page ) override;
 	virtual bool setNext() override;
 	virtual std::string getDescription() const override;

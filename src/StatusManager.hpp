@@ -13,12 +13,12 @@ class StatusPage
 public:
 	virtual bool init( unsigned width, unsigned height );
 	virtual ~StatusPage() {}
-	virtual Paint currentPage() const		   = 0;
-	virtual unsigned pageNo() const			   = 0;
-	virtual unsigned currentPageNo() const	 = 0;
-	virtual bool setPage( unsigned page )	  = 0;
-	virtual bool setNext()					   = 0;
-	virtual std::string getDescription() const = 0;
+	virtual std::unique_ptr< Paint > currentPage() const = 0;
+	virtual unsigned pageNo() const						 = 0;
+	virtual unsigned currentPageNo() const				 = 0;
+	virtual bool setPage( unsigned page )				 = 0;
+	virtual bool setNext()								 = 0;
+	virtual std::string getDescription() const			 = 0;
 
 protected:
 	unsigned m_height{ 0 };

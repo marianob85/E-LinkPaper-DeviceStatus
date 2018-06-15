@@ -66,7 +66,7 @@ unsigned StatusPing::currentPageNo() const
 	return m_currentPage;
 }
 
-//map< string, bool > StatusPing::getDeviceStatus() const
+// map< string, bool > StatusPing::getDeviceStatus() const
 //{
 //	vector< future< std::pair< string, bool > > > values;
 //
@@ -129,19 +129,18 @@ std::map< std::string, bool > StatusPing::getDeviceStatusV2() const
 	return retVal;
 }
 
-Paint StatusPing::currentPage() const
+std::unique_ptr< Paint > StatusPing::currentPage() const
 {
-	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_width / 8 * m_height );
-	auto painter							 = Paint( move( frameBuffer ), m_width, m_height );
+	auto painter = make_unique< Paint2Colors >( m_width, m_height );
 
-	auto font = painter.createFonter< FontPainterKS0108 >( liberationMono10 );
+	auto font = painter->createFonter< FontPainterKS0108 >( liberationMono10 );
 
 	static const string online  = "online";
 	static const string offline = "offline";
 	const auto devicestatus		= getDeviceStatusV2();
 	const unsigned startLineDef = 5;
 
-	unsigned startLine		   = startLineDef;
+	size_t startLine		   = startLineDef;
 	unsigned columnOffset	  = 0;
 	const unsigned columnWidth = m_width / 2;
 	for( const auto& device : m_devices )
@@ -169,11 +168,11 @@ Paint StatusPing::currentPage() const
 			size		  = font->getStringSize( offline );
 			auto position = make_pair( columnOffset + columnWidth - size.width - 2, startLine );
 
-			painter.drawFilledRectangle( position.first - 2,
-										 position.second - 2,
-										 position.first + size.width,
-										 position.second + size.height,
-										 UNCOLORED );
+			painter->drawFilledRectangle( position.first - 2,
+										  position.second - 2,
+										  position.first + size.width,
+										  position.second + size.height,
+										  UNCOLORED );
 
 			font->drawString( position.first, position.second, offline, COLORED );
 		}

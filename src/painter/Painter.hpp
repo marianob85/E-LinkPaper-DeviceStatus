@@ -12,50 +12,70 @@ enum class Rotate
 	Rotate270,
 };
 
-// Color inverse. 1 or 0 = set or reset a bit if set a colored pixel
-#define IF_INVERT_COLOR 0
+enum class Color
+{
+	White,
+	Black,
+	Color1,
+};
 
 class Paint
 {
 	friend class FontPainter;
 
 public:
-	Paint( std::unique_ptr< uint8_t[] > image, int width, int height );
+	Paint( size_t width, size_t height );
 	Paint( Paint& paint );
 	Paint( Paint&& ) = default;
-	~Paint();
+	virtual ~Paint();
 
 	Paint& operator=( const Paint& right );
+	operator const uint8_t*() const;
 
 	void clear( bool colored );
-	int getWidth( void );
-	int getHeight( void );
+	size_t getWidth( void );
+	size_t getHeight( void );
 	Rotate getRotate( void );
 	void setRotate( Rotate rotate );
-	void drawAbsolutePixel( int x, int y, bool colored );
-	bool getAbsolutePixel( unsigned x, unsigned y ) const;
-	void drawPixel( int x, int y, bool colored );
-	void drawLine( int x0, int y0, int x1, int y1, bool colored );
-	void drawHorizontalLine( int x, int y, int width, bool colored );
-	void drawVerticalLine( int x, int y, int height, bool colored );
-	void drawRectangle( int x0, int y0, int x1, int y1, bool colored );
-	void drawFilledRectangle( int x0, int y0, int x1, int y1, bool colored );
-	void drawCircle( int x, int y, int radius, bool colored );
-	void drawFilledCircle( int x, int y, int radius, bool colored );
-	bool merge( unsigned offsetX, unsigned offsetY, const Paint& painter );
-
-	uint8_t* rawImage() const;
+	void drawPixel( size_t x, size_t y, bool colored );
+	void drawLine( size_t x0, size_t y0, size_t x1, size_t y1, bool colored );
+	void drawHorizontalLine( size_t x, size_t y, size_t width, bool colored );
+	void drawVerticalLine( size_t x, size_t y, size_t height, bool colored );
+	void drawRectangle( size_t x0, size_t y0, size_t x1, size_t y1, bool colored );
+	void drawFilledRectangle( size_t x0, size_t y0, size_t x1, size_t y1, bool colored );
+	void drawCircle( size_t x, size_t y, size_t radius, bool colored );
+	void drawFilledCircle( size_t x, size_t y, size_t radius, bool colored );
+	bool merge( size_t offsetX, size_t offsetY, std::unique_ptr< Paint > painter );
 
 	template< class Fonter >
 	std::shared_ptr< FontPainter > createFonter( FontData fontData )
 	{
 		return std::make_shared< Fonter >(
-			fontData, std::bind( &Paint::drawPixel, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3 ) );
+			fontData,
+			std::bind( &Paint::drawPixel, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3 ) );
 	}
 
-private:
+protected:
+	virtual void drawAbsolutePixel( size_t x, size_t y, bool colored ) = 0;
+	virtual bool getAbsolutePixel( size_t x, size_t y ) const		   = 0;
+
+protected:
 	std::unique_ptr< uint8_t[] > m_image;
-	int m_width{ 0 };
-	int m_height{ 0 };
+	size_t m_imageSize{ 0 };
+	size_t m_width{ 0 };
+	size_t m_height{ 0 };
 	Rotate m_rotate{ Rotate::Rotate0 };
+};
+
+class Paint2Colors : public Paint
+{
+public:
+	Paint2Colors( size_t width, size_t height );
+	Paint2Colors( Paint2Colors& paint ) = default;
+	Paint2Colors( Paint2Colors&& )		= default;
+	virtual ~Paint2Colors();
+
+protected:
+	virtual void drawAbsolutePixel( size_t x, size_t y, bool colored );
+	virtual bool getAbsolutePixel( size_t x, size_t y ) const;
 };

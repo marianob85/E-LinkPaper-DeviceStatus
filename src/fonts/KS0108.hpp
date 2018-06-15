@@ -16,17 +16,16 @@ public:
 	FontPainterKS0108( FontData fontData, DrawPixel drawPixel );
 
 	// start: ------------------- FontPainter -------------------
-	virtual Size drawChar( unsigned startX, unsigned startY, char character, bool color ) override;
-	virtual Size drawString( unsigned startX, unsigned startY, std::string text, bool color ) override;
+	virtual Size drawChar( size_t startX, size_t startY, char character, bool color ) override;
+	virtual Size drawString( size_t startX, size_t startY, std::string text, bool color ) override;
 	virtual Size getCharSize( char character ) override;
 	virtual Size getStringSize( std::string text ) override;
 	// end: --------------------- FontPainter -------------------
 
 protected:
-	Size drawChar( unsigned startX, unsigned startY, char character, bool color, DrawPixel drawPixel );
-	Size drawString( unsigned startX, unsigned startY, std::string text, bool color, DrawPixel drawPixel );
+	Size drawChar( size_t startX, size_t startY, char character, bool color, DrawPixel drawPixel );
+	Size drawString( size_t startX, size_t startY, std::string text, bool color, DrawPixel drawPixel );
 };
-
 
 extern FontData fontGeorgia12;
 extern FontData liberationMono8;

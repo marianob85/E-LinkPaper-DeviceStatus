@@ -35,8 +35,7 @@ StatusManager::StatusManager( std::experimental::filesystem::path xmlPath )
 									epdConfig.child( "Width" ).text().as_int(),
 									epdConfig.child( "Height" ).text().as_int() );
 
-	std::unique_ptr< uint8_t[] > frameBuffer = make_unique< uint8_t[] >( m_epd->width() / 8 * m_epd->height() );
-	m_painter = make_unique< Paint >( move( frameBuffer ), m_epd->width(), m_epd->height() );
+	m_painter = make_unique< Paint2Colors >( m_epd->width(), m_epd->height() );
 
 	DS18B20Mgr ds18B20Mgr( BUS );
 	if( ds18B20Mgr.count() > 0 )
@@ -55,6 +54,18 @@ bool StatusManager::init()
 		wcout << L"e-Paper init failed\n";
 		return false;
 	}
+
+	// start: ------------------- Test -------------------
+	m_painter->clear( false );
+
+	auto font = m_painter->createFonter< FontPainterKS0108 >( liberationMono12 );
+	font->drawString( 10, 200, "Hello world !!!", COLORED );
+
+	m_epd->displayFrame( *m_painter );
+
+	return false;
+	// end: --------------------- Test -------------------
+
 	return true;
 }
 
@@ -130,7 +141,7 @@ void StatusManager::refreshPage()
 	// Draw vertical line
 	m_painter->drawVerticalLine( m_epd->width() / 2, s_headeWHeight, m_epd->height(), COLORED );
 
-	m_epd->displayFrame( m_painter->rawImage() );
+	m_epd->displayFrame( *m_painter );
 	m_epd->sleep();
 }
 
