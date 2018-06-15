@@ -3,7 +3,6 @@
 #include <thread>
 #include <experimental/filesystem>
 #include "StatusManager.hpp"
-#include "DeviceDef.hpp"
 
 class StatusPing : public StatusPage
 {

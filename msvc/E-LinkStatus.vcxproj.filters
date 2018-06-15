@@ -92,9 +92,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\DeviceDef.hpp">
-      <Filter>Source</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\StatusManager.hpp">
       <Filter>Source</Filter>
     </ClInclude>
@@ -133,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="..\src\ping\ping.h">
       <Filter>Source\ping</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\painter\PainterDef.hpp">
+      <Filter>Source\painter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

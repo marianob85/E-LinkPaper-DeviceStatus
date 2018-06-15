@@ -9,7 +9,6 @@
 #include <KS0108.hpp>
 #include <pugixml.hpp>
 #include "StatusPing.hpp"
-#include "DeviceDef.hpp"
 
 using namespace std;
 
@@ -156,12 +155,12 @@ std::unique_ptr< Paint > StatusPing::currentPage() const
 			columnOffset += columnWidth;
 		}
 
-		font->drawString( columnOffset + 2, startLine, text, UNCOLORED );
+		font->drawString( columnOffset + 2, startLine, text, Color::White );
 
 		if( status )
 		{
 			size = font->getStringSize( online );
-			font->drawString( columnOffset + columnWidth - size.width - 2, startLine, online, UNCOLORED );
+			font->drawString( columnOffset + columnWidth - size.width - 2, startLine, online, Color::White );
 		}
 		else
 		{
@@ -172,9 +171,9 @@ std::unique_ptr< Paint > StatusPing::currentPage() const
 										  position.second - 2,
 										  position.first + size.width,
 										  position.second + size.height,
-										  UNCOLORED );
+										  Color::White );
 
-			font->drawString( position.first, position.second, offline, COLORED );
+			font->drawString( position.first, position.second, offline, Color::Black );
 		}
 
 		startLine += size.height + 3;

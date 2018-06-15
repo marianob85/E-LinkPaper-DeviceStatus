@@ -67,7 +67,6 @@
     <ClCompile Include="..\src\StatusPing.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\DeviceDef.hpp" />
     <ClInclude Include="..\src\DS18B20\DS18B20.h" />
     <ClInclude Include="..\src\e-link_4in2\epd.h" />
     <ClInclude Include="..\src\e-link_4in2\epd4in2.h" />
@@ -76,6 +75,7 @@
     <ClInclude Include="..\src\lib\pugi\pugixml.hpp" />
     <ClInclude Include="..\src\painter\FontDef.hpp" />
     <ClInclude Include="..\src\painter\Painter.hpp" />
+    <ClInclude Include="..\src\painter\PainterDef.hpp" />
     <ClInclude Include="..\src\painter\PainterFont.hpp" />
     <ClInclude Include="..\src\ping\ping.h" />
     <ClInclude Include="..\src\StatusManager.hpp" />

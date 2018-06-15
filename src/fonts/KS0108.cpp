@@ -8,13 +8,13 @@ using namespace std;
 
 FontPainterKS0108::FontPainterKS0108( FontData fontData, DrawPixel drawPixel ) : FontPainter( fontData, drawPixel ) {}
 
-FontPainter::Size FontPainterKS0108::drawChar( size_t startX, size_t startY, char character, bool color )
+FontPainter::Size FontPainterKS0108::drawChar( size_t startX, size_t startY, char character, Color color )
 {
 	return drawChar( startX, startY, character, color, m_drawPixel );
 }
 
 FontPainter::Size FontPainterKS0108::drawChar(
-	size_t startX, size_t startY, char character, bool color, DrawPixel drawPixel )
+	size_t startX, size_t startY, char character, Color color, DrawPixel drawPixel )
 {
 	const auto chacterIndex = static_cast< uint8_t >( character ) - static_cast< uint8_t >( m_fontData.startCharacter );
 
@@ -35,13 +35,13 @@ FontPainter::Size FontPainterKS0108::drawChar(
 	return { charData->width, m_fontData.height };
 }
 
-FontPainter::Size FontPainterKS0108::drawString( size_t startX, size_t startY, std::string text, bool color )
+FontPainter::Size FontPainterKS0108::drawString( size_t startX, size_t startY, std::string text, Color color )
 {
 	return drawString( startX, startY, text, color, m_drawPixel );
 }
 
 FontPainter::Size FontPainterKS0108::drawString(
-	size_t startX, size_t startY, std::string text, bool color, DrawPixel drawPixel )
+	size_t startX, size_t startY, std::string text, Color color, DrawPixel drawPixel )
 {
 	FontPainter::Size totalSize{ 0, 0 };
 	size_t nextCharXPosition{ 0 };
@@ -58,12 +58,12 @@ FontPainter::Size FontPainterKS0108::drawString(
 
 FontPainter::Size FontPainterKS0108::getCharSize( char character )
 {
-	return drawChar( 0, 0, character, false, DrawPixel() );
+	return drawChar( 0, 0, character, Color::White, DrawPixel() );
 }
 
 FontPainter::Size FontPainterKS0108::getStringSize( std::string text )
 {
-	return drawString( 0, 0, text, false, DrawPixel() );
+	return drawString( 0, 0, text, Color::White, DrawPixel() );
 }
 
 // end: --------------------- FontPainterKS0108 -------------------

@@ -1,23 +1,9 @@
 #pragma once
+#include <vector>
 #include <memory>
+#include <PainterDef.hpp>
 #include <PainterFont.hpp>
 #include <FontDef.hpp>
-
-// Display orientation
-enum class Rotate
-{
-	Rotate0,
-	Rotate90,
-	Rotate180,
-	Rotate270,
-};
-
-enum class Color
-{
-	White,
-	Black,
-	Color1,
-};
 
 class Paint
 {
@@ -25,26 +11,25 @@ class Paint
 
 public:
 	Paint( size_t width, size_t height );
-	Paint( Paint& paint );
-	Paint( Paint&& ) = default;
+	Paint( Paint& paint ) = default;
+	Paint( Paint&& )	  = default;
 	virtual ~Paint();
 
-	Paint& operator=( const Paint& right );
 	operator const uint8_t*() const;
 
-	void clear( bool colored );
+	void clear( Color color );
 	size_t getWidth( void );
 	size_t getHeight( void );
 	Rotate getRotate( void );
 	void setRotate( Rotate rotate );
-	void drawPixel( size_t x, size_t y, bool colored );
-	void drawLine( size_t x0, size_t y0, size_t x1, size_t y1, bool colored );
-	void drawHorizontalLine( size_t x, size_t y, size_t width, bool colored );
-	void drawVerticalLine( size_t x, size_t y, size_t height, bool colored );
-	void drawRectangle( size_t x0, size_t y0, size_t x1, size_t y1, bool colored );
-	void drawFilledRectangle( size_t x0, size_t y0, size_t x1, size_t y1, bool colored );
-	void drawCircle( size_t x, size_t y, size_t radius, bool colored );
-	void drawFilledCircle( size_t x, size_t y, size_t radius, bool colored );
+	void drawPixel( size_t x, size_t y, Color color );
+	void drawLine( size_t x0, size_t y0, size_t x1, size_t y1, Color color );
+	void drawHorizontalLine( size_t x, size_t y, size_t width, Color color );
+	void drawVerticalLine( size_t x, size_t y, size_t height, Color color );
+	void drawRectangle( size_t x0, size_t y0, size_t x1, size_t y1, Color color );
+	void drawFilledRectangle( size_t x0, size_t y0, size_t x1, size_t y1, Color color );
+	void drawCircle( size_t x, size_t y, size_t radius, Color color );
+	void drawFilledCircle( size_t x, size_t y, size_t radius, Color color );
 	bool merge( size_t offsetX, size_t offsetY, std::unique_ptr< Paint > painter );
 
 	template< class Fonter >
@@ -56,11 +41,11 @@ public:
 	}
 
 protected:
-	virtual void drawAbsolutePixel( size_t x, size_t y, bool colored ) = 0;
-	virtual bool getAbsolutePixel( size_t x, size_t y ) const		   = 0;
+	virtual void drawAbsolutePixel( size_t x, size_t y, Color color ) = 0;
+	virtual Color getAbsolutePixel( size_t x, size_t y ) const		  = 0;
 
 protected:
-	std::unique_ptr< uint8_t[] > m_image;
+	std::vector< uint8_t > m_image;
 	size_t m_imageSize{ 0 };
 	size_t m_width{ 0 };
 	size_t m_height{ 0 };
@@ -76,6 +61,6 @@ public:
 	virtual ~Paint2Colors();
 
 protected:
-	virtual void drawAbsolutePixel( size_t x, size_t y, bool colored );
-	virtual bool getAbsolutePixel( size_t x, size_t y ) const;
+	virtual void drawAbsolutePixel( size_t x, size_t y, Color color );
+	virtual Color getAbsolutePixel( size_t x, size_t y ) const;
 };

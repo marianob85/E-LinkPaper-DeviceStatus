@@ -4,7 +4,6 @@
 #include <epd.h>
 #include <pugixml.hpp>
 #include <KS0108.hpp>
-#include "DeviceDef.hpp"
 #include "StatusManager.hpp"
 
 using namespace std;
@@ -56,10 +55,10 @@ bool StatusManager::init()
 	}
 
 	// start: ------------------- Test -------------------
-	m_painter->clear( false );
+	m_painter->clear( Color::White );
 
 	auto font = m_painter->createFonter< FontPainterKS0108 >( liberationMono12 );
-	font->drawString( 10, 200, "Hello world !!!", COLORED );
+	font->drawString( 10, 200, "Hello world !!!", Color::Black );
 
 	m_epd->displayFrame( *m_painter );
 
@@ -131,7 +130,7 @@ void StatusManager::refreshPage()
 	std::lock_guard< std::mutex > lock( m_refreshMutex );
 
 	m_epd->init();
-	m_painter->clear( UNCOLORED );
+	m_painter->clear( Color::White );
 
 	printHeader();
 
@@ -139,7 +138,7 @@ void StatusManager::refreshPage()
 	m_painter->merge( 0, s_headeWHeight, m_currentPage->first->currentPage() );
 
 	// Draw vertical line
-	m_painter->drawVerticalLine( m_epd->width() / 2, s_headeWHeight, m_epd->height(), COLORED );
+	m_painter->drawVerticalLine( m_epd->width() / 2, s_headeWHeight, m_epd->height(), Color::Black );
 
 	m_epd->displayFrame( *m_painter );
 	m_epd->sleep();
@@ -154,23 +153,23 @@ void StatusManager::printHeader()
 	sprintf( text, "Page %d/%d", currentPageNo() + 1, pagesNo() );
 	auto size = font->getStringSize( text );
 	auto y	= ( s_headeWHeight - 0 - size.height ) / 2 + 1;
-	m_painter->drawFilledRectangle( 0, 0, m_epd->width(), s_headeWHeight, COLORED );
+	m_painter->drawFilledRectangle( 0, 0, m_epd->width(), s_headeWHeight, Color::Black );
 
-	font->drawString( m_epd->width() - size.width - 2, y, text, UNCOLORED );
+	font->drawString( m_epd->width() - size.width - 2, y, text, Color::White );
 
 	// Print description
 	auto description = m_currentPage->first->getDescription();
 	size			 = font->getStringSize( description );
 	y				 = ( s_headeWHeight - 0 - size.height ) / 2 + 1;
 
-	font->drawString( 2, y, description, UNCOLORED );
+	font->drawString( 2, y, description, Color::White );
 
 	// Print temp
 	if( m_tempSensor )
 	{
 		char text[ 20 ];
 		sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0 );
-		font->drawString( 170, y, text, UNCOLORED );
+		font->drawString( 170, y, text, Color::White );
 	}
 }
 
