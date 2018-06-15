@@ -8,8 +8,8 @@
     <CS_PIN>7</CS_PIN>
     <BUSY_PIN>6</BUSY_PIN>
     <SPIChannel>0</SPIChannel>
-    <Width>400</Width>
-    <Height>300</Height>
+    <Width>640</Width>
+    <Height>385</Height>
   </Epd>
   <DeviceStatus>
     <Devices>

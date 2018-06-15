@@ -64,3 +64,16 @@ protected:
 	virtual void drawAbsolutePixel( size_t x, size_t y, Color color );
 	virtual Color getAbsolutePixel( size_t x, size_t y ) const;
 };
+
+class Paint3Colors : public Paint
+{
+public:
+	Paint3Colors( size_t width, size_t height );
+	Paint3Colors( Paint3Colors& paint ) = default;
+	Paint3Colors( Paint3Colors&& )		= default;
+	virtual ~Paint3Colors();
+
+protected:
+	virtual void drawAbsolutePixel( size_t x, size_t y, Color color );
+	virtual Color getAbsolutePixel( size_t x, size_t y ) const;
+};

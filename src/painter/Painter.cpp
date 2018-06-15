@@ -309,3 +309,46 @@ Color Paint2Colors::getAbsolutePixel( size_t x, size_t y ) const
 }
 
 // end: --------------------- Paint2Colors -------------------
+
+// start: ------------------- Paint3Colors -------------------
+
+Paint3Colors::Paint3Colors( size_t width, size_t height ) : Paint( width, height )
+{
+	m_imageSize = m_width / 2 * m_height;
+	m_image.reserve( m_imageSize );
+}
+
+Paint3Colors::~Paint3Colors() {}
+
+void Paint3Colors::drawAbsolutePixel( size_t x, size_t y, Color color )
+{
+	if( x < 0 || x >= m_width || y < 0 || y >= m_height )
+	{
+		return;
+	}
+	switch( color )
+	{
+	case Color::Black:
+		m_image[ ( x + y * m_width ) / 2 ] &= static_cast< uint8_t >( ~( 0xF0 >> ( x % 2 * 4 ) ) );
+		break;
+	case Color::White:
+		m_image[ ( x + y * m_width ) / 2 ] &= static_cast< uint8_t >( ~( 0xF0 >> ( x % 2 * 4 ) ) );
+		m_image[ ( x + y * m_width ) / 2 ] ^= static_cast< uint8_t >( 0x30 >> ( x % 2 * 4 ) );
+		break;
+	case Color::Color1:
+	default:
+		m_image[ ( x + y * m_width ) / 2 ] &= static_cast< uint8_t >( ~( 0xF0 >> ( x % 2 * 4 ) ) );
+		m_image[ ( x + y * m_width ) / 2 ] ^= static_cast< uint8_t >( 0x40 >> ( x % 2 * 4 ) );
+		break;
+
+		/* do nothing */
+		break;
+	}
+}
+
+Color Paint3Colors::getAbsolutePixel( size_t x, size_t y ) const
+{
+	return Color::White;
+}
+
+// end: --------------------- Paint3Colors -------------------

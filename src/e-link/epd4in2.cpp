@@ -123,6 +123,7 @@ bool Epd4in2::init( void )
 	{
 		return false;
 	}
+	waitUntilIdle();
 	reset();
 	sendCommand( POWER_SETTING );
 	sendData( 0x03 ); // VDS_EN, VDG_EN

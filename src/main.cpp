@@ -11,7 +11,7 @@
 #include <KS0108.hpp>
 // start: ------------------- Test -------------------
 #include <epdWiringPi.hpp>
-#include <KS0108.hpp>
+#include <epd7in5b.hpp>
 // end: --------------------- Test -------------------
 
 using namespace std;
@@ -49,10 +49,10 @@ int main( int argc, char** argv )
 
 	// start: ------------------- Test -------------------
 
-	auto epd = make_unique< Epd4in2 >( make_unique< EpdWiringPi >( 0 ), 13, 26, 7, 6, 400, 300 );
+	auto epd = make_unique< Epd7in5b >( make_unique< EpdWiringPi >( 0 ), 13, 26, 7, 6, 640, 385 );
 	epd->init();
 
-	auto painter = make_unique< Paint2Colors >( epd->width(), epd->height() );
+	auto painter = make_unique< Paint3Colors >( epd->width(), epd->height() );
 
 	painter->clear( Color::White );
 
