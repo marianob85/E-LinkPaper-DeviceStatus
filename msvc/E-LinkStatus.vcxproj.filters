@@ -13,9 +13,6 @@
     <Filter Include="Source\DS18B20">
       <UniqueIdentifier>{b3141783-644f-4b17-9452-be55292f1344}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\e-link_4in2">
-      <UniqueIdentifier>{c5e617c7-20b5-4697-9946-b41f3d9ecd2d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\fonts">
       <UniqueIdentifier>{a0f7f06e-d6b1-4fe2-a5f3-8bc838c75da3}</UniqueIdentifier>
     </Filter>
@@ -27,6 +24,15 @@
     </Filter>
     <Filter Include="Source\ping">
       <UniqueIdentifier>{b225c946-7737-478f-9b13-a9a3441baa90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\e-link">
+      <UniqueIdentifier>{c5e617c7-20b5-4697-9946-b41f3d9ecd2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\e-link\Display">
+      <UniqueIdentifier>{9436beb6-3d76-42dd-a65d-beeab1d8c7f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\e-link\Interface">
+      <UniqueIdentifier>{bbdd6f57-d895-4cb7-bc60-5709cd096de5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -44,15 +50,6 @@
     </ClCompile>
     <ClCompile Include="..\src\DS18B20\DS18B20.cpp">
       <Filter>Source\DS18B20</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\e-link_4in2\epd4in2.cpp">
-      <Filter>Source\e-link_4in2</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\e-link_4in2\epdBcm2835.cpp">
-      <Filter>Source\e-link_4in2</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\e-link_4in2\epdWiringPi.cpp">
-      <Filter>Source\e-link_4in2</Filter>
     </ClCompile>
     <ClCompile Include="..\src\fonts\KS0108.cpp">
       <Filter>Source\fonts</Filter>
@@ -90,6 +87,18 @@
     <ClCompile Include="..\src\ping\ping.cpp">
       <Filter>Source\ping</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\e-link\epdWiringPi.cpp">
+      <Filter>Source\e-link\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\e-link\epdBcm2835.cpp">
+      <Filter>Source\e-link\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\e-link\epd4in2.cpp">
+      <Filter>Source\e-link\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\e-link\epd7in5b.cpp">
+      <Filter>Source\e-link\Display</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
@@ -110,12 +119,6 @@
     <ClInclude Include="..\src\DS18B20\DS18B20.h">
       <Filter>Source\DS18B20</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\e-link_4in2\epd.h">
-      <Filter>Source\e-link_4in2</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\e-link_4in2\epd4in2.h">
-      <Filter>Source\e-link_4in2</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\fonts\KS0108.hpp">
       <Filter>Source\fonts</Filter>
     </ClInclude>
@@ -133,6 +136,21 @@
     </ClInclude>
     <ClInclude Include="..\src\painter\PainterDef.hpp">
       <Filter>Source\painter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\e-link\epdWiringPi.hpp">
+      <Filter>Source\e-link\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\e-link\epdBcm2835.hpp">
+      <Filter>Source\e-link\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\e-link\epdInterface.hpp">
+      <Filter>Source\e-link\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\e-link\epd7in5b.hpp">
+      <Filter>Source\e-link\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\e-link\epd4in2.h">
+      <Filter>Source\e-link\Display</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

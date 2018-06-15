@@ -36,9 +36,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\DS18B20\DS18B20.cpp" />
-    <ClCompile Include="..\src\e-link_4in2\epd4in2.cpp" />
-    <ClCompile Include="..\src\e-link_4in2\epdBcm2835.cpp" />
-    <ClCompile Include="..\src\e-link_4in2\epdWiringPi.cpp" />
+    <ClCompile Include="..\src\e-link\epd4in2.cpp" />
+    <ClCompile Include="..\src\e-link\epd7in5b.cpp" />
+    <ClCompile Include="..\src\e-link\epdBcm2835.cpp" />
+    <ClCompile Include="..\src\e-link\epdWiringPi.cpp" />
     <ClCompile Include="..\src\fonts\KS0108.cpp" />
     <ClCompile Include="..\src\fonts\KS0108\Georgia12.cpp" />
     <ClCompile Include="..\src\fonts\KS0108\Liberation_Mono10.cpp" />
@@ -68,8 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\DS18B20\DS18B20.h" />
-    <ClInclude Include="..\src\e-link_4in2\epd.h" />
-    <ClInclude Include="..\src\e-link_4in2\epd4in2.h" />
+    <ClInclude Include="..\src\e-link\epdBcm2835.hpp" />
+    <ClInclude Include="..\src\e-link\epd4in2.h" />
+    <ClInclude Include="..\src\e-link\epd7in5b.hpp" />
+    <ClInclude Include="..\src\e-link\epdInterface.hpp" />
+    <ClInclude Include="..\src\e-link\epdWiringPi.hpp" />
     <ClInclude Include="..\src\fonts\KS0108.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugiconfig.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugixml.hpp" />
@@ -207,7 +211,7 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link_4in2;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
     </ClCompile>
@@ -237,7 +241,7 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link_4in2;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
@@ -261,7 +265,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link_4in2;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
     </ClCompile>
@@ -275,7 +279,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link_4in2;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>
       </CppAdditionalWarning>
       <AdditionalOptions>-Wno-sign-conversion %(AdditionalOptions)</AdditionalOptions>

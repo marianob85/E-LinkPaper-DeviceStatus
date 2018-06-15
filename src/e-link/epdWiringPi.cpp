@@ -25,50 +25,45 @@
  * THE SOFTWARE.
  */
 
-#include "epd.h"
-#include <bcm2835.h>
+#include "epdWiringPi.hpp"
+#include <wiringPi.h>
+#include <wiringPiSPI.h>
 
-// start: ------------------- EpdBcm2835 -------------------
+// start: ------------------- EpdWiringPi -------------------
 
-EpdBcm2835::EpdBcm2835( uint8_t channel ) : Epd( channel ) {}
+EpdWiringPi::EpdWiringPi( uint8_t channel ) : EpdInterface( channel ) {}
 
-void EpdBcm2835::digitalWrite( uint8_t pin, uint8_t value )
+bool EpdWiringPi::init( uint8_t rstPin, uint8_t dcPin, uint8_t busyPin )
 {
-	bcm2835_gpio_write( pin, value );
-}
-
-uint8_t EpdBcm2835::digitalRead( uint8_t pin )
-{
-	return bcm2835_gpio_lev( pin );
-}
-
-void EpdBcm2835::delayMs( unsigned int delaytime )
-{
-	bcm2835_delay( delaytime );
-}
-
-void EpdBcm2835::spiTransfer( uint8_t data )
-{
-	bcm2835_spi_transfern( ( char* )&data, 1 );
-}
-
-bool EpdBcm2835::init( uint8_t rstPin, uint8_t dcPin, uint8_t busyPin )
-{
-	if( !bcm2835_init() )
-	{
+	if(::wiringPiSetupGpio() < 0 )
+	{ // using Broadcom GPIO pin mapping
 		return false;
 	}
-	bcm2835_gpio_fsel( rstPin, BCM2835_GPIO_FSEL_OUTP );
-	bcm2835_gpio_fsel( dcPin, BCM2835_GPIO_FSEL_OUTP );
-	bcm2835_gpio_fsel( busyPin, BCM2835_GPIO_FSEL_INPT );
-
-	bcm2835_spi_begin(); // Start spi interface, set spi pin for the reuse function
-	bcm2835_spi_setBitOrder( BCM2835_SPI_BIT_ORDER_MSBFIRST );	// High first transmission
-	bcm2835_spi_setDataMode( BCM2835_SPI_MODE0 );				  // spi mode 0
-	bcm2835_spi_setClockDivider( BCM2835_SPI_CLOCK_DIVIDER_128 ); // Frequency
-	bcm2835_spi_chipSelect( m_channel );						  // set CE0
-	bcm2835_spi_setChipSelectPolarity( m_channel, LOW );		  // enable cs0
+	::pinMode( rstPin, OUTPUT );
+	::pinMode( dcPin, OUTPUT );
+	::pinMode( busyPin, INPUT );
+	::wiringPiSPISetup( m_channel, 2000000 );
 	return true;
 }
 
-// end: --------------------- EpdBcm2835 -------------------
+void EpdWiringPi::digitalWrite( uint8_t pin, uint8_t value )
+{
+	::digitalWrite( pin, value );
+}
+
+uint8_t EpdWiringPi::digitalRead( uint8_t pin )
+{
+	return static_cast< uint8_t >(::digitalRead( pin ) );
+}
+
+void EpdWiringPi::delayMs( unsigned int delaytime )
+{
+	::delay( delaytime );
+}
+
+void EpdWiringPi::spiTransfer( uint8_t data )
+{
+	::wiringPiSPIDataRW( m_channel, &data, 1 );
+}
+
+// end: --------------------- EpdWiringPi -------------------

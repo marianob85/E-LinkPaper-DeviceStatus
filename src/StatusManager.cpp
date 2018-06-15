@@ -1,7 +1,7 @@
 #include <iostream>
 #include <future>
 #include <tuple>
-#include <epd.h>
+#include <epdWiringPi.hpp>
 #include <pugixml.hpp>
 #include <KS0108.hpp>
 #include "StatusManager.hpp"

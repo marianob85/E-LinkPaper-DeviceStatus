@@ -1,7 +1,6 @@
 /**
- *  @filename   :   epdif.cpp
- *  @brief      :   Implements EPD interface functions
- *                  Users have to implement all the functions in epdif.cpp
+ *  @filename   :   epd4in2.h
+ *  @brief      :   Header file for e-paper library epd4in2.cpp
  *  @author     :   Yehui from Waveshare
  *
  *  Copyright (C) Waveshare     August 10 2017
@@ -24,46 +23,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+#pragma once
 
-#include "epd.h"
-#include <wiringPi.h>
-#include <wiringPiSPI.h>
+#include <memory>
+#include "epdInterface.hpp"
 
-// start: ------------------- EpdWiringPi -------------------
-
-EpdWiringPi::EpdWiringPi( uint8_t channel ) : Epd( channel ) {}
-
-bool EpdWiringPi::init( uint8_t rstPin, uint8_t dcPin, uint8_t busyPin )
+class Epd4in2
 {
-	if(::wiringPiSetupGpio() < 0 )
-	{ // using Broadcom GPIO pin mapping
-		return false;
-	}
-	::pinMode( rstPin, OUTPUT );
-	::pinMode( dcPin, OUTPUT );
-	::pinMode( busyPin, INPUT );
-	::wiringPiSPISetup( m_channel, 2000000 );
-	return true;
-}
+public:
+	Epd4in2( std::unique_ptr< EpdInterface > epd,
+			 uint8_t resetPin,
+			 uint8_t dcPin,
+			 uint8_t csPin,
+			 uint8_t bussyPin,
+			 int width,
+			 int height );
+	~Epd4in2();
 
-void EpdWiringPi::digitalWrite( uint8_t pin, uint8_t value )
-{
-	::digitalWrite( pin, value );
-}
+	bool init( void );
+	void waitUntilIdle( void );
+	void reset( void );
+	void setLut( void );
+	void displayFrame( const uint8_t* frame_buffer );
+	void sendCommand( uint8_t command );
+	void sendData( uint8_t data );
+	void sleep( void );
+	int width() const;
+	int height() const;
+	void clear( bool colored = false );
 
-uint8_t EpdWiringPi::digitalRead( uint8_t pin )
-{
-	return static_cast< uint8_t >(::digitalRead( pin ) );
-}
+private:
+	std::unique_ptr< EpdInterface > m_epd;
 
-void EpdWiringPi::delayMs( unsigned int delaytime )
-{
-	::delay( delaytime );
-}
-
-void EpdWiringPi::spiTransfer( uint8_t data )
-{
-	::wiringPiSPIDataRW( m_channel, &data, 1 );
-}
-
-// end: --------------------- EpdWiringPi -------------------
+	uint8_t m_resetPin{ 0 };
+	uint8_t m_dcPin{ 0 };
+	uint8_t m_busyPin{ 0 };
+	int m_width{ 0 };
+	int m_height{ 0 };
+};
