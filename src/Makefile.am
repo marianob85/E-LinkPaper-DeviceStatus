@@ -1,7 +1,7 @@
 bin_PROGRAMS = eLinkDisplayStatus
 
 eLinkDisplayStatus_CXXFLAGS = -I"DS18B20"
-eLinkDisplayStatus_CXXFLAGS += -I"e-link_4in2"
+eLinkDisplayStatus_CXXFLAGS += -I"e-link"
 eLinkDisplayStatus_CXXFLAGS += -I"fonts"
 eLinkDisplayStatus_CXXFLAGS += -I"lib/pugi"
 eLinkDisplayStatus_CXXFLAGS += -I"painter"
@@ -12,9 +12,11 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				StatusPing.cpp \
 				main.cpp \
 				DS18B20/DS18B20.cpp \
-				e-link_4in2/epdWiringPi.cpp \
-				e-link_4in2/epdBcm2835.cpp \
-				e-link_4in2/epd4in2.cpp \
+				e-link/epdWiringPi.cpp \
+				e-link/epdBcm2835.cpp \
+				e-link/epd4in2.cpp \
+				e-link/epd7in5b.cpp \
+				e-link/epd.cpp \
 				fonts/KS0108.cpp \
 				fonts/KS0108/Liberation_Mono12.cpp \
 				fonts/KS0108/Liberation_Mono11Bold.cpp \
