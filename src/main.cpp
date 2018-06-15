@@ -57,7 +57,8 @@ int main( int argc, char** argv )
 	painter->clear( Color::White );
 
 	auto font = painter->createFonter< FontPainterKS0108 >( liberationMono12 );
-	font->drawString( 10, 200, "Hello world !!!", Color::Black );
+	font->drawString( 10, 200, "Hello world !!!", Color::Color1 );
+	//painter->drawFilledCircle( 100, 100, 100, Color::Color1 );
 
 	epd->displayFrame( *painter );
 

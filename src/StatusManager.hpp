@@ -4,7 +4,7 @@
 #include <mutex>
 #include <experimental/filesystem>
 #include <DS18B20.h>
-#include <epd4in2.h>
+#include <epd.hpp>
 #include <Painter.hpp>
 #include "Timer.hpp"
 
@@ -54,7 +54,7 @@ private:
 	using ContainerT = std::vector< std::pair< std::unique_ptr< StatusPage >, unsigned > >;
 	ContainerT m_pages;
 	ContainerT::const_iterator m_currentPage;
-	std::unique_ptr< Epd4in2 > m_epd;
+	std::unique_ptr< Epd > m_epd;
 	std::unique_ptr< Paint > m_painter;
 	TimerEvent m_timerEvent;
 	std::unique_ptr< DS18B20 > m_tempSensor;

@@ -20,8 +20,6 @@ public:
 
 private:
 	void pinger();
-
-	//std::map< std::string, bool > getDeviceStatus() const;
 	std::map< std::string, bool > getDeviceStatusV2() const;
 
 private:

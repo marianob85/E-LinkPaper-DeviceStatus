@@ -4,6 +4,7 @@
 #include <epdWiringPi.hpp>
 #include <pugixml.hpp>
 #include <KS0108.hpp>
+#include <epd7in5b.hpp>
 #include "StatusManager.hpp"
 
 using namespace std;
@@ -26,15 +27,15 @@ StatusManager::StatusManager( std::experimental::filesystem::path xmlPath )
 
 	auto epdConfig = doc.child( "Config" ).child( "Epd" );
 
-	m_epd = make_unique< Epd4in2 >( make_unique< EpdWiringPi >( epdConfig.child( "SPIChannel" ).text().as_int() ),
-									epdConfig.child( "RS_PIN" ).text().as_int(),
-									epdConfig.child( "DC_PIN" ).text().as_int(),
-									epdConfig.child( "CS_PIN" ).text().as_int(),
-									epdConfig.child( "BUSY_PIN" ).text().as_int(),
-									epdConfig.child( "Width" ).text().as_int(),
-									epdConfig.child( "Height" ).text().as_int() );
+	m_epd = make_unique< Epd7in5b >( make_unique< EpdWiringPi >( epdConfig.child( "SPIChannel" ).text().as_int() ),
+									 epdConfig.child( "RS_PIN" ).text().as_int(),
+									 epdConfig.child( "DC_PIN" ).text().as_int(),
+									 epdConfig.child( "CS_PIN" ).text().as_int(),
+									 epdConfig.child( "BUSY_PIN" ).text().as_int(),
+									 epdConfig.child( "Width" ).text().as_int(),
+									 epdConfig.child( "Height" ).text().as_int() );
 
-	m_painter = make_unique< Paint2Colors >( m_epd->width(), m_epd->height() );
+	m_painter = make_unique< Paint3Colors >( m_epd->width(), m_epd->height() );
 
 	DS18B20Mgr ds18B20Mgr( BUS );
 	if( ds18B20Mgr.count() > 0 )
