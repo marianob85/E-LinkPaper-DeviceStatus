@@ -99,6 +99,9 @@
     <ClCompile Include="..\src\e-link\epd7in5b.cpp">
       <Filter>Source\e-link\Display</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\e-link\epd.cpp">
+      <Filter>Source\e-link\Display</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
@@ -150,6 +153,9 @@
       <Filter>Source\e-link\Display</Filter>
     </ClInclude>
     <ClInclude Include="..\src\e-link\epd4in2.h">
+      <Filter>Source\e-link\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\e-link\epd.hpp">
       <Filter>Source\e-link\Display</Filter>
     </ClInclude>
   </ItemGroup>

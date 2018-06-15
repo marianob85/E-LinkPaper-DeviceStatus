@@ -54,17 +54,6 @@ bool StatusManager::init()
 		return false;
 	}
 
-	// start: ------------------- Test -------------------
-	m_painter->clear( Color::White );
-
-	auto font = m_painter->createFonter< FontPainterKS0108 >( liberationMono12 );
-	font->drawString( 10, 200, "Hello world !!!", Color::Black );
-
-	m_epd->displayFrame( *m_painter );
-
-	return false;
-	// end: --------------------- Test -------------------
-
 	return true;
 }
 
@@ -107,9 +96,6 @@ void StatusManager::autoChange( bool set )
 
 void StatusManager::close()
 {
-	m_epd->init();
-	m_epd->clear();
-	m_epd->waitUntilIdle();
 	m_epd->sleep();
 }
 

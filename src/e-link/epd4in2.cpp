@@ -106,14 +106,16 @@ const unsigned char lut_wb[] = {
 
 Epd4in2::~Epd4in2(){};
 
-Epd4in2::Epd4in2(
-	unique_ptr< EpdInterface > epd, uint8_t resetPin, uint8_t dcPin, uint8_t csPin, uint8_t bussyPin, int width, int height )
-	: m_epd( move( epd ) ),
-	  m_resetPin( resetPin ),
-	  m_dcPin( dcPin ),
-	  m_busyPin( bussyPin ),
-	  m_width( width ),
-	  m_height( height ){};
+Epd4in2::Epd4in2( unique_ptr< EpdInterface > epd,
+				  uint8_t resetPin,
+				  uint8_t dcPin,
+				  uint8_t csPin,
+				  uint8_t bussyPin,
+				  int width,
+				  int height )
+	: Epd( move( epd ), resetPin, dcPin, csPin, bussyPin, width, height )
+{
+}
 
 bool Epd4in2::init( void )
 {
@@ -142,18 +144,6 @@ bool Epd4in2::init( void )
 	return true;
 }
 
-void Epd4in2::sendCommand( uint8_t command )
-{
-	m_epd->digitalWrite( m_dcPin, LOW );
-	m_epd->spiTransfer( command );
-}
-
-void Epd4in2::sendData( uint8_t data )
-{
-	m_epd->digitalWrite( m_dcPin, HIGH );
-	m_epd->spiTransfer( data );
-}
-
 void Epd4in2::waitUntilIdle( void )
 {
 	m_epd->delayMs( 100 );
@@ -174,7 +164,7 @@ void Epd4in2::reset( void )
 
 void Epd4in2::setLut( void )
 {
-	unsigned int count;
+	size_t count;
 	sendCommand( LUT_FOR_VCOM ); // vcom
 	for( count = 0; count < 44; count++ )
 	{
@@ -223,13 +213,13 @@ void Epd4in2::displayFrame( const uint8_t* frame_buffer )
 	if( frame_buffer != NULL )
 	{
 		sendCommand( DATA_START_TRANSMISSION_1 );
-		for( int i = 0; i < m_width * m_height / 8; i++ )
+		for( size_t i = 0; i < m_width * m_height / 8; i++ )
 		{
 			sendData( 0xFF ); // bit set: white, bit reset: black
 		}
 		m_epd->delayMs( 2 );
 		sendCommand( DATA_START_TRANSMISSION_2 );
-		for( int i = 0; i < m_width * m_height / 8; i++ )
+		for( size_t i = 0; i < m_width * m_height / 8; i++ )
 		{
 			sendData( frame_buffer[ i ] );
 		}
@@ -272,48 +262,3 @@ void Epd4in2::sleep()
 	sendCommand( DEEP_SLEEP ); // deep sleep
 	sendData( 0xA5 );
 }
-
-int Epd4in2::width() const
-{
-	return m_width;
-}
-
-int Epd4in2::height() const
-{
-	return m_height;
-}
-
-void Epd4in2::clear( bool colored /*= false */ )
-{
-	waitUntilIdle();
-	sendCommand( RESOLUTION_SETTING );
-	sendData( static_cast< unsigned char >( m_width >> 8 ) );
-	sendData( static_cast< unsigned char >( m_width & 0xff ) );
-	sendData( static_cast< unsigned char >( m_height >> 8 ) );
-	sendData( static_cast< unsigned char >( m_height & 0xff ) );
-	sendCommand( VCM_DC_SETTING );
-	sendData( 0x12 );
-
-	sendCommand( VCOM_AND_DATA_INTERVAL_SETTING );
-	sendCommand( 0x97 ); // VBDF 17|D7 VBDW 97  VBDB 57  VBDF F7  VBDW 77  VBDB 37  VBDR B7
-
-	sendCommand( DATA_START_TRANSMISSION_1 );
-	for( int i = 0; i < m_width * m_height / 8; i++ )
-	{
-		sendData( 0xFF ); // bit set: white, bit reset: black
-	}
-	m_epd->delayMs( 2 );
-	sendCommand( DATA_START_TRANSMISSION_2 );
-	for( int i = 0; i < m_width * m_height / 8; i++ )
-	{
-		sendData( colored ? 0x00 : 0xFF );
-	}
-	m_epd->delayMs( 2 );
-
-	setLut();
-
-	sendCommand( DISPLAY_REFRESH );
-	m_epd->delayMs( 100 );
-}
-
-/* END OF FILE */

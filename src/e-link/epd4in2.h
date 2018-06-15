@@ -26,9 +26,9 @@
 #pragma once
 
 #include <memory>
-#include "epdInterface.hpp"
+#include "epd.hpp"
 
-class Epd4in2
+class Epd4in2 : public Epd
 {
 public:
 	Epd4in2( std::unique_ptr< EpdInterface > epd,
@@ -40,24 +40,12 @@ public:
 			 int height );
 	~Epd4in2();
 
-	bool init( void );
-	void waitUntilIdle( void );
-	void reset( void );
-	void setLut( void );
-	void displayFrame( const uint8_t* frame_buffer );
-	void sendCommand( uint8_t command );
-	void sendData( uint8_t data );
-	void sleep( void );
-	int width() const;
-	int height() const;
-	void clear( bool colored = false );
-
-private:
-	std::unique_ptr< EpdInterface > m_epd;
-
-	uint8_t m_resetPin{ 0 };
-	uint8_t m_dcPin{ 0 };
-	uint8_t m_busyPin{ 0 };
-	int m_width{ 0 };
-	int m_height{ 0 };
+	// start: ------------------- Epd -------------------
+	bool init( void ) override;
+	void waitUntilIdle( void ) override;
+	void reset( void ) override;
+	void setLut( void ) override;
+	void displayFrame( const uint8_t* frame_buffer ) override;
+	void sleep( void ) override;
+	// end: --------------------- Epd -------------------
 };

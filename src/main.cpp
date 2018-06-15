@@ -9,6 +9,10 @@
 #include "StatusManager.hpp"
 #include "StatusPing.hpp"
 #include <KS0108.hpp>
+// start: ------------------- Test -------------------
+#include <epdWiringPi.hpp>
+#include <KS0108.hpp>
+// end: --------------------- Test -------------------
 
 using namespace std;
 using namespace std::experimental::filesystem;
@@ -42,6 +46,23 @@ int main( int argc, char** argv )
 	signal( SIGABRT, sig_handler );
 	signal( SIGTERM, sig_handler );
 	signal( SIGINT, sig_handler );
+
+	// start: ------------------- Test -------------------
+
+	auto epd = make_unique< Epd4in2 >( make_unique< EpdWiringPi >( 0 ), 13, 26, 7, 6, 400, 300 );
+	epd->init();
+
+	auto painter = make_unique< Paint2Colors >( epd->width(), epd->height() );
+
+	painter->clear( Color::White );
+
+	auto font = painter->createFonter< FontPainterKS0108 >( liberationMono12 );
+	font->drawString( 10, 200, "Hello world !!!", Color::Black );
+
+	epd->displayFrame( *painter );
+
+	return 0;
+	// end: --------------------- Test -------------------
 
 	StatusManager statusManager( xmlPath );
 

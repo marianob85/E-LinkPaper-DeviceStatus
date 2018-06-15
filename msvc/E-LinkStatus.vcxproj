@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\DS18B20\DS18B20.cpp" />
+    <ClCompile Include="..\src\e-link\epd.cpp" />
     <ClCompile Include="..\src\e-link\epd4in2.cpp" />
     <ClCompile Include="..\src\e-link\epd7in5b.cpp" />
     <ClCompile Include="..\src\e-link\epdBcm2835.cpp" />
@@ -69,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\DS18B20\DS18B20.h" />
+    <ClInclude Include="..\src\e-link\epd.hpp" />
     <ClInclude Include="..\src\e-link\epdBcm2835.hpp" />
     <ClInclude Include="..\src\e-link\epd4in2.h" />
     <ClInclude Include="..\src\e-link\epd7in5b.hpp" />
