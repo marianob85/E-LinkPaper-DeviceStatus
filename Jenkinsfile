@@ -13,6 +13,7 @@ pipeline
 		stage('Build'){
 			steps {
 				sh '''
+					autoreconf --install --force
 					./configure
 					make
 				'''
