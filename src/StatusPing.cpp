@@ -134,8 +134,7 @@ std::unique_ptr< Paint > StatusPing::currentPage( size_t width, size_t height ) 
 	for( const auto& device : m_devices )
 	{
 		const auto status = devicestatus.at( device.Ip );
-		const auto& text  = device.Ip;
-		auto size		  = font->getStringSize( text );
+		auto size		  = font->getStringSize( device.Ip );
 
 		if( size.height + startLine > height )
 		{
@@ -144,7 +143,8 @@ std::unique_ptr< Paint > StatusPing::currentPage( size_t width, size_t height ) 
 			columnOffset += columnWidth;
 		}
 
-		font->drawString( columnOffset + 2, startLine, text, Color::Black );
+		font->drawString( columnOffset + 2, startLine, device.Ip, Color::Black );
+		font->drawString( columnOffset + 130, startLine, device.Name, Color::Black );
 
 		if( status )
 		{
