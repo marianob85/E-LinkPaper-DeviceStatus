@@ -11,18 +11,13 @@
 class StatusPage
 {
 public:
-	virtual bool init( unsigned width, unsigned height );
 	virtual ~StatusPage() {}
-	virtual std::unique_ptr< Paint > currentPage() const = 0;
-	virtual unsigned pageNo() const						 = 0;
-	virtual unsigned currentPageNo() const				 = 0;
-	virtual bool setPage( unsigned page )				 = 0;
-	virtual bool setNext()								 = 0;
-	virtual std::string getDescription() const			 = 0;
-
-protected:
-	unsigned m_height{ 0 };
-	unsigned m_width{ 0 };
+	virtual std::unique_ptr< Paint > currentPage( size_t width, size_t height ) const = 0;
+	virtual unsigned pageNo() const													  = 0;
+	virtual unsigned currentPageNo() const											  = 0;
+	virtual bool setPage( unsigned page )											  = 0;
+	virtual bool setNext()															  = 0;
+	virtual std::string getDescription( size_t index ) const						  = 0;
 };
 
 class StatusManager
@@ -33,30 +28,27 @@ public:
 
 	bool init();
 
-	bool add( std::unique_ptr< StatusPage > statusPage, unsigned intervalSeconds );
+	bool add( std::unique_ptr< StatusPage > statusPage );
 	void setNext();
 	bool setPage( unsigned page, unsigned subPage );
-	void autoChange( bool set );
 
 	void close();
 
 private:
 	void refreshRequest();
 	void refreshPage();
-	void printHeader();
 	unsigned pagesNo() const;
 	unsigned currentPageNo() const;
-	void onTimer();
+
+	size_t printHeader();
+	size_t printHeader2();
 
 private:
-	static const unsigned s_headeWHeight = 20;
-
-	using ContainerT = std::vector< std::pair< std::unique_ptr< StatusPage >, unsigned > >;
+	using ContainerT = std::vector< std::unique_ptr< StatusPage > >;
 	ContainerT m_pages;
 	ContainerT::const_iterator m_currentPage;
 	std::unique_ptr< Epd > m_epd;
 	std::unique_ptr< Paint > m_painter;
-	TimerEvent m_timerEvent;
 	std::unique_ptr< DS18B20 > m_tempSensor;
 	std::mutex m_refreshMutex;
 };

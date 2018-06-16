@@ -58,20 +58,16 @@ bool StatusManager::init()
 	return true;
 }
 
-bool StatusManager::add( std::unique_ptr< StatusPage > statusPage, unsigned intervalSeconds )
+bool StatusManager::add( std::unique_ptr< StatusPage > statusPage )
 {
-	if( !statusPage->init( m_epd->width(), m_epd->height() - s_headeWHeight ) )
-		return false;
-
-	m_pages.push_back( make_pair( move( statusPage ), intervalSeconds ) );
-
+	m_pages.push_back( move( statusPage ) );
 	m_currentPage = m_pages.begin();
 	return true;
 }
 
 void StatusManager::setNext()
 {
-	if( !m_currentPage->first->setNext() )
+	if( !( *m_currentPage )->setNext() )
 		if( ++m_currentPage == m_pages.end() )
 			m_currentPage = m_pages.begin();
 
@@ -82,29 +78,16 @@ bool StatusManager::setPage( unsigned page, unsigned subPage )
 {
 	if( page < m_pages.size() )
 	{
-		m_pages[ 0 ].first->setPage( subPage );
+		m_pages[ 0 ]->setPage( subPage );
 		refreshPage();
 		return true;
 	}
 	return false;
 }
 
-void StatusManager::autoChange( bool set )
-{
-	auto timeMS  = m_currentPage->second * 1000;
-	m_timerEvent = TimerEvent( timeMS, true, std::bind( &StatusManager::onTimer, this ) );
-}
-
 void StatusManager::close()
 {
 	m_epd->sleep();
-}
-
-void StatusManager::onTimer()
-{
-	setNext();
-	auto timeMS  = m_currentPage->second * 1000;
-	m_timerEvent = TimerEvent( timeMS, true, std::bind( &StatusManager::onTimer, this ) );
 }
 
 void StatusManager::refreshRequest()
@@ -119,35 +102,36 @@ void StatusManager::refreshPage()
 	m_epd->init();
 	m_painter->clear( Color::White );
 
-	printHeader();
+	auto height = printHeader2();
 
 	// Merge page content
-	m_painter->merge( 0, s_headeWHeight, m_currentPage->first->currentPage() );
+	m_painter->merge( 0, height, ( *m_currentPage )->currentPage( m_epd->width(), m_epd->height() - height ) );
 
 	// Draw vertical line
-	m_painter->drawVerticalLine( m_epd->width() / 2, s_headeWHeight, m_epd->height(), Color::Black );
+	m_painter->drawVerticalLine( m_epd->width() / 2, height, m_epd->height(), Color::Black );
 
 	m_epd->displayFrame( *m_painter );
 	m_epd->sleep();
 }
 
-void StatusManager::printHeader()
+size_t StatusManager::printHeader()
 {
-	auto font = m_painter->createFonter< FontPainterKS0108 >( liberationMono11Bold );
+	const size_t height = 20;
+	auto font			= m_painter->createFonter< FontPainterKS0108 >( liberationMono11Bold );
 
 	// Print pages
 	char text[ 128 ] = {};
 	sprintf( text, "Page %d/%d", currentPageNo() + 1, pagesNo() );
 	auto size = font->getStringSize( text );
-	auto y	= ( s_headeWHeight - 0 - size.height ) / 2 + 1;
-	m_painter->drawFilledRectangle( 0, 0, m_epd->width(), s_headeWHeight, Color::Black );
+	auto y	= ( height - 0 - size.height ) / 2 + 1;
+	m_painter->drawFilledRectangle( 0, 0, m_epd->width(), height, Color::Black );
 
 	font->drawString( m_epd->width() - size.width - 2, y, text, Color::White );
 
 	// Print description
-	auto description = m_currentPage->first->getDescription();
+	auto description = ( *m_currentPage )->getDescription( 0 );
 	size			 = font->getStringSize( description );
-	y				 = ( s_headeWHeight - 0 - size.height ) / 2 + 1;
+	y				 = ( height - 0 - size.height ) / 2 + 1;
 
 	font->drawString( 2, y, description, Color::White );
 
@@ -158,13 +142,60 @@ void StatusManager::printHeader()
 		sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0 );
 		font->drawString( 170, y, text, Color::White );
 	}
+
+	return height;
+}
+
+size_t StatusManager::printHeader2()
+{
+	const size_t height = 40;
+	auto font			= m_painter->createFonter< FontPainterKS0108 >( liberationMono11Bold );
+
+	static const string page = "Page";
+	string pageData			 = std::to_string( currentPageNo() + 1 );
+	pageData += "/";
+	pageData += std::to_string( pagesNo() );
+
+	auto y = 2; //	( height - 0 - size.height ) / 2 + 1;
+
+	// start: ------------------- Print page -------------------
+	auto sizePage	 = font->getStringSize( page );
+	auto sizePageData = font->getStringSize( pageData );
+	m_painter->drawFilledRectangle( 0, 0, m_epd->width() / 2, height, Color::Black );
+	m_painter->drawHorizontalLine( 0, height - 1, m_epd->width(), Color::Black );
+	font->drawString( m_epd->width() - sizePage.width - 2, y, page, Color::Black );
+	font->drawString(
+		m_epd->width() - sizePageData.width - 2, height - sizePageData.height - y, pageData, Color::Black );
+	// end: --------------------- Print page -------------------
+
+	// start: ------------------- Print description -------------------
+	auto description = ( *m_currentPage )->getDescription( 0 );
+	font->drawString( 2, y, description, Color::White );
+	// end: --------------------- Print description -------------------
+
+	// start: ------------------- Print description2 -------------------
+	description		  = ( *m_currentPage )->getDescription( 1 );
+	auto autoDescSize = font->getStringSize( description );
+	font->drawString(
+		m_epd->width() / 2 - autoDescSize.width - 2, height - autoDescSize.height - y, description, Color::White );
+	// end: --------------------- Print description2 -------------------
+
+	// Print temp
+	if( m_tempSensor )
+	{
+		char text[ 20 ];
+		sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0 );
+		font->drawString( 170, y, text, Color::White );
+	}
+
+	return height;
 }
 
 unsigned StatusManager::pagesNo() const
 {
 	unsigned pagesNo = 0;
 	for( const auto& page : m_pages )
-		pagesNo += page.first->pageNo();
+		pagesNo += page->pageNo();
 
 	return pagesNo;
 }
@@ -176,23 +207,11 @@ unsigned StatusManager::currentPageNo() const
 
 	while( it != m_currentPage )
 	{
-		pageNo += m_currentPage->first->pageNo();
+		pageNo += ( *m_currentPage )->pageNo();
 		it++;
 	}
 
-	return pageNo + m_currentPage->first->currentPageNo();
+	return pageNo + ( *m_currentPage )->currentPageNo();
 }
 
 // end: --------------------- StatusManager -------------------
-
-// start: ------------------- StatusPage -------------------
-
-bool StatusPage::init( unsigned width, unsigned height )
-{
-	m_height = height;
-	m_width  = width;
-
-	return true;
-}
-
-// end: --------------------- StatusPage -------------------

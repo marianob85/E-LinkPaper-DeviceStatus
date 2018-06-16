@@ -50,14 +50,31 @@ bool StatusPing::setNext()
 	return true;
 }
 
-string StatusPing::getDescription() const
+string StatusPing::getDescription( size_t index ) const
 {
-	return "Device status";
+	switch( index )
+	{
+	default:
+	case 0:
+		return "Device status";
+		break;
+	case 1:
+	{
+		auto status	= getDeviceStatusV2( false );
+		auto available = std::count_if(
+			status.begin(), status.end(), []( const std::pair< string, bool >& status ) { return status.second; } );
+
+		return string( "Online: " ) + to_string( available ) + "/" + to_string( status.size() );
+	}
+	break;
+	}
+
+	return "";
 }
 
 unsigned StatusPing::pageNo() const
 {
-	return 2;
+	return 1;
 }
 
 unsigned StatusPing::currentPageNo() const
@@ -89,7 +106,7 @@ void StatusPing::pinger()
 	}
 }
 
-std::map< std::string, bool > StatusPing::getDeviceStatusV2() const
+std::map< std::string, bool > StatusPing::getDeviceStatusV2( bool clear ) const
 {
 	while( m_devices.size() != m_status.size() )
 		this_thread::sleep_for( 1s );
@@ -97,13 +114,14 @@ std::map< std::string, bool > StatusPing::getDeviceStatusV2() const
 	std::lock_guard< std::mutex > lock( m_statusMutex );
 
 	auto retVal = m_status;
-	m_status.clear();
+	if( clear )
+		m_status.clear();
 	return retVal;
 }
 
-std::unique_ptr< Paint > StatusPing::currentPage() const
+std::unique_ptr< Paint > StatusPing::currentPage( size_t width, size_t height ) const
 {
-	auto painter = make_unique< Paint2Colors >( m_width, m_height );
+	auto painter = make_unique< Paint2Colors >( width, height );
 	painter->clear( Color::White );
 	auto font = painter->createFonter< FontPainterKS0108 >( liberationMono10 );
 
@@ -114,14 +132,14 @@ std::unique_ptr< Paint > StatusPing::currentPage() const
 
 	size_t startLine		   = startLineDef;
 	unsigned columnOffset	  = 0;
-	const unsigned columnWidth = m_width / 2;
+	const unsigned columnWidth = width / 2;
 	for( const auto& device : m_devices )
 	{
 		const auto status = devicestatus.at( device.Ip );
-		const auto& text  = m_currentPage == 0 ? device.Ip : device.Name;
+		const auto& text  = device.Ip;
 		auto size		  = font->getStringSize( text );
 
-		if( size.height + startLine > m_height )
+		if( size.height + startLine > height )
 		{
 			// Next column
 			startLine = startLineDef;
