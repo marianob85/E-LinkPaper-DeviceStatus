@@ -60,6 +60,7 @@ bool StatusManager::init()
 
 bool StatusManager::add( std::unique_ptr< StatusPage > statusPage )
 {
+	statusPage->init( std::bind( &StatusManager::setPage, this, m_pages.size(), std::placeholders::_1 ) );
 	m_pages.push_back( move( statusPage ) );
 	m_currentPage = m_pages.begin();
 	return true;
@@ -88,11 +89,6 @@ bool StatusManager::setPage( unsigned page, unsigned subPage )
 void StatusManager::close()
 {
 	m_epd->sleep();
-}
-
-void StatusManager::refreshRequest()
-{
-	std::async( std::launch::async, &StatusManager::refreshPage, this );
 }
 
 void StatusManager::refreshPage()
@@ -215,3 +211,11 @@ unsigned StatusManager::currentPageNo() const
 }
 
 // end: --------------------- StatusManager -------------------
+
+// start: ------------------- StatusPage -------------------
+bool StatusPage::init( std::function< void( size_t /*page*/ ) > refreshRequest )
+{
+	m_refresh = refreshRequest;
+	return true;
+}
+// end: --------------------- StatusPage -------------------

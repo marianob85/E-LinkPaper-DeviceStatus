@@ -356,6 +356,22 @@ Color Paint3Colors::getAbsolutePixel( size_t x, size_t y ) const
 	// About the image data: 4 bits = 1 pixel, doesn’t support Gray scale (can only display black and white). 0000
 	// (binary) stands for a black pixel, 0011 (binary) stands for a white pixel, 0100 (binary) stands for a red pixel.
 	// https://www.waveshare.com/wiki/7.5inch_e-Paper_HAT_(B)
+
+	if( x < 0 || x >= m_width || y < 0 || y >= m_height )
+		return Color::White;
+
+	auto color = m_image[ ( x + y * m_width ) / 2 ] >> ( ( x % 2 ) ? 0 : 4 ) & 0b1111;
+
+	switch( color )
+	{
+	case 0b0:
+		return Color::Black;
+	case 0b0011:
+		return Color::White;
+	case 0b0100:
+		return Color::Color1;
+	}
+
 	return Color::White;
 }
 

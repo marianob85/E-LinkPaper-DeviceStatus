@@ -40,13 +40,11 @@ StatusPing::StatusPing( std::experimental::filesystem::path xmlPath )
 
 bool StatusPing::setPage( unsigned page )
 {
-	m_currentPage = page % pageNo();
 	return true;
 }
 
 bool StatusPing::setNext()
 {
-	m_currentPage = ( m_currentPage + 1 ) % pageNo();
 	return true;
 }
 
@@ -79,7 +77,7 @@ unsigned StatusPing::pageNo() const
 
 unsigned StatusPing::currentPageNo() const
 {
-	return m_currentPage;
+	return 0;
 }
 
 void StatusPing::pinger()
@@ -121,7 +119,7 @@ std::map< std::string, bool > StatusPing::getDeviceStatusV2( bool clear ) const
 
 std::unique_ptr< Paint > StatusPing::currentPage( size_t width, size_t height ) const
 {
-	auto painter = make_unique< Paint2Colors >( width, height );
+	auto painter = make_unique< Paint3Colors >( width, height );
 	painter->clear( Color::White );
 	auto font = painter->createFonter< FontPainterKS0108 >( liberationMono10 );
 
@@ -151,7 +149,7 @@ std::unique_ptr< Paint > StatusPing::currentPage( size_t width, size_t height ) 
 		if( status )
 		{
 			size = font->getStringSize( online );
-			font->drawString( columnOffset + columnWidth - size.width - 2, startLine, online, Color::Black );
+			font->drawString( columnOffset + columnWidth - size.width - 2, startLine, online, Color::Color1 );
 		}
 		else
 		{
@@ -162,9 +160,9 @@ std::unique_ptr< Paint > StatusPing::currentPage( size_t width, size_t height ) 
 										  position.second - 2,
 										  position.first + size.width,
 										  position.second + size.height,
-										  Color::White );
+										  Color::Color1 );
 
-			font->drawString( position.first, position.second, offline, Color::Black );
+			font->drawString( position.first, position.second, offline, Color::White );
 		}
 
 		startLine += size.height + 3;

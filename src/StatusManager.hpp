@@ -12,12 +12,16 @@ class StatusPage
 {
 public:
 	virtual ~StatusPage() {}
+	virtual bool init( std::function< void( size_t /*page*/ ) > refreshRequest );
 	virtual std::unique_ptr< Paint > currentPage( size_t width, size_t height ) const = 0;
 	virtual unsigned pageNo() const													  = 0;
 	virtual unsigned currentPageNo() const											  = 0;
 	virtual bool setPage( unsigned page )											  = 0;
 	virtual bool setNext()															  = 0;
 	virtual std::string getDescription( size_t index ) const						  = 0;
+
+protected:
+	std::function< void( size_t /*page*/ ) > m_refresh;
 };
 
 class StatusManager
@@ -35,7 +39,6 @@ public:
 	void close();
 
 private:
-	void refreshRequest();
 	void refreshPage();
 	unsigned pagesNo() const;
 	unsigned currentPageNo() const;
