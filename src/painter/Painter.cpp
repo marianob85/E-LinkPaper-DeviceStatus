@@ -283,6 +283,7 @@ Paint2Colors::Paint2Colors( size_t width, size_t height ) : Paint( width, height
 {
 	m_imageSize = m_width / 8 * m_height;
 	m_image.reserve( m_imageSize );
+	m_image.resize( m_imageSize );
 }
 
 Paint2Colors::~Paint2Colors() {}
@@ -304,8 +305,11 @@ void Paint2Colors::drawAbsolutePixel( size_t x, size_t y, Color color )
 
 Color Paint2Colors::getAbsolutePixel( size_t x, size_t y ) const
 {
-	return m_image[ ( x + y * m_width ) / 8 ] & static_cast< uint8_t >( 0x80 >> ( x % 8 ) ) ? Color::Black :
-																							  Color::White;
+	if( x < 0 || x >= m_width || y < 0 || y >= m_height )
+		return Color::White;
+
+	return m_image[ ( x + y * m_width ) / 8 ] & static_cast< uint8_t >( 0x80 >> ( x % 8 ) ) ? Color::White :
+																							  Color::Black;
 }
 
 // end: --------------------- Paint2Colors -------------------
@@ -316,6 +320,7 @@ Paint3Colors::Paint3Colors( size_t width, size_t height ) : Paint( width, height
 {
 	m_imageSize = m_width / 2 * m_height;
 	m_image.reserve( m_imageSize );
+	m_image.resize( m_imageSize );
 }
 
 Paint3Colors::~Paint3Colors() {}
@@ -348,7 +353,8 @@ void Paint3Colors::drawAbsolutePixel( size_t x, size_t y, Color color )
 
 Color Paint3Colors::getAbsolutePixel( size_t x, size_t y ) const
 {
-	// About the image data: 4 bits = 1 pixel, doesn’t support Gray scale (can only display black and white). 0000 (binary) stands for a black pixel, 0011 (binary) stands for a white pixel, 0100 (binary) stands for a red pixel.
+	// About the image data: 4 bits = 1 pixel, doesn’t support Gray scale (can only display black and white). 0000
+	// (binary) stands for a black pixel, 0011 (binary) stands for a white pixel, 0100 (binary) stands for a red pixel.
 	// https://www.waveshare.com/wiki/7.5inch_e-Paper_HAT_(B)
 	return Color::White;
 }

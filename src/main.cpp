@@ -49,20 +49,20 @@ int main( int argc, char** argv )
 
 	// start: ------------------- Test -------------------
 
-	auto epd = make_unique< Epd7in5b >( make_unique< EpdWiringPi >( 0 ), 13, 26, 7, 6, 640, 385 );
-	epd->init();
+	//auto epd = make_unique< Epd7in5b >( make_unique< EpdWiringPi >( 0 ), 13, 26, 7, 6, 640, 385 );
+	//epd->init();
 
-	auto painter = make_unique< Paint3Colors >( epd->width(), epd->height() );
+	//auto painter = make_unique< Paint3Colors >( epd->width(), epd->height() );
 
-	painter->clear( Color::White );
+	//painter->clear( Color::Black );
 
-	auto font = painter->createFonter< FontPainterKS0108 >( liberationMono12 );
-	font->drawString( 10, 200, "Hello world !!!", Color::Color1 );
-	//painter->drawFilledCircle( 100, 100, 100, Color::Color1 );
+	//auto font = painter->createFonter< FontPainterKS0108 >( liberationMono12 );
+	//font->drawString( 10, 200, "Hello world !!!", Color::Color1 );
+	////painter->drawFilledCircle( 100, 100, 100, Color::Color1 );
 
-	epd->displayFrame( *painter );
+	//epd->displayFrame( *painter );
 
-	return 0;
+	//return 0;
 	// end: --------------------- Test -------------------
 
 	StatusManager statusManager( xmlPath );

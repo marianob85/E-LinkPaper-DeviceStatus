@@ -104,7 +104,7 @@ std::map< std::string, bool > StatusPing::getDeviceStatusV2() const
 std::unique_ptr< Paint > StatusPing::currentPage() const
 {
 	auto painter = make_unique< Paint2Colors >( m_width, m_height );
-
+	painter->clear( Color::White );
 	auto font = painter->createFonter< FontPainterKS0108 >( liberationMono10 );
 
 	static const string online  = "online";
@@ -128,12 +128,12 @@ std::unique_ptr< Paint > StatusPing::currentPage() const
 			columnOffset += columnWidth;
 		}
 
-		font->drawString( columnOffset + 2, startLine, text, Color::White );
+		font->drawString( columnOffset + 2, startLine, text, Color::Black );
 
 		if( status )
 		{
 			size = font->getStringSize( online );
-			font->drawString( columnOffset + columnWidth - size.width - 2, startLine, online, Color::White );
+			font->drawString( columnOffset + columnWidth - size.width - 2, startLine, online, Color::Black );
 		}
 		else
 		{
