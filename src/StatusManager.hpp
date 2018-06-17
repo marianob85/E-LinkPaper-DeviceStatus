@@ -39,6 +39,7 @@ public:
 	void close();
 
 private:
+	void requestPageRefresh( size_t page, size_t subPage );
 	void refreshPage();
 	unsigned pagesNo() const;
 	unsigned currentPageNo() const;

@@ -60,7 +60,7 @@ bool StatusManager::init()
 
 bool StatusManager::add( std::unique_ptr< StatusPage > statusPage )
 {
-	statusPage->init( std::bind( &StatusManager::setPage, this, m_pages.size(), std::placeholders::_1 ) );
+	statusPage->init( std::bind( &StatusManager::requestPageRefresh, this, m_pages.size(), std::placeholders::_1 ) );
 	m_pages.push_back( move( statusPage ) );
 	m_currentPage = m_pages.begin();
 	return true;
@@ -89,6 +89,12 @@ bool StatusManager::setPage( unsigned page, unsigned subPage )
 void StatusManager::close()
 {
 	m_epd->sleep();
+}
+
+void StatusManager::requestPageRefresh( size_t page, size_t subPage )
+{
+	if( page == currentPageNo() )
+		setPage( page, subPage );
 }
 
 void StatusManager::refreshPage()
@@ -157,7 +163,7 @@ size_t StatusManager::printHeader2()
 	// start: ------------------- Print page -------------------
 	auto sizePage	 = font->getStringSize( page );
 	auto sizePageData = font->getStringSize( pageData );
-	m_painter->drawFilledRectangle( 0, 0, m_epd->width() / 2, height, Color::Black );
+	//m_painter->drawFilledRectangle( 0, 0, m_epd->width() / 2, height, Color::Black );
 	m_painter->drawHorizontalLine( 0, height - 1, m_epd->width(), Color::Black );
 	font->drawString( m_epd->width() - sizePage.width - 2, y, page, Color::Black );
 	font->drawString(
@@ -166,14 +172,14 @@ size_t StatusManager::printHeader2()
 
 	// start: ------------------- Print description -------------------
 	auto description = ( *m_currentPage )->getDescription( 0 );
-	font->drawString( 2, y, description, Color::White );
+	font->drawString( 2, y, description, Color::Black );
 	// end: --------------------- Print description -------------------
 
 	// start: ------------------- Print description2 -------------------
 	description		  = ( *m_currentPage )->getDescription( 1 );
 	auto autoDescSize = font->getStringSize( description );
 	font->drawString(
-		m_epd->width() / 2 - autoDescSize.width - 2, height - autoDescSize.height - y, description, Color::White );
+		m_epd->width() / 2 - autoDescSize.width - 2, height - autoDescSize.height - y, description, Color::Black );
 	// end: --------------------- Print description2 -------------------
 
 	// Print temp

@@ -58,7 +58,7 @@ string StatusPing::getDescription( size_t index ) const
 		break;
 	case 1:
 	{
-		auto status	= getDeviceStatusV2( false );
+		auto status	= getDeviceStatusV2();
 		auto available = std::count_if(
 			status.begin(), status.end(), []( const std::pair< string, bool >& status ) { return status.second; } );
 
@@ -84,8 +84,10 @@ void StatusPing::pinger()
 {
 	while( true )
 	{
+		bool changed = false;
 		for( auto device : m_devices )
 		{
+
 			PingResult pingResult;
 			Ping ping   = Ping();
 			bool status = ping.ping( device.Ip.c_str(), m_pingCount, pingResult );
@@ -97,14 +99,22 @@ void StatusPing::pinger()
 			std::lock_guard< std::mutex > lock( m_statusMutex );
 
 			if( m_status.find( device.Ip ) != m_status.end() )
-				m_status.at( device.Ip ) |= status;
+			{
+				auto last				 = m_status.at( device.Ip );
+				m_status.at( device.Ip ) = status;
+				changed |= last != status;
+			}
+
 			else
 				m_status[ device.Ip ] = status;
 		}
+
+		if( changed )
+			std::async( std::launch::async, m_refresh, 0 );
 	}
 }
 
-std::map< std::string, bool > StatusPing::getDeviceStatusV2( bool clear ) const
+std::map< std::string, bool > StatusPing::getDeviceStatusV2() const
 {
 	while( m_devices.size() != m_status.size() )
 		this_thread::sleep_for( 1s );
@@ -112,8 +122,6 @@ std::map< std::string, bool > StatusPing::getDeviceStatusV2( bool clear ) const
 	std::lock_guard< std::mutex > lock( m_statusMutex );
 
 	auto retVal = m_status;
-	if( clear )
-		m_status.clear();
 	return retVal;
 }
 

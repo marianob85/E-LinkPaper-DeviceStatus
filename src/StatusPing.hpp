@@ -20,7 +20,7 @@ public:
 
 private:
 	void pinger();
-	std::map< std::string, bool > getDeviceStatusV2( bool clear = false ) const;
+	std::map< std::string, bool > getDeviceStatusV2() const;
 
 private:
 	unsigned m_pingCount{ 4 };

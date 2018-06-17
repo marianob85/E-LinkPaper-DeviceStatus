@@ -12,7 +12,7 @@ public:
 		 uint8_t bussyPin,
 		 size_t width,
 		 size_t height );
-	~Epd() = default;
+	virtual ~Epd() = default;
 
 	virtual bool init( void )								 = 0;
 	virtual void waitUntilIdle( void )						 = 0;
