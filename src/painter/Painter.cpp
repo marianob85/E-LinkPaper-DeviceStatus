@@ -104,6 +104,15 @@ bool Paint::merge( size_t offsetX, size_t offsetY, std::unique_ptr< Paint > pain
 	return true;
 }
 
+bool Paint::merge( size_t offsetX, size_t offsetY, std::unique_ptr< PaintMerger > mergeObject )
+{
+	for( size_t x = 0; x < mergeObject->width(); x++ )
+		for( size_t y = 0; y < mergeObject->height(); y++ )
+			drawAbsolutePixel( offsetX + x, offsetY + y, mergeObject->getAbsolutePixel( x, y ) );
+
+	return true;
+}
+
 Paint::operator const uint8_t*() const
 {
 	return m_image.data();

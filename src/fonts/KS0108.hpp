@@ -35,3 +35,6 @@ extern FontData liberationMono10;
 extern FontData liberationMono10Bold;
 extern FontData liberationMono11Bold;
 extern FontData liberationMono12;
+extern FontData fontDigital_7_36Bold;
+extern FontData fontArial28;
+extern FontData fontEbrima28;

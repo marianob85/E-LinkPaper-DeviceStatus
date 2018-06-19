@@ -34,6 +34,12 @@
     <Filter Include="Source\e-link\Interface">
       <UniqueIdentifier>{bbdd6f57-d895-4cb7-bc60-5709cd096de5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\image">
+      <UniqueIdentifier>{0f8fbbc0-2b53-4a1c-8235-654e6fb3db0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\image\data">
+      <UniqueIdentifier>{e0104313-8771-4e63-9695-224e3f04a4a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -102,6 +108,24 @@
     <ClCompile Include="..\src\e-link\epd.cpp">
       <Filter>Source\e-link\Display</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\image\Image.cpp">
+      <Filter>Source\image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\image\Data\icons8-humidity-32.cpp">
+      <Filter>Source\image\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\image\Data\icons8-temperature-30.cpp">
+      <Filter>Source\image\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Digital-7-36Bold.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Arial28.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fonts\KS0108\Ebrima28.cpp">
+      <Filter>Source\fonts\KS0108</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
@@ -157,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="..\src\e-link\epd.hpp">
       <Filter>Source\e-link\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\image\Image.hpp">
+      <Filter>Source\image</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@
 #include <KS0108.hpp>
 #include <epd7in5b.hpp>
 #include "StatusManager.hpp"
+#include <Image.hpp>
 
 using namespace std;
 
@@ -163,7 +164,7 @@ size_t StatusManager::printHeader2()
 	// start: ------------------- Print page -------------------
 	auto sizePage	 = font->getStringSize( page );
 	auto sizePageData = font->getStringSize( pageData );
-	//m_painter->drawFilledRectangle( 0, 0, m_epd->width() / 2, height, Color::Black );
+	// m_painter->drawFilledRectangle( 0, 0, m_epd->width() / 2, height, Color::Black );
 	m_painter->drawHorizontalLine( 0, height - 1, m_epd->width(), Color::Black );
 	font->drawString( m_epd->width() - sizePage.width - 2, y, page, Color::Black );
 	font->drawString(
@@ -182,13 +183,24 @@ size_t StatusManager::printHeader2()
 		m_epd->width() / 2 - autoDescSize.width - 2, height - autoDescSize.height - y, description, Color::Black );
 	// end: --------------------- Print description2 -------------------
 
+	auto courierNew28Bold = m_painter->createFonter< FontPainterKS0108 >( fontEbrima28 );
+
+	// start: ------------------- Temperature -------------------
+
+	auto image = make_unique< ImageXX >( icons8temperature30 );
+	m_painter->merge( m_epd->width() / 2, 5, move( image ) );
+
 	// Print temp
 	if( m_tempSensor )
 	{
 		char text[ 20 ];
-		sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0 );
-		font->drawString( 170, y, text, Color::White );
+		sprintf( text, "%3.1f%cc", m_tempSensor->getTemp(), 0xB0 );
+		courierNew28Bold->drawString( m_epd->width() / 2 + 30, 0, text, Color::Color1 );
 	}
+
+	image = make_unique< ImageXX >( icons8humidity32 );
+	m_painter->merge( m_epd->width() / 2 + 150, 5, move( image ) );
+	// end: --------------------- Temperature -------------------
 
 	return height;
 }

@@ -31,6 +31,7 @@ public:
 	void drawCircle( size_t x, size_t y, size_t radius, Color color );
 	void drawFilledCircle( size_t x, size_t y, size_t radius, Color color );
 	bool merge( size_t offsetX, size_t offsetY, std::unique_ptr< Paint > painter );
+	bool merge( size_t offsetX, size_t offsetY, std::unique_ptr< PaintMerger > mergeObject );
 
 	template< class Fonter >
 	std::shared_ptr< FontPainter > createFonter( FontData fontData )
