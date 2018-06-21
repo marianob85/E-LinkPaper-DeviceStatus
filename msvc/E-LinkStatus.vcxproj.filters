@@ -43,6 +43,9 @@
     <Filter Include="Library\wiringPi">
       <UniqueIdentifier>{9a886dbd-2f40-4dbb-b91c-5ed80eb50b8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Library\bcm2835">
+      <UniqueIdentifier>{fa8f2cb1-fba1-4e06-a388-b3a779025a8a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -231,6 +234,9 @@
     <ClCompile Include="..\src\lib\wiringPi\wiringPi\wpiExtensions.c">
       <Filter>Library\wiringPi</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\lib\bcm2835\bcm2835.c">
+      <Filter>Library\bcm2835</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
@@ -400,6 +406,9 @@
     </ClInclude>
     <ClInclude Include="..\src\lib\wiringPi\version.h">
       <Filter>Library\wiringPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\bcm2835\bcm2835.h">
+      <Filter>Library\bcm2835</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
