@@ -3,9 +3,14 @@ bin_PROGRAMS = eLinkDisplayStatus
 eLinkDisplayStatus_CXXFLAGS = -I"DS18B20"
 eLinkDisplayStatus_CXXFLAGS += -I"e-link"
 eLinkDisplayStatus_CXXFLAGS += -I"fonts"
-eLinkDisplayStatus_CXXFLAGS += -I"lib/pugi"
+eLinkDisplayStatus_CXXFLAGS += -I"image"
 eLinkDisplayStatus_CXXFLAGS += -I"painter"
 eLinkDisplayStatus_CXXFLAGS += -I"ping"
+eLinkDisplayStatus_CXXFLAGS += -I"lib/pugi"
+eLinkDisplayStatus_CXXFLAGS += -I"lib/bcm2835"
+eLinkDisplayStatus_CXXFLAGS += -I"lib/wiringPi"
+eLinkDisplayStatus_CXXFLAGS += -I"lib/wiringPi/wiringPi"
+eLinkDisplayStatus_CXXFLAGS += -I"lib/wiringPi/wiringPiD"
 eLinkDisplayStatus_CXXFLAGS += -W"no-psabi"
 
 eLinkDisplayStatus_SOURCES = StatusManager.cpp \
