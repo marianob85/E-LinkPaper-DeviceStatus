@@ -42,26 +42,26 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				painter/PainterFont.cpp \
 				painter/Painter.cpp \
 				ping/ping.cpp \
-				image\Image.cpp \
-				image\Data\icons8-humidity-32.cpp \
-				image\Data\icons8-temperature-30.cpp \
-				lib\wiringPi\wiringPi\wiringPi.c						\
-				lib\wiringPi\wiringPi\wiringSerial.c lib\wiringPi\wiringPi\wiringShift.c				\
-				lib\wiringPi\wiringPi\piHiPri.c lib\wiringPi\wiringPi\piThread.c					\
-				lib\wiringPi\wiringPi\wiringPiSPI.c lib\wiringPi\wiringPi\wiringPiI2C.c				\
-				lib\wiringPi\wiringPi\softPwm.c lib\wiringPi\wiringPi\softTone.c					\
-				lib\wiringPi\wiringPi\mcp23008.c lib\wiringPi\wiringPi\mcp23016.c lib\wiringPi\wiringPi\mcp23017.c			\
-				lib\wiringPi\wiringPi\mcp23s08.c lib\wiringPi\wiringPi\mcp23s17.c					\
-				lib\wiringPi\wiringPi\sr595.c							\
-				lib\wiringPi\wiringPi\pcf8574.c lib\wiringPi\wiringPi\pcf8591.c					\
-				lib\wiringPi\wiringPi\mcp3002.c lib\wiringPi\wiringPi\mcp3004.c lib\wiringPi\wiringPi\mcp4802.c lib\wiringPi\wiringPi\mcp3422.c			\
-				lib\wiringPi\wiringPi\max31855.c lib\wiringPi\wiringPi\max5322.c lib\wiringPi\wiringPi\ads1115.c				\
-				lib\wiringPi\wiringPi\sn3218.c						\
-				lib\wiringPi\wiringPi\bmp180.c lib\wiringPi\wiringPi\htu21d.c lib\wiringPi\wiringPi\ds18b20.c lib\wiringPi\wiringPi\rht03.c			\
-				lib\wiringPi\wiringPi\drcSerial.c lib\wiringPi\wiringPi\drcNet.c					\
-				lib\wiringPi\wiringPi\pseudoPins.c						\
-				lib\wiringPi\wiringPi\wpiExtensions.c \
-				lib\bcm2835\bcm2835.c 
+				image/Image.cpp \
+				image/Data/icons8-humidity-32.cpp \
+				image/Data/icons8-temperature-30.cpp \
+				lib/wiringPi/wiringPi/wiringPi.c						\
+				lib/wiringPi/wiringPi/wiringSerial.c lib/wiringPi/iringPi/wiringShift.c				\
+				lib/wiringPi/wiringPi/piHiPri.c lib/wiringPi\wiringPi/piThread.c					\
+				lib/wiringPi/wiringPi/wiringPiSPI.c lib/wiringPi/wiringPi/wiringPiI2C.c				\
+				lib/wiringPi/wiringPi/softPwm.c lib/wiringPi/wiringPi/softTone.c					\
+				lib/wiringPi/wiringPi/mcp23008.c lib/wiringPi/wiringPi/mcp23016.c lib/wiringPi/wiringPi/mcp23017.c			\
+				lib/wiringPi/wiringPi/mcp23s08.c lib/wiringPi/wiringPi/mcp23s17.c					\
+				lib/wiringPi/wiringPi/sr595.c							\
+				lib/wiringPi/wiringPi/pcf8574.c lib/wiringPi/wiringPi/pcf8591.c					\
+				lib/wiringPi/wiringPi/mcp3002.c lib/wiringPi/wiringPi/mcp3004.c lib/wiringPi/wiringPi/mcp4802.c lib/wiringPi/wiringPi/mcp3422.c			\
+				lib/wiringPi/wiringPi/max31855.c lib/wiringPi/wiringPi/max5322.c lib/wiringPi/wiringPi/ads1115.c				\
+				lib/wiringPi/wiringPi/sn3218.c						\
+				lib/wiringPi/wiringPi/bmp180.c lib/wiringPi/wiringPi/htu21d.c lib/wiringPi/wiringPi/ds18b20.c lib/wiringPi/wiringPi/rht03.c			\
+				lib/wiringPi/wiringPi/drcSerial.c lib/wiringPi/wiringPi/drcNet.c					\
+				lib/wiringPi/wiringPi/pseudoPins.c						\
+				lib/wiringPi/wiringPi/wpiExtensions.c \
+				lib/bcm2835/bcm2835.c 
 
 eLinkDisplayStatus_dir = /usr/local/etc
 eLinkDisplayStatus__DATA = ../E-LinkStatusConfig.xml
