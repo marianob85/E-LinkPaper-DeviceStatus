@@ -46,8 +46,8 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				image/Data/icons8-humidity-32.cpp \
 				image/Data/icons8-temperature-30.cpp \
 				lib/wiringPi/wiringPi/wiringPi.c						\
-				lib/wiringPi/wiringPi/wiringSerial.c lib/wiringPi/iringPi/wiringShift.c				\
-				lib/wiringPi/wiringPi/piHiPri.c lib/wiringPi\wiringPi/piThread.c					\
+				lib/wiringPi/wiringPi/wiringSerial.c lib/wiringPi/wiringPi/wiringShift.c				\
+				lib/wiringPi/wiringPi/piHiPri.c lib/wiringPi/wiringPi/piThread.c					\
 				lib/wiringPi/wiringPi/wiringPiSPI.c lib/wiringPi/wiringPi/wiringPiI2C.c				\
 				lib/wiringPi/wiringPi/softPwm.c lib/wiringPi/wiringPi/softTone.c					\
 				lib/wiringPi/wiringPi/mcp23008.c lib/wiringPi/wiringPi/mcp23016.c lib/wiringPi/wiringPi/mcp23017.c			\
