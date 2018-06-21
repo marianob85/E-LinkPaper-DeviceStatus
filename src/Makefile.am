@@ -62,5 +62,5 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				lib/wiringPi/wiringPi/wpiExtensions.c \
 				lib/bcm2835/bcm2835.c 
 
-eLinkDisplayStatus_dir = /usr/local/etc
-eLinkDisplayStatus__DATA = ../E-LinkStatusConfig.xml
+#eLinkDisplayStatus_dir = /usr/local/etc
+#eLinkDisplayStatus__DATA = ../E-LinkStatusConfig.xml

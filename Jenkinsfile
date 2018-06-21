@@ -10,9 +10,11 @@ pipeline
 	agent { node { label 'linuxarmhf && development' } }
 	stages
 	{
-		stage('Build'){
+		stage('Build autoconf'){
 			steps {
 				sh '''
+					cp -R src autoconf/src/
+					cd autoconf
 					autoreconf --install --force
 					./configure
 					make
