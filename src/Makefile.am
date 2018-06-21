@@ -29,7 +29,7 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				fonts/KS0108/Arial28.cpp \
 				fonts/KS0108/Digital-7-36Bold.cpp \
 				fonts/KS0108/Ebrima28.cpp \
-				fonts/KS0108/Georgia12.cpp.cpp \
+				fonts/KS0108/Georgia12.cpp \
 				fonts/KS0108/Liberation_Mono12.cpp \
 				fonts/KS0108/Liberation_Mono11Bold.cpp \
 				fonts/KS0108/Liberation_Mono10Bold.cpp \
