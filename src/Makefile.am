@@ -12,6 +12,9 @@ eLinkDisplayStatus_CXXFLAGS += -I"lib/wiringPi"
 eLinkDisplayStatus_CXXFLAGS += -I"lib/wiringPi/wiringPi"
 eLinkDisplayStatus_CXXFLAGS += -I"lib/wiringPi/wiringPiD"
 eLinkDisplayStatus_CXXFLAGS += -W"no-psabi"
+eLinkDisplayStatus_CXXFLAGS += -D_GNU_SOURCE
+eLinkDisplayStatus_CXXFLAGS += -D_POSIX_C_SOURCE=200112L
+
 
 eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				StatusPing.cpp \
@@ -23,6 +26,10 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				e-link/epd7in5b.cpp \
 				e-link/epd.cpp \
 				fonts/KS0108.cpp \
+				fonts/KS0108/Arial28.cpp \
+				fonts/KS0108/Digital-7-36Bold.cpp \
+				fonts/KS0108/Ebrima28.cpp \
+				fonts/KS0108/Georgia12.cpp.cpp \
 				fonts/KS0108/Liberation_Mono12.cpp \
 				fonts/KS0108/Liberation_Mono11Bold.cpp \
 				fonts/KS0108/Liberation_Mono10Bold.cpp \
@@ -34,7 +41,10 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				lib/pugi/pugixml.cpp \
 				painter/PainterFont.cpp \
 				painter/Painter.cpp \
-				ping/ping.cpp
+				ping/ping.cpp \
+				image\Image.cpp \
+				image\Data\icons8-humidity-32.cpp \
+				image\Data\icons8-temperature-30.cpp \
 				lib\wiringPi\wiringPi\wiringPi.c						\
 				lib\wiringPi\wiringPi\wiringSerial.c lib\wiringPi\wiringPi\wiringShift.c				\
 				lib\wiringPi\wiringPi\piHiPri.c lib\wiringPi\wiringPi\piThread.c					\
