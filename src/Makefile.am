@@ -37,7 +37,6 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				fonts/KS0108/Liberation_Mono9Bold.cpp \
 				fonts/KS0108/Liberation_Mono9.cpp \
 				fonts/KS0108/Liberation_Mono8.cpp \
-				fonts/KS0108/Georgia12.cpp \
 				lib/pugi/pugixml.cpp \
 				painter/PainterFont.cpp \
 				painter/Painter.cpp \
