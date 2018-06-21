@@ -14,7 +14,7 @@ AC_PROG_CC
 AC_LANG(C++)
 
 # Additional flags
-CXXFLAGS="-std=c++14 -O2 -Wall"
+CXXFLAGS="-std=c++14 -O3 -Wall"
 LDFLAGS="-Wno-undefined"
 
 # Checks for libraries.

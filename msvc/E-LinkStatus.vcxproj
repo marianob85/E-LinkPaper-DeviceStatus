@@ -62,6 +62,40 @@
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|x64'">TurnOffAllWarnings</WarningLevel>
     </ClCompile>
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\ads1115.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\bmp180.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\drcNet.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\drcSerial.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\ds18b20.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\htu21d.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\max31855.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\max5322.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23008.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23016.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23017.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23s08.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23s17.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3002.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3004.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3422.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp4802.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pcf8574.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pcf8591.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\piHiPri.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\piThread.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pseudoPins.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\rht03.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\sn3218.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softPwm.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softServo.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softTone.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\sr595.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPi.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPiI2C.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPiSPI.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringSerial.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringShift.c" />
+    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wpiExtensions.c" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\painter\Painter.cpp" />
     <ClCompile Include="..\src\painter\PainterFont.cpp" />
@@ -86,6 +120,43 @@
     <ClInclude Include="..\src\image\Image.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugiconfig.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugixml.hpp" />
+    <ClInclude Include="..\src\lib\wiringPi\version.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPiD\drcNetCmd.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\ads1115.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\bmp180.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\drcNet.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\drcSerial.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\ds18b20.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\htu21d.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\max31855.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\max5322.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23008.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23016.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23016reg.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23017.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23s08.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23s17.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23x08.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23x0817.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3002.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3004.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3422.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp4802.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pcf8574.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pcf8591.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pseudoPins.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\rht03.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\sn3218.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softPwm.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softServo.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softTone.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\sr595.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPi.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPiI2C.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPiSPI.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringSerial.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringShift.h" />
+    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wpiExtensions.h" />
     <ClInclude Include="..\src\painter\FontDef.hpp" />
     <ClInclude Include="..\src\painter\Painter.hpp" />
     <ClInclude Include="..\src\painter\PainterDef.hpp" />
@@ -172,7 +243,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
-      <LibraryDependencies>bcm2835;wiringPi;pthread;stdc++fs</LibraryDependencies>
+      <LibraryDependencies>bcm2835;pthread;stdc++fs;crypt;rt</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -192,7 +263,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <Link>
-      <LibraryDependencies>bcm2835;wiringPi;pthread;stdc++fs</LibraryDependencies>
+      <LibraryDependencies>bcm2835;pthread;stdc++fs;crypt;rt</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -212,7 +283,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <Link>
-      <LibraryDependencies>bcm2835;wiringPi;pthread;stdc++fs</LibraryDependencies>
+      <LibraryDependencies>bcm2835;pthread;stdc++fs;crypt;rt</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -223,6 +294,7 @@
       <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;..\src\image;..\src\image\data;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
+      <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -242,7 +314,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
     <Link>
-      <LibraryDependencies>bcm2835;wiringPi;pthread;stdc++fs</LibraryDependencies>
+      <LibraryDependencies>bcm2835;pthread;stdc++fs;crypt;rt</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
       <Command>
@@ -254,6 +326,7 @@
       <CppAdditionalWarning>%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|x64'">
@@ -275,8 +348,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\lib\pugi;..\src\image;..\src\image\data;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppLanguageStandard>c++1y</CppLanguageStandard>
+      <CppLanguageStandard>c++14</CppLanguageStandard>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
+      <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -295,6 +369,7 @@
       <CAdditionalWarning />
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <CLanguageStandard>c11</CLanguageStandard>
+      <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
