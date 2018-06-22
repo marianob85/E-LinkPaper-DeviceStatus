@@ -31,7 +31,7 @@ pipeline
 		
 		stage('Archive'){
 			steps {
-				archiveArtifacts artifacts: 'src/eLinkDisplayStatus', onlyIfSuccessful: true
+				archiveArtifacts artifacts: 'autoconf/src/eLinkDisplayStatus', onlyIfSuccessful: true
 			}
 		}
 		
