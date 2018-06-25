@@ -281,8 +281,10 @@
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|x64'">TurnOffAllWarnings</WarningLevel>
     </ClCompile>
+    <ClCompile Include="..\src\SI7021\SI7021.cpp" />
     <ClCompile Include="..\src\StatusManager.cpp" />
     <ClCompile Include="..\src\StatusPing.cpp" />
+    <ClCompile Include="..\src\TempProvider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\DS18B20\DS18B20.h" />
@@ -339,8 +341,10 @@
     <ClInclude Include="..\src\painter\PainterDef.hpp" />
     <ClInclude Include="..\src\painter\PainterFont.hpp" />
     <ClInclude Include="..\src\ping\ping.h" />
+    <ClInclude Include="..\src\SI7021\SI7021.hpp" />
     <ClInclude Include="..\src\StatusManager.hpp" />
     <ClInclude Include="..\src\StatusPing.hpp" />
+    <ClInclude Include="..\src\TempProvider.hpp" />
     <ClInclude Include="..\src\Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -468,7 +472,7 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
@@ -499,7 +503,7 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
@@ -524,7 +528,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++14</CppLanguageStandard>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
@@ -539,7 +543,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>
       </CppAdditionalWarning>
       <AdditionalOptions>-Wno-sign-conversion %(AdditionalOptions)</AdditionalOptions>

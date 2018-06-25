@@ -13,6 +13,7 @@
 #include <epdWiringPi.hpp>
 #include <epd7in5b.hpp>
 #include <wiringPiI2C.h>
+#include <bcm2835.h>
 // end: --------------------- Test -------------------
 
 using namespace std;
@@ -41,43 +42,73 @@ void sig_handler( int sig )
 	-----------------------------------------------------------------------*/
 #define SI7021_DEFAULT_ADDRESS ( 0x40 )
 
-#define SI7021_MEASRH_HOLD_CMD 0xE5
-#define SI7021_MEASRH_NOHOLD_CMD 0xF5
-#define SI7021_MEASTEMP_HOLD_CMD 0xE3
-#define SI7021_MEASTEMP_NOHOLD_CMD 0xF3
-#define SI7021_READPREVTEMP_CMD 0xE0
-#define SI7021_RESET_CMD 0xFE
-#define SI7021_WRITERHT_REG_CMD 0xE6
-#define SI7021_READRHT_REG_CMD 0xE7
-#define SI7021_WRITEHEATER_REG_CMD 0x51
-#define SI7021_READHEATER_REG_CMD 0x11
-#define SI7021_ID1_CMD 0xFA0F
-#define SI7021_ID2_CMD 0xFCC9
-#define SI7021_FIRMVERS_CMD 0x84B8
+static const uint8_t SI7021_MEASRH_HOLD_CMD		= 0xE5;
+static const uint8_t SI7021_MEASRH_NOHOLD_CMD   = 0xF5;
+static const uint8_t SI7021_MEASTEMP_HOLD_CMD   = 0xE3;
+static const uint8_t SI7021_MEASTEMP_NOHOLD_CMD = 0xF3;
+static const uint8_t SI7021_READPREVTEMP_CMD	= 0xE0;
+static const uint8_t SI7021_RESET_CMD			= 0xFE;
+static const uint8_t SI7021_WRITERHT_REG_CMD	= 0xE6;
+static const uint8_t SI7021_READRHT_REG_CMD		= 0xE7;
+static const uint8_t SI7021_WRITEHEATER_REG_CMD = 0x51;
+static const uint8_t SI7021_READHEATER_REG_CMD  = 0x11;
+static const uint16_t SI7021_ID1_CMD			= 0xFA0F;
+static const uint16_t SI7021_ID2_CMD			= 0xFCC9;
+static const uint16_t SI7021_FIRMVERS_CMD		= 0x84B8;
+
+uint16_t crc( uint8_t* data, size_t len )
+{
+	uint16_t crc = 0;
+	for( size_t index = 0; index < len; ++index )
+	{
+		crc ^= *( data + index );
+		for( uint8_t i = 0; i < 8; ++i )
+		{
+			if( crc & 0x80 )
+			{
+				crc <<= 1;
+				crc ^= 0x131;
+			}
+			else
+			{
+				crc <<= 1;
+			}
+		}
+	}
+	return crc;
+}
 
 void test()
 {
-	auto fd  = wiringPiI2CSetup( 0x40 );
-	auto ret = wiringPiI2CWrite( fd, SI7021_RESET_CMD );
-	//ret		 = wiringPiI2CWrite( fd, SI7021_MEASTEMP_HOLD_CMD );
-	//std::this_thread::sleep_for( std::chrono::milliseconds( 300 ) );
-	//unsigned int a = wiringPiI2CRead( fd );
-	//std::cout << a << endl;
-	//unsigned int b = wiringPiI2CRead( fd );
-	//std::cout << b << endl;
-	//unsigned int c = wiringPiI2CRead( fd );
-	//std::cout << c << endl;
 
-	auto temp = wiringPiI2CReadReg8( fd, SI7021_MEASTEMP_HOLD_CMD );
+	if( !bcm2835_init() )
+		return;
 
-	//unsigned int temp = a;
-	//temp <<= 8;
-	//temp |= b;
+	bcm2835_i2c_set_baudrate( 10000 );
 
-	float temperature = temp;
-	temperature *= 175.72;
-	temperature /= 65536;
-	temperature -= 46.85;
+	bcm2835_i2c_begin();
+	bcm2835_i2c_setSlaveAddress( SI7021_DEFAULT_ADDRESS );
+
+	// The I2C address of PCF8591 is 0x48.
+
+	bcm2835_i2c_write( ( char* )&SI7021_RESET_CMD, 1 );
+	bcm2835_i2c_write( ( char* )&SI7021_MEASTEMP_HOLD_CMD, 1 );
+	std::this_thread::sleep_for( std::chrono::milliseconds( 300 ) );
+	uint8_t read[ 3 ];
+	bcm2835_i2c_read( ( char* )read, 3 );
+
+	bcm2835_i2c_end();
+
+	unsigned int temp = read[ 0 ];
+	temp <<= 8;
+	temp |= read[ 1 ];
+
+	// auto crcCalc = crc( read, 2 );
+
+	float temperature = float( temp );
+	temperature *= 175.72f;
+	temperature /= 65536.0f;
+	temperature -= 46.85f;
 }
 
 int main( int argc, char** argv )

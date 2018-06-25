@@ -46,6 +46,9 @@
     <Filter Include="Library\bcm2835">
       <UniqueIdentifier>{fa8f2cb1-fba1-4e06-a388-b3a779025a8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\SI7021">
+      <UniqueIdentifier>{3219096a-dc3b-4ab8-92d4-e25bba0318d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -237,6 +240,12 @@
     <ClCompile Include="..\src\lib\bcm2835\bcm2835.c">
       <Filter>Library\bcm2835</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\TempProvider.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SI7021\SI7021.cpp">
+      <Filter>Source\SI7021</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
@@ -409,6 +418,12 @@
     </ClInclude>
     <ClInclude Include="..\src\lib\bcm2835\bcm2835.h">
       <Filter>Library\bcm2835</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TempProvider.hpp">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SI7021\SI7021.hpp">
+      <Filter>Source\SI7021</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -38,12 +38,8 @@ StatusManager::StatusManager( std::experimental::filesystem::path xmlPath )
 
 	m_painter = make_unique< Paint3Colors >( m_epd->width(), m_epd->height() );
 
-	DS18B20Mgr ds18B20Mgr( BUS );
-	if( ds18B20Mgr.count() > 0 )
-	{
-		m_tempSensor = make_unique< DS18B20 >( ds18B20Mgr[ 0 ] );
-		cout << "Found DS18B20 sensor. ID: " << m_tempSensor->id();
-	}
+	m_temperature
+		= make_unique< TempProvider >( std::bind( &StatusManager::onTemperature, this, std::placeholders::_1 ) );
 }
 
 StatusManager::~StatusManager() {}
@@ -139,12 +135,12 @@ size_t StatusManager::printHeader()
 	font->drawString( 2, y, description, Color::White );
 
 	// Print temp
-	if( m_tempSensor )
-	{
-		char text[ 20 ];
-		sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0 );
-		font->drawString( 170, y, text, Color::White );
-	}
+	// if( m_tempSensor )
+	//{
+	//	char text[ 20 ];
+	//	sprintf( text, "T:%4.2f%cC", m_tempSensor->getTemp(), 0xB0 );
+	//	font->drawString( 170, y, text, Color::White );
+	//}
 
 	return height;
 }
@@ -191,10 +187,10 @@ size_t StatusManager::printHeader2()
 	m_painter->merge( m_epd->width() / 2, 5, move( image ) );
 
 	// Print temp
-	if( m_tempSensor )
+	if( m_temperature->isAvailable() )
 	{
 		char text[ 20 ];
-		sprintf( text, "%3.1f%cc", m_tempSensor->getTemp(), 0xB0 );
+		sprintf( text, "%3.1f%cc", m_temperature->getData(), 0xB0 );
 		courierNew28Bold->drawString( m_epd->width() / 2 + 30, 0, text, Color::Color1 );
 	}
 
@@ -203,6 +199,11 @@ size_t StatusManager::printHeader2()
 	// end: --------------------- Temperature -------------------
 
 	return height;
+}
+
+void StatusManager::onTemperature( float temp ) 
+{
+	refreshPage();
 }
 
 unsigned StatusManager::pagesNo() const

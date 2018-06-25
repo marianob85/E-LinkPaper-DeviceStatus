@@ -3,10 +3,10 @@
 #include <vector>
 #include <mutex>
 #include <experimental/filesystem>
-#include <DS18B20.h>
 #include <epd.hpp>
 #include <Painter.hpp>
 #include "Timer.hpp"
+#include "TempProvider.hpp"
 
 class StatusPage
 {
@@ -46,6 +46,7 @@ private:
 
 	size_t printHeader();
 	size_t printHeader2();
+	void onTemperature( float temp );
 
 private:
 	using ContainerT = std::vector< std::unique_ptr< StatusPage > >;
@@ -53,6 +54,7 @@ private:
 	ContainerT::const_iterator m_currentPage;
 	std::unique_ptr< Epd > m_epd;
 	std::unique_ptr< Paint > m_painter;
-	std::unique_ptr< DS18B20 > m_tempSensor;
+
 	std::mutex m_refreshMutex;
+	std::unique_ptr< TempProvider > m_temperature;
 };
