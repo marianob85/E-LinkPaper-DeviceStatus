@@ -11,8 +11,8 @@ public:
 	EnvironmentDataProvider( std::function< void( float ) > callback );
 	virtual ~EnvironmentDataProvider() = default;
 
-	virtual float getData() const	= 0;
-	virtual bool isAvailable() const = 0;
+	virtual std::pair< float, bool > getData() const = 0;
+	virtual bool isAvailable() const				 = 0;
 
 protected:
 	std::function< void( float ) > m_callback;
@@ -26,7 +26,7 @@ public:
 	TempProvider( std::function< void( float ) > callback );
 
 	// start: ------------------- EnvironmentDataProvider -------------------
-	virtual float getData() const override;
+	virtual std::pair< float, bool > getData() const override;
 	virtual bool isAvailable() const override;
 	// end: --------------------- EnvironmentDataProvider -------------------
 private:
@@ -34,6 +34,7 @@ private:
 	bool createSI7021();
 
 	void threadWatcherDS18B20();
+	void threadWatcherSI7021();
 
 private:
 	std::unique_ptr< DS18B20 > m_DS18B20Sensor;

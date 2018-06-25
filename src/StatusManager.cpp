@@ -183,25 +183,37 @@ size_t StatusManager::printHeader2()
 
 	// start: ------------------- Temperature -------------------
 
-	auto image = make_unique< ImageXX >( icons8temperature30 );
-	m_painter->merge( m_epd->width() / 2, 5, move( image ) );
-
 	// Print temp
 	if( m_temperature->isAvailable() )
 	{
 		char text[ 20 ];
-		sprintf( text, "%3.1f%cc", m_temperature->getData(), 0xB0 );
-		courierNew28Bold->drawString( m_epd->width() / 2 + 30, 0, text, Color::Color1 );
+		auto image = make_unique< ImageXX >( icons8temperature30 );
+		m_painter->merge( m_epd->width() / 2, 5, move( image ) );
+
+		auto data = m_temperature->getData();
+		if( data.second )
+		{
+			sprintf( text, "%3.1f%cc", data.first, 0xB0 );
+			courierNew28Bold->drawString( m_epd->width() / 2 + 30, 0, text, Color::Color1 );
+		}
+		else
+		{
+			courierNew28Bold->drawString( m_epd->width() / 2 + 30, 0, "err", Color::Color1 );
+		}
 	}
 
-	image = make_unique< ImageXX >( icons8humidity32 );
-	m_painter->merge( m_epd->width() / 2 + 150, 5, move( image ) );
 	// end: --------------------- Temperature -------------------
+
+	// start: ------------------- humidity -------------------
+
+	auto image = make_unique< ImageXX >( icons8humidity32 );
+	m_painter->merge( m_epd->width() / 2 + 150, 5, move( image ) );
+	// end: --------------------- humidity -------------------
 
 	return height;
 }
 
-void StatusManager::onTemperature( float temp ) 
+void StatusManager::onTemperature( float temp )
 {
 	refreshPage();
 }
