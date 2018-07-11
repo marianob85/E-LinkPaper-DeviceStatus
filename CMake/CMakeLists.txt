@@ -6,6 +6,10 @@ cmake_minimum_required(VERSION 3.7)
 # Set the project name
 project (eLinkDisplayStatus)
 
+add_definitions(-W -std=c++14 -O3)
+
+add_compile_options("-Wno-undefined")
+
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
 		../src/StatusManager.cpp 
