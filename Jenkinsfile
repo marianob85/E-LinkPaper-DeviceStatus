@@ -13,7 +13,6 @@ pipeline
 		stage('Build autoconf'){
 			steps {
 				sh '''
-					cp -R src autoconf/src/
 					cd autoconf
 					autoreconf --install --force
 					./configure
