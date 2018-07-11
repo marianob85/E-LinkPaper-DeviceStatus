@@ -6,8 +6,14 @@ cmake_minimum_required(VERSION 3.7)
 # Set the project name
 project (eLinkDisplayStatus)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+
 set(CMAKE_CXX_STANDARD 14)
-add_definitions(-W -O3)
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined" )
+set(CMAKE_CXX_FLAGS "-W")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
