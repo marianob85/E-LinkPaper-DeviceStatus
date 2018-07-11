@@ -12,14 +12,12 @@ pipeline
 	{
 		stage('Build autoconf'){
 			steps {
-				cleanWs()
 				sh '''
 					cd autoconf
 					autoreconf --install --force
 					./configure
 					make
 				'''
-
 			}
 		}
 		stage('Package'){
@@ -32,12 +30,7 @@ pipeline
 		stage('Archive'){
 			steps {
 				archiveArtifacts artifacts: 'autoconf/src/eLinkDisplayStatus', onlyIfSuccessful: true
-			}
-		}
-		
-		stage('CleanUp'){
-			steps {
-				deleteDir()
+				cleanWs()
 			}
 		}
 	}
