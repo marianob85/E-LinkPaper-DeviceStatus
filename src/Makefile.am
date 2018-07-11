@@ -19,6 +19,7 @@ eLinkDisplayStatus_CXXFLAGS += -D_POSIX_C_SOURCE=200112L
 eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				StatusPing.cpp \
 				main.cpp \
+				DataProvider.cpp \
 				DS18B20/DS18B20.cpp \
 				e-link/epdWiringPi.cpp \
 				e-link/epdBcm2835.cpp \
@@ -44,6 +45,7 @@ eLinkDisplayStatus_SOURCES = StatusManager.cpp \
 				image/Image.cpp \
 				image/Data/icons8-humidity-32.cpp \
 				image/Data/icons8-temperature-30.cpp \
+				SI7021/SI7021.cpp \
 				lib/wiringPi/wiringPi/wiringPi.c						\
 				lib/wiringPi/wiringPi/wiringSerial.c lib/wiringPi/wiringPi/wiringShift.c				\
 				lib/wiringPi/wiringPi/piHiPri.c lib/wiringPi/wiringPi/piThread.c					\
