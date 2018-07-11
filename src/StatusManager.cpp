@@ -183,6 +183,8 @@ size_t StatusManager::printHeader2()
 	auto courierNew28Bold = m_painter->createFonter< FontPainterKS0108 >( fontEbrima28 );
 
 	// start: ------------------- Temperature -------------------
+	m_temperature->reset();
+	m_humidit->reset();
 
 	// Print temp
 	if( m_temperature->isAvailable() )
@@ -206,7 +208,7 @@ size_t StatusManager::printHeader2()
 	// end: --------------------- Temperature -------------------
 
 	// start: ------------------- humidity -------------------
-	if( m_temperature->isAvailable() )
+	if( m_humidit->isAvailable() )
 	{
 		auto image = make_unique< ImageXX >( icons8humidity32 );
 		m_painter->merge( m_epd->width() / 2 + 140, 5, move( image ) );

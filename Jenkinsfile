@@ -29,7 +29,7 @@ pipeline
 		
 		stage('Archive'){
 			steps {
-				archiveArtifacts artifacts: 'autoconf/src/eLinkDisplayStatus', onlyIfSuccessful: true
+				archiveArtifacts artifacts: 'autoconf/eLinkDisplayStatus', onlyIfSuccessful: true
 				cleanWs()
 			}
 		}

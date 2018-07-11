@@ -8,6 +8,13 @@ using namespace std;
 
 EnvironmentDataProvider::EnvironmentDataProvider( std::function< void( float ) > callback ) : m_callback( callback ) {}
 
+void EnvironmentDataProvider::reset()
+{
+	auto data = getData();
+	if( data.second )
+		m_lastTemp = data.first;
+}
+
 // end: --------------------- EnvironmentDataProvider -------------------
 
 // start: ------------------- TempProvider -------------------
@@ -143,7 +150,7 @@ void HumiditProvider::threadWatcherSI7021()
 		auto temp = m_SI7021Sensor->gethumidity();
 		if( temp.second )
 		{
-			if( fabs( temp.first - m_lastTemp ) > 1.0f )
+			if( fabs( temp.first - m_lastTemp ) > 0.5f )
 			{
 				m_lastTemp = temp.first;
 				std::async( std::launch::async, m_callback, m_lastTemp );

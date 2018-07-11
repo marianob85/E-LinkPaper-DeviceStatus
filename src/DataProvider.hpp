@@ -13,6 +13,7 @@ public:
 
 	virtual std::pair< float, bool > getData() const = 0;
 	virtual bool isAvailable() const				 = 0;
+	void reset();
 
 protected:
 	std::function< void( float ) > m_callback;
