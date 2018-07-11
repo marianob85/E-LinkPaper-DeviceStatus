@@ -13,23 +13,30 @@ pipeline
 		stage('Build autoconf'){
 			steps {
 				sh '''
+					git clean -df
 					cd autoconf
 					autoreconf --install --force
 					./configure
-					make
+					make -j4
 				'''
+				archiveArtifacts artifacts: 'autoconf/eLinkDisplayStatus', onlyIfSuccessful: true
+			}
+		}
+		stage('Build CMake'){
+			steps {
+				sh '''
+					git clean -df
+					cd CMake
+					cmake .
+					make -j4
+				'''
+				archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus', onlyIfSuccessful: true
 			}
 		}
 		stage('Package'){
 			steps {
 				sh '''
 				'''
-			}
-		}
-		
-		stage('Archive'){
-			steps {
-				archiveArtifacts artifacts: 'autoconf/eLinkDisplayStatus', onlyIfSuccessful: true
 				cleanWs()
 			}
 		}
