@@ -240,11 +240,11 @@
     <ClCompile Include="..\src\lib\bcm2835\bcm2835.c">
       <Filter>Library\bcm2835</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\TempProvider.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\SI7021\SI7021.cpp">
       <Filter>Source\SI7021</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DataProvider.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -419,11 +419,11 @@
     <ClInclude Include="..\src\lib\bcm2835\bcm2835.h">
       <Filter>Library\bcm2835</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\TempProvider.hpp">
-      <Filter>Source</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\SI7021\SI7021.hpp">
       <Filter>Source\SI7021</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DataProvider.hpp">
+      <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

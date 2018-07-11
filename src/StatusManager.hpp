@@ -6,7 +6,7 @@
 #include <epd.hpp>
 #include <Painter.hpp>
 #include "Timer.hpp"
-#include "TempProvider.hpp"
+#include "DataProvider.hpp"
 
 class StatusPage
 {
@@ -46,7 +46,9 @@ private:
 
 	size_t printHeader();
 	size_t printHeader2();
+
 	void onTemperature( float temp );
+	void onHumidit( float humidit );
 
 private:
 	using ContainerT = std::vector< std::unique_ptr< StatusPage > >;
@@ -57,4 +59,5 @@ private:
 
 	std::mutex m_refreshMutex;
 	std::unique_ptr< TempProvider > m_temperature;
+	std::unique_ptr< HumiditProvider > m_humidit;
 };

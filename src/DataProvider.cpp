@@ -1,6 +1,6 @@
 #include <cmath>
 #include <future>
-#include "TempProvider.hpp"
+#include "DataProvider.hpp"
 
 using namespace std;
 
@@ -51,8 +51,13 @@ bool TempProvider::createSI7021()
 	m_SI7021Sensor = std::make_unique< SI7021 >();
 
 	auto ret = m_SI7021Sensor->getTemp();
+	ret		 = m_SI7021Sensor->getTemp();
+	ret		 = m_SI7021Sensor->getTemp();
 	if( ret.second )
-		m_watcher = thread( std::bind( &TempProvider::threadWatcherSI7021, this ) );
+	{
+		m_lastTemp = ret.first;
+		m_watcher  = thread( std::bind( &TempProvider::threadWatcherSI7021, this ) );
+	}
 	else
 		m_SI7021Sensor.reset();
 
@@ -93,3 +98,61 @@ void TempProvider::threadWatcherSI7021()
 }
 
 // end: --------------------- TempProvider -------------------
+
+// start: ------------------- HumiditProvider -------------------
+
+HumiditProvider::HumiditProvider( std::function< void( float ) > callback ) : EnvironmentDataProvider( callback )
+{
+	createSI7021();
+}
+
+std::pair< float, bool > HumiditProvider::getData() const
+{
+	if( m_SI7021Sensor )
+		return m_SI7021Sensor->gethumidity();
+	return { 0.f, false };
+}
+
+bool HumiditProvider::isAvailable() const
+{
+	return bool( m_SI7021Sensor );
+}
+
+bool HumiditProvider::createSI7021()
+{
+	m_SI7021Sensor = std::make_unique< SI7021 >();
+
+	auto ret = m_SI7021Sensor->gethumidity();
+	ret		 = m_SI7021Sensor->gethumidity();
+	ret		 = m_SI7021Sensor->gethumidity();
+	if( ret.second )
+	{
+		m_lastTemp = ret.first;
+		m_watcher  = thread( std::bind( &HumiditProvider::threadWatcherSI7021, this ) );
+	}
+	else
+		m_SI7021Sensor.reset();
+
+	return bool( m_SI7021Sensor );
+}
+
+void HumiditProvider::threadWatcherSI7021()
+{
+	while( true )
+	{
+		auto temp = m_SI7021Sensor->gethumidity();
+		if( temp.second )
+		{
+			if( fabs( temp.first - m_lastTemp ) > 1.0f )
+			{
+				m_lastTemp = temp.first;
+				std::async( std::launch::async, m_callback, m_lastTemp );
+			};
+			std::this_thread::sleep_for( std::chrono::seconds( 30 ) );
+		}
+		else
+			std::this_thread::sleep_for( std::chrono::seconds( 1 ) );
+	}
+}
+
+// end: --------------------- HumiditProvider -------------------

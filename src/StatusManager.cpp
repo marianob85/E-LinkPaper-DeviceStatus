@@ -40,6 +40,7 @@ StatusManager::StatusManager( std::experimental::filesystem::path xmlPath )
 
 	m_temperature
 		= make_unique< TempProvider >( std::bind( &StatusManager::onTemperature, this, std::placeholders::_1 ) );
+	m_humidit = make_unique< HumiditProvider >( std::bind( &StatusManager::onHumidit, this, std::placeholders::_1 ) );
 }
 
 StatusManager::~StatusManager() {}
@@ -205,15 +206,35 @@ size_t StatusManager::printHeader2()
 	// end: --------------------- Temperature -------------------
 
 	// start: ------------------- humidity -------------------
+	if( m_temperature->isAvailable() )
+	{
+		auto image = make_unique< ImageXX >( icons8humidity32 );
+		m_painter->merge( m_epd->width() / 2 + 140, 5, move( image ) );
 
-	auto image = make_unique< ImageXX >( icons8humidity32 );
-	m_painter->merge( m_epd->width() / 2 + 150, 5, move( image ) );
+		char text[ 20 ];
+		auto data = m_humidit->getData();
+		if( data.second )
+		{
+			sprintf( text, "%3.1f%%", data.first );
+			courierNew28Bold->drawString( m_epd->width() / 2 + 175, 0, text, Color::Color1 );
+		}
+		else
+		{
+			courierNew28Bold->drawString( m_epd->width() / 2 + 175, 0, "err", Color::Color1 );
+		}
+	}
+
 	// end: --------------------- humidity -------------------
 
 	return height;
 }
 
 void StatusManager::onTemperature( float temp )
+{
+	refreshPage();
+}
+
+void StatusManager::onHumidit( float humidit )
 {
 	refreshPage();
 }

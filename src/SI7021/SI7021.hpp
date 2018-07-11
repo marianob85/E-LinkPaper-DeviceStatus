@@ -9,6 +9,7 @@ public:
 	virtual ~SI7021() = default;
 
 	std::pair< float, bool > getTemp() const;
+	std::pair< float, bool > gethumidity() const;
 
 	static unsigned crc( uint8_t* data, size_t len );
 

@@ -1,4 +1,5 @@
 #include <thread>
+#include <algorithm>
 #include <bcm2835.h>
 #include "SI7021.hpp"
 
@@ -9,6 +10,7 @@ std::mutex SI7021::m_refreshMutex;
 SI7021::SI7021()
 {
 	bcm2835_init();
+	bcm2835_i2c_set_baudrate( 10000 );
 
 	bcm2835_i2c_begin();
 	bcm2835_i2c_setSlaveAddress( SI7021_DEFAULT_ADDRESS );
@@ -19,11 +21,6 @@ SI7021::SI7021()
 std::pair< float, bool > SI7021::getTemp() const
 {
 	std::lock_guard< std::mutex > lock( m_refreshMutex );
-	if( !bcm2835_init() )
-		return { 0, false };
-
-	bcm2835_i2c_set_baudrate( 10000 );
-
 	bcm2835_i2c_begin();
 	bcm2835_i2c_setSlaveAddress( SI7021_DEFAULT_ADDRESS );
 	auto writeCode = bcm2835_i2c_write( ( char* )&SI7021_MEASTEMP_HOLD_CMD, 1 );
@@ -57,6 +54,44 @@ std::pair< float, bool > SI7021::getTemp() const
 	temperature -= 46.85f;
 
 	return { temperature, true };
+}
+
+std::pair< float, bool > SI7021::gethumidity() const
+{
+	std::lock_guard< std::mutex > lock( m_refreshMutex );
+	bcm2835_i2c_begin();
+	bcm2835_i2c_setSlaveAddress( SI7021_DEFAULT_ADDRESS );
+	auto writeCode = bcm2835_i2c_write( ( char* )&SI7021_MEASRH_HOLD_CMD, 1 );
+	if( writeCode != BCM2835_I2C_REASON_OK )
+	{
+		bcm2835_i2c_end();
+		return { 0, false };
+	}
+	std::this_thread::sleep_for( std::chrono::milliseconds( 300 ) );
+	uint8_t read[ 3 ];
+	auto readCode = bcm2835_i2c_read( ( char* )read, 3 );
+
+	if( readCode != BCM2835_I2C_REASON_OK )
+	{
+		bcm2835_i2c_end();
+		return { 0, false };
+	}
+
+	bcm2835_i2c_end();
+
+	unsigned int hum = read[ 0 ];
+	hum <<= 8;
+	hum |= read[ 1 ];
+
+	if( crc( read, 2 ) != read[ 2 ] || read[ 2 ] == 0 )
+		return { 0, false };
+
+	float humidity = float( hum );
+	humidity *= 125.0f;
+	humidity /= 65536.0f;
+	humidity -= 6.0f;
+
+	return { std::min( 100.0f, humidity ), true };
 }
 
 unsigned SI7021::crc( uint8_t* data, size_t len )

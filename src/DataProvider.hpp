@@ -40,3 +40,20 @@ private:
 	std::unique_ptr< DS18B20 > m_DS18B20Sensor;
 	std::unique_ptr< SI7021 > m_SI7021Sensor;
 };
+
+class HumiditProvider : public EnvironmentDataProvider
+{
+public:
+	HumiditProvider( std::function< void( float ) > callback );
+
+	// start: ------------------- EnvironmentDataProvider -------------------
+	virtual std::pair< float, bool > getData() const override;
+	virtual bool isAvailable() const override;
+	// end: --------------------- EnvironmentDataProvider -------------------
+protected:
+	bool createSI7021();
+	void threadWatcherSI7021();
+
+protected:
+	std::unique_ptr< SI7021 > m_SI7021Sensor;
+};
