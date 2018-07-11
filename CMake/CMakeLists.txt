@@ -6,9 +6,8 @@ cmake_minimum_required(VERSION 3.7)
 # Set the project name
 project (eLinkDisplayStatus)
 
-add_definitions(-W -std=c++14 -O3)
-
-add_compile_options("-Wno-undefined")
+set(CMAKE_CXX_STANDARD 14)
+add_definitions(-W -O3)
 
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
@@ -80,6 +79,11 @@ set(SOURCES
 
 # Add an executable with the above sources
 add_executable(eLinkDisplayStatus ${SOURCES})
+
+target_link_libraries(${PROJECT_NAME} stdc++fs)
+target_link_libraries(${PROJECT_NAME} pthread)
+target_link_libraries(${PROJECT_NAME} crypt)
+target_link_libraries(${PROJECT_NAME} rt)
 
 # Set the direcoties that should be included in the build command for this target
 # when running g++ these will be included as -I/directory/path/
