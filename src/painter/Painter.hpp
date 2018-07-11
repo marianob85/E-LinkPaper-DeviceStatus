@@ -22,16 +22,16 @@ public:
 	size_t getHeight( void );
 	Rotate getRotate( void );
 	void setRotate( Rotate rotate );
-	void drawPixel( size_t x, size_t y, Color color );
-	void drawLine( size_t x0, size_t y0, size_t x1, size_t y1, Color color );
-	void drawHorizontalLine( size_t x, size_t y, size_t width, Color color );
-	void drawVerticalLine( size_t x, size_t y, size_t height, Color color );
-	void drawRectangle( size_t x0, size_t y0, size_t x1, size_t y1, Color color );
-	void drawFilledRectangle( size_t x0, size_t y0, size_t x1, size_t y1, Color color );
-	void drawCircle( size_t x, size_t y, size_t radius, Color color );
-	void drawFilledCircle( size_t x, size_t y, size_t radius, Color color );
-	bool merge( size_t offsetX, size_t offsetY, std::unique_ptr< Paint > painter );
-	bool merge( size_t offsetX, size_t offsetY, std::unique_ptr< PaintMerger > mergeObject );
+	void drawPixel( int x, int y, Color color );
+	void drawLine( int x0, int y0, int x1, int y1, Color color );
+	void drawHorizontalLine( int x, int y, size_t width, Color color );
+	void drawVerticalLine( int x, int y, size_t height, Color color );
+	void drawRectangle( int x0, int y0, int x1, int y1, Color color );
+	void drawFilledRectangle( int x0, int y0, int x1, int y1, Color color );
+	void drawCircle( int x, int y, size_t radius, Color color );
+	void drawFilledCircle( int x, int y, size_t radius, Color color );
+	bool merge( int offsetX, int offsetY, std::unique_ptr< Paint > painter );
+	bool merge( int offsetX, int offsetY, std::unique_ptr< PaintMerger > mergeObject );
 
 	template< class Fonter >
 	std::shared_ptr< FontPainter > createFonter( FontData fontData )
@@ -42,8 +42,8 @@ public:
 	}
 
 protected:
-	virtual void drawAbsolutePixel( size_t x, size_t y, Color color ) = 0;
-	virtual Color getAbsolutePixel( size_t x, size_t y ) const		  = 0;
+	virtual void drawAbsolutePixel( int x, int y, Color color ) = 0;
+	virtual Color getAbsolutePixel( int x, int y ) const		  = 0;
 
 protected:
 	std::vector< uint8_t > m_image;
@@ -62,8 +62,8 @@ public:
 	virtual ~Paint2Colors();
 
 protected:
-	virtual void drawAbsolutePixel( size_t x, size_t y, Color color );
-	virtual Color getAbsolutePixel( size_t x, size_t y ) const;
+	virtual void drawAbsolutePixel( int x, int y, Color color );
+	virtual Color getAbsolutePixel( int x, int y ) const;
 };
 
 class Paint3Colors : public Paint
@@ -75,6 +75,6 @@ public:
 	virtual ~Paint3Colors();
 
 protected:
-	virtual void drawAbsolutePixel( size_t x, size_t y, Color color );
-	virtual Color getAbsolutePixel( size_t x, size_t y ) const;
+	virtual void drawAbsolutePixel( int x, int y, Color color );
+	virtual Color getAbsolutePixel( int x, int y ) const;
 };
