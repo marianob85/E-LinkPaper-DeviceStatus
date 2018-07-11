@@ -45,6 +45,7 @@ AC_FUNC_MALLOC
 AC_FUNC_STRTOD
 AC_CHECK_FUNCS([bzero floor gethostbyname gettimeofday inet_ntoa memmove memset select socket strchr strerror strstr])
 
-AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+ln -s ../src/
+
+AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

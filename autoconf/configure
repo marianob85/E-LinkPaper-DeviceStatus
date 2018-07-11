@@ -4358,104 +4358,10 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
 
 
 # Additional flags
-CXXFLAGS="-std=c++14 -O2 -Wall"
+CXXFLAGS="-std=c++14 -O3 -W"
 LDFLAGS="-Wno-undefined"
 
 # Checks for libraries.
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for wiringPiSetupGpio,wiringPiSPIDataRW in -lwiringPi" >&5
-$as_echo_n "checking for wiringPiSetupGpio,wiringPiSPIDataRW in -lwiringPi... " >&6; }
-if ${ac_cv_lib_wiringPi_wiringPiSetupGpio_wiringPiSPIDataRW+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  ac_check_lib_save_LIBS=$LIBS
-LIBS="-lwiringPi  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char wiringPiSetupGpio,wiringPiSPIDataRW ();
-int
-main ()
-{
-return wiringPiSetupGpio,wiringPiSPIDataRW ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_cxx_try_link "$LINENO"; then :
-  ac_cv_lib_wiringPi_wiringPiSetupGpio_wiringPiSPIDataRW=yes
-else
-  ac_cv_lib_wiringPi_wiringPiSetupGpio_wiringPiSPIDataRW=no
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_wiringPi_wiringPiSetupGpio_wiringPiSPIDataRW" >&5
-$as_echo "$ac_cv_lib_wiringPi_wiringPiSetupGpio_wiringPiSPIDataRW" >&6; }
-if test "x$ac_cv_lib_wiringPi_wiringPiSetupGpio_wiringPiSPIDataRW" = xyes; then :
-  cat >>confdefs.h <<_ACEOF
-#define HAVE_LIBWIRINGPI 1
-_ACEOF
-
-  LIBS="-lwiringPi $LIBS"
-
-else
-  as_fn_error $? "Could  not find wiringPi library" "$LINENO" 5
-fi
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern in -lbcm2835" >&5
-$as_echo_n "checking for bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern in -lbcm2835... " >&6; }
-if ${ac_cv_lib_bcm2835_bcm2835_init_bcm2835_gpio_write_bcm2835_spi_transfern+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  ac_check_lib_save_LIBS=$LIBS
-LIBS="-lbcm2835  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern ();
-int
-main ()
-{
-return bcm2835_init,bcm2835_gpio_write,bcm2835_spi_transfern ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_cxx_try_link "$LINENO"; then :
-  ac_cv_lib_bcm2835_bcm2835_init_bcm2835_gpio_write_bcm2835_spi_transfern=yes
-else
-  ac_cv_lib_bcm2835_bcm2835_init_bcm2835_gpio_write_bcm2835_spi_transfern=no
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_bcm2835_bcm2835_init_bcm2835_gpio_write_bcm2835_spi_transfern" >&5
-$as_echo "$ac_cv_lib_bcm2835_bcm2835_init_bcm2835_gpio_write_bcm2835_spi_transfern" >&6; }
-if test "x$ac_cv_lib_bcm2835_bcm2835_init_bcm2835_gpio_write_bcm2835_spi_transfern" = xyes; then :
-  cat >>confdefs.h <<_ACEOF
-#define HAVE_LIBBCM2835 1
-_ACEOF
-
-  LIBS="-lbcm2835 $LIBS"
-
-else
-  as_fn_error $? "Could  not find bcm2835 library" "$LINENO" 5
-fi
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lstdc++fs" >&5
 $as_echo_n "checking for main in -lstdc++fs... " >&6; }
@@ -4538,6 +4444,84 @@ if test "x$ac_cv_lib_pthread_pthread_mutex_init" = xyes; then :
 _ACEOF
 
   LIBS="-lpthread $LIBS"
+
+fi
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lcrypt" >&5
+$as_echo_n "checking for main in -lcrypt... " >&6; }
+if ${ac_cv_lib_crypt_main+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  ac_check_lib_save_LIBS=$LIBS
+LIBS="-lcrypt  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+
+int
+main ()
+{
+return main ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_cxx_try_link "$LINENO"; then :
+  ac_cv_lib_crypt_main=yes
+else
+  ac_cv_lib_crypt_main=no
+fi
+rm -f core conftest.err conftest.$ac_objext \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_crypt_main" >&5
+$as_echo "$ac_cv_lib_crypt_main" >&6; }
+if test "x$ac_cv_lib_crypt_main" = xyes; then :
+  cat >>confdefs.h <<_ACEOF
+#define HAVE_LIBCRYPT 1
+_ACEOF
+
+  LIBS="-lcrypt $LIBS"
+
+fi
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lrt" >&5
+$as_echo_n "checking for main in -lrt... " >&6; }
+if ${ac_cv_lib_rt_main+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  ac_check_lib_save_LIBS=$LIBS
+LIBS="-lrt  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+
+int
+main ()
+{
+return main ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_cxx_try_link "$LINENO"; then :
+  ac_cv_lib_rt_main=yes
+else
+  ac_cv_lib_rt_main=no
+fi
+rm -f core conftest.err conftest.$ac_objext \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_rt_main" >&5
+$as_echo "$ac_cv_lib_rt_main" >&6; }
+if test "x$ac_cv_lib_rt_main" = xyes; then :
+  cat >>confdefs.h <<_ACEOF
+#define HAVE_LIBRT 1
+_ACEOF
+
+  LIBS="-lrt $LIBS"
 
 fi
 
@@ -6302,7 +6286,9 @@ fi
 done
 
 
-ac_config_files="$ac_config_files Makefile src/Makefile"
+ln -s ../src/
+
+ac_config_files="$ac_config_files Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -7036,7 +7022,6 @@ do
     "config.h") CONFIG_HEADERS="$CONFIG_HEADERS config.h" ;;
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
-    "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac

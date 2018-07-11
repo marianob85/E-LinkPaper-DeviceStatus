@@ -13,6 +13,7 @@
 # PARTICULAR PURPOSE.
 
 @SET_MAKE@
+
 VPATH = @srcdir@
 am__is_gnu_make = { \
   if test -z '$(MAKELEVEL)'; then \
@@ -85,6 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
+bin_PROGRAMS = eLinkDisplayStatus$(EXEEXT)
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/m4_ax_cxx_compile_stdcxx.m4 \
@@ -99,6 +101,78 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
+am__installdirs = "$(DESTDIR)$(bindir)"
+PROGRAMS = $(bin_PROGRAMS)
+am__dirstamp = $(am__leading_dot)dirstamp
+am_eLinkDisplayStatus_OBJECTS =  \
+	src/eLinkDisplayStatus-StatusManager.$(OBJEXT) \
+	src/eLinkDisplayStatus-StatusPing.$(OBJEXT) \
+	src/eLinkDisplayStatus-main.$(OBJEXT) \
+	src/eLinkDisplayStatus-DataProvider.$(OBJEXT) \
+	src/DS18B20/eLinkDisplayStatus-DS18B20.$(OBJEXT) \
+	src/e-link/eLinkDisplayStatus-epdWiringPi.$(OBJEXT) \
+	src/e-link/eLinkDisplayStatus-epdBcm2835.$(OBJEXT) \
+	src/e-link/eLinkDisplayStatus-epd4in2.$(OBJEXT) \
+	src/e-link/eLinkDisplayStatus-epd7in5b.$(OBJEXT) \
+	src/e-link/eLinkDisplayStatus-epd.$(OBJEXT) \
+	src/fonts/eLinkDisplayStatus-KS0108.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Arial28.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Georgia12.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.$(OBJEXT) \
+	src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.$(OBJEXT) \
+	src/lib/pugi/eLinkDisplayStatus-pugixml.$(OBJEXT) \
+	src/painter/eLinkDisplayStatus-PainterFont.$(OBJEXT) \
+	src/painter/eLinkDisplayStatus-Painter.$(OBJEXT) \
+	src/ping/eLinkDisplayStatus-ping.$(OBJEXT) \
+	src/image/eLinkDisplayStatus-Image.$(OBJEXT) \
+	src/image/Data/eLinkDisplayStatus-icons8-humidity-32.$(OBJEXT) \
+	src/image/Data/eLinkDisplayStatus-icons8-temperature-30.$(OBJEXT) \
+	src/SI7021/eLinkDisplayStatus-SI7021.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/wiringPi.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/wiringSerial.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/wiringShift.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/piHiPri.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/piThread.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/wiringPiSPI.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/wiringPiI2C.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/softPwm.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/softTone.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp23008.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp23016.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp23017.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp23s08.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp23s17.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/sr595.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/pcf8574.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/pcf8591.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp3002.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp3004.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp4802.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/mcp3422.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/max31855.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/max5322.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/ads1115.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/sn3218.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/bmp180.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/htu21d.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/ds18b20.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/rht03.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/drcSerial.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/drcNet.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/pseudoPins.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/wpiExtensions.$(OBJEXT) \
+	src/lib/bcm2835/bcm2835.$(OBJEXT)
+eLinkDisplayStatus_OBJECTS = $(am_eLinkDisplayStatus_OBJECTS)
+eLinkDisplayStatus_LDADD = $(LDADD)
+eLinkDisplayStatus_LINK = $(CXXLD) $(eLinkDisplayStatus_CXXFLAGS) \
+	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -111,29 +185,46 @@ AM_V_at = $(am__v_at_@AM_V@)
 am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
 am__v_at_1 = 
-SOURCES =
-DIST_SOURCES =
-RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
-	ctags-recursive dvi-recursive html-recursive info-recursive \
-	install-data-recursive install-dvi-recursive \
-	install-exec-recursive install-html-recursive \
-	install-info-recursive install-pdf-recursive \
-	install-ps-recursive install-recursive installcheck-recursive \
-	installdirs-recursive pdf-recursive ps-recursive \
-	tags-recursive uninstall-recursive
+DEFAULT_INCLUDES = -I.@am__isrc@
+depcomp = $(SHELL) $(top_srcdir)/depcomp
+am__depfiles_maybe = depfiles
+am__mv = mv -f
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+AM_V_CC = $(am__v_CC_@AM_V@)
+am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+am__v_CC_0 = @echo "  CC      " $@;
+am__v_CC_1 = 
+CCLD = $(CC)
+LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+am__v_CCLD_0 = @echo "  CCLD    " $@;
+am__v_CCLD_1 = 
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
+CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+AM_V_CXX = $(am__v_CXX_@AM_V@)
+am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+am__v_CXX_0 = @echo "  CXX     " $@;
+am__v_CXX_1 = 
+CXXLD = $(CXX)
+CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+	-o $@
+AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+am__v_CXXLD_1 = 
+SOURCES = $(eLinkDisplayStatus_SOURCES)
+DIST_SOURCES = $(eLinkDisplayStatus_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
-  distclean-recursive maintainer-clean-recursive
-am__recursive_targets = \
-  $(RECURSIVE_TARGETS) \
-  $(RECURSIVE_CLEAN_TARGETS) \
-  $(am__extra_recursive_targets)
-AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \
-	cscope distdir dist dist-all distcheck
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
 	$(LISP)config.h.in
 # Read a list of newline-separated strings from the standard input,
@@ -155,7 +246,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = $(SUBDIRS)
+AM_RECURSIVE_TARGETS = cscope
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in AUTHORS \
 	COPYING ChangeLog INSTALL NEWS README compile depcomp \
 	install-sh missing
@@ -169,31 +260,6 @@ am__remove_distdir = \
       || { sleep 5 && rm -rf "$(distdir)"; }; \
   else :; fi
 am__post_remove_distdir = $(am__remove_distdir)
-am__relativize = \
-  dir0=`pwd`; \
-  sed_first='s,^\([^/]*\)/.*$$,\1,'; \
-  sed_rest='s,^[^/]*/*,,'; \
-  sed_last='s,^.*/\([^/]*\)$$,\1,'; \
-  sed_butlast='s,/*[^/]*$$,,'; \
-  while test -n "$$dir1"; do \
-    first=`echo "$$dir1" | sed -e "$$sed_first"`; \
-    if test "$$first" != "."; then \
-      if test "$$first" = ".."; then \
-        dir2=`echo "$$dir0" | sed -e "$$sed_last"`/"$$dir2"; \
-        dir0=`echo "$$dir0" | sed -e "$$sed_butlast"`; \
-      else \
-        first2=`echo "$$dir2" | sed -e "$$sed_first"`; \
-        if test "$$first2" = "$$first"; then \
-          dir2=`echo "$$dir2" | sed -e "$$sed_rest"`; \
-        else \
-          dir2="../$$dir2"; \
-        fi; \
-        dir0="$$dir0"/"$$first"; \
-      fi; \
-    fi; \
-    dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
-  done; \
-  reldir="$$dir2"
 DIST_ARCHIVES = $(distdir).tar.gz
 GZIP_ENV = --best
 DIST_TARGETS = dist-gzip
@@ -295,11 +361,65 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = src
+eLinkDisplayStatus_CXXFLAGS = -I"src/DS18B20" -I"src/e-link" \
+	-I"src/fonts" -I"src/image" -I"src/painter" -I"src/ping" \
+	-I"src/SI7021" -I"src/lib/pugi" -I"src/lib/bcm2835" \
+	-I"src/lib/wiringPI"src/ -I"src/lib/wiringPi/wiringPI"src/ \
+	-I"src/lib/wiringPi/wiringPiD" -W"no-psabI"src/ -D_GNU_SOURCE \
+	-D_POSIX_C_SOURCE=200112L
+eLinkDisplayStatus_SOURCES = src/StatusManager.cpp \
+				src/StatusPing.cpp \
+				src/main.cpp \
+				src/DataProvider.cpp \
+				src/DS18B20/DS18B20.cpp \
+				src/e-link/epdWiringPi.cpp \
+				src/e-link/epdBcm2835.cpp \
+				src/e-link/epd4in2.cpp \
+				src/e-link/epd7in5b.cpp \
+				src/e-link/epd.cpp \
+				src/fonts/KS0108.cpp \
+				src/fonts/KS0108/Arial28.cpp \
+				src/fonts/KS0108/Digital-7-36Bold.cpp \
+				src/fonts/KS0108/Ebrima28.cpp \
+				src/fonts/KS0108/Georgia12.cpp \
+				src/fonts/KS0108/Liberation_Mono12.cpp \
+				src/fonts/KS0108/Liberation_Mono11Bold.cpp \
+				src/fonts/KS0108/Liberation_Mono10Bold.cpp \
+				src/fonts/KS0108/Liberation_Mono10.cpp \
+				src/fonts/KS0108/Liberation_Mono9Bold.cpp \
+				src/fonts/KS0108/Liberation_Mono9.cpp \
+				src/fonts/KS0108/Liberation_Mono8.cpp \
+				src/lib/pugi/pugixml.cpp \
+				src/painter/PainterFont.cpp \
+				src/painter/Painter.cpp \
+				src/ping/ping.cpp \
+				src/image/Image.cpp \
+				src/image/Data/icons8-humidity-32.cpp \
+				src/image/Data/icons8-temperature-30.cpp \
+				src/SI7021/SI7021.cpp \
+				src/lib/wiringPi/wiringPi/wiringPi.c						\
+				src/lib/wiringPi/wiringPi/wiringSerial.c src/lib/wiringPi/wiringPi/wiringShift.c				\
+				src/lib/wiringPi/wiringPi/piHiPri.c src/lib/wiringPi/wiringPi/piThread.c					\
+				src/lib/wiringPi/wiringPi/wiringPiSPI.c src/lib/wiringPi/wiringPi/wiringPiI2C.c				\
+				src/lib/wiringPi/wiringPi/softPwm.c src/lib/wiringPi/wiringPi/softTone.c					\
+				src/lib/wiringPi/wiringPi/mcp23008.c src/lib/wiringPi/wiringPi/mcp23016.c src/lib/wiringPi/wiringPi/mcp23017.c			\
+				src/lib/wiringPi/wiringPi/mcp23s08.c src/lib/wiringPi/wiringPi/mcp23s17.c					\
+				src/lib/wiringPi/wiringPi/sr595.c							\
+				src/lib/wiringPi/wiringPi/pcf8574.c src/lib/wiringPi/wiringPi/pcf8591.c					\
+				src/lib/wiringPi/wiringPi/mcp3002.c src/lib/wiringPi/wiringPi/mcp3004.c src/lib/wiringPi/wiringPi/mcp4802.c src/lib/wiringPi/wiringPi/mcp3422.c			\
+				src/lib/wiringPi/wiringPi/max31855.c src/lib/wiringPi/wiringPi/max5322.c src/lib/wiringPi/wiringPi/ads1115.c				\
+				src/lib/wiringPi/wiringPi/sn3218.c						\
+				src/lib/wiringPi/wiringPi/bmp180.c src/lib/wiringPi/wiringPi/htu21d.c src/lib/wiringPi/wiringPi/ds18b20.c src/lib/wiringPi/wiringPi/rht03.c			\
+				src/lib/wiringPi/wiringPi/drcSerial.c src/lib/wiringPi/wiringPi/drcNet.c					\
+				src/lib/wiringPi/wiringPi/pseudoPins.c						\
+				src/lib/wiringPi/wiringPi/wpiExtensions.c \
+				src/lib/bcm2835/bcm2835.c 
+
 all: config.h
-	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+	$(MAKE) $(AM_MAKEFLAGS) all-am
 
 .SUFFIXES:
+.SUFFIXES: .c .cpp .o .obj
 am--refresh: Makefile
 	@:
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
@@ -348,62 +468,859 @@ $(srcdir)/config.h.in:  $(am__configure_deps)
 
 distclean-hdr:
 	-rm -f config.h stamp-h1
-
-# This directory's subdirectories are mostly independent; you can cd
-# into them and run 'make' without going through this Makefile.
-# To change the values of 'make' variables: instead of editing Makefiles,
-# (1) if the variable is set in 'config.status', edit 'config.status'
-#     (which will cause the Makefiles to be regenerated when you run 'make');
-# (2) otherwise, pass the desired values on the 'make' command line.
-$(am__recursive_targets):
-	@fail=; \
-	if $(am__make_keepgoing); then \
-	  failcom='fail=yes'; \
-	else \
-	  failcom='exit 1'; \
+install-binPROGRAMS: $(bin_PROGRAMS)
+	@$(NORMAL_INSTALL)
+	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(bindir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(bindir)" || exit 1; \
 	fi; \
-	dot_seen=no; \
-	target=`echo $@ | sed s/-recursive//`; \
-	case "$@" in \
-	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
-	  *) list='$(SUBDIRS)' ;; \
-	esac; \
-	for subdir in $$list; do \
-	  echo "Making $$target in $$subdir"; \
-	  if test "$$subdir" = "."; then \
-	    dot_seen=yes; \
-	    local_target="$$target-am"; \
-	  else \
-	    local_target="$$target"; \
-	  fi; \
-	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
-	  || eval $$failcom; \
-	done; \
-	if test "$$dot_seen" = "no"; then \
-	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
-	fi; test -z "$$fail"
+	for p in $$list; do echo "$$p $$p"; done | \
+	sed 's/$(EXEEXT)$$//' | \
+	while read p p1; do if test -f $$p \
+	  ; then echo "$$p"; echo "$$p"; else :; fi; \
+	done | \
+	sed -e 'p;s,.*/,,;n;h' \
+	    -e 's|.*|.|' \
+	    -e 'p;x;s,.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/' | \
+	sed 'N;N;N;s,\n, ,g' | \
+	$(AWK) 'BEGIN { files["."] = ""; dirs["."] = 1 } \
+	  { d=$$3; if (dirs[d] != 1) { print "d", d; dirs[d] = 1 } \
+	    if ($$2 == $$4) files[d] = files[d] " " $$1; \
+	    else { print "f", $$3 "/" $$4, $$1; } } \
+	  END { for (d in files) print "f", d, files[d] }' | \
+	while read type dir files; do \
+	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
+	    test -z "$$files" || { \
+	      echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(bindir)$$dir'"; \
+	      $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(bindir)$$dir" || exit $$?; \
+	    } \
+	; done
+
+uninstall-binPROGRAMS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+	files=`for p in $$list; do echo "$$p"; done | \
+	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
+	      -e 's/$$/$(EXEEXT)/' \
+	`; \
+	test -n "$$list" || exit 0; \
+	echo " ( cd '$(DESTDIR)$(bindir)' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(bindir)" && rm -f $$files
+
+clean-binPROGRAMS:
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+src/$(am__dirstamp):
+	@$(MKDIR_P) src
+	@: > src/$(am__dirstamp)
+src/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/$(DEPDIR)
+	@: > src/$(DEPDIR)/$(am__dirstamp)
+src/eLinkDisplayStatus-StatusManager.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/eLinkDisplayStatus-StatusPing.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/eLinkDisplayStatus-main.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/eLinkDisplayStatus-DataProvider.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/DS18B20/$(am__dirstamp):
+	@$(MKDIR_P) src/DS18B20
+	@: > src/DS18B20/$(am__dirstamp)
+src/DS18B20/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/DS18B20/$(DEPDIR)
+	@: > src/DS18B20/$(DEPDIR)/$(am__dirstamp)
+src/DS18B20/eLinkDisplayStatus-DS18B20.$(OBJEXT):  \
+	src/DS18B20/$(am__dirstamp) \
+	src/DS18B20/$(DEPDIR)/$(am__dirstamp)
+src/e-link/$(am__dirstamp):
+	@$(MKDIR_P) src/e-link
+	@: > src/e-link/$(am__dirstamp)
+src/e-link/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/e-link/$(DEPDIR)
+	@: > src/e-link/$(DEPDIR)/$(am__dirstamp)
+src/e-link/eLinkDisplayStatus-epdWiringPi.$(OBJEXT):  \
+	src/e-link/$(am__dirstamp) \
+	src/e-link/$(DEPDIR)/$(am__dirstamp)
+src/e-link/eLinkDisplayStatus-epdBcm2835.$(OBJEXT):  \
+	src/e-link/$(am__dirstamp) \
+	src/e-link/$(DEPDIR)/$(am__dirstamp)
+src/e-link/eLinkDisplayStatus-epd4in2.$(OBJEXT):  \
+	src/e-link/$(am__dirstamp) \
+	src/e-link/$(DEPDIR)/$(am__dirstamp)
+src/e-link/eLinkDisplayStatus-epd7in5b.$(OBJEXT):  \
+	src/e-link/$(am__dirstamp) \
+	src/e-link/$(DEPDIR)/$(am__dirstamp)
+src/e-link/eLinkDisplayStatus-epd.$(OBJEXT):  \
+	src/e-link/$(am__dirstamp) \
+	src/e-link/$(DEPDIR)/$(am__dirstamp)
+src/fonts/$(am__dirstamp):
+	@$(MKDIR_P) src/fonts
+	@: > src/fonts/$(am__dirstamp)
+src/fonts/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/fonts/$(DEPDIR)
+	@: > src/fonts/$(DEPDIR)/$(am__dirstamp)
+src/fonts/eLinkDisplayStatus-KS0108.$(OBJEXT):  \
+	src/fonts/$(am__dirstamp) src/fonts/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/$(am__dirstamp):
+	@$(MKDIR_P) src/fonts/KS0108
+	@: > src/fonts/KS0108/$(am__dirstamp)
+src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/fonts/KS0108/$(DEPDIR)
+	@: > src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Arial28.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Georgia12.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.$(OBJEXT):  \
+	src/fonts/KS0108/$(am__dirstamp) \
+	src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+src/lib/pugi/$(am__dirstamp):
+	@$(MKDIR_P) src/lib/pugi
+	@: > src/lib/pugi/$(am__dirstamp)
+src/lib/pugi/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/lib/pugi/$(DEPDIR)
+	@: > src/lib/pugi/$(DEPDIR)/$(am__dirstamp)
+src/lib/pugi/eLinkDisplayStatus-pugixml.$(OBJEXT):  \
+	src/lib/pugi/$(am__dirstamp) \
+	src/lib/pugi/$(DEPDIR)/$(am__dirstamp)
+src/painter/$(am__dirstamp):
+	@$(MKDIR_P) src/painter
+	@: > src/painter/$(am__dirstamp)
+src/painter/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/painter/$(DEPDIR)
+	@: > src/painter/$(DEPDIR)/$(am__dirstamp)
+src/painter/eLinkDisplayStatus-PainterFont.$(OBJEXT):  \
+	src/painter/$(am__dirstamp) \
+	src/painter/$(DEPDIR)/$(am__dirstamp)
+src/painter/eLinkDisplayStatus-Painter.$(OBJEXT):  \
+	src/painter/$(am__dirstamp) \
+	src/painter/$(DEPDIR)/$(am__dirstamp)
+src/ping/$(am__dirstamp):
+	@$(MKDIR_P) src/ping
+	@: > src/ping/$(am__dirstamp)
+src/ping/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/ping/$(DEPDIR)
+	@: > src/ping/$(DEPDIR)/$(am__dirstamp)
+src/ping/eLinkDisplayStatus-ping.$(OBJEXT): src/ping/$(am__dirstamp) \
+	src/ping/$(DEPDIR)/$(am__dirstamp)
+src/image/$(am__dirstamp):
+	@$(MKDIR_P) src/image
+	@: > src/image/$(am__dirstamp)
+src/image/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/image/$(DEPDIR)
+	@: > src/image/$(DEPDIR)/$(am__dirstamp)
+src/image/eLinkDisplayStatus-Image.$(OBJEXT):  \
+	src/image/$(am__dirstamp) src/image/$(DEPDIR)/$(am__dirstamp)
+src/image/Data/$(am__dirstamp):
+	@$(MKDIR_P) src/image/Data
+	@: > src/image/Data/$(am__dirstamp)
+src/image/Data/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/image/Data/$(DEPDIR)
+	@: > src/image/Data/$(DEPDIR)/$(am__dirstamp)
+src/image/Data/eLinkDisplayStatus-icons8-humidity-32.$(OBJEXT):  \
+	src/image/Data/$(am__dirstamp) \
+	src/image/Data/$(DEPDIR)/$(am__dirstamp)
+src/image/Data/eLinkDisplayStatus-icons8-temperature-30.$(OBJEXT):  \
+	src/image/Data/$(am__dirstamp) \
+	src/image/Data/$(DEPDIR)/$(am__dirstamp)
+src/SI7021/$(am__dirstamp):
+	@$(MKDIR_P) src/SI7021
+	@: > src/SI7021/$(am__dirstamp)
+src/SI7021/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/SI7021/$(DEPDIR)
+	@: > src/SI7021/$(DEPDIR)/$(am__dirstamp)
+src/SI7021/eLinkDisplayStatus-SI7021.$(OBJEXT):  \
+	src/SI7021/$(am__dirstamp) \
+	src/SI7021/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/$(am__dirstamp):
+	@$(MKDIR_P) src/lib/wiringPi/wiringPi
+	@: > src/lib/wiringPi/wiringPi/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/lib/wiringPi/wiringPi/$(DEPDIR)
+	@: > src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/wiringPi.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/wiringSerial.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/wiringShift.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/piHiPri.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/piThread.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/wiringPiSPI.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/wiringPiI2C.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/softPwm.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/softTone.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp23008.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp23016.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp23017.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp23s08.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp23s17.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/sr595.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/pcf8574.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/pcf8591.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp3002.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp3004.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp4802.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/mcp3422.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/max31855.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/max5322.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/ads1115.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/sn3218.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/bmp180.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/htu21d.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/ds18b20.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/rht03.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/drcSerial.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/drcNet.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/pseudoPins.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/wiringPi/wiringPi/wpiExtensions.$(OBJEXT):  \
+	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
+	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+src/lib/bcm2835/$(am__dirstamp):
+	@$(MKDIR_P) src/lib/bcm2835
+	@: > src/lib/bcm2835/$(am__dirstamp)
+src/lib/bcm2835/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/lib/bcm2835/$(DEPDIR)
+	@: > src/lib/bcm2835/$(DEPDIR)/$(am__dirstamp)
+src/lib/bcm2835/bcm2835.$(OBJEXT): src/lib/bcm2835/$(am__dirstamp) \
+	src/lib/bcm2835/$(DEPDIR)/$(am__dirstamp)
+
+eLinkDisplayStatus$(EXEEXT): $(eLinkDisplayStatus_OBJECTS) $(eLinkDisplayStatus_DEPENDENCIES) $(EXTRA_eLinkDisplayStatus_DEPENDENCIES) 
+	@rm -f eLinkDisplayStatus$(EXEEXT)
+	$(AM_V_CXXLD)$(eLinkDisplayStatus_LINK) $(eLinkDisplayStatus_OBJECTS) $(eLinkDisplayStatus_LDADD) $(LIBS)
+
+mostlyclean-compile:
+	-rm -f *.$(OBJEXT)
+	-rm -f src/*.$(OBJEXT)
+	-rm -f src/DS18B20/*.$(OBJEXT)
+	-rm -f src/SI7021/*.$(OBJEXT)
+	-rm -f src/e-link/*.$(OBJEXT)
+	-rm -f src/fonts/*.$(OBJEXT)
+	-rm -f src/fonts/KS0108/*.$(OBJEXT)
+	-rm -f src/image/*.$(OBJEXT)
+	-rm -f src/image/Data/*.$(OBJEXT)
+	-rm -f src/lib/bcm2835/*.$(OBJEXT)
+	-rm -f src/lib/pugi/*.$(OBJEXT)
+	-rm -f src/lib/wiringPi/wiringPi/*.$(OBJEXT)
+	-rm -f src/painter/*.$(OBJEXT)
+	-rm -f src/ping/*.$(OBJEXT)
+
+distclean-compile:
+	-rm -f *.tab.c
+
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/eLinkDisplayStatus-DataProvider.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/eLinkDisplayStatus-StatusManager.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/eLinkDisplayStatus-StatusPing.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/eLinkDisplayStatus-main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/DS18B20/$(DEPDIR)/eLinkDisplayStatus-DS18B20.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/SI7021/$(DEPDIR)/eLinkDisplayStatus-SI7021.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd4in2.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd7in5b.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdBcm2835.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdWiringPi.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/$(DEPDIR)/eLinkDisplayStatus-KS0108.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Arial28.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Digital-7-36Bold.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Ebrima28.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Georgia12.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10Bold.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono11Bold.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono12.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono8.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9Bold.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/image/$(DEPDIR)/eLinkDisplayStatus-Image.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-humidity-32.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-temperature-30.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/bcm2835/$(DEPDIR)/bcm2835.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/pugi/$(DEPDIR)/eLinkDisplayStatus-pugixml.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/ads1115.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/bmp180.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/drcNet.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/drcSerial.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/ds18b20.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/htu21d.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/max31855.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/max5322.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23008.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23016.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23017.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23s08.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23s17.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp3002.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp3004.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp3422.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp4802.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/pcf8574.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/pcf8591.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/piHiPri.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/piThread.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/pseudoPins.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/rht03.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/sn3218.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/softPwm.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/softTone.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/sr595.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringPi.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringPiI2C.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringPiSPI.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringSerial.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringShift.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wpiExtensions.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/painter/$(DEPDIR)/eLinkDisplayStatus-Painter.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/painter/$(DEPDIR)/eLinkDisplayStatus-PainterFont.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/ping/$(DEPDIR)/eLinkDisplayStatus-ping.Po@am__quote@
+
+.c.o:
+@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ $<
+
+.c.obj:
+@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+.cpp.o:
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+@am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCXX_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ $<
+
+.cpp.obj:
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+@am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+@am__fastdepCXX_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+src/eLinkDisplayStatus-StatusManager.o: src/StatusManager.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/eLinkDisplayStatus-StatusManager.o -MD -MP -MF src/$(DEPDIR)/eLinkDisplayStatus-StatusManager.Tpo -c -o src/eLinkDisplayStatus-StatusManager.o `test -f 'src/StatusManager.cpp' || echo '$(srcdir)/'`src/StatusManager.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/eLinkDisplayStatus-StatusManager.Tpo src/$(DEPDIR)/eLinkDisplayStatus-StatusManager.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/StatusManager.cpp' object='src/eLinkDisplayStatus-StatusManager.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/eLinkDisplayStatus-StatusManager.o `test -f 'src/StatusManager.cpp' || echo '$(srcdir)/'`src/StatusManager.cpp
+
+src/eLinkDisplayStatus-StatusManager.obj: src/StatusManager.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/eLinkDisplayStatus-StatusManager.obj -MD -MP -MF src/$(DEPDIR)/eLinkDisplayStatus-StatusManager.Tpo -c -o src/eLinkDisplayStatus-StatusManager.obj `if test -f 'src/StatusManager.cpp'; then $(CYGPATH_W) 'src/StatusManager.cpp'; else $(CYGPATH_W) '$(srcdir)/src/StatusManager.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/eLinkDisplayStatus-StatusManager.Tpo src/$(DEPDIR)/eLinkDisplayStatus-StatusManager.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/StatusManager.cpp' object='src/eLinkDisplayStatus-StatusManager.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/eLinkDisplayStatus-StatusManager.obj `if test -f 'src/StatusManager.cpp'; then $(CYGPATH_W) 'src/StatusManager.cpp'; else $(CYGPATH_W) '$(srcdir)/src/StatusManager.cpp'; fi`
+
+src/eLinkDisplayStatus-StatusPing.o: src/StatusPing.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/eLinkDisplayStatus-StatusPing.o -MD -MP -MF src/$(DEPDIR)/eLinkDisplayStatus-StatusPing.Tpo -c -o src/eLinkDisplayStatus-StatusPing.o `test -f 'src/StatusPing.cpp' || echo '$(srcdir)/'`src/StatusPing.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/eLinkDisplayStatus-StatusPing.Tpo src/$(DEPDIR)/eLinkDisplayStatus-StatusPing.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/StatusPing.cpp' object='src/eLinkDisplayStatus-StatusPing.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/eLinkDisplayStatus-StatusPing.o `test -f 'src/StatusPing.cpp' || echo '$(srcdir)/'`src/StatusPing.cpp
+
+src/eLinkDisplayStatus-StatusPing.obj: src/StatusPing.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/eLinkDisplayStatus-StatusPing.obj -MD -MP -MF src/$(DEPDIR)/eLinkDisplayStatus-StatusPing.Tpo -c -o src/eLinkDisplayStatus-StatusPing.obj `if test -f 'src/StatusPing.cpp'; then $(CYGPATH_W) 'src/StatusPing.cpp'; else $(CYGPATH_W) '$(srcdir)/src/StatusPing.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/eLinkDisplayStatus-StatusPing.Tpo src/$(DEPDIR)/eLinkDisplayStatus-StatusPing.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/StatusPing.cpp' object='src/eLinkDisplayStatus-StatusPing.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/eLinkDisplayStatus-StatusPing.obj `if test -f 'src/StatusPing.cpp'; then $(CYGPATH_W) 'src/StatusPing.cpp'; else $(CYGPATH_W) '$(srcdir)/src/StatusPing.cpp'; fi`
+
+src/eLinkDisplayStatus-main.o: src/main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/eLinkDisplayStatus-main.o -MD -MP -MF src/$(DEPDIR)/eLinkDisplayStatus-main.Tpo -c -o src/eLinkDisplayStatus-main.o `test -f 'src/main.cpp' || echo '$(srcdir)/'`src/main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/eLinkDisplayStatus-main.Tpo src/$(DEPDIR)/eLinkDisplayStatus-main.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/main.cpp' object='src/eLinkDisplayStatus-main.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/eLinkDisplayStatus-main.o `test -f 'src/main.cpp' || echo '$(srcdir)/'`src/main.cpp
+
+src/eLinkDisplayStatus-main.obj: src/main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/eLinkDisplayStatus-main.obj -MD -MP -MF src/$(DEPDIR)/eLinkDisplayStatus-main.Tpo -c -o src/eLinkDisplayStatus-main.obj `if test -f 'src/main.cpp'; then $(CYGPATH_W) 'src/main.cpp'; else $(CYGPATH_W) '$(srcdir)/src/main.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/eLinkDisplayStatus-main.Tpo src/$(DEPDIR)/eLinkDisplayStatus-main.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/main.cpp' object='src/eLinkDisplayStatus-main.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/eLinkDisplayStatus-main.obj `if test -f 'src/main.cpp'; then $(CYGPATH_W) 'src/main.cpp'; else $(CYGPATH_W) '$(srcdir)/src/main.cpp'; fi`
+
+src/eLinkDisplayStatus-DataProvider.o: src/DataProvider.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/eLinkDisplayStatus-DataProvider.o -MD -MP -MF src/$(DEPDIR)/eLinkDisplayStatus-DataProvider.Tpo -c -o src/eLinkDisplayStatus-DataProvider.o `test -f 'src/DataProvider.cpp' || echo '$(srcdir)/'`src/DataProvider.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/eLinkDisplayStatus-DataProvider.Tpo src/$(DEPDIR)/eLinkDisplayStatus-DataProvider.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/DataProvider.cpp' object='src/eLinkDisplayStatus-DataProvider.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/eLinkDisplayStatus-DataProvider.o `test -f 'src/DataProvider.cpp' || echo '$(srcdir)/'`src/DataProvider.cpp
+
+src/eLinkDisplayStatus-DataProvider.obj: src/DataProvider.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/eLinkDisplayStatus-DataProvider.obj -MD -MP -MF src/$(DEPDIR)/eLinkDisplayStatus-DataProvider.Tpo -c -o src/eLinkDisplayStatus-DataProvider.obj `if test -f 'src/DataProvider.cpp'; then $(CYGPATH_W) 'src/DataProvider.cpp'; else $(CYGPATH_W) '$(srcdir)/src/DataProvider.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/eLinkDisplayStatus-DataProvider.Tpo src/$(DEPDIR)/eLinkDisplayStatus-DataProvider.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/DataProvider.cpp' object='src/eLinkDisplayStatus-DataProvider.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/eLinkDisplayStatus-DataProvider.obj `if test -f 'src/DataProvider.cpp'; then $(CYGPATH_W) 'src/DataProvider.cpp'; else $(CYGPATH_W) '$(srcdir)/src/DataProvider.cpp'; fi`
+
+src/DS18B20/eLinkDisplayStatus-DS18B20.o: src/DS18B20/DS18B20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/DS18B20/eLinkDisplayStatus-DS18B20.o -MD -MP -MF src/DS18B20/$(DEPDIR)/eLinkDisplayStatus-DS18B20.Tpo -c -o src/DS18B20/eLinkDisplayStatus-DS18B20.o `test -f 'src/DS18B20/DS18B20.cpp' || echo '$(srcdir)/'`src/DS18B20/DS18B20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/DS18B20/$(DEPDIR)/eLinkDisplayStatus-DS18B20.Tpo src/DS18B20/$(DEPDIR)/eLinkDisplayStatus-DS18B20.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/DS18B20/DS18B20.cpp' object='src/DS18B20/eLinkDisplayStatus-DS18B20.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/DS18B20/eLinkDisplayStatus-DS18B20.o `test -f 'src/DS18B20/DS18B20.cpp' || echo '$(srcdir)/'`src/DS18B20/DS18B20.cpp
+
+src/DS18B20/eLinkDisplayStatus-DS18B20.obj: src/DS18B20/DS18B20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/DS18B20/eLinkDisplayStatus-DS18B20.obj -MD -MP -MF src/DS18B20/$(DEPDIR)/eLinkDisplayStatus-DS18B20.Tpo -c -o src/DS18B20/eLinkDisplayStatus-DS18B20.obj `if test -f 'src/DS18B20/DS18B20.cpp'; then $(CYGPATH_W) 'src/DS18B20/DS18B20.cpp'; else $(CYGPATH_W) '$(srcdir)/src/DS18B20/DS18B20.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/DS18B20/$(DEPDIR)/eLinkDisplayStatus-DS18B20.Tpo src/DS18B20/$(DEPDIR)/eLinkDisplayStatus-DS18B20.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/DS18B20/DS18B20.cpp' object='src/DS18B20/eLinkDisplayStatus-DS18B20.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/DS18B20/eLinkDisplayStatus-DS18B20.obj `if test -f 'src/DS18B20/DS18B20.cpp'; then $(CYGPATH_W) 'src/DS18B20/DS18B20.cpp'; else $(CYGPATH_W) '$(srcdir)/src/DS18B20/DS18B20.cpp'; fi`
+
+src/e-link/eLinkDisplayStatus-epdWiringPi.o: src/e-link/epdWiringPi.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epdWiringPi.o -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdWiringPi.Tpo -c -o src/e-link/eLinkDisplayStatus-epdWiringPi.o `test -f 'src/e-link/epdWiringPi.cpp' || echo '$(srcdir)/'`src/e-link/epdWiringPi.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdWiringPi.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdWiringPi.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epdWiringPi.cpp' object='src/e-link/eLinkDisplayStatus-epdWiringPi.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epdWiringPi.o `test -f 'src/e-link/epdWiringPi.cpp' || echo '$(srcdir)/'`src/e-link/epdWiringPi.cpp
+
+src/e-link/eLinkDisplayStatus-epdWiringPi.obj: src/e-link/epdWiringPi.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epdWiringPi.obj -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdWiringPi.Tpo -c -o src/e-link/eLinkDisplayStatus-epdWiringPi.obj `if test -f 'src/e-link/epdWiringPi.cpp'; then $(CYGPATH_W) 'src/e-link/epdWiringPi.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epdWiringPi.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdWiringPi.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdWiringPi.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epdWiringPi.cpp' object='src/e-link/eLinkDisplayStatus-epdWiringPi.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epdWiringPi.obj `if test -f 'src/e-link/epdWiringPi.cpp'; then $(CYGPATH_W) 'src/e-link/epdWiringPi.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epdWiringPi.cpp'; fi`
+
+src/e-link/eLinkDisplayStatus-epdBcm2835.o: src/e-link/epdBcm2835.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epdBcm2835.o -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdBcm2835.Tpo -c -o src/e-link/eLinkDisplayStatus-epdBcm2835.o `test -f 'src/e-link/epdBcm2835.cpp' || echo '$(srcdir)/'`src/e-link/epdBcm2835.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdBcm2835.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdBcm2835.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epdBcm2835.cpp' object='src/e-link/eLinkDisplayStatus-epdBcm2835.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epdBcm2835.o `test -f 'src/e-link/epdBcm2835.cpp' || echo '$(srcdir)/'`src/e-link/epdBcm2835.cpp
+
+src/e-link/eLinkDisplayStatus-epdBcm2835.obj: src/e-link/epdBcm2835.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epdBcm2835.obj -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdBcm2835.Tpo -c -o src/e-link/eLinkDisplayStatus-epdBcm2835.obj `if test -f 'src/e-link/epdBcm2835.cpp'; then $(CYGPATH_W) 'src/e-link/epdBcm2835.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epdBcm2835.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdBcm2835.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epdBcm2835.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epdBcm2835.cpp' object='src/e-link/eLinkDisplayStatus-epdBcm2835.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epdBcm2835.obj `if test -f 'src/e-link/epdBcm2835.cpp'; then $(CYGPATH_W) 'src/e-link/epdBcm2835.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epdBcm2835.cpp'; fi`
+
+src/e-link/eLinkDisplayStatus-epd4in2.o: src/e-link/epd4in2.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epd4in2.o -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd4in2.Tpo -c -o src/e-link/eLinkDisplayStatus-epd4in2.o `test -f 'src/e-link/epd4in2.cpp' || echo '$(srcdir)/'`src/e-link/epd4in2.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd4in2.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd4in2.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epd4in2.cpp' object='src/e-link/eLinkDisplayStatus-epd4in2.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epd4in2.o `test -f 'src/e-link/epd4in2.cpp' || echo '$(srcdir)/'`src/e-link/epd4in2.cpp
+
+src/e-link/eLinkDisplayStatus-epd4in2.obj: src/e-link/epd4in2.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epd4in2.obj -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd4in2.Tpo -c -o src/e-link/eLinkDisplayStatus-epd4in2.obj `if test -f 'src/e-link/epd4in2.cpp'; then $(CYGPATH_W) 'src/e-link/epd4in2.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epd4in2.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd4in2.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd4in2.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epd4in2.cpp' object='src/e-link/eLinkDisplayStatus-epd4in2.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epd4in2.obj `if test -f 'src/e-link/epd4in2.cpp'; then $(CYGPATH_W) 'src/e-link/epd4in2.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epd4in2.cpp'; fi`
+
+src/e-link/eLinkDisplayStatus-epd7in5b.o: src/e-link/epd7in5b.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epd7in5b.o -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd7in5b.Tpo -c -o src/e-link/eLinkDisplayStatus-epd7in5b.o `test -f 'src/e-link/epd7in5b.cpp' || echo '$(srcdir)/'`src/e-link/epd7in5b.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd7in5b.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd7in5b.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epd7in5b.cpp' object='src/e-link/eLinkDisplayStatus-epd7in5b.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epd7in5b.o `test -f 'src/e-link/epd7in5b.cpp' || echo '$(srcdir)/'`src/e-link/epd7in5b.cpp
+
+src/e-link/eLinkDisplayStatus-epd7in5b.obj: src/e-link/epd7in5b.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epd7in5b.obj -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd7in5b.Tpo -c -o src/e-link/eLinkDisplayStatus-epd7in5b.obj `if test -f 'src/e-link/epd7in5b.cpp'; then $(CYGPATH_W) 'src/e-link/epd7in5b.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epd7in5b.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd7in5b.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd7in5b.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epd7in5b.cpp' object='src/e-link/eLinkDisplayStatus-epd7in5b.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epd7in5b.obj `if test -f 'src/e-link/epd7in5b.cpp'; then $(CYGPATH_W) 'src/e-link/epd7in5b.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epd7in5b.cpp'; fi`
+
+src/e-link/eLinkDisplayStatus-epd.o: src/e-link/epd.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epd.o -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd.Tpo -c -o src/e-link/eLinkDisplayStatus-epd.o `test -f 'src/e-link/epd.cpp' || echo '$(srcdir)/'`src/e-link/epd.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epd.cpp' object='src/e-link/eLinkDisplayStatus-epd.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epd.o `test -f 'src/e-link/epd.cpp' || echo '$(srcdir)/'`src/e-link/epd.cpp
+
+src/e-link/eLinkDisplayStatus-epd.obj: src/e-link/epd.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/e-link/eLinkDisplayStatus-epd.obj -MD -MP -MF src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd.Tpo -c -o src/e-link/eLinkDisplayStatus-epd.obj `if test -f 'src/e-link/epd.cpp'; then $(CYGPATH_W) 'src/e-link/epd.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epd.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd.Tpo src/e-link/$(DEPDIR)/eLinkDisplayStatus-epd.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/e-link/epd.cpp' object='src/e-link/eLinkDisplayStatus-epd.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/e-link/eLinkDisplayStatus-epd.obj `if test -f 'src/e-link/epd.cpp'; then $(CYGPATH_W) 'src/e-link/epd.cpp'; else $(CYGPATH_W) '$(srcdir)/src/e-link/epd.cpp'; fi`
+
+src/fonts/eLinkDisplayStatus-KS0108.o: src/fonts/KS0108.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/eLinkDisplayStatus-KS0108.o -MD -MP -MF src/fonts/$(DEPDIR)/eLinkDisplayStatus-KS0108.Tpo -c -o src/fonts/eLinkDisplayStatus-KS0108.o `test -f 'src/fonts/KS0108.cpp' || echo '$(srcdir)/'`src/fonts/KS0108.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/$(DEPDIR)/eLinkDisplayStatus-KS0108.Tpo src/fonts/$(DEPDIR)/eLinkDisplayStatus-KS0108.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108.cpp' object='src/fonts/eLinkDisplayStatus-KS0108.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/eLinkDisplayStatus-KS0108.o `test -f 'src/fonts/KS0108.cpp' || echo '$(srcdir)/'`src/fonts/KS0108.cpp
+
+src/fonts/eLinkDisplayStatus-KS0108.obj: src/fonts/KS0108.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/eLinkDisplayStatus-KS0108.obj -MD -MP -MF src/fonts/$(DEPDIR)/eLinkDisplayStatus-KS0108.Tpo -c -o src/fonts/eLinkDisplayStatus-KS0108.obj `if test -f 'src/fonts/KS0108.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/$(DEPDIR)/eLinkDisplayStatus-KS0108.Tpo src/fonts/$(DEPDIR)/eLinkDisplayStatus-KS0108.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108.cpp' object='src/fonts/eLinkDisplayStatus-KS0108.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/eLinkDisplayStatus-KS0108.obj `if test -f 'src/fonts/KS0108.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Arial28.o: src/fonts/KS0108/Arial28.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Arial28.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Arial28.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Arial28.o `test -f 'src/fonts/KS0108/Arial28.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Arial28.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Arial28.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Arial28.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Arial28.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Arial28.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Arial28.o `test -f 'src/fonts/KS0108/Arial28.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Arial28.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Arial28.obj: src/fonts/KS0108/Arial28.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Arial28.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Arial28.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Arial28.obj `if test -f 'src/fonts/KS0108/Arial28.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Arial28.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Arial28.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Arial28.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Arial28.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Arial28.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Arial28.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Arial28.obj `if test -f 'src/fonts/KS0108/Arial28.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Arial28.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Arial28.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.o: src/fonts/KS0108/Digital-7-36Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Digital-7-36Bold.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.o `test -f 'src/fonts/KS0108/Digital-7-36Bold.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Digital-7-36Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Digital-7-36Bold.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Digital-7-36Bold.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Digital-7-36Bold.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.o `test -f 'src/fonts/KS0108/Digital-7-36Bold.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Digital-7-36Bold.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.obj: src/fonts/KS0108/Digital-7-36Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Digital-7-36Bold.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.obj `if test -f 'src/fonts/KS0108/Digital-7-36Bold.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Digital-7-36Bold.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Digital-7-36Bold.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Digital-7-36Bold.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Digital-7-36Bold.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Digital-7-36Bold.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Digital-7-36Bold.obj `if test -f 'src/fonts/KS0108/Digital-7-36Bold.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Digital-7-36Bold.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Digital-7-36Bold.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.o: src/fonts/KS0108/Ebrima28.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Ebrima28.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.o `test -f 'src/fonts/KS0108/Ebrima28.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Ebrima28.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Ebrima28.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Ebrima28.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Ebrima28.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.o `test -f 'src/fonts/KS0108/Ebrima28.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Ebrima28.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.obj: src/fonts/KS0108/Ebrima28.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Ebrima28.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.obj `if test -f 'src/fonts/KS0108/Ebrima28.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Ebrima28.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Ebrima28.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Ebrima28.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Ebrima28.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Ebrima28.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Ebrima28.obj `if test -f 'src/fonts/KS0108/Ebrima28.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Ebrima28.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Ebrima28.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Georgia12.o: src/fonts/KS0108/Georgia12.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Georgia12.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Georgia12.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Georgia12.o `test -f 'src/fonts/KS0108/Georgia12.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Georgia12.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Georgia12.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Georgia12.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Georgia12.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Georgia12.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Georgia12.o `test -f 'src/fonts/KS0108/Georgia12.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Georgia12.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Georgia12.obj: src/fonts/KS0108/Georgia12.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Georgia12.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Georgia12.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Georgia12.obj `if test -f 'src/fonts/KS0108/Georgia12.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Georgia12.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Georgia12.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Georgia12.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Georgia12.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Georgia12.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Georgia12.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Georgia12.obj `if test -f 'src/fonts/KS0108/Georgia12.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Georgia12.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Georgia12.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.o: src/fonts/KS0108/Liberation_Mono12.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono12.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.o `test -f 'src/fonts/KS0108/Liberation_Mono12.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono12.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono12.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono12.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono12.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.o `test -f 'src/fonts/KS0108/Liberation_Mono12.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono12.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.obj: src/fonts/KS0108/Liberation_Mono12.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono12.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.obj `if test -f 'src/fonts/KS0108/Liberation_Mono12.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono12.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono12.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono12.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono12.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono12.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono12.obj `if test -f 'src/fonts/KS0108/Liberation_Mono12.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono12.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono12.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.o: src/fonts/KS0108/Liberation_Mono11Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono11Bold.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.o `test -f 'src/fonts/KS0108/Liberation_Mono11Bold.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono11Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono11Bold.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono11Bold.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono11Bold.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.o `test -f 'src/fonts/KS0108/Liberation_Mono11Bold.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono11Bold.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.obj: src/fonts/KS0108/Liberation_Mono11Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono11Bold.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.obj `if test -f 'src/fonts/KS0108/Liberation_Mono11Bold.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono11Bold.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono11Bold.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono11Bold.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono11Bold.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono11Bold.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono11Bold.obj `if test -f 'src/fonts/KS0108/Liberation_Mono11Bold.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono11Bold.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono11Bold.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.o: src/fonts/KS0108/Liberation_Mono10Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10Bold.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.o `test -f 'src/fonts/KS0108/Liberation_Mono10Bold.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono10Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10Bold.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10Bold.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono10Bold.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.o `test -f 'src/fonts/KS0108/Liberation_Mono10Bold.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono10Bold.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.obj: src/fonts/KS0108/Liberation_Mono10Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10Bold.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.obj `if test -f 'src/fonts/KS0108/Liberation_Mono10Bold.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono10Bold.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono10Bold.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10Bold.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10Bold.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono10Bold.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10Bold.obj `if test -f 'src/fonts/KS0108/Liberation_Mono10Bold.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono10Bold.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono10Bold.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.o: src/fonts/KS0108/Liberation_Mono10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.o `test -f 'src/fonts/KS0108/Liberation_Mono10.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono10.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.o `test -f 'src/fonts/KS0108/Liberation_Mono10.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono10.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.obj: src/fonts/KS0108/Liberation_Mono10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.obj `if test -f 'src/fonts/KS0108/Liberation_Mono10.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono10.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono10.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono10.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono10.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono10.obj `if test -f 'src/fonts/KS0108/Liberation_Mono10.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono10.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono10.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.o: src/fonts/KS0108/Liberation_Mono9Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9Bold.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.o `test -f 'src/fonts/KS0108/Liberation_Mono9Bold.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono9Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9Bold.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9Bold.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono9Bold.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.o `test -f 'src/fonts/KS0108/Liberation_Mono9Bold.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono9Bold.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.obj: src/fonts/KS0108/Liberation_Mono9Bold.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9Bold.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.obj `if test -f 'src/fonts/KS0108/Liberation_Mono9Bold.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono9Bold.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono9Bold.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9Bold.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9Bold.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono9Bold.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9Bold.obj `if test -f 'src/fonts/KS0108/Liberation_Mono9Bold.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono9Bold.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono9Bold.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.o: src/fonts/KS0108/Liberation_Mono9.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.o `test -f 'src/fonts/KS0108/Liberation_Mono9.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono9.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono9.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.o `test -f 'src/fonts/KS0108/Liberation_Mono9.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono9.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.obj: src/fonts/KS0108/Liberation_Mono9.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.obj `if test -f 'src/fonts/KS0108/Liberation_Mono9.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono9.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono9.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono9.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono9.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono9.obj `if test -f 'src/fonts/KS0108/Liberation_Mono9.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono9.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono9.cpp'; fi`
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.o: src/fonts/KS0108/Liberation_Mono8.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.o -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono8.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.o `test -f 'src/fonts/KS0108/Liberation_Mono8.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono8.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono8.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono8.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono8.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.o `test -f 'src/fonts/KS0108/Liberation_Mono8.cpp' || echo '$(srcdir)/'`src/fonts/KS0108/Liberation_Mono8.cpp
+
+src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.obj: src/fonts/KS0108/Liberation_Mono8.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.obj -MD -MP -MF src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono8.Tpo -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.obj `if test -f 'src/fonts/KS0108/Liberation_Mono8.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono8.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono8.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono8.Tpo src/fonts/KS0108/$(DEPDIR)/eLinkDisplayStatus-Liberation_Mono8.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/fonts/KS0108/Liberation_Mono8.cpp' object='src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/fonts/KS0108/eLinkDisplayStatus-Liberation_Mono8.obj `if test -f 'src/fonts/KS0108/Liberation_Mono8.cpp'; then $(CYGPATH_W) 'src/fonts/KS0108/Liberation_Mono8.cpp'; else $(CYGPATH_W) '$(srcdir)/src/fonts/KS0108/Liberation_Mono8.cpp'; fi`
+
+src/lib/pugi/eLinkDisplayStatus-pugixml.o: src/lib/pugi/pugixml.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/lib/pugi/eLinkDisplayStatus-pugixml.o -MD -MP -MF src/lib/pugi/$(DEPDIR)/eLinkDisplayStatus-pugixml.Tpo -c -o src/lib/pugi/eLinkDisplayStatus-pugixml.o `test -f 'src/lib/pugi/pugixml.cpp' || echo '$(srcdir)/'`src/lib/pugi/pugixml.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/lib/pugi/$(DEPDIR)/eLinkDisplayStatus-pugixml.Tpo src/lib/pugi/$(DEPDIR)/eLinkDisplayStatus-pugixml.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/lib/pugi/pugixml.cpp' object='src/lib/pugi/eLinkDisplayStatus-pugixml.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/lib/pugi/eLinkDisplayStatus-pugixml.o `test -f 'src/lib/pugi/pugixml.cpp' || echo '$(srcdir)/'`src/lib/pugi/pugixml.cpp
+
+src/lib/pugi/eLinkDisplayStatus-pugixml.obj: src/lib/pugi/pugixml.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/lib/pugi/eLinkDisplayStatus-pugixml.obj -MD -MP -MF src/lib/pugi/$(DEPDIR)/eLinkDisplayStatus-pugixml.Tpo -c -o src/lib/pugi/eLinkDisplayStatus-pugixml.obj `if test -f 'src/lib/pugi/pugixml.cpp'; then $(CYGPATH_W) 'src/lib/pugi/pugixml.cpp'; else $(CYGPATH_W) '$(srcdir)/src/lib/pugi/pugixml.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/lib/pugi/$(DEPDIR)/eLinkDisplayStatus-pugixml.Tpo src/lib/pugi/$(DEPDIR)/eLinkDisplayStatus-pugixml.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/lib/pugi/pugixml.cpp' object='src/lib/pugi/eLinkDisplayStatus-pugixml.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/lib/pugi/eLinkDisplayStatus-pugixml.obj `if test -f 'src/lib/pugi/pugixml.cpp'; then $(CYGPATH_W) 'src/lib/pugi/pugixml.cpp'; else $(CYGPATH_W) '$(srcdir)/src/lib/pugi/pugixml.cpp'; fi`
+
+src/painter/eLinkDisplayStatus-PainterFont.o: src/painter/PainterFont.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/painter/eLinkDisplayStatus-PainterFont.o -MD -MP -MF src/painter/$(DEPDIR)/eLinkDisplayStatus-PainterFont.Tpo -c -o src/painter/eLinkDisplayStatus-PainterFont.o `test -f 'src/painter/PainterFont.cpp' || echo '$(srcdir)/'`src/painter/PainterFont.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/painter/$(DEPDIR)/eLinkDisplayStatus-PainterFont.Tpo src/painter/$(DEPDIR)/eLinkDisplayStatus-PainterFont.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/painter/PainterFont.cpp' object='src/painter/eLinkDisplayStatus-PainterFont.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/painter/eLinkDisplayStatus-PainterFont.o `test -f 'src/painter/PainterFont.cpp' || echo '$(srcdir)/'`src/painter/PainterFont.cpp
+
+src/painter/eLinkDisplayStatus-PainterFont.obj: src/painter/PainterFont.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/painter/eLinkDisplayStatus-PainterFont.obj -MD -MP -MF src/painter/$(DEPDIR)/eLinkDisplayStatus-PainterFont.Tpo -c -o src/painter/eLinkDisplayStatus-PainterFont.obj `if test -f 'src/painter/PainterFont.cpp'; then $(CYGPATH_W) 'src/painter/PainterFont.cpp'; else $(CYGPATH_W) '$(srcdir)/src/painter/PainterFont.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/painter/$(DEPDIR)/eLinkDisplayStatus-PainterFont.Tpo src/painter/$(DEPDIR)/eLinkDisplayStatus-PainterFont.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/painter/PainterFont.cpp' object='src/painter/eLinkDisplayStatus-PainterFont.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/painter/eLinkDisplayStatus-PainterFont.obj `if test -f 'src/painter/PainterFont.cpp'; then $(CYGPATH_W) 'src/painter/PainterFont.cpp'; else $(CYGPATH_W) '$(srcdir)/src/painter/PainterFont.cpp'; fi`
+
+src/painter/eLinkDisplayStatus-Painter.o: src/painter/Painter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/painter/eLinkDisplayStatus-Painter.o -MD -MP -MF src/painter/$(DEPDIR)/eLinkDisplayStatus-Painter.Tpo -c -o src/painter/eLinkDisplayStatus-Painter.o `test -f 'src/painter/Painter.cpp' || echo '$(srcdir)/'`src/painter/Painter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/painter/$(DEPDIR)/eLinkDisplayStatus-Painter.Tpo src/painter/$(DEPDIR)/eLinkDisplayStatus-Painter.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/painter/Painter.cpp' object='src/painter/eLinkDisplayStatus-Painter.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/painter/eLinkDisplayStatus-Painter.o `test -f 'src/painter/Painter.cpp' || echo '$(srcdir)/'`src/painter/Painter.cpp
+
+src/painter/eLinkDisplayStatus-Painter.obj: src/painter/Painter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/painter/eLinkDisplayStatus-Painter.obj -MD -MP -MF src/painter/$(DEPDIR)/eLinkDisplayStatus-Painter.Tpo -c -o src/painter/eLinkDisplayStatus-Painter.obj `if test -f 'src/painter/Painter.cpp'; then $(CYGPATH_W) 'src/painter/Painter.cpp'; else $(CYGPATH_W) '$(srcdir)/src/painter/Painter.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/painter/$(DEPDIR)/eLinkDisplayStatus-Painter.Tpo src/painter/$(DEPDIR)/eLinkDisplayStatus-Painter.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/painter/Painter.cpp' object='src/painter/eLinkDisplayStatus-Painter.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/painter/eLinkDisplayStatus-Painter.obj `if test -f 'src/painter/Painter.cpp'; then $(CYGPATH_W) 'src/painter/Painter.cpp'; else $(CYGPATH_W) '$(srcdir)/src/painter/Painter.cpp'; fi`
+
+src/ping/eLinkDisplayStatus-ping.o: src/ping/ping.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/ping/eLinkDisplayStatus-ping.o -MD -MP -MF src/ping/$(DEPDIR)/eLinkDisplayStatus-ping.Tpo -c -o src/ping/eLinkDisplayStatus-ping.o `test -f 'src/ping/ping.cpp' || echo '$(srcdir)/'`src/ping/ping.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/ping/$(DEPDIR)/eLinkDisplayStatus-ping.Tpo src/ping/$(DEPDIR)/eLinkDisplayStatus-ping.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/ping/ping.cpp' object='src/ping/eLinkDisplayStatus-ping.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/ping/eLinkDisplayStatus-ping.o `test -f 'src/ping/ping.cpp' || echo '$(srcdir)/'`src/ping/ping.cpp
+
+src/ping/eLinkDisplayStatus-ping.obj: src/ping/ping.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/ping/eLinkDisplayStatus-ping.obj -MD -MP -MF src/ping/$(DEPDIR)/eLinkDisplayStatus-ping.Tpo -c -o src/ping/eLinkDisplayStatus-ping.obj `if test -f 'src/ping/ping.cpp'; then $(CYGPATH_W) 'src/ping/ping.cpp'; else $(CYGPATH_W) '$(srcdir)/src/ping/ping.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/ping/$(DEPDIR)/eLinkDisplayStatus-ping.Tpo src/ping/$(DEPDIR)/eLinkDisplayStatus-ping.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/ping/ping.cpp' object='src/ping/eLinkDisplayStatus-ping.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/ping/eLinkDisplayStatus-ping.obj `if test -f 'src/ping/ping.cpp'; then $(CYGPATH_W) 'src/ping/ping.cpp'; else $(CYGPATH_W) '$(srcdir)/src/ping/ping.cpp'; fi`
+
+src/image/eLinkDisplayStatus-Image.o: src/image/Image.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/image/eLinkDisplayStatus-Image.o -MD -MP -MF src/image/$(DEPDIR)/eLinkDisplayStatus-Image.Tpo -c -o src/image/eLinkDisplayStatus-Image.o `test -f 'src/image/Image.cpp' || echo '$(srcdir)/'`src/image/Image.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/image/$(DEPDIR)/eLinkDisplayStatus-Image.Tpo src/image/$(DEPDIR)/eLinkDisplayStatus-Image.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/image/Image.cpp' object='src/image/eLinkDisplayStatus-Image.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/image/eLinkDisplayStatus-Image.o `test -f 'src/image/Image.cpp' || echo '$(srcdir)/'`src/image/Image.cpp
+
+src/image/eLinkDisplayStatus-Image.obj: src/image/Image.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/image/eLinkDisplayStatus-Image.obj -MD -MP -MF src/image/$(DEPDIR)/eLinkDisplayStatus-Image.Tpo -c -o src/image/eLinkDisplayStatus-Image.obj `if test -f 'src/image/Image.cpp'; then $(CYGPATH_W) 'src/image/Image.cpp'; else $(CYGPATH_W) '$(srcdir)/src/image/Image.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/image/$(DEPDIR)/eLinkDisplayStatus-Image.Tpo src/image/$(DEPDIR)/eLinkDisplayStatus-Image.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/image/Image.cpp' object='src/image/eLinkDisplayStatus-Image.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/image/eLinkDisplayStatus-Image.obj `if test -f 'src/image/Image.cpp'; then $(CYGPATH_W) 'src/image/Image.cpp'; else $(CYGPATH_W) '$(srcdir)/src/image/Image.cpp'; fi`
+
+src/image/Data/eLinkDisplayStatus-icons8-humidity-32.o: src/image/Data/icons8-humidity-32.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/image/Data/eLinkDisplayStatus-icons8-humidity-32.o -MD -MP -MF src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-humidity-32.Tpo -c -o src/image/Data/eLinkDisplayStatus-icons8-humidity-32.o `test -f 'src/image/Data/icons8-humidity-32.cpp' || echo '$(srcdir)/'`src/image/Data/icons8-humidity-32.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-humidity-32.Tpo src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-humidity-32.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/image/Data/icons8-humidity-32.cpp' object='src/image/Data/eLinkDisplayStatus-icons8-humidity-32.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/image/Data/eLinkDisplayStatus-icons8-humidity-32.o `test -f 'src/image/Data/icons8-humidity-32.cpp' || echo '$(srcdir)/'`src/image/Data/icons8-humidity-32.cpp
+
+src/image/Data/eLinkDisplayStatus-icons8-humidity-32.obj: src/image/Data/icons8-humidity-32.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/image/Data/eLinkDisplayStatus-icons8-humidity-32.obj -MD -MP -MF src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-humidity-32.Tpo -c -o src/image/Data/eLinkDisplayStatus-icons8-humidity-32.obj `if test -f 'src/image/Data/icons8-humidity-32.cpp'; then $(CYGPATH_W) 'src/image/Data/icons8-humidity-32.cpp'; else $(CYGPATH_W) '$(srcdir)/src/image/Data/icons8-humidity-32.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-humidity-32.Tpo src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-humidity-32.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/image/Data/icons8-humidity-32.cpp' object='src/image/Data/eLinkDisplayStatus-icons8-humidity-32.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/image/Data/eLinkDisplayStatus-icons8-humidity-32.obj `if test -f 'src/image/Data/icons8-humidity-32.cpp'; then $(CYGPATH_W) 'src/image/Data/icons8-humidity-32.cpp'; else $(CYGPATH_W) '$(srcdir)/src/image/Data/icons8-humidity-32.cpp'; fi`
+
+src/image/Data/eLinkDisplayStatus-icons8-temperature-30.o: src/image/Data/icons8-temperature-30.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/image/Data/eLinkDisplayStatus-icons8-temperature-30.o -MD -MP -MF src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-temperature-30.Tpo -c -o src/image/Data/eLinkDisplayStatus-icons8-temperature-30.o `test -f 'src/image/Data/icons8-temperature-30.cpp' || echo '$(srcdir)/'`src/image/Data/icons8-temperature-30.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-temperature-30.Tpo src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-temperature-30.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/image/Data/icons8-temperature-30.cpp' object='src/image/Data/eLinkDisplayStatus-icons8-temperature-30.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/image/Data/eLinkDisplayStatus-icons8-temperature-30.o `test -f 'src/image/Data/icons8-temperature-30.cpp' || echo '$(srcdir)/'`src/image/Data/icons8-temperature-30.cpp
+
+src/image/Data/eLinkDisplayStatus-icons8-temperature-30.obj: src/image/Data/icons8-temperature-30.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/image/Data/eLinkDisplayStatus-icons8-temperature-30.obj -MD -MP -MF src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-temperature-30.Tpo -c -o src/image/Data/eLinkDisplayStatus-icons8-temperature-30.obj `if test -f 'src/image/Data/icons8-temperature-30.cpp'; then $(CYGPATH_W) 'src/image/Data/icons8-temperature-30.cpp'; else $(CYGPATH_W) '$(srcdir)/src/image/Data/icons8-temperature-30.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-temperature-30.Tpo src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-temperature-30.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/image/Data/icons8-temperature-30.cpp' object='src/image/Data/eLinkDisplayStatus-icons8-temperature-30.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/image/Data/eLinkDisplayStatus-icons8-temperature-30.obj `if test -f 'src/image/Data/icons8-temperature-30.cpp'; then $(CYGPATH_W) 'src/image/Data/icons8-temperature-30.cpp'; else $(CYGPATH_W) '$(srcdir)/src/image/Data/icons8-temperature-30.cpp'; fi`
+
+src/SI7021/eLinkDisplayStatus-SI7021.o: src/SI7021/SI7021.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/SI7021/eLinkDisplayStatus-SI7021.o -MD -MP -MF src/SI7021/$(DEPDIR)/eLinkDisplayStatus-SI7021.Tpo -c -o src/SI7021/eLinkDisplayStatus-SI7021.o `test -f 'src/SI7021/SI7021.cpp' || echo '$(srcdir)/'`src/SI7021/SI7021.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/SI7021/$(DEPDIR)/eLinkDisplayStatus-SI7021.Tpo src/SI7021/$(DEPDIR)/eLinkDisplayStatus-SI7021.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/SI7021/SI7021.cpp' object='src/SI7021/eLinkDisplayStatus-SI7021.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/SI7021/eLinkDisplayStatus-SI7021.o `test -f 'src/SI7021/SI7021.cpp' || echo '$(srcdir)/'`src/SI7021/SI7021.cpp
+
+src/SI7021/eLinkDisplayStatus-SI7021.obj: src/SI7021/SI7021.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -MT src/SI7021/eLinkDisplayStatus-SI7021.obj -MD -MP -MF src/SI7021/$(DEPDIR)/eLinkDisplayStatus-SI7021.Tpo -c -o src/SI7021/eLinkDisplayStatus-SI7021.obj `if test -f 'src/SI7021/SI7021.cpp'; then $(CYGPATH_W) 'src/SI7021/SI7021.cpp'; else $(CYGPATH_W) '$(srcdir)/src/SI7021/SI7021.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/SI7021/$(DEPDIR)/eLinkDisplayStatus-SI7021.Tpo src/SI7021/$(DEPDIR)/eLinkDisplayStatus-SI7021.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/SI7021/SI7021.cpp' object='src/SI7021/eLinkDisplayStatus-SI7021.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CXXFLAGS) $(CXXFLAGS) -c -o src/SI7021/eLinkDisplayStatus-SI7021.obj `if test -f 'src/SI7021/SI7021.cpp'; then $(CYGPATH_W) 'src/SI7021/SI7021.cpp'; else $(CYGPATH_W) '$(srcdir)/src/SI7021/SI7021.cpp'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
-tags: tags-recursive
+tags: tags-am
 TAGS: tags
 
 tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
 	set x; \
 	here=`pwd`; \
-	if ($(ETAGS) --etags-include --version) >/dev/null 2>&1; then \
-	  include_option=--etags-include; \
-	  empty_fix=.; \
-	else \
-	  include_option=--include; \
-	  empty_fix=; \
-	fi; \
-	list='$(SUBDIRS)'; for subdir in $$list; do \
-	  if test "$$subdir" = .; then :; else \
-	    test ! -f $$subdir/TAGS || \
-	      set "$$@" "$$include_option=$$here/$$subdir/TAGS"; \
-	  fi; \
-	done; \
 	$(am__define_uniq_tagged_files); \
 	shift; \
 	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
@@ -416,7 +1333,7 @@ tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
 	      $$unique; \
 	  fi; \
 	fi
-ctags: ctags-recursive
+ctags: ctags-am
 
 CTAGS: ctags
 ctags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
@@ -435,7 +1352,7 @@ cscope: cscope.files
 clean-cscope:
 	-rm -f cscope.files
 cscope.files: clean-cscope cscopelist
-cscopelist: cscopelist-recursive
+cscopelist: cscopelist-am
 
 cscopelist-am: $(am__tagged_files)
 	list='$(am__tagged_files)'; \
@@ -485,31 +1402,6 @@ distdir: $(DISTFILES)
 	    test -f "$(distdir)/$$file" \
 	    || cp -p $$d/$$file "$(distdir)/$$file" \
 	    || exit 1; \
-	  fi; \
-	done
-	@list='$(DIST_SUBDIRS)'; for subdir in $$list; do \
-	  if test "$$subdir" = .; then :; else \
-	    $(am__make_dryrun) \
-	      || test -d "$(distdir)/$$subdir" \
-	      || $(MKDIR_P) "$(distdir)/$$subdir" \
-	      || exit 1; \
-	    dir1=$$subdir; dir2="$(distdir)/$$subdir"; \
-	    $(am__relativize); \
-	    new_distdir=$$reldir; \
-	    dir1=$$subdir; dir2="$(top_distdir)"; \
-	    $(am__relativize); \
-	    new_top_distdir=$$reldir; \
-	    echo " (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir="$$new_top_distdir" distdir="$$new_distdir" \\"; \
-	    echo "     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)"; \
-	    ($(am__cd) $$subdir && \
-	      $(MAKE) $(AM_MAKEFLAGS) \
-	        top_distdir="$$new_top_distdir" \
-	        distdir="$$new_distdir" \
-		am__remove_distdir=: \
-		am__skip_length_check=: \
-		am__skip_mode_fix=: \
-	        distdir) \
-	      || exit 1; \
 	  fi; \
 	done
 	-test -n "$(am__skip_mode_fix)" \
@@ -644,19 +1536,21 @@ distcleancheck: distclean
 	       $(distcleancheck_listfiles) ; \
 	       exit 1; } >&2
 check-am: all-am
-check: check-recursive
-all-am: Makefile config.h
-installdirs: installdirs-recursive
-installdirs-am:
-install: install-recursive
-install-exec: install-exec-recursive
-install-data: install-data-recursive
-uninstall: uninstall-recursive
+check: check-am
+all-am: Makefile $(PROGRAMS) config.h
+installdirs:
+	for dir in "$(DESTDIR)$(bindir)"; do \
+	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+	done
+install: install-am
+install-exec: install-exec-am
+install-data: install-data-am
+uninstall: uninstall-am
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 
-installcheck: installcheck-recursive
+installcheck: installcheck-am
 install-strip:
 	if test -z '$(STRIP)'; then \
 	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
@@ -674,99 +1568,132 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+	-rm -f src/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/$(am__dirstamp)
+	-rm -f src/DS18B20/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/DS18B20/$(am__dirstamp)
+	-rm -f src/SI7021/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/SI7021/$(am__dirstamp)
+	-rm -f src/e-link/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/e-link/$(am__dirstamp)
+	-rm -f src/fonts/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/fonts/$(am__dirstamp)
+	-rm -f src/fonts/KS0108/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/fonts/KS0108/$(am__dirstamp)
+	-rm -f src/image/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/image/$(am__dirstamp)
+	-rm -f src/image/Data/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/image/Data/$(am__dirstamp)
+	-rm -f src/lib/bcm2835/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/lib/bcm2835/$(am__dirstamp)
+	-rm -f src/lib/pugi/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/lib/pugi/$(am__dirstamp)
+	-rm -f src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/lib/wiringPi/wiringPi/$(am__dirstamp)
+	-rm -f src/painter/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/painter/$(am__dirstamp)
+	-rm -f src/ping/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/ping/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-clean: clean-recursive
+clean: clean-am
 
-clean-am: clean-generic mostlyclean-am
+clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
-distclean: distclean-recursive
+distclean: distclean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+	-rm -rf src/$(DEPDIR) src/DS18B20/$(DEPDIR) src/SI7021/$(DEPDIR) src/e-link/$(DEPDIR) src/fonts/$(DEPDIR) src/fonts/KS0108/$(DEPDIR) src/image/$(DEPDIR) src/image/Data/$(DEPDIR) src/lib/bcm2835/$(DEPDIR) src/lib/pugi/$(DEPDIR) src/lib/wiringPi/wiringPi/$(DEPDIR) src/painter/$(DEPDIR) src/ping/$(DEPDIR)
 	-rm -f Makefile
-distclean-am: clean-am distclean-generic distclean-hdr distclean-tags
+distclean-am: clean-am distclean-compile distclean-generic \
+	distclean-hdr distclean-tags
 
-dvi: dvi-recursive
+dvi: dvi-am
 
 dvi-am:
 
-html: html-recursive
+html: html-am
 
 html-am:
 
-info: info-recursive
+info: info-am
 
 info-am:
 
 install-data-am:
 
-install-dvi: install-dvi-recursive
+install-dvi: install-dvi-am
 
 install-dvi-am:
 
-install-exec-am:
+install-exec-am: install-binPROGRAMS
 
-install-html: install-html-recursive
+install-html: install-html-am
 
 install-html-am:
 
-install-info: install-info-recursive
+install-info: install-info-am
 
 install-info-am:
 
 install-man:
 
-install-pdf: install-pdf-recursive
+install-pdf: install-pdf-am
 
 install-pdf-am:
 
-install-ps: install-ps-recursive
+install-ps: install-ps-am
 
 install-ps-am:
 
 installcheck-am:
 
-maintainer-clean: maintainer-clean-recursive
+maintainer-clean: maintainer-clean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
+	-rm -rf src/$(DEPDIR) src/DS18B20/$(DEPDIR) src/SI7021/$(DEPDIR) src/e-link/$(DEPDIR) src/fonts/$(DEPDIR) src/fonts/KS0108/$(DEPDIR) src/image/$(DEPDIR) src/image/Data/$(DEPDIR) src/lib/bcm2835/$(DEPDIR) src/lib/pugi/$(DEPDIR) src/lib/wiringPi/wiringPi/$(DEPDIR) src/painter/$(DEPDIR) src/ping/$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
-mostlyclean: mostlyclean-recursive
+mostlyclean: mostlyclean-am
 
-mostlyclean-am: mostlyclean-generic
+mostlyclean-am: mostlyclean-compile mostlyclean-generic
 
-pdf: pdf-recursive
+pdf: pdf-am
 
 pdf-am:
 
-ps: ps-recursive
+ps: ps-am
 
 ps-am:
 
-uninstall-am:
+uninstall-am: uninstall-binPROGRAMS
 
-.MAKE: $(am__recursive_targets) all install-am install-strip
+.MAKE: all install-am install-strip
 
-.PHONY: $(am__recursive_targets) CTAGS GTAGS TAGS all all-am \
-	am--refresh check check-am clean clean-cscope clean-generic \
-	cscope cscopelist-am ctags ctags-am dist dist-all dist-bzip2 \
+.PHONY: CTAGS GTAGS TAGS all all-am am--refresh check check-am clean \
+	clean-binPROGRAMS clean-cscope clean-generic cscope \
+	cscopelist-am ctags ctags-am dist dist-all dist-bzip2 \
 	dist-gzip dist-lzip dist-shar dist-tarZ dist-xz dist-zip \
-	distcheck distclean distclean-generic distclean-hdr \
-	distclean-tags distcleancheck distdir distuninstallcheck dvi \
-	dvi-am html html-am info info-am install install-am \
-	install-data install-data-am install-dvi install-dvi-am \
-	install-exec install-exec-am install-html install-html-am \
-	install-info install-info-am install-man install-pdf \
-	install-pdf-am install-ps install-ps-am install-strip \
-	installcheck installcheck-am installdirs installdirs-am \
-	maintainer-clean maintainer-clean-generic mostlyclean \
+	distcheck distclean distclean-compile distclean-generic \
+	distclean-hdr distclean-tags distcleancheck distdir \
+	distuninstallcheck dvi dvi-am html html-am info info-am \
+	install install-am install-binPROGRAMS install-data \
+	install-data-am install-dvi install-dvi-am install-exec \
+	install-exec-am install-html install-html-am install-info \
+	install-info-am install-man install-pdf install-pdf-am \
+	install-ps install-ps-am install-strip installcheck \
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
 	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-am
+	uninstall-am uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile
 
+
+#eLinkDisplayStatus_dir = /usr/local/etc
+#eLinkDisplayStatus__DATA = ../E-LinkStatusConfig.xml
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -27,17 +27,17 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
-/* Define to 1 if you have the `bcm2835' library (-lbcm2835). */
-#undef HAVE_LIBBCM2835
+/* Define to 1 if you have the `crypt' library (-lcrypt). */
+#undef HAVE_LIBCRYPT
 
 /* Define to 1 if you have the `pthread' library (-lpthread). */
 #undef HAVE_LIBPTHREAD
 
+/* Define to 1 if you have the `rt' library (-lrt). */
+#undef HAVE_LIBRT
+
 /* Define to 1 if you have the `stdc++fs' library (-lstdc++fs). */
 #undef HAVE_LIBSTDC__FS
-
-/* Define to 1 if you have the `wiringPi' library (-lwiringPi). */
-#undef HAVE_LIBWIRINGPI
 
 /* Define to 1 if you have the <limits.h> header file. */
 #undef HAVE_LIMITS_H
