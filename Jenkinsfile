@@ -12,6 +12,7 @@ pipeline
 	{
 		stage('Build autoconf'){
 			steps {
+				cleanWs()
 				sh '''
 					cd autoconf
 					autoreconf --install --force
