@@ -9,7 +9,7 @@ pipeline
 {
 	agent none
 	stages {
-		stage( 'Build autoconf gcc') {
+		stage( 'Build autoconf cross-compilatio gcc armhf') {
 			agent {
 				node {
 					label 'linux && development'
