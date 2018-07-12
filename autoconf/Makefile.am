@@ -9,13 +9,15 @@ eLinkDisplayStatus_CXXFLAGS += -I"src/ping"
 eLinkDisplayStatus_CXXFLAGS += -I"src/SI7021"
 eLinkDisplayStatus_CXXFLAGS += -I"src/lib/pugi"
 eLinkDisplayStatus_CXXFLAGS += -I"src/lib/bcm2835"
-eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringPI"src/
-eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringPi/wiringPI"src/
+eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringPi"
+eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringPi/wiringPi"
 eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringPi/wiringPiD"
-eLinkDisplayStatus_CXXFLAGS += -W"no-psabI"src/
+eLinkDisplayStatus_CXXFLAGS += -W"no-psabI"
 eLinkDisplayStatus_CXXFLAGS += -D_GNU_SOURCE
 eLinkDisplayStatus_CXXFLAGS += -D_POSIX_C_SOURCE=200112L
 
+eLinkDisplayStatus_CFLAGS  = $(eLinkDisplayStatus_CXXFLAGS)
+eLinkDisplayStatus_CFLAGS += -W"no-int-to-pointer-cast" -W"no-pointer-to-int-cast"
 
 eLinkDisplayStatus_SOURCES = src/StatusManager.cpp \
 				src/StatusPing.cpp \

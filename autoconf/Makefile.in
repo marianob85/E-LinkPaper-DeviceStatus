@@ -135,40 +135,40 @@ am_eLinkDisplayStatus_OBJECTS =  \
 	src/image/Data/eLinkDisplayStatus-icons8-humidity-32.$(OBJEXT) \
 	src/image/Data/eLinkDisplayStatus-icons8-temperature-30.$(OBJEXT) \
 	src/SI7021/eLinkDisplayStatus-SI7021.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/wiringPi.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/wiringSerial.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/wiringShift.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/piHiPri.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/piThread.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/wiringPiSPI.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/wiringPiI2C.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/softPwm.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/softTone.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp23008.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp23016.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp23017.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp23s08.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp23s17.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/sr595.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/pcf8574.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/pcf8591.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp3002.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp3004.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp4802.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/mcp3422.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/max31855.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/max5322.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/ads1115.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/sn3218.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/bmp180.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/htu21d.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/ds18b20.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/rht03.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/drcSerial.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/drcNet.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/pseudoPins.$(OBJEXT) \
-	src/lib/wiringPi/wiringPi/wpiExtensions.$(OBJEXT) \
-	src/lib/bcm2835/bcm2835.$(OBJEXT)
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.$(OBJEXT) \
+	src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.$(OBJEXT) \
+	src/lib/bcm2835/eLinkDisplayStatus-bcm2835.$(OBJEXT)
 eLinkDisplayStatus_OBJECTS = $(am_eLinkDisplayStatus_OBJECTS)
 eLinkDisplayStatus_LDADD = $(LDADD)
 eLinkDisplayStatus_LINK = $(CXXLD) $(eLinkDisplayStatus_CXXFLAGS) \
@@ -189,6 +189,10 @@ DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_@AM_V@)
@@ -201,10 +205,6 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-AM_V_lt = $(am__v_lt_@AM_V@)
-am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-am__v_lt_0 = --silent
-am__v_lt_1 = 
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 AM_V_CXX = $(am__v_CXX_@AM_V@)
@@ -364,9 +364,11 @@ top_srcdir = @top_srcdir@
 eLinkDisplayStatus_CXXFLAGS = -I"src/DS18B20" -I"src/e-link" \
 	-I"src/fonts" -I"src/image" -I"src/painter" -I"src/ping" \
 	-I"src/SI7021" -I"src/lib/pugi" -I"src/lib/bcm2835" \
-	-I"src/lib/wiringPI"src/ -I"src/lib/wiringPi/wiringPI"src/ \
-	-I"src/lib/wiringPi/wiringPiD" -W"no-psabI"src/ -D_GNU_SOURCE \
+	-I"src/lib/wiringPi" -I"src/lib/wiringPi/wiringPi" \
+	-I"src/lib/wiringPi/wiringPiD" -W"no-psabI" -D_GNU_SOURCE \
 	-D_POSIX_C_SOURCE=200112L
+eLinkDisplayStatus_CFLAGS = $(eLinkDisplayStatus_CXXFLAGS) \
+	-W"no-int-to-pointer-cast" -W"no-pointer-to-int-cast"
 eLinkDisplayStatus_SOURCES = src/StatusManager.cpp \
 				src/StatusPing.cpp \
 				src/main.cpp \
@@ -665,103 +667,103 @@ src/lib/wiringPi/wiringPi/$(am__dirstamp):
 src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) src/lib/wiringPi/wiringPi/$(DEPDIR)
 	@: > src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/wiringPi.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/wiringSerial.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/wiringShift.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/piHiPri.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/piThread.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/wiringPiSPI.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/wiringPiI2C.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/softPwm.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/softTone.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp23008.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp23016.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp23017.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp23s08.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp23s17.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/sr595.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/pcf8574.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/pcf8591.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp3002.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp3004.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp4802.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/mcp3422.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/max31855.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/max5322.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/ads1115.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/sn3218.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/bmp180.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/htu21d.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/ds18b20.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/rht03.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/drcSerial.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/drcNet.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/pseudoPins.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
-src/lib/wiringPi/wiringPi/wpiExtensions.$(OBJEXT):  \
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.$(OBJEXT):  \
 	src/lib/wiringPi/wiringPi/$(am__dirstamp) \
 	src/lib/wiringPi/wiringPi/$(DEPDIR)/$(am__dirstamp)
 src/lib/bcm2835/$(am__dirstamp):
@@ -770,7 +772,8 @@ src/lib/bcm2835/$(am__dirstamp):
 src/lib/bcm2835/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) src/lib/bcm2835/$(DEPDIR)
 	@: > src/lib/bcm2835/$(DEPDIR)/$(am__dirstamp)
-src/lib/bcm2835/bcm2835.$(OBJEXT): src/lib/bcm2835/$(am__dirstamp) \
+src/lib/bcm2835/eLinkDisplayStatus-bcm2835.$(OBJEXT):  \
+	src/lib/bcm2835/$(am__dirstamp) \
 	src/lib/bcm2835/$(DEPDIR)/$(am__dirstamp)
 
 eLinkDisplayStatus$(EXEEXT): $(eLinkDisplayStatus_OBJECTS) $(eLinkDisplayStatus_DEPENDENCIES) $(EXTRA_eLinkDisplayStatus_DEPENDENCIES) 
@@ -822,41 +825,41 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/image/$(DEPDIR)/eLinkDisplayStatus-Image.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-humidity-32.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/image/Data/$(DEPDIR)/eLinkDisplayStatus-icons8-temperature-30.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/bcm2835/$(DEPDIR)/bcm2835.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/bcm2835/$(DEPDIR)/eLinkDisplayStatus-bcm2835.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/lib/pugi/$(DEPDIR)/eLinkDisplayStatus-pugixml.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/ads1115.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/bmp180.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/drcNet.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/drcSerial.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/ds18b20.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/htu21d.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/max31855.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/max5322.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23008.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23016.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23017.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23s08.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp23s17.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp3002.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp3004.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp3422.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/mcp4802.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/pcf8574.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/pcf8591.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/piHiPri.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/piThread.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/pseudoPins.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/rht03.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/sn3218.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/softPwm.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/softTone.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/sr595.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringPi.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringPiI2C.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringPiSPI.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringSerial.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wiringShift.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/wpiExtensions.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ads1115.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-bmp180.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcNet.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcSerial.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ds18b20.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-htu21d.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max31855.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max5322.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23008.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23016.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23017.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s08.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s17.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3002.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3004.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3422.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp4802.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8574.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8591.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piHiPri.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piThread.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pseudoPins.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-rht03.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sn3218.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softPwm.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softTone.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sr595.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPi.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiI2C.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiSPI.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringSerial.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringShift.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wpiExtensions.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/painter/$(DEPDIR)/eLinkDisplayStatus-Painter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/painter/$(DEPDIR)/eLinkDisplayStatus-PainterFont.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ping/$(DEPDIR)/eLinkDisplayStatus-ping.Po@am__quote@
@@ -876,6 +879,482 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.o: src/lib/wiringPi/wiringPi/wiringPi.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPi.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.o `test -f 'src/lib/wiringPi/wiringPi/wiringPi.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringPi.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPi.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPi.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringPi.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.o `test -f 'src/lib/wiringPi/wiringPi/wiringPi.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringPi.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.obj: src/lib/wiringPi/wiringPi/wiringPi.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPi.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringPi.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringPi.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringPi.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPi.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPi.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringPi.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPi.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringPi.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringPi.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringPi.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.o: src/lib/wiringPi/wiringPi/wiringSerial.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringSerial.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.o `test -f 'src/lib/wiringPi/wiringPi/wiringSerial.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringSerial.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringSerial.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringSerial.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringSerial.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.o `test -f 'src/lib/wiringPi/wiringPi/wiringSerial.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringSerial.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.obj: src/lib/wiringPi/wiringPi/wiringSerial.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringSerial.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringSerial.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringSerial.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringSerial.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringSerial.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringSerial.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringSerial.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringSerial.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringSerial.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringSerial.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringSerial.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.o: src/lib/wiringPi/wiringPi/wiringShift.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringShift.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.o `test -f 'src/lib/wiringPi/wiringPi/wiringShift.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringShift.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringShift.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringShift.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringShift.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.o `test -f 'src/lib/wiringPi/wiringPi/wiringShift.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringShift.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.obj: src/lib/wiringPi/wiringPi/wiringShift.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringShift.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringShift.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringShift.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringShift.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringShift.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringShift.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringShift.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringShift.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringShift.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringShift.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringShift.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.o: src/lib/wiringPi/wiringPi/piHiPri.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piHiPri.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.o `test -f 'src/lib/wiringPi/wiringPi/piHiPri.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/piHiPri.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piHiPri.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piHiPri.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/piHiPri.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.o `test -f 'src/lib/wiringPi/wiringPi/piHiPri.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/piHiPri.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.obj: src/lib/wiringPi/wiringPi/piHiPri.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piHiPri.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.obj `if test -f 'src/lib/wiringPi/wiringPi/piHiPri.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/piHiPri.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/piHiPri.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piHiPri.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piHiPri.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/piHiPri.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piHiPri.obj `if test -f 'src/lib/wiringPi/wiringPi/piHiPri.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/piHiPri.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/piHiPri.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.o: src/lib/wiringPi/wiringPi/piThread.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piThread.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.o `test -f 'src/lib/wiringPi/wiringPi/piThread.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/piThread.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piThread.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piThread.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/piThread.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.o `test -f 'src/lib/wiringPi/wiringPi/piThread.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/piThread.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.obj: src/lib/wiringPi/wiringPi/piThread.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piThread.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.obj `if test -f 'src/lib/wiringPi/wiringPi/piThread.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/piThread.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/piThread.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piThread.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-piThread.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/piThread.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-piThread.obj `if test -f 'src/lib/wiringPi/wiringPi/piThread.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/piThread.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/piThread.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.o: src/lib/wiringPi/wiringPi/wiringPiSPI.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiSPI.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.o `test -f 'src/lib/wiringPi/wiringPi/wiringPiSPI.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringPiSPI.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiSPI.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiSPI.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringPiSPI.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.o `test -f 'src/lib/wiringPi/wiringPi/wiringPiSPI.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringPiSPI.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.obj: src/lib/wiringPi/wiringPi/wiringPiSPI.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiSPI.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringPiSPI.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringPiSPI.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringPiSPI.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiSPI.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiSPI.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringPiSPI.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiSPI.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringPiSPI.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringPiSPI.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringPiSPI.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.o: src/lib/wiringPi/wiringPi/wiringPiI2C.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiI2C.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.o `test -f 'src/lib/wiringPi/wiringPi/wiringPiI2C.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringPiI2C.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiI2C.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiI2C.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringPiI2C.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.o `test -f 'src/lib/wiringPi/wiringPi/wiringPiI2C.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wiringPiI2C.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.obj: src/lib/wiringPi/wiringPi/wiringPiI2C.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiI2C.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringPiI2C.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringPiI2C.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringPiI2C.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiI2C.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wiringPiI2C.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wiringPiI2C.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wiringPiI2C.obj `if test -f 'src/lib/wiringPi/wiringPi/wiringPiI2C.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wiringPiI2C.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wiringPiI2C.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.o: src/lib/wiringPi/wiringPi/softPwm.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softPwm.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.o `test -f 'src/lib/wiringPi/wiringPi/softPwm.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/softPwm.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softPwm.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softPwm.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/softPwm.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.o `test -f 'src/lib/wiringPi/wiringPi/softPwm.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/softPwm.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.obj: src/lib/wiringPi/wiringPi/softPwm.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softPwm.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.obj `if test -f 'src/lib/wiringPi/wiringPi/softPwm.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/softPwm.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/softPwm.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softPwm.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softPwm.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/softPwm.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softPwm.obj `if test -f 'src/lib/wiringPi/wiringPi/softPwm.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/softPwm.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/softPwm.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.o: src/lib/wiringPi/wiringPi/softTone.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softTone.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.o `test -f 'src/lib/wiringPi/wiringPi/softTone.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/softTone.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softTone.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softTone.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/softTone.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.o `test -f 'src/lib/wiringPi/wiringPi/softTone.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/softTone.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.obj: src/lib/wiringPi/wiringPi/softTone.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softTone.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.obj `if test -f 'src/lib/wiringPi/wiringPi/softTone.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/softTone.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/softTone.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softTone.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-softTone.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/softTone.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-softTone.obj `if test -f 'src/lib/wiringPi/wiringPi/softTone.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/softTone.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/softTone.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.o: src/lib/wiringPi/wiringPi/mcp23008.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23008.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.o `test -f 'src/lib/wiringPi/wiringPi/mcp23008.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23008.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23008.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23008.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23008.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.o `test -f 'src/lib/wiringPi/wiringPi/mcp23008.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23008.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.obj: src/lib/wiringPi/wiringPi/mcp23008.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23008.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23008.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23008.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23008.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23008.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23008.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23008.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23008.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23008.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23008.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23008.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.o: src/lib/wiringPi/wiringPi/mcp23016.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23016.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.o `test -f 'src/lib/wiringPi/wiringPi/mcp23016.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23016.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23016.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23016.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23016.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.o `test -f 'src/lib/wiringPi/wiringPi/mcp23016.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23016.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.obj: src/lib/wiringPi/wiringPi/mcp23016.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23016.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23016.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23016.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23016.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23016.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23016.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23016.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23016.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23016.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23016.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23016.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.o: src/lib/wiringPi/wiringPi/mcp23017.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23017.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.o `test -f 'src/lib/wiringPi/wiringPi/mcp23017.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23017.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23017.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23017.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23017.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.o `test -f 'src/lib/wiringPi/wiringPi/mcp23017.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23017.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.obj: src/lib/wiringPi/wiringPi/mcp23017.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23017.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23017.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23017.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23017.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23017.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23017.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23017.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23017.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23017.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23017.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23017.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.o: src/lib/wiringPi/wiringPi/mcp23s08.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s08.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.o `test -f 'src/lib/wiringPi/wiringPi/mcp23s08.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23s08.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s08.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s08.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23s08.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.o `test -f 'src/lib/wiringPi/wiringPi/mcp23s08.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23s08.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.obj: src/lib/wiringPi/wiringPi/mcp23s08.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s08.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23s08.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23s08.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23s08.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s08.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s08.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23s08.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s08.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23s08.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23s08.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23s08.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.o: src/lib/wiringPi/wiringPi/mcp23s17.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s17.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.o `test -f 'src/lib/wiringPi/wiringPi/mcp23s17.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23s17.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s17.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s17.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23s17.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.o `test -f 'src/lib/wiringPi/wiringPi/mcp23s17.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp23s17.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.obj: src/lib/wiringPi/wiringPi/mcp23s17.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s17.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23s17.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23s17.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23s17.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s17.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp23s17.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp23s17.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp23s17.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp23s17.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp23s17.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp23s17.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.o: src/lib/wiringPi/wiringPi/sr595.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sr595.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.o `test -f 'src/lib/wiringPi/wiringPi/sr595.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/sr595.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sr595.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sr595.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/sr595.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.o `test -f 'src/lib/wiringPi/wiringPi/sr595.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/sr595.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.obj: src/lib/wiringPi/wiringPi/sr595.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sr595.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.obj `if test -f 'src/lib/wiringPi/wiringPi/sr595.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/sr595.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/sr595.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sr595.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sr595.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/sr595.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sr595.obj `if test -f 'src/lib/wiringPi/wiringPi/sr595.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/sr595.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/sr595.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.o: src/lib/wiringPi/wiringPi/pcf8574.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8574.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.o `test -f 'src/lib/wiringPi/wiringPi/pcf8574.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/pcf8574.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8574.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8574.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/pcf8574.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.o `test -f 'src/lib/wiringPi/wiringPi/pcf8574.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/pcf8574.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.obj: src/lib/wiringPi/wiringPi/pcf8574.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8574.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.obj `if test -f 'src/lib/wiringPi/wiringPi/pcf8574.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/pcf8574.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/pcf8574.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8574.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8574.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/pcf8574.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8574.obj `if test -f 'src/lib/wiringPi/wiringPi/pcf8574.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/pcf8574.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/pcf8574.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.o: src/lib/wiringPi/wiringPi/pcf8591.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8591.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.o `test -f 'src/lib/wiringPi/wiringPi/pcf8591.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/pcf8591.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8591.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8591.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/pcf8591.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.o `test -f 'src/lib/wiringPi/wiringPi/pcf8591.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/pcf8591.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.obj: src/lib/wiringPi/wiringPi/pcf8591.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8591.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.obj `if test -f 'src/lib/wiringPi/wiringPi/pcf8591.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/pcf8591.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/pcf8591.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8591.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pcf8591.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/pcf8591.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pcf8591.obj `if test -f 'src/lib/wiringPi/wiringPi/pcf8591.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/pcf8591.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/pcf8591.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.o: src/lib/wiringPi/wiringPi/mcp3002.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3002.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.o `test -f 'src/lib/wiringPi/wiringPi/mcp3002.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp3002.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3002.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3002.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp3002.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.o `test -f 'src/lib/wiringPi/wiringPi/mcp3002.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp3002.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.obj: src/lib/wiringPi/wiringPi/mcp3002.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3002.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp3002.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp3002.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp3002.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3002.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3002.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp3002.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3002.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp3002.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp3002.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp3002.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.o: src/lib/wiringPi/wiringPi/mcp3004.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3004.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.o `test -f 'src/lib/wiringPi/wiringPi/mcp3004.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp3004.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3004.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3004.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp3004.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.o `test -f 'src/lib/wiringPi/wiringPi/mcp3004.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp3004.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.obj: src/lib/wiringPi/wiringPi/mcp3004.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3004.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp3004.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp3004.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp3004.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3004.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3004.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp3004.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3004.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp3004.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp3004.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp3004.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.o: src/lib/wiringPi/wiringPi/mcp4802.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp4802.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.o `test -f 'src/lib/wiringPi/wiringPi/mcp4802.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp4802.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp4802.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp4802.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp4802.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.o `test -f 'src/lib/wiringPi/wiringPi/mcp4802.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp4802.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.obj: src/lib/wiringPi/wiringPi/mcp4802.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp4802.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp4802.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp4802.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp4802.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp4802.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp4802.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp4802.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp4802.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp4802.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp4802.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp4802.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.o: src/lib/wiringPi/wiringPi/mcp3422.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3422.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.o `test -f 'src/lib/wiringPi/wiringPi/mcp3422.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp3422.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3422.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3422.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp3422.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.o `test -f 'src/lib/wiringPi/wiringPi/mcp3422.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/mcp3422.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.obj: src/lib/wiringPi/wiringPi/mcp3422.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3422.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp3422.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp3422.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp3422.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3422.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-mcp3422.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/mcp3422.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-mcp3422.obj `if test -f 'src/lib/wiringPi/wiringPi/mcp3422.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/mcp3422.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/mcp3422.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.o: src/lib/wiringPi/wiringPi/max31855.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max31855.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.o `test -f 'src/lib/wiringPi/wiringPi/max31855.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/max31855.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max31855.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max31855.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/max31855.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.o `test -f 'src/lib/wiringPi/wiringPi/max31855.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/max31855.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.obj: src/lib/wiringPi/wiringPi/max31855.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max31855.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.obj `if test -f 'src/lib/wiringPi/wiringPi/max31855.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/max31855.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/max31855.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max31855.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max31855.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/max31855.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max31855.obj `if test -f 'src/lib/wiringPi/wiringPi/max31855.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/max31855.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/max31855.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.o: src/lib/wiringPi/wiringPi/max5322.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max5322.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.o `test -f 'src/lib/wiringPi/wiringPi/max5322.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/max5322.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max5322.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max5322.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/max5322.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.o `test -f 'src/lib/wiringPi/wiringPi/max5322.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/max5322.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.obj: src/lib/wiringPi/wiringPi/max5322.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max5322.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.obj `if test -f 'src/lib/wiringPi/wiringPi/max5322.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/max5322.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/max5322.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max5322.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-max5322.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/max5322.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-max5322.obj `if test -f 'src/lib/wiringPi/wiringPi/max5322.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/max5322.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/max5322.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.o: src/lib/wiringPi/wiringPi/ads1115.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ads1115.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.o `test -f 'src/lib/wiringPi/wiringPi/ads1115.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/ads1115.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ads1115.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ads1115.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/ads1115.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.o `test -f 'src/lib/wiringPi/wiringPi/ads1115.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/ads1115.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.obj: src/lib/wiringPi/wiringPi/ads1115.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ads1115.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.obj `if test -f 'src/lib/wiringPi/wiringPi/ads1115.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/ads1115.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/ads1115.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ads1115.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ads1115.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/ads1115.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ads1115.obj `if test -f 'src/lib/wiringPi/wiringPi/ads1115.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/ads1115.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/ads1115.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.o: src/lib/wiringPi/wiringPi/sn3218.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sn3218.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.o `test -f 'src/lib/wiringPi/wiringPi/sn3218.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/sn3218.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sn3218.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sn3218.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/sn3218.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.o `test -f 'src/lib/wiringPi/wiringPi/sn3218.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/sn3218.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.obj: src/lib/wiringPi/wiringPi/sn3218.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sn3218.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.obj `if test -f 'src/lib/wiringPi/wiringPi/sn3218.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/sn3218.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/sn3218.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sn3218.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-sn3218.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/sn3218.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-sn3218.obj `if test -f 'src/lib/wiringPi/wiringPi/sn3218.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/sn3218.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/sn3218.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.o: src/lib/wiringPi/wiringPi/bmp180.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-bmp180.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.o `test -f 'src/lib/wiringPi/wiringPi/bmp180.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/bmp180.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-bmp180.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-bmp180.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/bmp180.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.o `test -f 'src/lib/wiringPi/wiringPi/bmp180.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/bmp180.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.obj: src/lib/wiringPi/wiringPi/bmp180.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-bmp180.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.obj `if test -f 'src/lib/wiringPi/wiringPi/bmp180.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/bmp180.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/bmp180.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-bmp180.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-bmp180.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/bmp180.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-bmp180.obj `if test -f 'src/lib/wiringPi/wiringPi/bmp180.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/bmp180.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/bmp180.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.o: src/lib/wiringPi/wiringPi/htu21d.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-htu21d.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.o `test -f 'src/lib/wiringPi/wiringPi/htu21d.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/htu21d.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-htu21d.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-htu21d.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/htu21d.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.o `test -f 'src/lib/wiringPi/wiringPi/htu21d.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/htu21d.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.obj: src/lib/wiringPi/wiringPi/htu21d.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-htu21d.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.obj `if test -f 'src/lib/wiringPi/wiringPi/htu21d.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/htu21d.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/htu21d.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-htu21d.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-htu21d.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/htu21d.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-htu21d.obj `if test -f 'src/lib/wiringPi/wiringPi/htu21d.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/htu21d.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/htu21d.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.o: src/lib/wiringPi/wiringPi/ds18b20.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ds18b20.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.o `test -f 'src/lib/wiringPi/wiringPi/ds18b20.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/ds18b20.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ds18b20.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ds18b20.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/ds18b20.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.o `test -f 'src/lib/wiringPi/wiringPi/ds18b20.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/ds18b20.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.obj: src/lib/wiringPi/wiringPi/ds18b20.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ds18b20.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.obj `if test -f 'src/lib/wiringPi/wiringPi/ds18b20.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/ds18b20.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/ds18b20.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ds18b20.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-ds18b20.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/ds18b20.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-ds18b20.obj `if test -f 'src/lib/wiringPi/wiringPi/ds18b20.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/ds18b20.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/ds18b20.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.o: src/lib/wiringPi/wiringPi/rht03.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-rht03.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.o `test -f 'src/lib/wiringPi/wiringPi/rht03.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/rht03.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-rht03.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-rht03.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/rht03.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.o `test -f 'src/lib/wiringPi/wiringPi/rht03.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/rht03.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.obj: src/lib/wiringPi/wiringPi/rht03.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-rht03.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.obj `if test -f 'src/lib/wiringPi/wiringPi/rht03.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/rht03.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/rht03.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-rht03.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-rht03.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/rht03.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-rht03.obj `if test -f 'src/lib/wiringPi/wiringPi/rht03.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/rht03.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/rht03.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.o: src/lib/wiringPi/wiringPi/drcSerial.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcSerial.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.o `test -f 'src/lib/wiringPi/wiringPi/drcSerial.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/drcSerial.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcSerial.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcSerial.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/drcSerial.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.o `test -f 'src/lib/wiringPi/wiringPi/drcSerial.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/drcSerial.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.obj: src/lib/wiringPi/wiringPi/drcSerial.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcSerial.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.obj `if test -f 'src/lib/wiringPi/wiringPi/drcSerial.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/drcSerial.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/drcSerial.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcSerial.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcSerial.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/drcSerial.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcSerial.obj `if test -f 'src/lib/wiringPi/wiringPi/drcSerial.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/drcSerial.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/drcSerial.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.o: src/lib/wiringPi/wiringPi/drcNet.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcNet.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.o `test -f 'src/lib/wiringPi/wiringPi/drcNet.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/drcNet.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcNet.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcNet.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/drcNet.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.o `test -f 'src/lib/wiringPi/wiringPi/drcNet.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/drcNet.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.obj: src/lib/wiringPi/wiringPi/drcNet.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcNet.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.obj `if test -f 'src/lib/wiringPi/wiringPi/drcNet.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/drcNet.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/drcNet.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcNet.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-drcNet.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/drcNet.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-drcNet.obj `if test -f 'src/lib/wiringPi/wiringPi/drcNet.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/drcNet.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/drcNet.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.o: src/lib/wiringPi/wiringPi/pseudoPins.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pseudoPins.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.o `test -f 'src/lib/wiringPi/wiringPi/pseudoPins.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/pseudoPins.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pseudoPins.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pseudoPins.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/pseudoPins.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.o `test -f 'src/lib/wiringPi/wiringPi/pseudoPins.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/pseudoPins.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.obj: src/lib/wiringPi/wiringPi/pseudoPins.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pseudoPins.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.obj `if test -f 'src/lib/wiringPi/wiringPi/pseudoPins.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/pseudoPins.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/pseudoPins.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pseudoPins.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-pseudoPins.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/pseudoPins.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-pseudoPins.obj `if test -f 'src/lib/wiringPi/wiringPi/pseudoPins.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/pseudoPins.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/pseudoPins.c'; fi`
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.o: src/lib/wiringPi/wiringPi/wpiExtensions.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.o -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wpiExtensions.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.o `test -f 'src/lib/wiringPi/wiringPi/wpiExtensions.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wpiExtensions.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wpiExtensions.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wpiExtensions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wpiExtensions.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.o `test -f 'src/lib/wiringPi/wiringPi/wpiExtensions.c' || echo '$(srcdir)/'`src/lib/wiringPi/wiringPi/wpiExtensions.c
+
+src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.obj: src/lib/wiringPi/wiringPi/wpiExtensions.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.obj -MD -MP -MF src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wpiExtensions.Tpo -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.obj `if test -f 'src/lib/wiringPi/wiringPi/wpiExtensions.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wpiExtensions.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wpiExtensions.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wpiExtensions.Tpo src/lib/wiringPi/wiringPi/$(DEPDIR)/eLinkDisplayStatus-wpiExtensions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/wiringPi/wiringPi/wpiExtensions.c' object='src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/wiringPi/wiringPi/eLinkDisplayStatus-wpiExtensions.obj `if test -f 'src/lib/wiringPi/wiringPi/wpiExtensions.c'; then $(CYGPATH_W) 'src/lib/wiringPi/wiringPi/wpiExtensions.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/wiringPi/wiringPi/wpiExtensions.c'; fi`
+
+src/lib/bcm2835/eLinkDisplayStatus-bcm2835.o: src/lib/bcm2835/bcm2835.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/bcm2835/eLinkDisplayStatus-bcm2835.o -MD -MP -MF src/lib/bcm2835/$(DEPDIR)/eLinkDisplayStatus-bcm2835.Tpo -c -o src/lib/bcm2835/eLinkDisplayStatus-bcm2835.o `test -f 'src/lib/bcm2835/bcm2835.c' || echo '$(srcdir)/'`src/lib/bcm2835/bcm2835.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/bcm2835/$(DEPDIR)/eLinkDisplayStatus-bcm2835.Tpo src/lib/bcm2835/$(DEPDIR)/eLinkDisplayStatus-bcm2835.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/bcm2835/bcm2835.c' object='src/lib/bcm2835/eLinkDisplayStatus-bcm2835.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/bcm2835/eLinkDisplayStatus-bcm2835.o `test -f 'src/lib/bcm2835/bcm2835.c' || echo '$(srcdir)/'`src/lib/bcm2835/bcm2835.c
+
+src/lib/bcm2835/eLinkDisplayStatus-bcm2835.obj: src/lib/bcm2835/bcm2835.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -MT src/lib/bcm2835/eLinkDisplayStatus-bcm2835.obj -MD -MP -MF src/lib/bcm2835/$(DEPDIR)/eLinkDisplayStatus-bcm2835.Tpo -c -o src/lib/bcm2835/eLinkDisplayStatus-bcm2835.obj `if test -f 'src/lib/bcm2835/bcm2835.c'; then $(CYGPATH_W) 'src/lib/bcm2835/bcm2835.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/bcm2835/bcm2835.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/lib/bcm2835/$(DEPDIR)/eLinkDisplayStatus-bcm2835.Tpo src/lib/bcm2835/$(DEPDIR)/eLinkDisplayStatus-bcm2835.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lib/bcm2835/bcm2835.c' object='src/lib/bcm2835/eLinkDisplayStatus-bcm2835.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(eLinkDisplayStatus_CFLAGS) $(CFLAGS) -c -o src/lib/bcm2835/eLinkDisplayStatus-bcm2835.obj `if test -f 'src/lib/bcm2835/bcm2835.c'; then $(CYGPATH_W) 'src/lib/bcm2835/bcm2835.c'; else $(CYGPATH_W) '$(srcdir)/src/lib/bcm2835/bcm2835.c'; fi`
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
