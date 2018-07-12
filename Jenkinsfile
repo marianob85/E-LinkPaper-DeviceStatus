@@ -25,7 +25,6 @@ pipeline
 							./configure
 							make -j4
 						'''
-						archiveArtifacts artifacts: 'autoconf/eLinkDisplayStatus', onlyIfSuccessful: true
 						cleanWs()
 					}			
 				}
@@ -43,6 +42,23 @@ pipeline
 							mv ./eLinkDisplayStatus ./eLinkDisplayStatus-gcc
 						'''
 						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-gcc', onlyIfSuccessful: true
+						cleanWs()
+					}			
+				}
+				stage( 'Build CMake llvm') {
+					agent {
+						node {
+							label 'linuxarmhf && development'
+						}
+                    }
+					steps {
+						sh '''
+							cd CMake
+							cmake -DCMAKE_TOOLCHAIN_FILE=llvm.cmake .
+							make -j4
+							mv ./eLinkDisplayStatus ./eLinkDisplayStatus-llvm
+						'''
+						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-llvm', onlyIfSuccessful: true
 						cleanWs()
 					}			
 				}
