@@ -27,6 +27,6 @@ Use e-paper display as status information.
 ## RaspberryPI:
  - Tools: apt-get install crossbuild-essential-armhf 
 ### GCC
- - cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnuaebihf.cmake
+ - cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnuaebihf.cmake .
 ### LLVM ( clang )
-- cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-llvm.cmake -Wno-dev
+- cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-llvm.cmake -Wno-dev .
