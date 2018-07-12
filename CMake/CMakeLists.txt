@@ -15,6 +15,8 @@ set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined" 
 set(CMAKE_CXX_FLAGS "-W")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
+set_source_files_properties( ../src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
+
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
 		../src/StatusManager.cpp 
@@ -104,7 +106,7 @@ target_include_directories(eLinkDisplayStatus
 		${PROJECT_SOURCE_DIR}/../src/SI7021
 		${PROJECT_SOURCE_DIR}/../src/lib/pugi
 		${PROJECT_SOURCE_DIR}/../src/lib/bcm2835
-		${PROJECT_SOURCE_DIR}/../src/lib/wiringPIsrc
-		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPIsrc
+		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi
+		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPi
 		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPiD
 )
