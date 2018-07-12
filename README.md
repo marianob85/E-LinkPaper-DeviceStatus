@@ -29,4 +29,4 @@ Use e-paper display as status information.
 ### GCC
  - cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnuaebihf.cmake
 ### LLVM ( clang )
-- cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-llvm.cmake
+- cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-llvm.cmake -Wno-dev
