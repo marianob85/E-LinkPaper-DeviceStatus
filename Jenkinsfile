@@ -43,6 +43,7 @@ pipeline
 					cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc
 				'''
 				archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf-gcc', onlyIfSuccessful: true
+				stash includes: "CMake/eLinkDisplayStatus", name: "eLinkDisplayStatus-gcc"
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'GNU Make + GNU C Compiler (gcc)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 
@@ -73,7 +74,7 @@ pipeline
 				}
 			}
 			steps {
-				
+				unstash "eLinkDisplayStatus-gcc"
 			}
 		}
 	}
