@@ -546,9 +546,8 @@
       <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>
       </CppAdditionalWarning>
-      <AdditionalOptions>-Wno-sign-conversion %(AdditionalOptions)</AdditionalOptions>
       <CAdditionalWarning />
-      <CppLanguageStandard>c++1y</CppLanguageStandard>
+      <CppLanguageStandard>c++14</CppLanguageStandard>
       <CLanguageStandard>c11</CLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
     </ClCompile>

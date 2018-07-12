@@ -38,7 +38,7 @@ StatusPing::StatusPing( std::experimental::filesystem::path xmlPath )
 	m_pinger = thread( std::bind( &StatusPing::pinger, this ) );
 }
 
-bool StatusPing::setPage( unsigned page )
+bool StatusPing::setPage( unsigned /*page*/ )
 {
 	return true;
 }
