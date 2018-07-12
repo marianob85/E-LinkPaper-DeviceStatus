@@ -21,7 +21,9 @@ pipeline
 					autoreconf --install --force
 					./configure
 					make -j4
+					cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc-autoconf
 				'''
+				archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf-gcc-autoconf', onlyIfSuccessful: true
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'GNU Make + GNU C Compiler (gcc)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 			}			
@@ -63,6 +65,16 @@ pipeline
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'Clang (LLVM based)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 			}			
+		}
+		stage('Package') {
+			agent {
+				node {
+					label 'linux && development'
+				}
+			}
+			steps {
+				
+			}
 		}
 	}
 }
