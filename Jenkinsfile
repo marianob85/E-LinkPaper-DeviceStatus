@@ -75,6 +75,7 @@ pipeline
 			}
 			steps {
 				unstash "eLinkDisplayStatus-gcc"
+				cleanWs()
 			}
 		}
 	}
