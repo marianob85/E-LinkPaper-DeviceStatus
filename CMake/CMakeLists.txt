@@ -103,6 +103,7 @@ target_include_directories(eLinkDisplayStatus
 		${PROJECT_SOURCE_DIR}/../src/painter
 		${PROJECT_SOURCE_DIR}/../src/ping
 		${PROJECT_SOURCE_DIR}/../src/SI7021
+		${PROJECT_SOURCE_DIR}/../src/lib
 		${PROJECT_SOURCE_DIR}/../src/lib/pugi
 		${PROJECT_SOURCE_DIR}/../src/lib/bcm2835
 		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi

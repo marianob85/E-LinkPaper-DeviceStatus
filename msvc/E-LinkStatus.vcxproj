@@ -297,6 +297,7 @@
     <ClInclude Include="..\src\fonts\KS0108.hpp" />
     <ClInclude Include="..\src\image\Image.hpp" />
     <ClInclude Include="..\src\lib\bcm2835\bcm2835.h" />
+    <ClInclude Include="..\src\lib\influxdb.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugiconfig.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugixml.hpp" />
     <ClInclude Include="..\src\lib\wiringPi\version.h" />
@@ -472,7 +473,7 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
@@ -503,7 +504,7 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
@@ -528,7 +529,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++14</CppLanguageStandard>
       <CppAdditionalWarning>no-psabi;type-limits;%(CppAdditionalWarning)</CppAdditionalWarning>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
@@ -543,7 +544,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>
       </CppAdditionalWarning>
       <CAdditionalWarning />

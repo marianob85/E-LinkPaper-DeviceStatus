@@ -425,6 +425,9 @@
     <ClInclude Include="..\src\DataProvider.hpp">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\lib\influxdb.hpp">
+      <Filter>Library</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\E-LinkStatusConfig.xml" />
