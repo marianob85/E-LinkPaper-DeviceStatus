@@ -1,5 +1,6 @@
 
 
+
 # E-PaperProjectStatus
 Use e-paper display as status information. 
 
@@ -8,8 +9,13 @@ Use e-paper display as status information.
 # Usage 
 
 ## CMake
+### gcc
 1. cd CMake
 2. cmake .
+3. make
+### clang
+1. cd CMake
+2. cmake -DCMAKE_TOOLCHAIN_FILE=llvm.cmake -Wno-dev
 3. make
 
 ## autoconf
