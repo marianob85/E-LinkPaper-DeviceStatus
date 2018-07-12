@@ -55,7 +55,7 @@ pipeline
 					steps {
 						sh '''
 							cd CMake
-							cmake -DCMAKE_TOOLCHAIN_FILE=llvm.cmake
+							cmake -DCMAKE_TOOLCHAIN_FILE=llvm.cmake -Wno-dev 
 							make -j4
 							cp ./eLinkDisplayStatus ./eLinkDisplayStatus-linuxarmhf-llvm
 						'''
@@ -73,7 +73,7 @@ pipeline
 					steps {
 						sh '''
 							cd CMake
-							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnueabihf.cmake
+							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnueabihf.cmake -Wno-dev 
 							make -j4
 							cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc
 						'''
@@ -90,7 +90,7 @@ pipeline
 					steps {
 						sh '''
 							cd CMake
-							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-llvm.cmake
+							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-llvm.cmake -Wno-dev 
 							make -j4
 							cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-llvm
 						'''
