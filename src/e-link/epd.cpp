@@ -8,7 +8,7 @@
 Epd::Epd( std::unique_ptr< EpdInterface > epd,
 		  uint8_t resetPin,
 		  uint8_t dcPin,
-		  uint8_t csPin,
+		  uint8_t /*csPin*/,
 		  uint8_t bussyPin,
 		  size_t width,
 		  size_t height )

@@ -231,12 +231,12 @@ size_t StatusManager::printHeader2()
 	return height;
 }
 
-void StatusManager::onTemperature( float temp )
+void StatusManager::onTemperature( float /*temp*/ )
 {
 	refreshPage();
 }
 
-void StatusManager::onHumidit( float humidit )
+void StatusManager::onHumidit( float /*humidit*/ )
 {
 	refreshPage();
 }
