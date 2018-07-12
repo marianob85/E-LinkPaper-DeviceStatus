@@ -1,6 +1,7 @@
 #include <iostream>
 #include <future>
 #include <tuple>
+#include <iomanip>
 #include <epdWiringPi.hpp>
 #include <pugixml.hpp>
 #include <KS0108.hpp>
@@ -149,7 +150,8 @@ size_t StatusManager::printHeader()
 size_t StatusManager::printHeader2()
 {
 	const size_t height = 40;
-	auto font			= m_painter->createFonter< FontPainterKS0108 >( liberationMono11Bold );
+	auto font10	= m_painter->createFonter< FontPainterKS0108 >( liberationMono10);
+	auto font11bold			= m_painter->createFonter< FontPainterKS0108 >( liberationMono11Bold );
 
 	static const string page = "Page";
 	string pageData			 = std::to_string( currentPageNo() + 1 );
@@ -159,26 +161,36 @@ size_t StatusManager::printHeader2()
 	auto y = 2; //	( height - 0 - size.height ) / 2 + 1;
 
 	// start: ------------------- Print page -------------------
-	auto sizePage	 = font->getStringSize( page );
-	auto sizePageData = font->getStringSize( pageData );
+	auto sizePage	 = font11bold->getStringSize( page );
+	auto sizePageData = font11bold->getStringSize( pageData );
 	// m_painter->drawFilledRectangle( 0, 0, m_epd->width() / 2, height, Color::Black );
 	m_painter->drawHorizontalLine( 0, height - 1, m_epd->width(), Color::Black );
-	font->drawString( m_epd->width() - sizePage.width - 2, y, page, Color::Black );
-	font->drawString(
+	font11bold->drawString( m_epd->width() - sizePage.width - 2, y, page, Color::Black );
+	font11bold->drawString(
 		m_epd->width() - sizePageData.width - 2, height - sizePageData.height - y, pageData, Color::Black );
 	// end: --------------------- Print page -------------------
 
 	// start: ------------------- Print description -------------------
 	auto description = ( *m_currentPage )->getDescription( 0 );
-	font->drawString( 2, y, description, Color::Black );
+	font11bold->drawString( 2, y, description, Color::Black );
 	// end: --------------------- Print description -------------------
 
 	// start: ------------------- Print description2 -------------------
-	description		  = ( *m_currentPage )->getDescription( 1 );
-	auto autoDescSize = font->getStringSize( description );
-	font->drawString(
-		m_epd->width() / 2 - autoDescSize.width - 2, height - autoDescSize.height - y, description, Color::Black );
+	description   = ( *m_currentPage )->getDescription( 1 );
+	auto descSize = font11bold->getStringSize( description );
+	font11bold->drawString(
+		m_epd->width() / 2 - descSize.width - 2, height - descSize.height - y, description, Color::Black );
 	// end: --------------------- Print description2 -------------------
+
+	// start: ------------------- Last Update -------------------
+	auto t  = std::time( nullptr );
+	auto tm = *std::localtime( &t );
+	std::stringstream ss;
+	ss << std::put_time( &tm, "%d-%m-%Y %R" );
+
+	auto lastUpdateSize = font10->getStringSize( ss.str() );
+	font10->drawString( m_epd->width() / 2 - lastUpdateSize.width - 2, 0, ss.str(), Color::Black );
+	// end: --------------------- Last Update -------------------
 
 	auto courierNew28Bold = m_painter->createFonter< FontPainterKS0108 >( fontEbrima28 );
 

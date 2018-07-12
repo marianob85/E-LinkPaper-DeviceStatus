@@ -90,6 +90,8 @@ void TempProvider::threadWatcherSI7021()
 	while( true )
 	{
 		auto temp = m_SI7021Sensor->getTemp();
+		if( !temp.second )
+			temp = m_SI7021Sensor->getTemp();
 		if( temp.second )
 		{
 			if( fabs( temp.first - m_lastTemp ) > 0.2f )
@@ -147,7 +149,10 @@ void HumiditProvider::threadWatcherSI7021()
 {
 	while( true )
 	{
+
 		auto temp = m_SI7021Sensor->gethumidity();
+		if( !temp.second )
+			temp = m_SI7021Sensor->gethumidity();
 		if( temp.second )
 		{
 			if( fabs( temp.first - m_lastTemp ) > 0.5f )

@@ -11,6 +11,7 @@
 #include "StatusPing.hpp"
 #include <KS0108.hpp>
 
+
 using namespace std;
 using namespace std::experimental::filesystem;
 
@@ -35,34 +36,6 @@ void sig_handler( int sig )
 
 int main( int argc, char** argv )
 {
-	//std::mutex refreshMutex;
-	//
-
-	//SI7021 st7021;
-
-	//std::thread watcher = thread( [&]() {
-	//	while( 1 )
-	//	{
-	//		auto hum7021 = st7021.gethumidity();
-
-	//		std::lock_guard< std::mutex > lock( refreshMutex );
-	//		cout << "Correct: " << hum7021.second << " Humidity: " << std::setprecision( 4 ) << hum7021.first << endl;
-	//	}
-	//} );
-
-	//while( 1 )
-	//{
-	//	auto temp7021 = st7021.getTemp();
-
-	//	std::lock_guard< std::mutex > lock( refreshMutex );
-	//	cout << "Correct: " << temp7021.second << " Temp: " << std::setprecision( 4 ) << temp7021.first << endl;
-
-	//	// auto hum7021 = st7021.gethumidity();
-	//	// cout << "Correct: " << hum7021.second << " Humidity: " << std::setprecision( 2 ) << hum7021.first << endl;
-	//}
-
-	//return 0;
-
 	path xmlPath( "usr/local/etc/E-LinkStatusConfig.xml" );
 
 	if( argc > 1 )
