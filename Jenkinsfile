@@ -12,6 +12,7 @@ pipeline
 	stages {
 		stage('Build native') {
 			parallel {
+				/*
 				stage( 'Build autoconf gcc') {
 					agent {
 						node {
@@ -39,9 +40,9 @@ pipeline
 							cd CMake
 							cmake .
 							make -j4
-							mv ./eLinkDisplayStatus ./eLinkDisplayStatus-gcc
+							cp ./eLinkDisplayStatus ./eLinkDisplayStatus-linuxarmhf-gcc
 						'''
-						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-gcc', onlyIfSuccessful: true
+						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-linuxarmhf-gcc', onlyIfSuccessful: true
 						cleanWs()
 					}			
 				}
@@ -54,15 +55,16 @@ pipeline
 					steps {
 						sh '''
 							cd CMake
-							cmake -DCMAKE_TOOLCHAIN_FILE=llvm.cmake .
+							cmake -DCMAKE_TOOLCHAIN_FILE=llvm.cmake
 							make -j4
-							mv ./eLinkDisplayStatus ./eLinkDisplayStatus-llvm
+							cp ./eLinkDisplayStatus ./eLinkDisplayStatus-linuxarmhf-llvm
 						'''
-						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-llvm', onlyIfSuccessful: true
+						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-linuxarmhf-llvm', onlyIfSuccessful: true
 						cleanWs()
 					}			
 				}
-				stage( 'Build CMake cross-compilation gcc') {
+				*/
+				stage( 'Build CMake cross-compilation gcc armhf') {
 					agent {
 						node {
 							label 'linux && development'
@@ -71,15 +73,15 @@ pipeline
 					steps {
 						sh '''
 							cd CMake
-							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnueabihf.cmake .
+							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnueabihf.cmake
 							make -j4
-							mv ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf
+							cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc
 						'''
-						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf', onlyIfSuccessful: true
+						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf-gcc', onlyIfSuccessful: true
 						cleanWs()
 					}			
 				}
-				stage( 'Build CMake cross-compilation llvm') {
+				stage( 'Build CMake cross-compilation llvm armhf') {
 					agent {
 						node {
 							label 'linux && development'
@@ -88,11 +90,11 @@ pipeline
 					steps {
 						sh '''
 							cd CMake
-							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-llvm.cmake .
+							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-llvm.cmake
 							make -j4
-							mv ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-llvm
+							cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-llvm
 						'''
-						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-llvm', onlyIfSuccessful: true
+						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf-llvm', onlyIfSuccessful: true
 						cleanWs()
 					}			
 				}
