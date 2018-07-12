@@ -11,9 +11,8 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined" )
-set(CMAKE_CXX_FLAGS "-W")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+add_compile_options(-Wall -Wno-unused-function)
+add_compile_options($<$<CONFIG:RELEASE>:-O3>)
 
 set_source_files_properties( ../src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
 
