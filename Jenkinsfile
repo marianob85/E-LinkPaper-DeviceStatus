@@ -55,11 +55,11 @@ pipeline
 					steps {
 						sh '''
 							cd CMake
-							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnuaebihf.cmake .
+							cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnueabihf.cmake .
 							make -j4
-							mv ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnuaebihf
+							mv ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf
 						'''
-						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnuaebihf', onlyIfSuccessful: true
+						archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf', onlyIfSuccessful: true
 						cleanWs()
 					}			
 				}
