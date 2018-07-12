@@ -22,8 +22,8 @@ pipeline
 					./configure
 					make -j4
 				'''
-		
 				cleanWs()
+				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'GNU Make + GNU C Compiler (gcc)']], defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', messagesPattern: '', unHealthy: ''
 			}			
 		}
 
@@ -59,8 +59,8 @@ pipeline
 				'''
 				archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf-llvm', onlyIfSuccessful: true
 				cleanWs()
-				
-				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'GNU Make + GNU C Compiler (gcc)'], [parserName: 'Clang (LLVM based)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '1', failedTotalHigh: '1', failedTotalLow: '1', failedTotalNormal: '1', healthy: '', includePattern: '', messagesPattern: '', unHealthy: ''
+				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'Clang (LLVM based)']], defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', messagesPattern: '', unHealthy: ''
+
 			}			
 		}
 	}
