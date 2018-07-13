@@ -9,7 +9,7 @@ pipeline
 {
 	agent none
 	stages {
-		stage( 'Build autoconf gcc') {
+		stage( 'Build autoconf cross-compilatio gcc armhf') {
 			agent {
 				node {
 					label 'linux && development'
@@ -21,7 +21,9 @@ pipeline
 					autoreconf --install --force
 					./configure
 					make -j4
+					cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc-autoconf
 				'''
+				archiveArtifacts artifacts: 'autoconf/eLinkDisplayStatus-arm-linux-gnueabihf-gcc-autoconf', onlyIfSuccessful: true
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'GNU Make + GNU C Compiler (gcc)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 			}			
@@ -41,6 +43,7 @@ pipeline
 					cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc
 				'''
 				archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf-gcc', onlyIfSuccessful: true
+				stash includes: "CMake/eLinkDisplayStatus", name: "eLinkDisplayStatus-gcc"
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'GNU Make + GNU C Compiler (gcc)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 
@@ -63,6 +66,17 @@ pipeline
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'Clang (LLVM based)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 			}			
+		}
+		stage('Package') {
+			agent {
+				node {
+					label 'linux && development'
+				}
+			}
+			steps {
+				unstash "eLinkDisplayStatus-gcc"
+				cleanWs()
+			}
 		}
 	}
 }
