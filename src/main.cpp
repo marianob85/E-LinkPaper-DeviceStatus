@@ -42,7 +42,7 @@ int main( int argc, char** argv )
 
 	//return 0;
 
-	path xmlPath( "usr/local/etc/E-LinkStatusConfig.xml" );
+	path xmlPath( "/usr/local/etc/E-LinkStatusConfig.xml" );
 
 	if( argc > 1 )
 		xmlPath = argv[ 1 ];

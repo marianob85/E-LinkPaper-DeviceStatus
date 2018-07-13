@@ -1,3 +1,5 @@
+// Code from : https://github.com/orca-zhang/influxdb-cpp
+
 #include <string>
 #include <cstring>
 #include <cstdio>
