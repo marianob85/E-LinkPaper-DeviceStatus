@@ -132,3 +132,21 @@ install (TARGETS eLinkDisplayStatus
 # Config
 install (FILES ../E-LinkStatusConfig.xml
     DESTINATION etc)
+
+############################################################
+# Create DEB
+############################################################
+
+# Tell CPack to generate a .deb package
+set(CPACK_GENERATOR "DEB")
+
+# Set a Package Maintainer.
+# This is required
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Mariusz Brzeski")
+
+# Set a Package Version
+set(CPACK_PACKAGE_VERSION ${eLinkDisplayStatus_VERSION})
+
+# Include CPack
+include(CPack)
+
