@@ -6,6 +6,12 @@ cmake_minimum_required(VERSION 3.7)
 # Set the project name
 project (eLinkDisplayStatus)
 
+# set a project version
+set (eLinkDisplayStatus_VERSION_MAJOR 1)
+set (eLinkDisplayStatus_VERSION_MINOR 0)
+set (eLinkDisplayStatus_VERSION_PATCH 0)
+set (eLinkDisplayStatus_VERSION "${eLinkDisplayStatus_VERSION_MAJOR}.${eLinkDisplayStatus_VERSION_MINOR}.${eLinkDisplayStatus_VERSION_PATCH}")
+
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
@@ -13,8 +19,11 @@ endif()
 set(CMAKE_CXX_STANDARD 14)
 add_compile_options(-Wall -Wno-unused-function -Wno-switch-bool)
 add_compile_options($<$<CONFIG:RELEASE>:-O3>)
-
 set_source_files_properties( ../src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
+
+############################################################
+# Create an executable
+############################################################
 
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
@@ -92,6 +101,7 @@ target_link_libraries(${PROJECT_NAME} pthread)
 target_link_libraries(${PROJECT_NAME} crypt)
 target_link_libraries(${PROJECT_NAME} rt)
 
+
 # Set the direcoties that should be included in the build command for this target
 # when running g++ these will be included as -I/directory/path/
 target_include_directories(eLinkDisplayStatus
@@ -110,3 +120,15 @@ target_include_directories(eLinkDisplayStatus
 		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPi
 		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPiD
 )
+
+############################################################
+# Install
+############################################################
+
+# Binaries
+install (TARGETS eLinkDisplayStatus
+    DESTINATION bin)
+
+# Config
+install (FILES ../E-LinkStatusConfig.xml
+    DESTINATION etc)

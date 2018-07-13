@@ -363,10 +363,10 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 eLinkDisplayStatus_CXXFLAGS = -I"src/DS18B20" -I"src/e-link" \
 	-I"src/fonts" -I"src/image" -I"src/painter" -I"src/ping" \
-	-I"src/SI7021" -I"src/lib/pugi" -I"src/lib/bcm2835" \
-	-I"src/lib/wiringPi" -I"src/lib/wiringPi/wiringPi" \
-	-I"src/lib/wiringPi/wiringPiD" -W"no-psabI" -D_GNU_SOURCE \
-	-D_POSIX_C_SOURCE=200112L
+	-I"src/SI7021" -I"src/lib" -I"src/lib/pugi" \
+	-I"src/lib/bcm2835" -I"src/lib/wiringPi" \
+	-I"src/lib/wiringPi/wiringPi" -I"src/lib/wiringPi/wiringPiD" \
+	-W"no-psabI" -D_GNU_SOURCE -D_POSIX_C_SOURCE=200112L
 eLinkDisplayStatus_CFLAGS = $(eLinkDisplayStatus_CXXFLAGS) \
 	-W"no-int-to-pointer-cast" -W"no-pointer-to-int-cast"
 eLinkDisplayStatus_SOURCES = src/StatusManager.cpp \
