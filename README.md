@@ -18,6 +18,11 @@ Use e-paper display as status information.
 2. cmake -DCMAKE_TOOLCHAIN_FILE=llvm.cmake -Wno-dev
 3. make
 
+### Install
+	make install
+### Uninstall
+	xargs rm < install_manifest.txt
+
 ## autoconf
  - cd autoconf
  - ./configure
