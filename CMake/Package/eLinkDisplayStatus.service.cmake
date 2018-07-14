@@ -1,4 +1,6 @@
-[Unit] Description=Status Project E-Link Display After=multi-user.target
+[Unit] 
+Description=Status Project E-Link Display
+After=multi-user.target
  
 [Service]
 Type=simple
