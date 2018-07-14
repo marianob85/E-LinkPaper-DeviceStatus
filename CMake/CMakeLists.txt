@@ -170,5 +170,7 @@ set(CPACK_PACKAGE_VERSION ${eLinkDisplayStatus_VERSION})
 
 set( CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/Package/postinst;${CMAKE_CURRENT_SOURCE_DIR}/Package/prerm;${CMAKE_CURRENT_SOURCE_DIR}/Package/postrm" )
 
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE armhf)
+
 # Include CPack
 include(CPack)
