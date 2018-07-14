@@ -4,7 +4,7 @@ After=multi-user.target
  
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/eLinkDisplayStatus
+ExecStart=${CMAKE_INSTALL_PREFIX}/bin/eLinkDisplayStatus ${CMAKE_INSTALL_PREFIX}/etc/E-LinkStatusConfig.xml
 Restart=on-abort
  
 [Install]

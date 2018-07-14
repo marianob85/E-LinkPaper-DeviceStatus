@@ -133,6 +133,8 @@ install (TARGETS eLinkDisplayStatus
 install (FILES ../E-LinkStatusConfig.xml
     DESTINATION etc)
 
+
+
 ############################################################
 # Create DEB
 ############################################################
@@ -150,3 +152,5 @@ set(CPACK_PACKAGE_VERSION ${eLinkDisplayStatus_VERSION})
 # Include CPack
 include(CPack)
 
+#message(STATUS "test message")
+#message(STATUS ${CMAKE_INSTALL_PREFIX})
