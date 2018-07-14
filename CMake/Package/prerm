@@ -1,1 +1,2 @@
-
+systemctl stop eLinkDisplayStatus.service
+systemctl disable eLinkDisplayStatus.service
