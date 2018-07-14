@@ -24,6 +24,8 @@ private:
 
 private:
 	unsigned m_pingCount{ 4 };
+	unsigned m_pingLoops{ 1 };
+	unsigned m_loopsDelay{ 0 };
 	struct Device
 	{
 		std::string Ip;

@@ -33,7 +33,9 @@ StatusPing::StatusPing( std::experimental::filesystem::path xmlPath )
 	for( auto device : config.child( "DeviceStatus" ).child( "Devices" ).children() )
 		m_devices.push_back( { device.text().as_string(), device.attribute( "Name" ).as_string() } );
 
-	m_pingCount = config.child( "Ping" ).child( "Count" ).text().as_int( 4 );
+	m_pingCount  = config.child( "Ping" ).child( "Count" ).text().as_int( 4 );
+	m_pingLoops  = std::max( 1, config.child( "Ping" ).child( "Loops" ).text().as_int( 1 ) );
+	m_loopsDelay = config.child( "Ping" ).child( "LoopsDelayS" ).text().as_int();
 
 	m_pinger = thread( std::bind( &StatusPing::pinger, this ) );
 }
@@ -85,28 +87,31 @@ void StatusPing::pinger()
 	while( true )
 	{
 		bool changed = false;
-		for( auto device : m_devices )
+		for( unsigned i = 0; i < m_pingLoops; ++i )
 		{
-
-			PingResult pingResult;
-			Ping ping   = Ping();
-			bool status = ping.ping( device.Ip.c_str(), m_pingCount, pingResult );
-			status &= std::count_if( pingResult.icmpEchoReplys.begin(),
-									 pingResult.icmpEchoReplys.end(),
-									 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } )
-				> 0;
-
-			std::lock_guard< std::mutex > lock( m_statusMutex );
-
-			if( m_status.find( device.Ip ) != m_status.end() )
+			for( auto device : m_devices )
 			{
-				auto last				 = m_status.at( device.Ip );
-				m_status.at( device.Ip ) = status;
-				changed |= last != status;
-			}
+				PingResult pingResult;
+				Ping ping   = Ping();
+				bool status = ping.ping( device.Ip.c_str(), m_pingCount, pingResult );
+				status &= std::count_if( pingResult.icmpEchoReplys.begin(),
+										 pingResult.icmpEchoReplys.end(),
+										 []( const IcmpEchoReply& echoReplay ) { return echoReplay.isReply; } )
+					> 0;
 
-			else
-				m_status[ device.Ip ] = status;
+				std::lock_guard< std::mutex > lock( m_statusMutex );
+
+				if( m_status.find( device.Ip ) != m_status.end() )
+				{
+					auto last				 = m_status.at( device.Ip );
+					m_status.at( device.Ip ) = status;
+					changed |= last != status;
+				}
+
+				else
+					m_status[ device.Ip ] = status;
+			}
+			this_thread::sleep_for( std::chrono::seconds( m_loopsDelay ) );
 		}
 
 		if( changed )

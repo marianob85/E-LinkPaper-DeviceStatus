@@ -1,6 +1,8 @@
 <Config>
   <Ping>
     <Count>8</Count>
+    <Loops>2</Loops>
+    <LoopsDelayS>5</LoopsDelayS>
   </Ping>
   <Epd>
     <RS_PIN>13</RS_PIN>
