@@ -40,10 +40,11 @@ pipeline
 					cd CMake
 					cmake -DCMAKE_TOOLCHAIN_FILE=arm-linux-gnueabihf.cmake -Wno-dev 
 					make -j4
+					make package
 					cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc
 				'''
 				archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus-arm-linux-gnueabihf-gcc', onlyIfSuccessful: true
-				stash includes: "CMake/eLinkDisplayStatus", name: "eLinkDisplayStatus-gcc"
+				archiveArtifacts artifacts: 'CMake/eLinkDisplayStatus*.deb', onlyIfSuccessful: true
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'GNU Make + GNU C Compiler (gcc)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 
@@ -66,17 +67,6 @@ pipeline
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'Clang (LLVM based)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 			}			
-		}
-		stage('Package') {
-			agent {
-				node {
-					label 'linux && development'
-				}
-			}
-			steps {
-				unstash "eLinkDisplayStatus-gcc"
-				cleanWs()
-			}
 		}
 	}
 }
