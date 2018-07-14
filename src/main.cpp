@@ -23,11 +23,11 @@ void sig_handler( int sig )
 	switch( sig )
 	{
 	case SIGTERM:
-	case SIGABRT:
 	case SIGINT:
 		std::cout << "SIG" << sig << endl;
 		cv.notify_one();
 		break;
+	case SIGABRT:
 	default:
 		fprintf( stderr, "wasn't expecting that!\n" );
 		abort();
@@ -47,10 +47,6 @@ int main( int argc, char** argv )
 	if( argc > 1 )
 		xmlPath = argv[ 1 ];
 
-	signal( SIGABRT, sig_handler );
-	signal( SIGTERM, sig_handler );
-	signal( SIGINT, sig_handler );
-
 	StatusManager statusManager( xmlPath );
 
 	if( !statusManager.init() )
@@ -58,6 +54,9 @@ int main( int argc, char** argv )
 
 	statusManager.add( make_unique< StatusPing >( xmlPath ) );
 	statusManager.setPage( 0, 0 );
+
+	signal( SIGTERM, sig_handler );
+	signal( SIGINT, sig_handler );
 
 	std::unique_lock< std::mutex > lk( m );
 	cv.wait( lk );

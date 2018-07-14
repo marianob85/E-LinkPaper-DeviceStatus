@@ -87,7 +87,9 @@ bool StatusManager::setPage( unsigned page, unsigned subPage )
 
 void StatusManager::close()
 {
-	m_epd->sleep();
+	m_epd->init();
+	m_painter->clear( Color::White );
+	m_epd->displayFrame( *m_painter );
 }
 
 void StatusManager::requestPageRefresh( size_t page, size_t subPage )
