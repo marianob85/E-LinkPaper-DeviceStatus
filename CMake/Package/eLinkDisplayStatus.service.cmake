@@ -1,10 +1,8 @@
-[Unit]
-Description=Status Project E-Link Display
-After=multi-user.target
+[Unit] Description=Status Project E-Link Display After=multi-user.target
  
 [Service]
 Type=simple
-ExecStart=${CMAKE_INSTALL_PREFIX}/bin/eLinkDisplayStatus ${CMAKE_INSTALL_PREFIX}/etc/E-LinkStatusConfig.xml
+ExecStart=/usr/bin/eLinkDisplayStatus /usr/etc/E-LinkStatusConfig.xml
 Restart=on-abort
  
 [Install]
