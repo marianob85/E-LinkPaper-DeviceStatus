@@ -126,13 +126,32 @@ target_include_directories(eLinkDisplayStatus
 ############################################################
 
 # Binaries
-install (TARGETS eLinkDisplayStatus
-    DESTINATION bin)
+install (
+	TARGETS eLinkDisplayStatus
+	DESTINATION bin)
 
 # Config
-install (FILES ../E-LinkStatusConfig.xml
-    DESTINATION etc)
+install (
+	FILES ../E-LinkStatusConfig.xml
+	DESTINATION etc)
 
+configure_file("Package/eLinkDisplayStatus.service.cmake" "Package/eLinkDisplayStatus.service")
+
+install (
+	FILES Package/eLinkDisplayStatus.service
+	DESTINATION /lib/systemd/system
+	PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+
+install (
+	CODE
+	"
+	execute_process(
+		COMMAND systemctl daemon-reload
+		COMMAND systemctl enable eLinkDisplayStatus.service
+		COMMAND systemctl start eLinkDisplayStatus.service
+	)
+	"
+)
 
 
 ############################################################
@@ -149,8 +168,7 @@ set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Mariusz Brzeski")
 # Set a Package Version
 set(CPACK_PACKAGE_VERSION ${eLinkDisplayStatus_VERSION})
 
+set( CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/Package/postinst;${CMAKE_CURRENT_SOURCE_DIR}/Package/prerm;" )
+
 # Include CPack
 include(CPack)
-
-#message(STATUS "test message")
-#message(STATUS ${CMAKE_INSTALL_PREFIX})
