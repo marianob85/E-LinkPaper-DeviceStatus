@@ -5,16 +5,16 @@
     <LoopsDelayS>5</LoopsDelayS>
   </Ping>
   <Epd>
-    <RS_PIN>13</RS_PIN>
-    <DC_PIN>26</DC_PIN>
-    <CS_PIN>7</CS_PIN>
-    <BUSY_PIN>6</BUSY_PIN>
+    <RS_PIN>3</RS_PIN>
+    <DC_PIN>2</DC_PIN>
+    <CS_PIN>0</CS_PIN>
+    <BUSY_PIN>0</BUSY_PIN>
     <SPIChannel>0</SPIChannel>
     <Width>640</Width>
     <Height>385</Height>
   </Epd>
   <LedStatus>
-    <Pin>17</Pin>
+    <Pin>11</Pin>
   </LedStatus>
   <DeviceStatus>
     <Devices>
