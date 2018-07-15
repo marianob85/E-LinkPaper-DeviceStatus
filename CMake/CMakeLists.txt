@@ -27,6 +27,7 @@ set_source_files_properties( ../src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIE
 
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
+		../src/StatusLed.cpp 
 		../src/StatusManager.cpp 
 		../src/StatusPing.cpp 
 		../src/main.cpp 

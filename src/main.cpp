@@ -10,6 +10,7 @@
 #include "StatusManager.hpp"
 #include "StatusPing.hpp"
 #include <KS0108.hpp>
+#include "StatusLed.hpp"
 #include <influxdb.hpp>
 
 using namespace std;
@@ -36,11 +37,12 @@ void sig_handler( int sig )
 
 int main( int argc, char** argv )
 {
-	//influxdb_cpp::server_info si( "192.168.1.110", 8086, "telegraf", "grafana", "Gr@fana123456789" );
-	//string resp;
-	//influxdb_cpp::query( resp, R"(SELECT mean("value") FROM "Environment" WHERE ("host" = 'Ogrodowa-NanoPINeo2' AND "id" = '28-0117b35349ff') AND time > now() - 1h)", si );
+	// influxdb_cpp::server_info si( "192.168.1.110", 8086, "telegraf", "grafana", "Gr@fana123456789" );
+	// string resp;
+	// influxdb_cpp::query( resp, R"(SELECT mean("value") FROM "Environment" WHERE ("host" = 'Ogrodowa-NanoPINeo2' AND
+	// "id" = '28-0117b35349ff') AND time > now() - 1h)", si );
 
-	//return 0;
+	// return 0;
 
 	path xmlPath( "/usr/local/etc/E-LinkStatusConfig.xml" );
 
@@ -48,6 +50,8 @@ int main( int argc, char** argv )
 		xmlPath = argv[ 1 ];
 
 	StatusManager statusManager( xmlPath );
+
+	LedStatus ledStatus( xmlPath );
 
 	if( !statusManager.init() )
 		return -1;

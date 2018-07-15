@@ -13,6 +13,9 @@
     <Width>640</Width>
     <Height>385</Height>
   </Epd>
+  <LedStatus>
+    <Pin>17</Pin>
+  </LedStatus>
   <DeviceStatus>
     <Devices>
       <Device Name="M:MT-Gateway">192.168.1.1</Device>

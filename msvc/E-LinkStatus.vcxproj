@@ -282,6 +282,7 @@
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|x64'">TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <ClCompile Include="..\src\SI7021\SI7021.cpp" />
+    <ClCompile Include="..\src\StatusLed.cpp" />
     <ClCompile Include="..\src\StatusManager.cpp" />
     <ClCompile Include="..\src\StatusPing.cpp" />
     <ClCompile Include="..\src\DataProvider.cpp" />
@@ -343,6 +344,7 @@
     <ClInclude Include="..\src\painter\PainterFont.hpp" />
     <ClInclude Include="..\src\ping\ping.h" />
     <ClInclude Include="..\src\SI7021\SI7021.hpp" />
+    <ClInclude Include="..\src\StatusLed.hpp" />
     <ClInclude Include="..\src\StatusManager.hpp" />
     <ClInclude Include="..\src\StatusPing.hpp" />
     <ClInclude Include="..\src\DataProvider.hpp" />

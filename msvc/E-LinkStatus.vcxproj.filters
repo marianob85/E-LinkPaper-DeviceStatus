@@ -246,6 +246,9 @@
     <ClCompile Include="..\src\DataProvider.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\StatusLed.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
@@ -427,6 +430,9 @@
     </ClInclude>
     <ClInclude Include="..\src\lib\influxdb.hpp">
       <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StatusLed.hpp">
+      <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

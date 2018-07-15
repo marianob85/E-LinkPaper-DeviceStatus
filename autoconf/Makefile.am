@@ -22,6 +22,7 @@ eLinkDisplayStatus_CFLAGS += -W"no-int-to-pointer-cast" -W"no-pointer-to-int-cas
 
 eLinkDisplayStatus_SOURCES = src/StatusManager.cpp \
 				src/StatusPing.cpp \
+				src/StatusLed.cpp \
 				src/main.cpp \
 				src/DataProvider.cpp \
 				src/DS18B20/DS18B20.cpp \
