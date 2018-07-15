@@ -35,14 +35,15 @@ EpdWiringPi::EpdWiringPi( uint8_t channel ) : EpdInterface( channel ) {}
 
 bool EpdWiringPi::init( uint8_t rstPin, uint8_t dcPin, uint8_t busyPin )
 {
-	if(::wiringPiSetupGpio() < 0 )
+	if(::wiringPiSetupPhys() < 0 )
 	{ // using Broadcom GPIO pin mapping
 		return false;
 	}
 	::pinMode( rstPin, OUTPUT );
 	::pinMode( dcPin, OUTPUT );
 	::pinMode( busyPin, INPUT );
-	::wiringPiSPISetup( m_channel, 2000000 );
+	::pinMode( 24, OUTPUT );
+	::wiringPiSPISetup( m_channel, 10000000 );
 	return true;
 }
 

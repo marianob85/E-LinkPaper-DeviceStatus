@@ -40,14 +40,14 @@
     <Filter Include="Source\image\data">
       <UniqueIdentifier>{e0104313-8771-4e63-9695-224e3f04a4a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\wiringPi">
-      <UniqueIdentifier>{9a886dbd-2f40-4dbb-b91c-5ed80eb50b8a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Library\bcm2835">
       <UniqueIdentifier>{fa8f2cb1-fba1-4e06-a388-b3a779025a8a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\SI7021">
       <UniqueIdentifier>{3219096a-dc3b-4ab8-92d4-e25bba0318d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\wiringNPi">
+      <UniqueIdentifier>{332cf909-3ff5-46c8-88ac-822660e1703e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -135,108 +135,6 @@
     <ClCompile Include="..\src\fonts\KS0108\Ebrima28.cpp">
       <Filter>Source\fonts\KS0108</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\ads1115.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\bmp180.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\drcNet.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\drcSerial.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\ds18b20.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\htu21d.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\max5322.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\max31855.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23s08.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23s17.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3002.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3004.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3422.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp4802.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23008.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23016.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23017.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pcf8574.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pcf8591.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\piHiPri.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\piThread.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pseudoPins.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\rht03.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\sn3218.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softPwm.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softServo.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softTone.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\sr595.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPi.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPiI2C.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPiSPI.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringSerial.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringShift.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wpiExtensions.c">
-      <Filter>Library\wiringPi</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\lib\bcm2835\bcm2835.c">
       <Filter>Library\bcm2835</Filter>
     </ClCompile>
@@ -248,6 +146,87 @@
     </ClCompile>
     <ClCompile Include="..\src\StatusLed.cpp">
       <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringShift.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringSerial.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPiSPI.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPiI2C.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPi.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\sr595.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\softTone.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\softServo.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\softPwm.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\sn3218.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\piThread.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\piHiPri.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\pcf8591.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\pcf8574.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23017.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23016.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23008.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp4802.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3422.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3004.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3002.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23s17.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23s08.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\max31855.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\max5322.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\drcSerial.c">
+      <Filter>Library\wiringNPi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\boardtype_friendlyelec.c">
+      <Filter>Library\wiringNPi</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -308,117 +287,6 @@
     <ClInclude Include="..\src\image\Image.hpp">
       <Filter>Source\image</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\ads1115.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\bmp180.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\drcNet.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\drcSerial.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\ds18b20.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\htu21d.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\max5322.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\max31855.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23s08.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23s17.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23x08.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23x0817.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3002.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3004.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3422.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp4802.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23008.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23016.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23016reg.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23017.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pcf8574.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pcf8591.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pseudoPins.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\rht03.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\sn3218.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softPwm.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softServo.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softTone.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\sr595.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPi.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPiI2C.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPiSPI.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringSerial.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringShift.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wpiExtensions.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\wiringPiD\drcNetCmd.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\wiringPi\version.h">
-      <Filter>Library\wiringPi</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\lib\bcm2835\bcm2835.h">
       <Filter>Library\bcm2835</Filter>
     </ClInclude>
@@ -434,8 +302,100 @@
     <ClInclude Include="..\src\StatusLed.hpp">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\wiringShift.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\wiringSerial.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\wiringPiSPI.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\wiringPiI2C.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\wiringPi.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\sr595.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\softTone.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\softServo.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\softPwm.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\sn3218.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\pcf8591.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\pcf8574.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23017.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23016reg.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23016.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23008.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp4802.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp3422.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp3004.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp3002.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23x0817.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23x08.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23s17.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23s08.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\max31855.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\max5322.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\drcSerial.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\wiringNPi\boardtype_friendlyelec.h">
+      <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\E-LinkStatusConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\lib\wiringNPi\Makefile">
+      <Filter>Library\wiringNPi</Filter>
+    </None>
+    <None Include="..\src\lib\wiringNPi\COPYING.LESSER">
+      <Filter>Library\wiringNPi</Filter>
+    </None>
   </ItemGroup>
 </Project>

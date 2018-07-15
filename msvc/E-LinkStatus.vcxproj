@@ -68,210 +68,33 @@
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|x64'">TurnOffAllWarnings</WarningLevel>
     </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\ads1115.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\bmp180.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\drcNet.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\drcSerial.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\ds18b20.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\htu21d.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\max31855.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\max5322.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23008.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23016.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23017.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23s08.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp23s17.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3002.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3004.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp3422.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\mcp4802.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pcf8574.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pcf8591.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\piHiPri.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\piThread.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\pseudoPins.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\rht03.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\sn3218.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softPwm.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softServo.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\softTone.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\sr595.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPi.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPiI2C.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringPiSPI.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringSerial.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wiringShift.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\wiringPi\wiringPi\wpiExtensions.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\boardtype_friendlyelec.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\drcSerial.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\max31855.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\max5322.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23008.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23016.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23017.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23s08.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23s17.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3002.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3004.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3422.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\mcp4802.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\pcf8574.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\pcf8591.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\piHiPri.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\piThread.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\sn3218.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\softPwm.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\softServo.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\softTone.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\sr595.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPi.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPiI2C.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPiSPI.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\wiringSerial.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\wiringShift.c" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\painter\Painter.cpp" />
     <ClCompile Include="..\src\painter\PainterFont.cpp" />
@@ -301,43 +124,34 @@
     <ClInclude Include="..\src\lib\influxdb.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugiconfig.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugixml.hpp" />
-    <ClInclude Include="..\src\lib\wiringPi\version.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPiD\drcNetCmd.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\ads1115.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\bmp180.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\drcNet.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\drcSerial.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\ds18b20.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\htu21d.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\max31855.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\max5322.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23008.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23016.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23016reg.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23017.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23s08.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23s17.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23x08.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp23x0817.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3002.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3004.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp3422.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\mcp4802.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pcf8574.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pcf8591.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\pseudoPins.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\rht03.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\sn3218.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softPwm.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softServo.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\softTone.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\sr595.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPi.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPiI2C.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringPiSPI.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringSerial.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wiringShift.h" />
-    <ClInclude Include="..\src\lib\wiringPi\wiringPi\wpiExtensions.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\boardtype_friendlyelec.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\drcSerial.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\max31855.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\max5322.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23008.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23016.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23016reg.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23017.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23s08.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23s17.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23x08.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp23x0817.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp3002.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp3004.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp3422.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\mcp4802.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\pcf8574.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\pcf8591.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\sn3218.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\softPwm.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\softServo.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\softTone.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\sr595.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\wiringPi.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\wiringPiI2C.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\wiringPiSPI.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\wiringSerial.h" />
+    <ClInclude Include="..\src\lib\wiringNPi\wiringShift.h" />
     <ClInclude Include="..\src\painter\FontDef.hpp" />
     <ClInclude Include="..\src\painter\Painter.hpp" />
     <ClInclude Include="..\src\painter\PainterDef.hpp" />
@@ -352,6 +166,10 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\E-LinkStatusConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\lib\wiringNPi\COPYING.LESSER" />
+    <None Include="..\src\lib\wiringNPi\Makefile" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{17212035-e085-42cf-bd40-c3592b7c6098}</ProjectGuid>
@@ -475,7 +293,7 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
@@ -506,7 +324,7 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>%(CppAdditionalWarning)</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
@@ -531,7 +349,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++14</CppLanguageStandard>
       <CppAdditionalWarning>no-psabi;type-limits;%(CppAdditionalWarning)</CppAdditionalWarning>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
@@ -546,7 +364,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringPi;..\src\lib\wiringPi\wiringPi;..\src\lib\wiringPi\wiringPiD;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppAdditionalWarning>
       </CppAdditionalWarning>
       <CAdditionalWarning />

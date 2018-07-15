@@ -1,5 +1,5 @@
 #include <iostream>
-#include <bcm2835.h>
+#include <wiringPi.h>
 #include <pugixml.hpp>
 #include "StatusLed.hpp"
 
@@ -7,7 +7,7 @@ using namespace std;
 
 LedStatus::LedStatus( std::experimental::filesystem::path xmlPath )
 {
-	bcm2835_init();
+	wiringPiSetupPhys();
 
 	pugi::xml_document doc;
 	pugi::xml_parse_result result = doc.load_file( xmlPath.string().c_str() );
@@ -27,17 +27,17 @@ LedStatus::LedStatus( std::experimental::filesystem::path xmlPath )
 	if( !ledNode.empty() )
 	{
 		m_gpioPin = static_cast< uint8_t >( ledNode.text().as_uint() );
-		bcm2835_gpio_fsel( m_gpioPin, BCM2835_GPIO_FSEL_OUTP );
-		bcm2835_gpio_pud( m_gpioPin );
+		pinMode( m_gpioPin, OUTPUT );
 		m_led = thread( std::bind( &LedStatus::ledWorker, this ) );
 	}
 }
 
-LedStatus::~LedStatus() {
+LedStatus::~LedStatus()
+{
 
 	m_threadLoop = false;
 	m_led.join();
-	bcm2835_gpio_write( m_gpioPin, 0 );
+	digitalWrite( m_gpioPin, LOW );
 }
 
 void LedStatus::ledWorker()
@@ -45,8 +45,8 @@ void LedStatus::ledWorker()
 	while( m_threadLoop )
 	{
 		this_thread::sleep_for( 2s );
-		bcm2835_gpio_write( m_gpioPin, 1 );
+		digitalWrite( m_gpioPin, HIGH );
 		this_thread::sleep_for( 50ms );
-		bcm2835_gpio_write( m_gpioPin, 0 );
+		digitalWrite( m_gpioPin, LOW );
 	}
 }

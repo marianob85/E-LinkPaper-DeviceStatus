@@ -13,6 +13,8 @@
 #include "StatusLed.hpp"
 #include <influxdb.hpp>
 
+#include <wiringPi.h>
+
 using namespace std;
 using namespace std::experimental::filesystem;
 
@@ -43,6 +45,10 @@ int main( int argc, char** argv )
 	// "id" = '28-0117b35349ff') AND time > now() - 1h)", si );
 
 	// return 0;
+	//wiringPiSetupPhys();
+	//pinMode( 7, OUTPUT );
+	//digitalWrite( 7, LOW ); // On
+	//return 0;
 
 	path xmlPath( "/usr/local/etc/E-LinkStatusConfig.xml" );
 
