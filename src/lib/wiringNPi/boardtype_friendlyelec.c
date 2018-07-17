@@ -12,11 +12,11 @@ const char* allwinner_tempfile		  = "/sys/class/thermal/thermal_zone0/temp";
 	if( isGot == 0 )                                                   \
 	{                                                                  \
 		strcpy( line2, line );                                         \
-		if( valP = strtok( line2, ":" ) )                              \
+		if( ( valP = strtok( line2, ":" ) ) )                          \
 		{                                                              \
 			if( strncasecmp( valP, keyName, strlen( keyName ) ) == 0 ) \
 			{                                                          \
-				if( valP = strtok( 0, ":" ) )                          \
+				if( ( valP = strtok( 0, ":" ) ) )                      \
 				{                                                      \
 					memset( buff, 0, buffLen );                        \
 					strncpy( buff, valP, buffLen - 1 );                \
@@ -183,12 +183,12 @@ static int getAllwinnerBoardID( char* boardId, int boardIdMaxLen )
 			if( n > 0 )
 			{
 				// LOGD("LINE: %s\n", line);
-				if( p = strtok( line, ":" ) )
+				if( ( p = strtok( line, ":" ) ) )
 				{
 					if( strncasecmp( p, sunxi_board_id_fieldname, strlen( sunxi_board_id_fieldname ) ) == 0 )
 					{
 						// LOGD("\t\tkey=\"%s\"\n", p);
-						if( p = strtok( 0, ":" ) )
+						if( ( p = strtok( 0, ":" ) ) )
 						{
 							// LOGD("\t\tv=\"%s\"\n", p);
 							memset( boardId, 0, boardIdMaxLen );
