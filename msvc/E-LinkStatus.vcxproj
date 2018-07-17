@@ -297,6 +297,8 @@
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
       <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
+      <ThreadSafeStatics />
+      <RuntimeTypeInfo />
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -330,6 +332,8 @@
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
       <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
+      <ThreadSafeStatics />
+      <RuntimeTypeInfo />
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|x64'">
@@ -355,6 +359,8 @@
       <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
       <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
+      <ThreadSafeStatics />
+      <RuntimeTypeInfo />
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -372,6 +378,8 @@
       <CppLanguageStandard>c++14</CppLanguageStandard>
       <CLanguageStandard>c11</CLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
+      <ThreadSafeStatics />
+      <RuntimeTypeInfo />
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
