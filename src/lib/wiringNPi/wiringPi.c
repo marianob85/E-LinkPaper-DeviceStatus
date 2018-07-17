@@ -134,7 +134,7 @@ struct wiringPiNodeStruct *wiringPiNodes = NULL;
 #define GPIO_PWM  (BCM2708_PERI_BASE + 0x0020C000)
 
 #define PAGE_SIZE  (4*1024)
-#define BLOCK_SIZE  (4*1024)
+#define WPI_BLOCK_SIZE  (4*1024)
 
 // PWM
 //	Word offsets into the PWM control region
@@ -2303,25 +2303,25 @@ int wiringPiSetup(void) {
 
     // GPIO:
     // BLOCK SIZE * 2 increases range to include pwm addresses
-    gpio = (uint32_t *) mmap(0, BLOCK_SIZE*10, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO_BASE_BP);
+    gpio = (uint32_t *) mmap(0, WPI_BLOCK_SIZE*10, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO_BASE_BP);
     if ((int32_t) gpio == -1)
         return wiringPiFailure(WPI_ALMOST, "wiringPiSetup: mmap (GPIO) failed: %s\n", strerror(errno));
 
     // PWM
 
-    pwm = (uint32_t *) mmap(0, BLOCK_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO_PWM_BP);
+    pwm = (uint32_t *) mmap(0, WPI_BLOCK_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO_PWM_BP);
     if ((int32_t) pwm == -1)
         return wiringPiFailure(WPI_ALMOST, "wiringPiSetup: mmap (PWM) failed: %s\n", strerror(errno));
 
     // Clock control (needed for PWM)
 
-    clk = (uint32_t *) mmap(0, BLOCK_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, CLOCK_BASE_BP);
+    clk = (uint32_t *) mmap(0, WPI_BLOCK_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, CLOCK_BASE_BP);
     if ((int32_t) clk == -1)
         return wiringPiFailure(WPI_ALMOST, "wiringPiSetup: mmap (CLOCK) failed: %s\n", strerror(errno));
 
     // The drive pads
 
-    pads = (uint32_t *) mmap(0, BLOCK_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO_PADS_BP);
+    pads = (uint32_t *) mmap(0, WPI_BLOCK_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO_PADS_BP);
     if ((int32_t) pads == -1)
         return wiringPiFailure(WPI_ALMOST, "wiringPiSetup: mmap (PADS) failed: %s\n", strerror(errno));
 

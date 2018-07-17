@@ -45,9 +45,34 @@ int main( int argc, char** argv )
 	// "id" = '28-0117b35349ff') AND time > now() - 1h)", si );
 
 	// return 0;
-	//wiringPiSetupPhys();
-	//pinMode( 7, OUTPUT );
-	//digitalWrite( 7, LOW ); // On
+	// wiringPiSetupPhys();
+	// pinMode( 7, OUTPUT );
+	// digitalWrite( 7, LOW ); // On
+	// return 0;
+	//cout << "started" << endl;
+
+	//SI7021 sI7021;
+
+	//auto humF = [&]() {
+	//	while( 1 )
+	//	{
+	//		auto hum = sI7021.gethumidity();
+
+	//	if( hum.second == false )
+	//			cout << "Error hum" << endl;
+	//	}
+	//};
+
+	//std::thread tempT = thread( humF );
+
+	//while( 1 )
+	//{
+	//	auto temp = sI7021.getTemp();
+
+	//	if( temp.second == false )
+	//		cout << "Error temp" << endl;
+	//}
+
 	//return 0;
 
 	path xmlPath( "/usr/local/etc/E-LinkStatusConfig.xml" );

@@ -39,7 +39,6 @@
     <ClCompile Include="..\src\e-link\epd.cpp" />
     <ClCompile Include="..\src\e-link\epd4in2.cpp" />
     <ClCompile Include="..\src\e-link\epd7in5b.cpp" />
-    <ClCompile Include="..\src\e-link\epdBcm2835.cpp" />
     <ClCompile Include="..\src\e-link\epdWiringPi.cpp" />
     <ClCompile Include="..\src\fonts\KS0108.cpp" />
     <ClCompile Include="..\src\fonts\KS0108\Arial28.cpp" />
@@ -56,12 +55,7 @@
     <ClCompile Include="..\src\image\Data\icons8-humidity-32.cpp" />
     <ClCompile Include="..\src\image\Data\icons8-temperature-30.cpp" />
     <ClCompile Include="..\src\image\Image.cpp" />
-    <ClCompile Include="..\src\lib\bcm2835\bcm2835.c">
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">TurnOffAllWarnings</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">TurnOffAllWarnings</WarningLevel>
-    </ClCompile>
+    <ClCompile Include="..\src\lib\libi2c\i2c.c" />
     <ClCompile Include="..\src\lib\pugi\pugixml.cpp">
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TurnOffAllWarnings</WarningLevel>
@@ -113,15 +107,14 @@
   <ItemGroup>
     <ClInclude Include="..\src\DS18B20\DS18B20.h" />
     <ClInclude Include="..\src\e-link\epd.hpp" />
-    <ClInclude Include="..\src\e-link\epdBcm2835.hpp" />
     <ClInclude Include="..\src\e-link\epd4in2.h" />
     <ClInclude Include="..\src\e-link\epd7in5b.hpp" />
     <ClInclude Include="..\src\e-link\epdInterface.hpp" />
     <ClInclude Include="..\src\e-link\epdWiringPi.hpp" />
     <ClInclude Include="..\src\fonts\KS0108.hpp" />
     <ClInclude Include="..\src\image\Image.hpp" />
-    <ClInclude Include="..\src\lib\bcm2835\bcm2835.h" />
     <ClInclude Include="..\src\lib\influxdb.hpp" />
+    <ClInclude Include="..\src\lib\libi2c\i2c.h" />
     <ClInclude Include="..\src\lib\pugi\pugiconfig.hpp" />
     <ClInclude Include="..\src\lib\pugi\pugixml.hpp" />
     <ClInclude Include="..\src\lib\wiringNPi\boardtype_friendlyelec.h" />
@@ -293,8 +286,8 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppAdditionalWarning>no-psabi;%(CppAdditionalWarning)</CppAdditionalWarning>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;..\src\lib\libi2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
     </ClCompile>
@@ -324,8 +317,8 @@
       <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
     </RemotePostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppAdditionalWarning>%(CppAdditionalWarning)</CppAdditionalWarning>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;..\src\lib\libi2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
@@ -349,9 +342,9 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;..\src\lib\libi2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++14</CppLanguageStandard>
-      <CppAdditionalWarning>no-psabi;type-limits;%(CppAdditionalWarning)</CppAdditionalWarning>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion</CppAdditionalWarning>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -364,9 +357,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppAdditionalWarning>
-      </CppAdditionalWarning>
+      <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;..\src\lib\libi2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion</CppAdditionalWarning>
       <CAdditionalWarning />
       <CppLanguageStandard>c++14</CppLanguageStandard>
       <CLanguageStandard>c11</CLanguageStandard>

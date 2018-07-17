@@ -40,14 +40,14 @@
     <Filter Include="Source\image\data">
       <UniqueIdentifier>{e0104313-8771-4e63-9695-224e3f04a4a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\bcm2835">
-      <UniqueIdentifier>{fa8f2cb1-fba1-4e06-a388-b3a779025a8a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\SI7021">
       <UniqueIdentifier>{3219096a-dc3b-4ab8-92d4-e25bba0318d7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Library\wiringNPi">
       <UniqueIdentifier>{332cf909-3ff5-46c8-88ac-822660e1703e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\libi2c">
+      <UniqueIdentifier>{97df5222-62c2-4c25-aaeb-07a1b45a32e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,9 +105,6 @@
     <ClCompile Include="..\src\e-link\epdWiringPi.cpp">
       <Filter>Source\e-link\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\e-link\epdBcm2835.cpp">
-      <Filter>Source\e-link\Interface</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\e-link\epd4in2.cpp">
       <Filter>Source\e-link\Display</Filter>
     </ClCompile>
@@ -134,9 +131,6 @@
     </ClCompile>
     <ClCompile Include="..\src\fonts\KS0108\Ebrima28.cpp">
       <Filter>Source\fonts\KS0108</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\lib\bcm2835\bcm2835.c">
-      <Filter>Library\bcm2835</Filter>
     </ClCompile>
     <ClCompile Include="..\src\SI7021\SI7021.cpp">
       <Filter>Source\SI7021</Filter>
@@ -228,6 +222,9 @@
     <ClCompile Include="..\src\lib\wiringNPi\boardtype_friendlyelec.c">
       <Filter>Library\wiringNPi</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\lib\libi2c\i2c.c">
+      <Filter>Library\libi2c</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
@@ -269,9 +266,6 @@
     <ClInclude Include="..\src\e-link\epdWiringPi.hpp">
       <Filter>Source\e-link\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\e-link\epdBcm2835.hpp">
-      <Filter>Source\e-link\Interface</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\e-link\epdInterface.hpp">
       <Filter>Source\e-link\Interface</Filter>
     </ClInclude>
@@ -286,9 +280,6 @@
     </ClInclude>
     <ClInclude Include="..\src\image\Image.hpp">
       <Filter>Source\image</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\lib\bcm2835\bcm2835.h">
-      <Filter>Library\bcm2835</Filter>
     </ClInclude>
     <ClInclude Include="..\src\SI7021\SI7021.hpp">
       <Filter>Source\SI7021</Filter>
@@ -385,6 +376,9 @@
     </ClInclude>
     <ClInclude Include="..\src\lib\wiringNPi\boardtype_friendlyelec.h">
       <Filter>Library\wiringNPi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\libi2c\i2c.h">
+      <Filter>Library\libi2c</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

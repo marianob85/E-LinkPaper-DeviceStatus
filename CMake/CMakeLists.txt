@@ -17,9 +17,9 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 set(CMAKE_CXX_STANDARD 14)
-add_compile_options(-Wall -Wno-unused-function -Wno-switch-bool)
+add_compile_options(-Wall -Wno-unused-function -Wno-switch-bool -Wno-sign-conversion -Wno-conversion -Wno-switch-bool)
 add_compile_options($<$<CONFIG:RELEASE>:-O3>)
-set_source_files_properties( ../src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
+#set_source_files_properties( ../src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
 
 ############################################################
 # Create an executable
@@ -58,40 +58,33 @@ set(SOURCES
 		../src/image/Data/icons8-humidity-32.cpp 
 		../src/image/Data/icons8-temperature-30.cpp 
 		../src/SI7021/SI7021.cpp 
-		../src/lib/wiringPi/wiringPi/wiringPi.c						
-		../src/lib/wiringPi/wiringPi/wiringSerial.c 
-		../src/lib/wiringPi/wiringPi/wiringShift.c				
-		../src/lib/wiringPi/wiringPi/piHiPri.c
-		../src/lib/wiringPi/wiringPi/piThread.c					
-		../src/lib/wiringPi/wiringPi/wiringPiSPI.c
-		../src/lib/wiringPi/wiringPi/wiringPiI2C.c				
-		../src/lib/wiringPi/wiringPi/softPwm.c
-		../src/lib/wiringPi/wiringPi/softTone.c					
-		../src/lib/wiringPi/wiringPi/mcp23008.c
-		../src/lib/wiringPi/wiringPi/mcp23016.c 
-		../src/lib/wiringPi/wiringPi/mcp23017.c			
-		../src/lib/wiringPi/wiringPi/mcp23s08.c
-		../src/lib/wiringPi/wiringPi/mcp23s17.c					
-		../src/lib/wiringPi/wiringPi/sr595.c							
-		../src/lib/wiringPi/wiringPi/pcf8574.c
-		../src/lib/wiringPi/wiringPi/pcf8591.c					
-		../src/lib/wiringPi/wiringPi/mcp3002.c
-		../src/lib/wiringPi/wiringPi/mcp3004.c
-		../src/lib/wiringPi/wiringPi/mcp4802.c
-		../src/lib/wiringPi/wiringPi/mcp3422.c			
-		../src/lib/wiringPi/wiringPi/max31855.c
-		../src/lib/wiringPi/wiringPi/max5322.c
-		../src/lib/wiringPi/wiringPi/ads1115.c				
-		../src/lib/wiringPi/wiringPi/sn3218.c						
-		../src/lib/wiringPi/wiringPi/bmp180.c
-		../src/lib/wiringPi/wiringPi/htu21d.c
-		../src/lib/wiringPi/wiringPi/ds18b20.c
-		../src/lib/wiringPi/wiringPi/rht03.c			
-		../src/lib/wiringPi/wiringPi/drcSerial.c
-		../src/lib/wiringPi/wiringPi/drcNet.c					
-		../src/lib/wiringPi/wiringPi/pseudoPins.c						
-		../src/lib/wiringPi/wiringPi/wpiExtensions.c 
-		../src/lib/bcm2835/bcm2835.c 
+		../src/lib/wiringNPi/boardtype_friendlyelec.c
+		../src/lib/wiringNPi/drcSerial.c
+		../src/lib/wiringNPi/max5322.c
+		../src/lib/wiringNPi/max31855.c
+		../src/lib/wiringNPi/mcp23s08.c
+		../src/lib/wiringNPi/mcp23s17.c
+		../src/lib/wiringNPi/mcp3002.c
+		../src/lib/wiringNPi/mcp3004.c
+		../src/lib/wiringNPi/mcp3422.c
+		../src/lib/wiringNPi/mcp4802.c
+		../src/lib/wiringNPi/mcp23008.c
+		../src/lib/wiringNPi/mcp23016.c
+		../src/lib/wiringNPi/mcp23017.c
+		../src/lib/wiringNPi/pcf8574.c
+		../src/lib/wiringNPi/pcf8591.c
+		../src/lib/wiringNPi/piHiPri.c
+		../src/lib/wiringNPi/piThread.c
+		../src/lib/wiringNPi/sn3218.c
+		../src/lib/wiringNPi/softPwm.c
+		../src/lib/wiringNPi/softServo.c
+		../src/lib/wiringNPi/softTone.c
+		../src/lib/wiringNPi/sr595.c
+		../src/lib/wiringNPi/wiringPi.c
+		../src/lib/wiringNPi/wiringPiI2C.c
+		../src/lib/wiringNPi/wiringPiSPI.c
+		../src/lib/wiringNPi/wiringSerial.c
+		../src/lib/wiringNPi/wiringShift.c
 )
 
 # Add an executable with the above sources
@@ -116,7 +109,7 @@ target_include_directories(eLinkDisplayStatus
 		${PROJECT_SOURCE_DIR}/../src/SI7021
 		${PROJECT_SOURCE_DIR}/../src/lib
 		${PROJECT_SOURCE_DIR}/../src/lib/pugi
-		${PROJECT_SOURCE_DIR}/../src/lib/bcm2835
+		${PROJECT_SOURCE_DIR}/../src/lib/libi2c
 		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi
 		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPi
 		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPiD
