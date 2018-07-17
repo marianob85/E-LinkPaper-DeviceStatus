@@ -100,6 +100,9 @@ void StatusManager::requestPageRefresh( size_t page, size_t subPage )
 
 void StatusManager::refreshPage()
 {
+	if( m_pages.empty() )
+		return;
+
 	std::lock_guard< std::mutex > lock( m_refreshMutex );
 
 	m_epd->init();
@@ -152,8 +155,8 @@ size_t StatusManager::printHeader()
 size_t StatusManager::printHeader2()
 {
 	const size_t height = 40;
-	auto font10	= m_painter->createFonter< FontPainterKS0108 >( liberationMono10);
-	auto font11bold			= m_painter->createFonter< FontPainterKS0108 >( liberationMono11Bold );
+	auto font10			= m_painter->createFonter< FontPainterKS0108 >( liberationMono10 );
+	auto font11bold		= m_painter->createFonter< FontPainterKS0108 >( liberationMono11Bold );
 
 	static const string page = "Page";
 	string pageData			 = std::to_string( currentPageNo() + 1 );
