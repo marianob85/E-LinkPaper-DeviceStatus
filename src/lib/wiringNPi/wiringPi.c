@@ -248,7 +248,7 @@ static uint64_t epochMilli, epochMicro;
 // Misc
 
 static int wiringPiMode		= WPI_MODE_UNINITIALISED;
-static volatile int pinPass = -1;
+//static volatile int pinPass = -1;
 
 // Debugging & Return codes
 
