@@ -293,10 +293,10 @@
     </RemotePostBuildEvent>
     <ClCompile>
       <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;..\src\lib\libi2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-parentheses;no-switch-bool</CppAdditionalWarning>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
-      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-parentheses;no-switch-bool</CAdditionalWarning>
+      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -325,11 +325,11 @@
     </RemotePostBuildEvent>
     <ClCompile>
       <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;..\src\lib\libi2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-parentheses;no-switch-bool</CppAdditionalWarning>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
-      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-parentheses;no-switch-bool</CAdditionalWarning>
+      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|x64'">
@@ -352,9 +352,9 @@
     <ClCompile>
       <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;..\src\lib\libi2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++14</CppLanguageStandard>
-      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-parentheses;no-switch-bool</CppAdditionalWarning>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
-      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-parentheses;no-switch-bool</CAdditionalWarning>
+      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -367,8 +367,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\;..\src\fonts;..\src\e-link;..\src\painter;..\src\ping;..\src\DS18B20;..\src\SI7021;..\src\image;..\src\image\data;..\src\lib;..\src\lib\pugi;..\src\lib\wiringNPi;..\src\lib\bcm2835;..\src\lib\libi2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-parentheses;no-switch-bool</CppAdditionalWarning>
-      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-parentheses;no-switch-bool</CAdditionalWarning>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
+      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
       <CppLanguageStandard>c++14</CppLanguageStandard>
       <CLanguageStandard>c11</CLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
