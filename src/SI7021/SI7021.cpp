@@ -10,7 +10,7 @@ const uint8_t SI7021_MEASRH_HOLD_CMD = 0xE5;
 const uint8_t SI7021_MEASTEMP_HOLD_CMD = 0xE3;
 // const uint8_t SI7021_MEASTEMP_NOHOLD_CMD = 0xF3;
 // const uint8_t SI7021_READPREVTEMP_CMD	= 0xE0;
-const uint8_t SI7021_RESET_CMD = 0xFE;
+// const uint8_t SI7021_RESET_CMD = 0xFE;
 // const uint8_t SI7021_WRITERHT_REG_CMD	= 0xE6;
 // const uint8_t SI7021_READRHT_REG_CMD	 = 0xE7;
 // const uint8_t SI7021_WRITEHEATER_REG_CMD = 0x51;
@@ -79,7 +79,6 @@ std::pair< float, bool > SI7021::computeTemp( uint8_t data[ 3 ] ) const
 
 std::pair< float, bool > SI7021::computeHumidity( uint8_t data[ 3 ] ) const
 {
-
 	unsigned int hum = data[ 0 ];
 	hum <<= 8;
 	hum |= data[ 1 ];

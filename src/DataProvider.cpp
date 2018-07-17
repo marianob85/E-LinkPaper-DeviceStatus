@@ -21,8 +21,8 @@ void EnvironmentDataProvider::reset()
 
 TempProvider::TempProvider( std::function< void( float ) > callback ) : EnvironmentDataProvider( callback )
 {
-	//if( createSI7021() == false )
-	//	createDS18B20();
+	if( createSI7021() == false )
+		createDS18B20();
 }
 
 std::pair< float, bool > TempProvider::getData() const
@@ -112,7 +112,7 @@ void TempProvider::threadWatcherSI7021()
 
 HumiditProvider::HumiditProvider( std::function< void( float ) > callback ) : EnvironmentDataProvider( callback )
 {
-	//createSI7021();
+	createSI7021();
 }
 
 std::pair< float, bool > HumiditProvider::getData() const
