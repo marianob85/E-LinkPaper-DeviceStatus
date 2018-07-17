@@ -55,40 +55,516 @@
     <ClCompile Include="..\src\image\Data\icons8-humidity-32.cpp" />
     <ClCompile Include="..\src\image\Data\icons8-temperature-30.cpp" />
     <ClCompile Include="..\src\image\Image.cpp" />
-    <ClCompile Include="..\src\lib\libi2c\i2c.c" />
+    <ClCompile Include="..\src\lib\libi2c\i2c.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
     <ClCompile Include="..\src\lib\pugi\pugixml.cpp">
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugCLang|x64'">TurnOffAllWarnings</WarningLevel>
     </ClCompile>
-    <ClCompile Include="..\src\lib\wiringNPi\boardtype_friendlyelec.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\drcSerial.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\max31855.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\max5322.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp23008.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp23016.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp23017.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp23s08.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp23s17.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp3002.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp3004.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp3422.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\mcp4802.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\pcf8574.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\pcf8591.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\piHiPri.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\piThread.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\sn3218.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\softPwm.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\softServo.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\softTone.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\sr595.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\wiringPi.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\wiringPiI2C.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\wiringPiSPI.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\wiringSerial.c" />
-    <ClCompile Include="..\src\lib\wiringNPi\wiringShift.c" />
+    <ClCompile Include="..\src\lib\wiringNPi\boardtype_friendlyelec.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\drcSerial.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\max31855.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\max5322.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23008.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23016.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23017.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23s08.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp23s17.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3002.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3004.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp3422.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\mcp4802.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\pcf8574.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\pcf8591.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\piHiPri.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\piThread.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\sn3218.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\softPwm.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\softServo.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\softTone.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\sr595.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPi.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPiI2C.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringPiSPI.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringSerial.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\wiringNPi\wiringShift.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='DebugCLang|ARM'">
+      </RuntimeTypeInfo>
+    </ClCompile>
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\painter\Painter.cpp" />
     <ClCompile Include="..\src\painter\PainterFont.cpp" />
@@ -297,8 +773,8 @@
       <CppLanguageStandard>c++1y</CppLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
       <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
-      <ThreadSafeStatics />
-      <RuntimeTypeInfo />
+      <ThreadSafeStatics>Yes</ThreadSafeStatics>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -332,8 +808,8 @@
       <AdditionalOptions>-Wno-sign-conversion -std=c++17 %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
       <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
-      <ThreadSafeStatics />
-      <RuntimeTypeInfo />
+      <ThreadSafeStatics>Yes</ThreadSafeStatics>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseClang|x64'">
@@ -359,8 +835,8 @@
       <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
       <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
-      <ThreadSafeStatics />
-      <RuntimeTypeInfo />
+      <ThreadSafeStatics>Yes</ThreadSafeStatics>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -378,8 +854,8 @@
       <CppLanguageStandard>c++14</CppLanguageStandard>
       <CLanguageStandard>c11</CLanguageStandard>
       <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
-      <ThreadSafeStatics />
-      <RuntimeTypeInfo />
+      <ThreadSafeStatics>Yes</ThreadSafeStatics>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
