@@ -34,7 +34,6 @@ set(SOURCES
 		../src/DataProvider.cpp 
 		../src/DS18B20/DS18B20.cpp 
 		../src/e-link/epdWiringPi.cpp 
-		../src/e-link/epdBcm2835.cpp 
 		../src/e-link/epd4in2.cpp 
 		../src/e-link/epd7in5b.cpp 
 		../src/e-link/epd.cpp 
@@ -58,6 +57,7 @@ set(SOURCES
 		../src/image/Data/icons8-humidity-32.cpp 
 		../src/image/Data/icons8-temperature-30.cpp 
 		../src/SI7021/SI7021.cpp 
+		../src/lib/libi2c/i2c.c
 		../src/lib/wiringNPi/boardtype_friendlyelec.c
 		../src/lib/wiringNPi/drcSerial.c
 		../src/lib/wiringNPi/max5322.c
@@ -110,9 +110,7 @@ target_include_directories(eLinkDisplayStatus
 		${PROJECT_SOURCE_DIR}/../src/lib
 		${PROJECT_SOURCE_DIR}/../src/lib/pugi
 		${PROJECT_SOURCE_DIR}/../src/lib/libi2c
-		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi
-		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPi
-		${PROJECT_SOURCE_DIR}/../src/lib/wiringPi/wiringPiD
+		${PROJECT_SOURCE_DIR}/../src/lib/wiringNPi
 )
 
 ############################################################
