@@ -10,10 +10,8 @@ eLinkDisplayStatus_CXXFLAGS += -I"src/SI7021"
 eLinkDisplayStatus_CXXFLAGS += -I"src/lib"
 eLinkDisplayStatus_CXXFLAGS += -I"src/lib/pugi"
 eLinkDisplayStatus_CXXFLAGS += -I"src/lib/libi2c"
-eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringPi"
-eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringPi/wiringPi"
-eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringPi/wiringPiD"
-eLinkDisplayStatus_CXXFLAGS += -W"no-psabI"
+eLinkDisplayStatus_CXXFLAGS += -I"src/lib/wiringNPi"
+eLinkDisplayStatus_CXXFLAGS += -W"no-psabi"
 eLinkDisplayStatus_CXXFLAGS += -D_GNU_SOURCE
 eLinkDisplayStatus_CXXFLAGS += -D_POSIX_C_SOURCE=200112L
 
@@ -27,7 +25,6 @@ eLinkDisplayStatus_SOURCES = src/StatusManager.cpp \
 				src/DataProvider.cpp \
 				src/DS18B20/DS18B20.cpp \
 				src/e-link/epdWiringPi.cpp \
-				src/e-link/epdBcm2835.cpp \
 				src/e-link/epd4in2.cpp \
 				src/e-link/epd7in5b.cpp \
 				src/e-link/epd.cpp \
@@ -51,32 +48,33 @@ eLinkDisplayStatus_SOURCES = src/StatusManager.cpp \
 				src/image/Data/icons8-humidity-32.cpp \
 				src/image/Data/icons8-temperature-30.cpp \
 				src/SI7021/SI7021.cpp \
-				src/lib/wiringNPi/boardtype_friendlyelec.c
-				src/lib/wiringNPi/drcSerial.c
-				src/lib/wiringNPi/max5322.c
-				src/lib/wiringNPi/max31855.c
-				src/lib/wiringNPi/mcp23s08.c
-				src/lib/wiringNPi/mcp23s17.c
-				src/lib/wiringNPi/mcp3002.c
-				src/lib/wiringNPi/mcp3004.c
-				src/lib/wiringNPi/mcp3422.c
-				src/lib/wiringNPi/mcp4802.c
-				src/lib/wiringNPi/mcp23008.c
-				src/lib/wiringNPi/mcp23016.c
-				src/lib/wiringNPi/mcp23017.c
-				src/lib/wiringNPi/pcf8574.c
-				src/lib/wiringNPi/pcf8591.c
-				src/lib/wiringNPi/piHiPri.c
-				src/lib/wiringNPi/piThread.c
-				src/lib/wiringNPi/sn3218.c
-				src/lib/wiringNPi/softPwm.c
-				src/lib/wiringNPi/softServo.c
-				src/lib/wiringNPi/softTone.c
-				src/lib/wiringNPi/sr595.c
-				src/lib/wiringNPi/wiringPi.c
-				src/lib/wiringNPi/wiringPiI2C.c
-				src/lib/wiringNPi/wiringPiSPI.c
-				src/lib/wiringNPi/wiringSerial.c
+				src/lib/libi2c/i2c.c \
+				src/lib/wiringNPi/boardtype_friendlyelec.c \
+				src/lib/wiringNPi/drcSerial.c \
+				src/lib/wiringNPi/max5322.c \
+				src/lib/wiringNPi/max31855.c \
+				src/lib/wiringNPi/mcp23s08.c \
+				src/lib/wiringNPi/mcp23s17.c \
+				src/lib/wiringNPi/mcp3002.c \
+				src/lib/wiringNPi/mcp3004.c \
+				src/lib/wiringNPi/mcp3422.c \
+				src/lib/wiringNPi/mcp4802.c \
+				src/lib/wiringNPi/mcp23008.c \
+				src/lib/wiringNPi/mcp23016.c \
+				src/lib/wiringNPi/mcp23017.c \
+				src/lib/wiringNPi/pcf8574.c \
+				src/lib/wiringNPi/pcf8591.c \
+				src/lib/wiringNPi/piHiPri.c \
+				src/lib/wiringNPi/piThread.c \
+				src/lib/wiringNPi/sn3218.c \
+				src/lib/wiringNPi/softPwm.c \
+				src/lib/wiringNPi/softServo.c \
+				src/lib/wiringNPi/softTone.c \
+				src/lib/wiringNPi/sr595.c \
+				src/lib/wiringNPi/wiringPi.c \
+				src/lib/wiringNPi/wiringPiI2C.c \
+				src/lib/wiringNPi/wiringPiSPI.c \
+				src/lib/wiringNPi/wiringSerial.c \
 				src/lib/wiringNPi/wiringShift.c
 
 #eLinkDisplayStatus_dir = /usr/local/etc
