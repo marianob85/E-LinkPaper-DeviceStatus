@@ -26,7 +26,7 @@ endif()
 
 if(GIT_FOUND)
   execute_process(
-    COMMAND ${GIT_EXECUTABLE} rev-parse --abbrev-ref HEAD
+    COMMAND ${GIT_EXECUTABLE} symbolic-ref --short HEAD
     WORKING_DIRECTORY "${local_dir}"
     OUTPUT_VARIABLE _branch_version
     ERROR_QUIET
