@@ -59,6 +59,7 @@ set(SOURCES
 		../src/StatusManager.cpp 
 		../src/StatusPing.cpp 
 		../src/main.cpp 
+		../src/InfluxWriter.cpp
 		../src/DataProvider.cpp 
 		../src/DS18B20/DS18B20.cpp 
 		../src/e-link/epdWiringPi.cpp 

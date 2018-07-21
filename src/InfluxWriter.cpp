@@ -23,13 +23,20 @@ InfluxWriter::InfluxWriter( std::experimental::filesystem::path xmlPath )
 
 	auto config		= doc.child( "Config" );
 	auto influxNode = config.child( "InfluxData" );
+	m_measurmenet   = influxNode.child( "Measurement" ).text().as_string();
+
+	for( auto tag : influxNode.child( "Tags" ) )
+	{
+		m_tags.emplace( tag.name(), tag.text().as_string() );
+	}
 
 	m_influxServer = influxdb_cpp::server_info( influxNode.child( "Address" ).text().as_string(),
 												influxNode.child( "Port" ).text().as_uint(),
 												influxNode.child( "Database" ).text().as_string(),
 												influxNode.child( "User" ).text().as_string(),
 												influxNode.child( "Password" ).text().as_string() );
-	m_worker	   = thread( std::bind( &InfluxWriter::worker, this ) );
+
+	m_worker = thread( std::bind( &InfluxWriter::worker, this ) );
 }
 
 void InfluxWriter::worker()
@@ -39,14 +46,18 @@ void InfluxWriter::worker()
 		auto temp = m_SI7021.getTemp();
 		auto hum  = m_SI7021.gethumidity();
 		std::string resp;
-		influxdb_cpp::builder()
-			.meas( "environment" )
-			.tag( "host", "Poddasze" )
-			.field( "temperature", temp.first )
+		auto data = influxdb_cpp::builder().meas( m_measurmenet );
+
+		for( const auto& tag : m_tags )
+			data.tag( tag.first, tag.second );
+
+		data.field( "temperature", temp.first )
 			.field( "tempearture_valid", temp.second )
 			.field( "humidity", hum.first )
 			.field( "humidity_valid", hum.second )
+			.timestamp( static_cast< long int >( time( nullptr ) ) )
 			.post_http( m_influxServer, &resp );
+
 		this_thread::sleep_for( std::chrono::minutes( 1 ) );
 	}
 }
