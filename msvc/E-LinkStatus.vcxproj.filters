@@ -228,7 +228,9 @@
     <ClCompile Include="..\src\InfluxWriter.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\lib\influxdb.cpp" />
+    <ClCompile Include="..\src\lib\influxdb.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
