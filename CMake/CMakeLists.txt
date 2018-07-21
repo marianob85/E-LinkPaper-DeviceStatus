@@ -26,10 +26,9 @@ endif()
 
 if(GIT_FOUND)
   execute_process(
-    COMMAND ${GIT_EXECUTABLE} describe --all --exact-match 2>/dev/null | sed 's=.*/=='
+    COMMAND ${GIT_EXECUTABLE} describe --all --exact-match COMMAND sed "s=.*/=="
     WORKING_DIRECTORY "${local_dir}"
     OUTPUT_VARIABLE _branch_version
-    ERROR_QUIET
     OUTPUT_STRIP_TRAILING_WHITESPACE
   )
   message( STATUS "GIT branch: ${_branch_version}")
