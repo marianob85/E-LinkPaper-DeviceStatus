@@ -6,10 +6,39 @@ cmake_minimum_required(VERSION 3.7)
 # Set the project name
 project (eLinkDisplayStatus)
 
+set(_build_version "unknown")
+set(_branch_version "unknown")
+set(CPACK_PACKAGE_NAME "eLinkDisplayStatus")
+find_package(Git)
+
+if(GIT_FOUND)
+  execute_process(
+    COMMAND ${GIT_EXECUTABLE} rev-parse --short HEAD
+    WORKING_DIRECTORY "${local_dir}"
+    OUTPUT_VARIABLE _build_version
+    ERROR_QUIET
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+  message( STATUS "GIT hash: ${_build_version}")
+else()
+  message(STATUS "GIT not found")
+endif()
+
+if(GIT_FOUND)
+  execute_process(
+    COMMAND ${GIT_EXECUTABLE} rev-parse --abbrev-ref HEAD
+    WORKING_DIRECTORY "${local_dir}"
+    OUTPUT_VARIABLE _branch_version
+    ERROR_QUIET
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+  message( STATUS "GIT branch: ${_branch_version}")
+endif()
+
 # set a project version
 set (eLinkDisplayStatus_VERSION_MAJOR 1)
 set (eLinkDisplayStatus_VERSION_MINOR 0)
-set (eLinkDisplayStatus_VERSION_PATCH 0)
+set (eLinkDisplayStatus_VERSION_PATCH ${_build_version})
 set (eLinkDisplayStatus_VERSION "${eLinkDisplayStatus_VERSION_MAJOR}.${eLinkDisplayStatus_VERSION_MINOR}.${eLinkDisplayStatus_VERSION_PATCH}")
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -163,6 +192,9 @@ set(CPACK_PACKAGE_VERSION ${eLinkDisplayStatus_VERSION})
 set( CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/Package/postinst;${CMAKE_CURRENT_SOURCE_DIR}/Package/prerm;${CMAKE_CURRENT_SOURCE_DIR}/Package/postrm" )
 
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE armhf)
+message(STATUS "${CPACK_PACKAGE_NAME}")
+
+set (CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION}_${_branch_version}_${CPACK_DEBIAN_PACKAGE_ARCHITECTURE}")
 
 # Include CPack
 include(CPack)
