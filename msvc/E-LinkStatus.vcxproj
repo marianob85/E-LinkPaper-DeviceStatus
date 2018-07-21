@@ -55,6 +55,8 @@
     <ClCompile Include="..\src\image\Data\icons8-humidity-32.cpp" />
     <ClCompile Include="..\src\image\Data\icons8-temperature-30.cpp" />
     <ClCompile Include="..\src\image\Image.cpp" />
+    <ClCompile Include="..\src\InfluxWriter.cpp" />
+    <ClCompile Include="..\src\lib\influxdb.cpp" />
     <ClCompile Include="..\src\lib\libi2c\i2c.c">
       <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
       </ThreadSafeStatics>
@@ -589,6 +591,7 @@
     <ClInclude Include="..\src\e-link\epdWiringPi.hpp" />
     <ClInclude Include="..\src\fonts\KS0108.hpp" />
     <ClInclude Include="..\src\image\Image.hpp" />
+    <ClInclude Include="..\src\InfluxWriter.hpp" />
     <ClInclude Include="..\src\lib\influxdb.hpp" />
     <ClInclude Include="..\src\lib\libi2c\i2c.h" />
     <ClInclude Include="..\src\lib\pugi\pugiconfig.hpp" />

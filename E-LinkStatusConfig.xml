@@ -37,4 +37,11 @@
       <Device Name="P:NG-GS105Ev2">192.168.1.9</Device>
     </Devices>
   </DeviceStatus>
+  <InfluxData>
+    <User>writer</User>
+    <Password>WriteR</Password>
+    <Address>192.168.1.110</Address>
+    <Port>8086</Port>
+    <Database>test</Database>
+  </InfluxData>
 </Config>

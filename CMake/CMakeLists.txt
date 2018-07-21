@@ -86,6 +86,7 @@ set(SOURCES
 		../src/image/Data/icons8-temperature-30.cpp 
 		../src/SI7021/SI7021.cpp 
 		../src/lib/libi2c/i2c.c
+		../src/lib/influxdb.cpp
 		../src/lib/wiringNPi/boardtype_friendlyelec.c
 		../src/lib/wiringNPi/drcSerial.c
 		../src/lib/wiringNPi/max5322.c

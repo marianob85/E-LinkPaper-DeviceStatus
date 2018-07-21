@@ -225,6 +225,10 @@
     <ClCompile Include="..\src\lib\libi2c\i2c.c">
       <Filter>Library\libi2c</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\InfluxWriter.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\influxdb.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StatusManager.hpp">
@@ -379,6 +383,9 @@
     </ClInclude>
     <ClInclude Include="..\src\lib\libi2c\i2c.h">
       <Filter>Library\libi2c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InfluxWriter.hpp">
+      <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
