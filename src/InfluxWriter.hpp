@@ -12,6 +12,7 @@ public:
 
 private:
 	void worker();
+	uint64_t getUnixTimeStamp();
 
 private:
 	SI7021 m_SI7021;

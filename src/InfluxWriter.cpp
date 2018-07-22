@@ -55,10 +55,17 @@ void InfluxWriter::worker()
 			.field( "tempearture_valid", temp.second )
 			.field( "humidity", hum.first )
 			.field( "humidity_valid", hum.second )
+			.timestamp( getUnixTimeStamp() )
 			.post_http( m_influxServer, &resp );
 
 		this_thread::sleep_for( std::chrono::minutes( 1 ) );
 	}
+}
+
+uint64_t InfluxWriter::getUnixTimeStamp()
+{
+	return std::chrono::duration_cast< std::chrono::nanoseconds >( std::chrono::system_clock::now().time_since_epoch() )
+		.count();
 }
 
 // end: --------------------- InfluxWriter -------------------

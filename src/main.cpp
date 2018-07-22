@@ -35,6 +35,8 @@ void sig_handler( int sig )
 	}
 }
 
+
+
 int main( int argc, char** argv )
 {
 	path xmlPath( "/usr/local/etc/E-LinkStatusConfig.xml" );
@@ -44,7 +46,6 @@ int main( int argc, char** argv )
 	LedStatus ledStatus( xmlPath );
 	InfluxWriter influxWriter( xmlPath );
 	StatusManager statusManager( xmlPath );
-
 
 	if( !statusManager.init() )
 		return -1;
