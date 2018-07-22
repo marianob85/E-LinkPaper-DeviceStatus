@@ -55,7 +55,6 @@ void InfluxWriter::worker()
 			.field( "tempearture_valid", temp.second )
 			.field( "humidity", hum.first )
 			.field( "humidity_valid", hum.second )
-			.timestamp( static_cast< long int >( time( nullptr ) ) )
 			.post_http( m_influxServer, &resp );
 
 		this_thread::sleep_for( std::chrono::minutes( 1 ) );
