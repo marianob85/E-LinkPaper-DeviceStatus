@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{fe295458-885c-45df-986d-d8ab69dfce49}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lib\wiringNPi\boardtype_friendlyelec.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\drcSerial.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\max5322.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\max31855.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp23s08.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp23s17.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp3002.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp3004.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp3422.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp4802.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp23008.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp23016.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\mcp23017.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\pcf8574.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\pcf8591.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\piHiPri.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\piThread.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\sn3218.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\softPwm.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\softServo.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\softTone.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\sr595.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\wiringPi.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\wiringPiI2C.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\wiringPiSPI.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\wiringSerial.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\wiringNPi\wiringShift.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\lib\wiringNPi\boardtype_friendlyelec.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\drcSerial.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\max5322.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\max31855.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp23s08.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp23s17.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp23x08.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp23x0817.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp3002.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp3004.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp3422.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp4802.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp23008.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp23016.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp23016reg.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\mcp23017.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\pcf8574.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\pcf8591.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\sn3218.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\softPwm.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\softServo.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\softTone.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\sr595.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\wiringPi.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\wiringPiI2C.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\wiringPiSPI.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\wiringSerial.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\wiringNPi\wiringShift.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\lib\wiringNPi\COPYING.LESSER">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\lib\wiringNPi\Makefile">
+      <Filter>Source</Filter>
+    </None>
+  </ItemGroup>
+</Project>

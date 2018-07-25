@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\E-LinkStatusConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\DataProvider.cpp" />
+    <ClCompile Include="..\..\src\DS18B20\DS18B20.cpp" />
+    <ClCompile Include="..\..\src\e-link\epd.cpp" />
+    <ClCompile Include="..\..\src\e-link\epd4in2.cpp" />
+    <ClCompile Include="..\..\src\e-link\epd7in5b.cpp" />
+    <ClCompile Include="..\..\src\e-link\epdWiringPi.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Arial28.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Digital-7-36Bold.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Ebrima28.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Georgia12.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Liberation_Mono10.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Liberation_Mono10Bold.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Liberation_Mono11Bold.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Liberation_Mono12.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Liberation_Mono8.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Liberation_Mono9.cpp" />
+    <ClCompile Include="..\..\src\fonts\KS0108\Liberation_Mono9Bold.cpp" />
+    <ClCompile Include="..\..\src\image\Data\icons8-humidity-32.cpp" />
+    <ClCompile Include="..\..\src\image\Data\icons8-temperature-30.cpp" />
+    <ClCompile Include="..\..\src\image\Image.cpp" />
+    <ClCompile Include="..\..\src\InfluxWriter.cpp" />
+    <ClCompile Include="..\..\src\lib\influxDB\influxdb.cpp" />
+    <ClCompile Include="..\..\src\lib\libi2c\i2c.c">
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ThreadSafeStatics>
+      <ThreadSafeStatics Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ThreadSafeStatics>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </RuntimeTypeInfo>
+      <RuntimeTypeInfo Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </RuntimeTypeInfo>
+      <CppLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">c++14</CppLanguageStandard>
+      <CppLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">c++14</CppLanguageStandard>
+      <CppLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">c++14</CppLanguageStandard>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lib\pugi\pugixml.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\painter\Painter.cpp" />
+    <ClCompile Include="..\..\src\painter\PainterFont.cpp" />
+    <ClCompile Include="..\..\src\ping\ping.cpp" />
+    <ClCompile Include="..\..\src\SI7021\SI7021.cpp" />
+    <ClCompile Include="..\..\src\StatusLed.cpp" />
+    <ClCompile Include="..\..\src\StatusManager.cpp" />
+    <ClCompile Include="..\..\src\StatusPing.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\DataProvider.hpp" />
+    <ClInclude Include="..\..\src\DS18B20\DS18B20.h" />
+    <ClInclude Include="..\..\src\e-link\epd.hpp" />
+    <ClInclude Include="..\..\src\e-link\epd4in2.h" />
+    <ClInclude Include="..\..\src\e-link\epd7in5b.hpp" />
+    <ClInclude Include="..\..\src\e-link\epdInterface.hpp" />
+    <ClInclude Include="..\..\src\e-link\epdWiringPi.hpp" />
+    <ClInclude Include="..\..\src\fonts\KS0108.hpp" />
+    <ClInclude Include="..\..\src\image\Image.hpp" />
+    <ClInclude Include="..\..\src\InfluxWriter.hpp" />
+    <ClInclude Include="..\..\src\lib\influxDB\influxdb.hpp" />
+    <ClInclude Include="..\..\src\lib\libi2c\i2c.h" />
+    <ClInclude Include="..\..\src\lib\pugi\pugiconfig.hpp" />
+    <ClInclude Include="..\..\src\lib\pugi\pugixml.hpp" />
+    <ClInclude Include="..\..\src\lib\wiringPi\ads1115.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\bmp180.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\drcNet.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\drcSerial.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\ds18b20.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\htu21d.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\max31855.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\max5322.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp23008.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp23016.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp23016reg.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp23017.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp23s08.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp23s17.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp23x08.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp23x0817.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp3002.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp3004.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp3422.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\mcp4802.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\pcf8574.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\pcf8591.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\pseudoPins.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\rht03.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\sn3218.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\softPwm.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\softServo.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\softTone.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\sr595.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\wiringPi.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\wiringPiI2C.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\wiringPiSPI.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\wiringSerial.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\wiringShift.h" />
+    <ClInclude Include="..\..\src\lib\wiringPi\wpiExtensions.h" />
+    <ClInclude Include="..\..\src\painter\FontDef.hpp" />
+    <ClInclude Include="..\..\src\painter\Painter.hpp" />
+    <ClInclude Include="..\..\src\painter\PainterDef.hpp" />
+    <ClInclude Include="..\..\src\painter\PainterFont.hpp" />
+    <ClInclude Include="..\..\src\ping\ping.h" />
+    <ClInclude Include="..\..\src\SI7021\SI7021.hpp" />
+    <ClInclude Include="..\..\src\StatusLed.hpp" />
+    <ClInclude Include="..\..\src\StatusManager.hpp" />
+    <ClInclude Include="..\..\src\StatusPing.hpp" />
+    <ClInclude Include="..\..\src\Timer.hpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{17212035-e085-42cf-bd40-c3592b7c6098}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>E_LinkStatus</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Raspberry</TargetLinuxPlatform>
+    <LinuxProjectType>{8748239F-558C-44D1-944B-07B09C35B330}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <IncludePath>c:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\Linux\include\bcm2835\1.55\;$(IncludePath)</IncludePath>
+    <RemoteCCompileToolExe>gcc</RemoteCCompileToolExe>
+    <MultiProcNumber>6</MultiProcNumber>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <RemoteCCompileToolExe>gcc</RemoteCCompileToolExe>
+    <MultiProcNumber>6</MultiProcNumber>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <IncludePath>c:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\Linux\include\bcm2835\1.55\;$(IncludePath)</IncludePath>
+    <RemoteCCompileToolExe>gcc</RemoteCCompileToolExe>
+    <MultiProcNumber>6</MultiProcNumber>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>c:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\Linux\include\bcm2835\1.55\;$(IncludePath)</IncludePath>
+    <RemoteCCompileToolExe>gcc</RemoteCCompileToolExe>
+    <MultiProcNumber>6</MultiProcNumber>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Link>
+      <LibraryDependencies>pthread;stdc++fs;crypt;rt;wiringNPi</LibraryDependencies>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>
+      </Command>
+      <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
+    </RemotePostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <LibraryDependencies>pthread;stdc++fs;crypt;rt;wiringNPi</LibraryDependencies>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>
+      </Command>
+      <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
+    </RemotePostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Link>
+      <LibraryDependencies>pthread;stdc++fs;crypt;rt;wiringNPi</LibraryDependencies>
+      <AdditionalLibraryDirectories>..\wiringNPi\bin\ARM\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>
+      </Command>
+      <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
+    </RemotePostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\src\fonts;..\..\src\e-link;..\..\src\painter;..\..\src\ping;..\..\src\DS18B20;..\..\src\SI7021;..\..\src\image;..\..\src\image\data;..\..\src\lib\pugi;..\..\src\lib\wiringNPi;..\..\src\lib\libi2c;..\..\src\lib\influxDB;..\..\src\lib\wiringPi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
+      <CppLanguageStandard>c++14</CppLanguageStandard>
+      <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
+      <ThreadSafeStatics>Yes</ThreadSafeStatics>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <LibraryDependencies>pthread;stdc++fs;crypt;rt;wiringNPi</LibraryDependencies>
+      <AdditionalLibraryDirectories>..\wiringNPi\bin\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>
+      </Command>
+      <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
+    </RemotePostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\src\fonts;..\..\src\e-link;..\..\src\painter;..\..\src\ping;..\..\src\DS18B20;..\..\src\SI7021;..\..\src\image;..\..\src\image\data;..\..\src\lib\pugi;..\..\src\lib\wiringNPi;..\..\src\lib\libi2c;..\..\src\lib\influxDB;..\..\src\lib\wiringPi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
+      <CppLanguageStandard>c++14</CppLanguageStandard>
+      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
+      <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\src\fonts;..\..\src\e-link;..\..\src\painter;..\..\src\ping;..\..\src\DS18B20;..\..\src\SI7021;..\..\src\image;..\..\src\image\data;..\..\src\lib\pugi;..\..\src\lib\wiringNPi;..\..\src\lib\libi2c;..\..\src\lib\influxDB;..\..\src\lib\wiringPi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++14</CppLanguageStandard>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
+      <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
+      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
+      <ThreadSafeStatics>Yes</ThreadSafeStatics>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\wiringNPi\bin\ARM\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\src\fonts;..\..\src\e-link;..\..\src\painter;..\..\src\ping;..\..\src\DS18B20;..\..\src\SI7021;..\..\src\image;..\..\src\image\data;..\..\src\lib\pugi;..\..\src\lib\wiringNPi;..\..\src\lib\libi2c;..\..\src\lib\influxDB;..\..\src\lib\wiringPi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++14</CppLanguageStandard>
+      <CppAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CppAdditionalWarning>
+      <PreprocessorDefinitions>_POSIX_C_SOURCE=200112L;_GNU_SOURCE</PreprocessorDefinitions>
+      <CAdditionalWarning>no-psabi;type-limits;no-sign-conversion;no-conversion;no-switch-bool</CAdditionalWarning>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\wiringNPi\bin\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
