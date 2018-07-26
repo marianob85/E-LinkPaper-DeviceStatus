@@ -15,7 +15,7 @@ private:
 	uint64_t getUnixTimeStamp();
 
 private:
-	SI7021 m_SI7021;
+	std::unique_ptr< SI7021 > m_SI7021;
 	std::thread m_worker;
 	influxdb_cpp::server_info m_influxServer;
 	std::string m_measurmenet;

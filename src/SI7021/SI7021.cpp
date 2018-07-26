@@ -1,5 +1,7 @@
 #include <thread>
+#include <iostream>
 #include <algorithm>
+#include <pugixml.hpp>
 #include "SI7021.hpp"
 #include <i2c.h>
 // start: ------------------- SI7021 -------------------
@@ -19,14 +21,37 @@ const uint8_t SI7021_MEASTEMP_HOLD_CMD = 0xE3;
 // const uint16_t SI7021_ID2_CMD			 = 0xFCC9;
 // const uint16_t SI7021_FIRMVERS_CMD		 = 0x84B8;
 
+SI7021::SI7021( std::experimental::filesystem::path xmlPath )
+{
+	pugi::xml_document doc;
+	pugi::xml_parse_result result = doc.load_file( xmlPath.string().c_str() );
+
+	if( !result )
+	{
+		std::cout << "XML [" << xmlPath.string().c_str() << "] parsed with errors, attr value: ["
+				  << doc.child( "node" ).attribute( "attr" ).value() << "]\n";
+		std::cout << "Error description: " << result.description() << "\n";
+		std::cout << "Error offset: " << result.offset << " (error at [..."
+				  << ( xmlPath.string().c_str() + result.offset ) << "]\n\n";
+		throw std::exception();
+	}
+	auto config  = doc.child( "Config" );
+	auto ledNode = config.child( "Sensors" ).child( "SI7021" );
+
+	m_dev = ledNode.text().as_string();
+}
+
 // std::mutex SI7021::m_refreshMutex;
 
 std::pair< float, bool > SI7021::getTemp() const
 {
 	// std::lock_guard< std::mutex > lock( m_refreshMutex );
 
+	if( m_dev.empty() )
+		return { 0.f, false };
+
 	int bus;
-	if( ( bus = i2c_open( "/dev/i2c-0" ) ) == -1 )
+	if( ( bus = i2c_open( m_dev.c_str() ) ) == -1 )
 	{
 		return { 0.f, false };
 	}
@@ -97,9 +122,11 @@ std::pair< float, bool > SI7021::computeHumidity( uint8_t data[ 3 ] ) const
 std::pair< float, bool > SI7021::gethumidity() const
 {
 	// std::lock_guard< std::mutex > lock( m_refreshMutex );
+	if( m_dev.empty() )
+		return { 0.f, false };
 
 	int bus;
-	if( ( bus = i2c_open( "/dev/i2c-0" ) ) == -1 )
+	if( ( bus = i2c_open( m_dev.c_str() ) ) == -1 )
 	{
 		return { 0.f, false };
 	}

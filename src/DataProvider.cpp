@@ -6,7 +6,11 @@ using namespace std;
 
 // start: ------------------- EnvironmentDataProvider -------------------
 
-EnvironmentDataProvider::EnvironmentDataProvider( std::function< void( float ) > callback ) : m_callback( callback ) {}
+EnvironmentDataProvider::EnvironmentDataProvider( std::experimental::filesystem::path xmlPath,
+												  std::function< void( float ) > callback )
+	: m_callback( callback ), m_xmlPath( xmlPath )
+{
+}
 
 void EnvironmentDataProvider::reset()
 {
@@ -19,7 +23,8 @@ void EnvironmentDataProvider::reset()
 
 // start: ------------------- TempProvider -------------------
 
-TempProvider::TempProvider( std::function< void( float ) > callback ) : EnvironmentDataProvider( callback )
+TempProvider::TempProvider( std::experimental::filesystem::path xmlPath, std::function< void( float ) > callback )
+	: EnvironmentDataProvider( xmlPath, callback )
 {
 	if( createSI7021() == false )
 		createDS18B20();
@@ -55,7 +60,7 @@ bool TempProvider::createDS18B20()
 
 bool TempProvider::createSI7021()
 {
-	m_SI7021Sensor = std::make_unique< SI7021 >();
+	m_SI7021Sensor = std::make_unique< SI7021 >( m_xmlPath );
 
 	auto ret = m_SI7021Sensor->getTemp();
 	ret		 = m_SI7021Sensor->getTemp();
@@ -110,7 +115,8 @@ void TempProvider::threadWatcherSI7021()
 
 // start: ------------------- HumiditProvider -------------------
 
-HumiditProvider::HumiditProvider( std::function< void( float ) > callback ) : EnvironmentDataProvider( callback )
+HumiditProvider::HumiditProvider( std::experimental::filesystem::path xmlPath, std::function< void( float ) > callback )
+	: EnvironmentDataProvider( xmlPath, callback )
 {
 	createSI7021();
 }
@@ -129,7 +135,7 @@ bool HumiditProvider::isAvailable() const
 
 bool HumiditProvider::createSI7021()
 {
-	m_SI7021Sensor = std::make_unique< SI7021 >();
+	m_SI7021Sensor = std::make_unique< SI7021 >( m_xmlPath );
 
 	auto ret = m_SI7021Sensor->gethumidity();
 	ret		 = m_SI7021Sensor->gethumidity();

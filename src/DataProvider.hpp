@@ -2,13 +2,14 @@
 #include <functional>
 #include <memory>
 #include <thread>
+#include <experimental/filesystem>
 #include <DS18B20.h>
 #include <SI7021.hpp>
 
 class EnvironmentDataProvider
 {
 public:
-	EnvironmentDataProvider( std::function< void( float ) > callback );
+	EnvironmentDataProvider( std::experimental::filesystem::path xmlPath, std::function< void( float ) > callback );
 	virtual ~EnvironmentDataProvider() = default;
 
 	virtual std::pair< float, bool > getData() const = 0;
@@ -19,12 +20,13 @@ protected:
 	std::function< void( float ) > m_callback;
 	std::thread m_watcher;
 	float m_lastTemp{ 0.f };
+	std::experimental::filesystem::path m_xmlPath;
 };
 
 class TempProvider : public EnvironmentDataProvider
 {
 public:
-	TempProvider( std::function< void( float ) > callback );
+	TempProvider( std::experimental::filesystem::path xmlPath, std::function< void( float ) > callback );
 
 	// start: ------------------- EnvironmentDataProvider -------------------
 	virtual std::pair< float, bool > getData() const override;
@@ -45,7 +47,7 @@ private:
 class HumiditProvider : public EnvironmentDataProvider
 {
 public:
-	HumiditProvider( std::function< void( float ) > callback );
+	HumiditProvider( std::experimental::filesystem::path xmlPath, std::function< void( float ) > callback );
 
 	// start: ------------------- EnvironmentDataProvider -------------------
 	virtual std::pair< float, bool > getData() const override;

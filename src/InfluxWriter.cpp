@@ -36,6 +36,8 @@ InfluxWriter::InfluxWriter( std::experimental::filesystem::path xmlPath )
 												influxNode.child( "User" ).text().as_string(),
 												influxNode.child( "Password" ).text().as_string() );
 
+	m_SI7021 = std::make_unique< SI7021 >( xmlPath );
+
 	m_worker = thread( std::bind( &InfluxWriter::worker, this ) );
 }
 
@@ -43,8 +45,8 @@ void InfluxWriter::worker()
 {
 	while( true )
 	{
-		auto temp = m_SI7021.getTemp();
-		auto hum  = m_SI7021.gethumidity();
+		auto temp = m_SI7021->getTemp();
+		auto hum  = m_SI7021->gethumidity();
 		std::string resp;
 		auto data = influxdb_cpp::builder().meas( m_measurmenet );
 

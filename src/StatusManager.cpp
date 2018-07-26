@@ -39,9 +39,10 @@ StatusManager::StatusManager( std::experimental::filesystem::path xmlPath )
 
 	m_painter = make_unique< Paint3Colors >( m_epd->width(), m_epd->height() );
 
-	m_temperature
-		= make_unique< TempProvider >( std::bind( &StatusManager::onTemperature, this, std::placeholders::_1 ) );
-	m_humidit = make_unique< HumiditProvider >( std::bind( &StatusManager::onHumidit, this, std::placeholders::_1 ) );
+	m_temperature = make_unique< TempProvider >(
+		xmlPath, std::bind( &StatusManager::onTemperature, this, std::placeholders::_1 ) );
+	m_humidit = make_unique< HumiditProvider >( xmlPath,
+												std::bind( &StatusManager::onHumidit, this, std::placeholders::_1 ) );
 }
 
 StatusManager::~StatusManager() {}

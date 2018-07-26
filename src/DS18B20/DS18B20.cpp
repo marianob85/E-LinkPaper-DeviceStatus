@@ -82,6 +82,8 @@ vector< string > DS18B20Mgr::readDirectory( const std::string& name ) const
 {
 	vector< string > files;
 	DIR* dirp = opendir( name.c_str() );
+	if( dirp == nullptr )
+		return {};
 	struct dirent* dp{ nullptr };
 	while( ( dp = readdir( dirp ) ) != NULL )
 		files.push_back( dp->d_name );

@@ -1,10 +1,12 @@
 #pragma once
 #include <cstdlib>
 #include <mutex>
+#include <experimental/filesystem>
 
 class SI7021
 {
 public:
+	SI7021( std::experimental::filesystem::path xmlPath );
 	virtual ~SI7021() = default;
 
 	std::pair< float, bool > getTemp() const;
@@ -18,4 +20,5 @@ protected:
 
 private:
 	static std::mutex m_refreshMutex;
+	std::string m_dev;
 };
