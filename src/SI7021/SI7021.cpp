@@ -12,7 +12,7 @@ const uint8_t SI7021_MEASRH_HOLD_CMD = 0xE5;
 const uint8_t SI7021_MEASTEMP_HOLD_CMD = 0xE3;
 // const uint8_t SI7021_MEASTEMP_NOHOLD_CMD = 0xF3;
 // const uint8_t SI7021_READPREVTEMP_CMD	= 0xE0;
-// const uint8_t SI7021_RESET_CMD = 0xFE;
+const uint8_t SI7021_RESET_CMD = 0xFE;
 // const uint8_t SI7021_WRITERHT_REG_CMD	= 0xE6;
 // const uint8_t SI7021_READRHT_REG_CMD	 = 0xE7;
 // const uint8_t SI7021_WRITEHEATER_REG_CMD = 0x51;
@@ -20,6 +20,8 @@ const uint8_t SI7021_MEASTEMP_HOLD_CMD = 0xE3;
 // const uint16_t SI7021_ID1_CMD			 = 0xFA0F;
 // const uint16_t SI7021_ID2_CMD			 = 0xFCC9;
 // const uint16_t SI7021_FIRMVERS_CMD		 = 0x84B8;
+
+std::mutex SI7021::m_refreshMutex;
 
 SI7021::SI7021( std::experimental::filesystem::path xmlPath )
 {
@@ -41,14 +43,12 @@ SI7021::SI7021( std::experimental::filesystem::path xmlPath )
 	m_dev = ledNode.text().as_string();
 }
 
-// std::mutex SI7021::m_refreshMutex;
-
 std::pair< float, bool > SI7021::getTemp() const
 {
-	// std::lock_guard< std::mutex > lock( m_refreshMutex );
-
 	if( m_dev.empty() )
 		return { 0.f, false };
+
+	std::lock_guard< std::mutex > lock( m_refreshMutex );
 
 	int bus;
 	if( ( bus = i2c_open( m_dev.c_str() ) ) == -1 )
@@ -66,6 +66,8 @@ std::pair< float, bool > SI7021::getTemp() const
 	device.iaddr_bytes = 0;						 /* Device internal address is 1 byte */
 	device.page_bytes  = 8;
 
+	i2c_ioctl_write( &device, 0x0, ( char* )&SI7021_RESET_CMD, 1 );
+	std::this_thread::sleep_for( std::chrono::milliseconds( 300 ) );
 	if( i2c_ioctl_write( &device, 0x0, ( char* )&SI7021_MEASTEMP_HOLD_CMD, 1 ) == 1 )
 	{
 		std::this_thread::sleep_for( std::chrono::milliseconds( 300 ) );
@@ -121,9 +123,10 @@ std::pair< float, bool > SI7021::computeHumidity( uint8_t data[ 3 ] ) const
 
 std::pair< float, bool > SI7021::gethumidity() const
 {
-	// std::lock_guard< std::mutex > lock( m_refreshMutex );
 	if( m_dev.empty() )
 		return { 0.f, false };
+
+	std::lock_guard< std::mutex > lock( m_refreshMutex );
 
 	int bus;
 	if( ( bus = i2c_open( m_dev.c_str() ) ) == -1 )
@@ -140,7 +143,8 @@ std::pair< float, bool > SI7021::gethumidity() const
 	device.addr		   = SI7021_DEFAULT_ADDRESS; /* Slave address is 0x50, 7-bit */
 	device.iaddr_bytes = 0;						 /* Device internal address is 1 byte */
 	device.page_bytes  = 8;
-
+	i2c_ioctl_write( &device, 0x0, ( char* )&SI7021_RESET_CMD, 1 );
+	std::this_thread::sleep_for( std::chrono::milliseconds( 300 ) );
 	if( i2c_ioctl_write( &device, 0x0, ( char* )&SI7021_MEASRH_HOLD_CMD, 1 ) == 1 )
 	{
 		std::this_thread::sleep_for( std::chrono::milliseconds( 300 ) );

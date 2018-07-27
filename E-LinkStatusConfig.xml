@@ -14,7 +14,7 @@
     <Height>385</Height>
   </Epd>
   <Sensors>
-    <SI7021>/dev/i2c-1</SI7021>
+    <SI7021>/dev/i2c-0</SI7021>
   </Sensors>
   <LedStatus>
     <Pin>7</Pin>
