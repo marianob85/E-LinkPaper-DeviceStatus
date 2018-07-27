@@ -53,6 +53,7 @@ endif()
 set(CMAKE_CXX_STANDARD 14)
 add_compile_options(-Wall -Wno-unused-function -Wno-switch-bool -Wno-sign-conversion -Wno-conversion -Wno-switch-bool -Wno-unused-result)
 set_source_files_properties( ../lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
+set_source_files_properties( ../lib/wiringNPi/wiringPi.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
 add_compile_options($<$<CONFIG:RELEASE>:-O3>)
 
 ############################################################
@@ -101,7 +102,38 @@ if( PlatformType STREQUAL "RaspberryPi" )
         ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPiD
     )
 elseif( PlatformType STREQUAL "NanoPiNeo" )
-    message( "FUBARTEST Worked1" )
+    set( WIRING_SOURCES 
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/boardtype_friendlyelec.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/drcSerial.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/max31855.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/max5322.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp23008.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp23016.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp23017.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp23s08.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp23s17.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp3002.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp3004.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp3422.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/mcp4802.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/pcf8574.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/pcf8591.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/piHiPri.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/piThread.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/sn3218.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/softPwm.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/softServo.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/softTone.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/sr595.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/wiringPi.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/wiringPiI2C.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/wiringPiSPI.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/wiringSerial.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi/wiringShift.c
+    )
+    set( WIRING_INCLUDES
+        ${PROJECT_SOURCE_DIR}/../lib/wiringNPi
+    )
 else()
     message( FATAL_ERROR "PlatformType: ${PlatformType} not supported" )    
 endif()
