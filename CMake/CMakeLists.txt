@@ -6,6 +6,11 @@ cmake_minimum_required(VERSION 3.7)
 # Set the project name
 project (eLinkDisplayStatus)
 
+if (NOT DEFINED PlatformType)
+  set( PlatformType "RaspberryPi")
+endif()
+message( STATUS "Platform type: ${PlatformType}" )
+
 set(_build_version "unknown")
 set(_branch_version "unknown")
 set(CPACK_PACKAGE_NAME "eLinkDisplayStatus")
