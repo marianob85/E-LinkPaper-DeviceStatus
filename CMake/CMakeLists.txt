@@ -52,6 +52,7 @@ endif()
 
 set(CMAKE_CXX_STANDARD 14)
 add_compile_options(-Wall -Wno-unused-function -Wno-switch-bool -Wno-sign-conversion -Wno-conversion -Wno-switch-bool -Wno-unused-result)
+set_source_files_properties( ../lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
 add_compile_options($<$<CONFIG:RELEASE>:-O3>)
 
 ############################################################
@@ -59,12 +60,54 @@ add_compile_options($<$<CONFIG:RELEASE>:-O3>)
 ############################################################
 
 if( PlatformType STREQUAL "RaspberryPi" )
-    message( "FUBARTEST Worked" )
+    set( WIRING_SOURCES 
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/ads1115.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/bmp180.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/drcNet.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/drcSerial.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/ds18b20.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/htu21d.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/max31855.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/max5322.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp23008.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp23016.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp23017.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp23s08.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp23s17.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp3002.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp3004.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp3422.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/mcp4802.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/pcf8574.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/pcf8591.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/piHiPri.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/piThread.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/pseudoPins.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/rht03.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/sn3218.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/softPwm.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/softServo.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/softTone.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/sr595.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/wiringPi.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/wiringPiI2C.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/wiringPiSPI.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/wiringSerial.c
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi/wiringShift.c
+    )
+    set( WIRING_INCLUDES
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPi
+        ${PROJECT_SOURCE_DIR}/../lib/wiringPi/wiringPiD
+    )
 elseif( PlatformType STREQUAL "NanoPiNeo" )
     message( "FUBARTEST Worked1" )
 else()
     message( FATAL_ERROR "PlatformType: ${PlatformType} not supported" )    
 endif()
+
+add_library(wiringPI_library STATIC ${WIRING_SOURCES} )
+target_include_directories(wiringPI_library PUBLIC ${WIRING_INCLUDES} )
 
 ############################################################
 # Create an executable
@@ -72,44 +115,45 @@ endif()
 
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
-		../src/StatusLed.cpp 
-		../src/StatusManager.cpp 
-		../src/StatusPing.cpp 
-		../src/main.cpp 
-		../src/InfluxWriter.cpp
-		../src/DataProvider.cpp 
-		../src/DS18B20/DS18B20.cpp 
-		../src/e-link/epdWiringPi.cpp 
-		../src/e-link/epd4in2.cpp 
-		../src/e-link/epd7in5b.cpp 
-		../src/e-link/epd.cpp 
-		../src/fonts/KS0108.cpp 
-		../src/fonts/KS0108/Arial28.cpp 
-		../src/fonts/KS0108/Digital-7-36Bold.cpp 
-		../src/fonts/KS0108/Ebrima28.cpp 
-		../src/fonts/KS0108/Georgia12.cpp 
-		../src/fonts/KS0108/Liberation_Mono12.cpp 
-		../src/fonts/KS0108/Liberation_Mono11Bold.cpp 
-		../src/fonts/KS0108/Liberation_Mono10Bold.cpp 
-		../src/fonts/KS0108/Liberation_Mono10.cpp 
-		../src/fonts/KS0108/Liberation_Mono9Bold.cpp 
-		../src/fonts/KS0108/Liberation_Mono9.cpp 
-		../src/fonts/KS0108/Liberation_Mono8.cpp 
-		../src/painter/PainterFont.cpp 
-		../src/painter/Painter.cpp 
-		../src/ping/ping.cpp 
-		../src/image/Image.cpp 
-		../src/image/Data/icons8-humidity-32.cpp 
-		../src/image/Data/icons8-temperature-30.cpp 
-		../src/SI7021/SI7021.cpp 
-		../src/lib/libi2c/i2c.c
-		../src/lib/influxDB/influxdb.cpp
-		../src/lib/pugi/pugixml.cpp 
+		${PROJECT_SOURCE_DIR}/../src/StatusLed.cpp 
+		${PROJECT_SOURCE_DIR}/../src/StatusManager.cpp 
+		${PROJECT_SOURCE_DIR}/../src/StatusPing.cpp 
+		${PROJECT_SOURCE_DIR}/../src/main.cpp 
+		${PROJECT_SOURCE_DIR}/../src/InfluxWriter.cpp
+		${PROJECT_SOURCE_DIR}/../src/DataProvider.cpp 
+		${PROJECT_SOURCE_DIR}/../src/DS18B20/DS18B20.cpp 
+		${PROJECT_SOURCE_DIR}/../src/e-link/epdWiringPi.cpp 
+		${PROJECT_SOURCE_DIR}/../src/e-link/epd4in2.cpp 
+		${PROJECT_SOURCE_DIR}/../src/e-link/epd7in5b.cpp 
+		${PROJECT_SOURCE_DIR}/../src/e-link/epd.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Arial28.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Digital-7-36Bold.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Ebrima28.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Georgia12.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Liberation_Mono12.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Liberation_Mono11Bold.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Liberation_Mono10Bold.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Liberation_Mono10.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Liberation_Mono9Bold.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Liberation_Mono9.cpp 
+		${PROJECT_SOURCE_DIR}/../src/fonts/KS0108/Liberation_Mono8.cpp 
+		${PROJECT_SOURCE_DIR}/../src/painter/PainterFont.cpp 
+		${PROJECT_SOURCE_DIR}/../src/painter/Painter.cpp 
+		${PROJECT_SOURCE_DIR}/../src/ping/ping.cpp 
+		${PROJECT_SOURCE_DIR}/../src/image/Image.cpp 
+		${PROJECT_SOURCE_DIR}/../src/image/Data/icons8-humidity-32.cpp 
+		${PROJECT_SOURCE_DIR}/../src/image/Data/icons8-temperature-30.cpp 
+		${PROJECT_SOURCE_DIR}/../src/SI7021/SI7021.cpp 
+		${PROJECT_SOURCE_DIR}/../src/lib/libi2c/i2c.c
+		${PROJECT_SOURCE_DIR}/../src/lib/influxDB/influxdb.cpp
+		${PROJECT_SOURCE_DIR}/../src/lib/pugi/pugixml.cpp 
 )
 
 # Add an executable with the above sources
 add_executable(eLinkDisplayStatus ${SOURCES})
 
+target_link_libraries(${PROJECT_NAME} wiringPI_library )
 target_link_libraries(${PROJECT_NAME} stdc++fs)
 target_link_libraries(${PROJECT_NAME} pthread)
 target_link_libraries(${PROJECT_NAME} crypt)
