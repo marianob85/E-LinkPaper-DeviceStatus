@@ -1,3 +1,5 @@
+
+#include <functional>
 #include "influxdb.hpp"
 
 int influxdb_cpp::detail::inner::http_request( const char* method,
@@ -52,7 +54,7 @@ int influxdb_cpp::detail::inner::http_request( const char* method,
 	iv[ 1 ].iov_base = ( void* )&body[ 0 ];
 	iv[ 1 ].iov_len  = body.length();
 
-	if( writev( sock, iv, 2 ) < ( int )( iv[ 0 ].iov_len + iv[ 1 ].iov_len ) )
+	if( write( sock, iv, 2 ) < ( int )( iv[ 0 ].iov_len + iv[ 1 ].iov_len ) )
 	{
 		ret_code = -6;
 		goto END;

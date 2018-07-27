@@ -1,4 +1,5 @@
 #include <cstring>
+#include <functional>
 #include "Painter.hpp"
 
 using namespace std;
@@ -366,7 +367,7 @@ void Paint3Colors::drawAbsolutePixel( int x, int y, Color color )
 
 Color Paint3Colors::getAbsolutePixel( int x, int y ) const
 {
-	// About the image data: 4 bits = 1 pixel, doesn’t support Gray scale (can only display black and white). 0000
+	// About the image data: 4 bits = 1 pixel, doesn\92t support Gray scale (can only display black and white). 0000
 	// (binary) stands for a black pixel, 0011 (binary) stands for a white pixel, 0100 (binary) stands for a red pixel.
 	// https://www.waveshare.com/wiki/7.5inch_e-Paper_HAT_(B)
 

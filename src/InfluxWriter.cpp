@@ -1,4 +1,5 @@
 #include <iostream>
+#include <functional>
 #include <pugixml.hpp>
 #include "InfluxWriter.hpp"
 

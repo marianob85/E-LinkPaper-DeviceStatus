@@ -1,6 +1,7 @@
 #include <iostream>
 #include <wiringPi.h>
 #include <pugixml.hpp>
+#include <functional>
 #include "StatusLed.hpp"
 
 using namespace std;
