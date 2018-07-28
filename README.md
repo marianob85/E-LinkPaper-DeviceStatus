@@ -12,7 +12,10 @@ Use e-paper display as status information.
 ### gcc
 1. cd CMake
 2. cmake .
+ 	1. cmake -DPlatformType=NanoPiNeo
+	2. cmake -DPlatformType=RaspberryPi
 3. make
+
 ### clang
 1. cd CMake
 2. cmake -DCMAKE_TOOLCHAIN_FILE=llvm.cmake -Wno-dev
