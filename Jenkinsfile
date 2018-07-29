@@ -19,7 +19,7 @@ pipeline
 				sh '''
 					cd autoconf
 					autoreconf --install --force
-					./configure
+					./configure --host=arm-linux-gnueabihf
 					make -j4
 					cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc-autoconf
 				'''
