@@ -23,7 +23,7 @@ pipeline
 					make -j4
 					cp ./eLinkDisplayStatus ./eLinkDisplayStatus-arm-linux-gnueabihf-gcc-autoconf-rPI
 				'''
-				archiveArtifacts artifacts: 'autoconf/eLinkDisplayStatus-arm-linux-gnueabihf-gcc-autoconf--rPI', onlyIfSuccessful: true
+				archiveArtifacts artifacts: 'autoconf/eLinkDisplayStatus-arm-linux-gnueabihf-gcc-autoconf-rPI', onlyIfSuccessful: true
 				cleanWs()
 				warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'GNU Make + GNU C Compiler (gcc)']], defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '', unstableTotalAll: '0'
 			}			
