@@ -1,5 +1,5 @@
-
 #include <functional>
+#include <sys/uio.h>
 #include "influxdb.hpp"
 
 int influxdb_cpp::detail::inner::http_request( const char* method,
