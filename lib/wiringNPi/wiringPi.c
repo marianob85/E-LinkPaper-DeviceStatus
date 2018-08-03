@@ -247,8 +247,8 @@ static uint64_t epochMilli, epochMicro;
 
 // Misc
 
-static int wiringPiMode		= WPI_MODE_UNINITIALISED;
-//static volatile int pinPass = -1;
+static int wiringPiMode = WPI_MODE_UNINITIALISED;
+// static volatile int pinPass = -1;
 
 // Debugging & Return codes
 
@@ -1393,6 +1393,12 @@ static int syspin_duo[ MAX_PIN_COUNT ] = {
 	-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 	-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 	
+
+
+
+
+
+
 
 	// 64~73
 	-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -3419,7 +3425,8 @@ int wiringPiSetup( void )
 	pads = ( uint32_t* )mmap( 0, WPI_BLOCK_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO_PADS_BP );
 	if( ( int32_t )pads == -1 )
 		return wiringPiFailure( WPI_ALMOST, "wiringPiSetup: mmap (PADS) failed: %s\n", strerror( errno ) );
-
+	
+	close( fd );
 	initialiseEpoch();
 
 	// If we're running on a compute module, then wiringPi pin numbers don't really many anything...
