@@ -115,7 +115,6 @@ int wiringPiSPISetupMode( int channel, int speed, int mode )
 
 	if( ioctl( fd, SPI_IOC_WR_MAX_SPEED_HZ, &speed ) < 0 )
 		return wiringPiFailure( WPI_ALMOST, "SPI Speed Change failure: %s\n", strerror( errno ) );
-	close( fd );
 	return 1;
 }
 

@@ -51,16 +51,14 @@ Epd7in5b::Epd7in5b( std::unique_ptr< EpdInterface > epd,
 					int height )
 	: Epd( move( epd ), resetPin, dcPin, csPin, bussyPin, width, height )
 {
+	m_epd->init( m_resetPin, m_dcPin, m_busyPin );
+
 }
 
 Epd7in5b::~Epd7in5b() {}
 
 bool Epd7in5b::init( void )
 {
-	if( m_epd->init( m_resetPin, m_dcPin, m_busyPin ) == false )
-	{
-		return false;
-	}
 	reset();
 	sendCommand( POWER_SETTING );
 	sendData( 0x37 );

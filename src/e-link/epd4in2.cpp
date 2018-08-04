@@ -115,14 +115,11 @@ Epd4in2::Epd4in2( unique_ptr< EpdInterface > epd,
 				  int height )
 	: Epd( move( epd ), resetPin, dcPin, csPin, bussyPin, width, height )
 {
+	m_epd->init( m_resetPin, m_dcPin, m_busyPin );
 }
 
 bool Epd4in2::init( void )
 {
-	if( m_epd->init( m_resetPin, m_dcPin, m_busyPin ) == false )
-	{
-		return false;
-	}
 	waitUntilIdle();
 	reset();
 	sendCommand( POWER_SETTING );
