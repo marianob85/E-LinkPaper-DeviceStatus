@@ -12,7 +12,7 @@ pipeline
 		stage( 'Build autoconf cross-compilatio gcc armhf RaspberryPi') {
 			agent {
 				node {
-					label 'linux && development'
+					label 'linux && stretch'
 				}
 			}
 			steps {
@@ -32,7 +32,7 @@ pipeline
 		stage( 'Build CMake cross-compilation llvm armhf RaspberryPi') {
 			agent {
 				node {
-					label 'linux && development'
+					label 'linux && stretch'
 				}
 			}
 			steps {
@@ -51,7 +51,7 @@ pipeline
 		stage( 'Build CMake cross-compilation gcc armhf RaspberryPi') {
 			agent {
 				node {
-					label 'linux && development'
+					label 'linux && stretch'
 				}
 			}
 			steps {
@@ -73,7 +73,7 @@ pipeline
 		stage( 'Build CMake cross-compilation gcc armhf NanoPiNeo') {
 			agent {
 				node {
-					label 'linux && development'
+					label 'linux && stretch'
 				}
 			}
 			steps {
