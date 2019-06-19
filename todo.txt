@@ -1,0 +1,2 @@
+https://www.boost.org/doc/libs/1_47_0/doc/html/boost_asio/example/icmp/ping.cpp
+https://noping.cc/documentation/liboping/
