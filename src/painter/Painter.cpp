@@ -6,7 +6,7 @@ using namespace std;
 
 Paint::Paint( size_t width, size_t height )
 {
-	m_rotate = Rotate::Rotate0;
+	m_rotate = Rotate::Rotate180;
 	/* 1 byte = 8 pixels, so the width should be the multiple of 8 */
 	m_width  = width % 8 ? width + 8 - ( width % 8 ) : width;
 	m_height = height;
