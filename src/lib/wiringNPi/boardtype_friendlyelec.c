@@ -155,7 +155,9 @@ static int getAllwinnerBoardID( char* boardId, int boardIdMaxLen )
 	if( !( f = fopen( "/sys/class/sunxi_info/sys_info", "r" ) ) )
 	{
 		LOGE( "open /sys/class/sunxi_info/sys_info failed." );
-		return -1;
+		memset( boardId, 0, boardIdMaxLen );
+		strncpy( boardId, "2(0)", boardIdMaxLen - 1 );
+		return 0;
 	}
 
 	while( !feof( f ) )
