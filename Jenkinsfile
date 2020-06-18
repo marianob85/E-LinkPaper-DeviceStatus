@@ -59,11 +59,14 @@ pipeline
 				}
 			}
 			steps {
-				dir('artifacts-RaspberryPi'){ unstash 'RaspberryPi-artifacts' }
-				dir('artifacts-NanoPiNeo'){ unstash 'NanoPiNeo-artifacts' }
-				unstash 'RaspberryPi-deb'
-				unstash 'NanoPiNeo-deb'
-				archiveArtifacts '**'
+			
+				dir('artifacts') {
+					dir('RaspberryPi'){ unstash 'RaspberryPi-artifacts' }
+					dir('NanoPiNeo'){ unstash 'NanoPiNeo-artifacts' }
+					unstash 'RaspberryPi-deb'
+					unstash 'NanoPiNeo-deb'
+					archiveArtifacts '**'
+				}
 			}			
 		}
 	}
