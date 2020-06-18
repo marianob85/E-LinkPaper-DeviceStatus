@@ -1,4 +1,1 @@
-.vs
-*.user
-bin
-obj
+build

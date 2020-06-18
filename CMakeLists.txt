@@ -51,9 +51,9 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 set(CMAKE_CXX_STANDARD 14)
-add_compile_options(-Wall -Wno-dev -Wno-unused-function -Wno-switch-bool -Wno-sign-conversion -Wno-conversion -Wno-switch-bool -Wno-unused-result)
-set_source_files_properties( lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
-set_source_files_properties( lib/wiringNPi/wiringPi.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
+add_compile_options(-Wall -Wno-psabi -Wno-dev -Wno-unused-function -Wno-switch-bool -Wno-sign-conversion -Wno-conversion -Wno-switch-bool -Wno-unused-result)
+set_source_files_properties( src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
+set_source_files_properties( src/lib/wiringNPi/wiringPi.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
 add_compile_options($<$<CONFIG:RELEASE>:-O3>)
 
 ############################################################
@@ -221,13 +221,13 @@ install (
 
 # Config
 install (
-	FILES CMake/deb/E-LinkStatusConfig.xml
+	FILES cmake/deb/E-LinkStatusConfig.xml
 	DESTINATION etc)
 
-configure_file("${PROJECT_SOURCE_DIR}/CMake/deb/eLinkDisplayStatus.service.cmake" "${PROJECT_SOURCE_DIR}/CMake/deb/eLinkDisplayStatus.service")
+configure_file("${PROJECT_SOURCE_DIR}/cmake/deb/eLinkDisplayStatus.service.cmake" "${PROJECT_SOURCE_DIR}/cmake/deb/eLinkDisplayStatus.service")
 
 install (
-	FILES CMake/deb/eLinkDisplayStatus.service
+	FILES cmake/deb/eLinkDisplayStatus.service
 	DESTINATION /lib/systemd/system
 	PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 
@@ -246,7 +246,7 @@ set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Mariusz Brzeski")
 # Set a Package Version
 set(CPACK_PACKAGE_VERSION ${eLinkDisplayStatus_VERSION})
 set(CPACK_DEBIAN_PACKAGE_DEPENDS " ")
-set( CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/CMake/deb/postinst;${CMAKE_CURRENT_SOURCE_DIR}/CMake/deb/prerm;${CMAKE_CURRENT_SOURCE_DIR}/CMake/deb/postrm" )
+set( CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/cmake/deb/postinst;${CMAKE_CURRENT_SOURCE_DIR}/cmake/deb/prerm;${CMAKE_CURRENT_SOURCE_DIR}/cmake/deb/postrm" )
 
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE armhf)
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION}_${_branch_version}_${PlatformType}_${CPACK_DEBIAN_PACKAGE_ARCHITECTURE}")
