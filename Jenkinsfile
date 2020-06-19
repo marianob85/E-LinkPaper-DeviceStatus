@@ -59,7 +59,6 @@ pipeline
 				}
 			}
 			steps {
-			
 				dir('artifacts') {
 					dir('RaspberryPi'){ unstash 'RaspberryPi-artifacts' }
 					dir('NanoPiNeo'){ unstash 'NanoPiNeo-artifacts' }
@@ -67,6 +66,7 @@ pipeline
 					unstash 'NanoPiNeo-deb'
 					archiveArtifacts '**'
 				}
+				cleanWs()
 			}			
 		}
 	}
