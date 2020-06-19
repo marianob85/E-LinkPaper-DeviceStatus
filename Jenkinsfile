@@ -18,7 +18,7 @@ pipeline
 			}
 			steps {
 				sh '''
-					cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=CMake/toolchain/arm-linux-gnueabihf.cmake
+					cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain/arm-linux-gnueabihf.cmake
 					cmake --build build -j10 --target package
 				'''
 				dir('build') {
@@ -40,7 +40,7 @@ pipeline
 			}
 			steps {
 				sh '''
-					cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=CMake/toolchain/arm-linux-gnueabihf.cmake -DPlatformType=NanoPiNeo
+					cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain/arm-linux-gnueabihf.cmake -DPlatformType=NanoPiNeo
 					cmake --build build -j10 --target package
 				'''
 				dir('build') {
