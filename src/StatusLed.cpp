@@ -46,8 +46,8 @@ void LedStatus::ledWorker()
 	while( m_threadLoop )
 	{
 		this_thread::sleep_for( 2s );
-		digitalWrite( m_gpioPin, HIGH );
-		this_thread::sleep_for( 50ms );
 		digitalWrite( m_gpioPin, LOW );
+		this_thread::sleep_for( 50ms );
+		digitalWrite( m_gpioPin, HIGH );
 	}
 }
