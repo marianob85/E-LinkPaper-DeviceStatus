@@ -14,7 +14,6 @@
 #include "StatusLed.hpp"
 #include "InfluxWriter.hpp"
 
-
 using namespace std;
 using namespace std::experimental::filesystem;
 
@@ -71,6 +70,7 @@ int main( int argc, char** argv )
 
 	std::unique_lock< std::mutex > lk( m );
 	cv.wait( lk );
+	// std::this_thread::sleep_for( 5s );
 
 	std::cout << "close" << endl;
 	statusManager.close();

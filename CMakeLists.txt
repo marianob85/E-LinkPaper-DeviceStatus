@@ -175,7 +175,8 @@ set(SOURCES
 		${PROJECT_SOURCE_DIR}/src/ping/ping.cpp 
 		${PROJECT_SOURCE_DIR}/src/image/Image.cpp 
 		${PROJECT_SOURCE_DIR}/src/image/Data/icons8-humidity-32.cpp 
-		${PROJECT_SOURCE_DIR}/src/image/Data/icons8-temperature-30.cpp 
+    ${PROJECT_SOURCE_DIR}/src/image/Data/icons8-temperature-30.cpp 
+    ${PROJECT_SOURCE_DIR}/src/image/Data/avatar.cpp 
 		${PROJECT_SOURCE_DIR}/src/SI7021/SI7021.cpp 
 		${PROJECT_SOURCE_DIR}/src/lib/libi2c/i2c.c
 		${PROJECT_SOURCE_DIR}/src/lib/influxDB/influxdb.cpp

@@ -90,6 +90,8 @@ void StatusManager::close()
 {
 	m_epd->init();
 	m_painter->clear( Color::White );
+	auto image = make_unique< ImageXX >( avatar );
+	m_painter->merge( 179, 39, move( image ) );
 	m_epd->displayFrame( *m_painter );
 }
 
@@ -130,7 +132,7 @@ size_t StatusManager::printHeader()
 	char text[ 128 ] = {};
 	sprintf( text, "Page %d/%d", currentPageNo() + 1, pagesNo() );
 	auto size = font->getStringSize( text );
-	auto y	= ( height - 0 - size.height ) / 2 + 1;
+	auto y	  = ( height - 0 - size.height ) / 2 + 1;
 	m_painter->drawFilledRectangle( 0, 0, m_epd->width(), height, Color::Black );
 
 	font->drawString( m_epd->width() - size.width - 2, y, text, Color::White );
@@ -167,7 +169,7 @@ size_t StatusManager::printHeader2()
 	auto y = 2; //	( height - 0 - size.height ) / 2 + 1;
 
 	// start: ------------------- Print page -------------------
-	auto sizePage	 = font11bold->getStringSize( page );
+	auto sizePage	  = font11bold->getStringSize( page );
 	auto sizePageData = font11bold->getStringSize( pageData );
 	// m_painter->drawFilledRectangle( 0, 0, m_epd->width() / 2, height, Color::Black );
 	m_painter->drawHorizontalLine( 0, height - 1, m_epd->width(), Color::Black );
@@ -182,14 +184,14 @@ size_t StatusManager::printHeader2()
 	// end: --------------------- Print description -------------------
 
 	// start: ------------------- Print description2 -------------------
-	description   = ( *m_currentPage )->getDescription( 1 );
+	description	  = ( *m_currentPage )->getDescription( 1 );
 	auto descSize = font11bold->getStringSize( description );
 	font11bold->drawString(
 		m_epd->width() / 2 - descSize.width - 2, height - descSize.height - y, description, Color::Black );
 	// end: --------------------- Print description2 -------------------
 
 	// start: ------------------- Last Update -------------------
-	auto t  = std::time( nullptr );
+	auto t	= std::time( nullptr );
 	auto tm = *std::localtime( &t );
 	std::stringstream ss;
 	ss << std::put_time( &tm, "%d-%m-%Y %R" );

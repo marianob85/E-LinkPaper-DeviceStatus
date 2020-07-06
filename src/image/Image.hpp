@@ -25,3 +25,4 @@ protected:
 
 extern const Image icons8humidity32;
 extern const Image icons8temperature30;
+extern const Image avatar;
