@@ -37,10 +37,12 @@ SI7021::SI7021( std::experimental::filesystem::path xmlPath )
 				  << ( xmlPath.string().c_str() + result.offset ) << "]\n\n";
 		throw std::exception();
 	}
-	auto config  = doc.child( "Config" );
-	auto ledNode = config.child( "Sensors" ).child( "SI7021" );
+	const auto config = doc.child( "Config" );
+	const auto dev	  = config.child( "Sensors" ).child( "SI7021" );
 
-	m_dev = ledNode.text().as_string();
+	m_dev	  = dev.text().as_string();
+	m_tOffset = config.child( "Sensors" ).child( "TemperatureOffset" ).text().as_float( 0 );
+	m_hOffset = config.child( "Sensors" ).child( "HumidityOffset" ).text().as_float( 0 );
 }
 
 std::pair< float, bool > SI7021::getTemp() const
@@ -101,7 +103,7 @@ std::pair< float, bool > SI7021::computeTemp( uint8_t data[ 3 ] ) const
 	temperature /= 65536.0f;
 	temperature -= 46.85f;
 
-	return { temperature, true };
+	return { temperature + m_tOffset, true };
 }
 
 std::pair< float, bool > SI7021::computeHumidity( uint8_t data[ 3 ] ) const
@@ -118,7 +120,7 @@ std::pair< float, bool > SI7021::computeHumidity( uint8_t data[ 3 ] ) const
 	humidity /= 65536.0f;
 	humidity -= 6.0f;
 
-	return { std::min( 100.0f, humidity ), true };
+	return { std::min( 100.0f, humidity ) + m_hOffset, true };
 }
 
 std::pair< float, bool > SI7021::gethumidity() const

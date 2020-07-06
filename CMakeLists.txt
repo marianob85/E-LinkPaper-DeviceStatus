@@ -20,7 +20,7 @@ find_package(Git)
 if(GIT_FOUND)
   execute_process(
     COMMAND ${GIT_EXECUTABLE} rev-parse --short HEAD
-    WORKING_DIRECTORY "${local_dir}"
+    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
     OUTPUT_VARIABLE _build_version
     ERROR_QUIET
     OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -33,7 +33,7 @@ endif()
 if(GIT_FOUND)
   execute_process(
     COMMAND ${GIT_EXECUTABLE} describe --all --exact-match COMMAND sed "s=.*/=="
-    WORKING_DIRECTORY "${local_dir}"
+    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
     OUTPUT_VARIABLE _branch_version
     OUTPUT_STRIP_TRAILING_WHITESPACE
   )
@@ -50,7 +50,7 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 add_compile_options(-Wall -Wno-psabi -Wno-dev -Wno-unused-function -Wno-switch-bool -Wno-sign-conversion -Wno-conversion -Wno-switch-bool -Wno-unused-result)
 set_source_files_properties( src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
 set_source_files_properties( src/lib/wiringNPi/wiringPi.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )

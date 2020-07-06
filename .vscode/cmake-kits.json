@@ -1,10 +1,13 @@
 [
     {
-        "name": "gcc",
+        "name": "gcc-NanoPI",
         "compilers": {
             "CXX": "g++-7",
             "C": "gcc-7"
         },
         "toolchainFile": "${workspaceFolder}/cmake/toolchain/arm-linux-gnueabihf.cmake",
+        "cmakeSettings": {
+            "PlatformType":"NanoPiNeo"
+        }
     },
 ]

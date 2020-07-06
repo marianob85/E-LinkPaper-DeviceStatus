@@ -6,12 +6,14 @@
 #include <mutex>
 #include <condition_variable>
 #include <iomanip>
+#include <wiringPi.h>
 #include <experimental/filesystem>
 #include "StatusManager.hpp"
 #include "StatusPing.hpp"
 #include <KS0108.hpp>
 #include "StatusLed.hpp"
 #include "InfluxWriter.hpp"
+
 
 using namespace std;
 using namespace std::experimental::filesystem;
@@ -35,11 +37,22 @@ void sig_handler( int sig )
 	}
 }
 
-
-
 int main( int argc, char** argv )
 {
-	path xmlPath( "/usr/local/etc/E-LinkStatusConfig.xml" );
+	path xmlPath( "/usr/etc/E-LinkStatusConfig.xml" );
+
+	// gpio
+	wiringPiSetupPhys();
+
+	/*
+	pinMode( 18, INPUT );
+	pullUpDnControl(18,PUD_UP );
+	while(1)
+	{
+		cout << digitalRead(18) << endl;
+		std::this_thread::sleep_for(100ms);
+	}
+	*/
 
 	if( argc > 1 )
 		xmlPath = argv[ 1 ];
