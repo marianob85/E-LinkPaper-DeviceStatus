@@ -38,6 +38,9 @@ void sig_handler( int sig )
 
 int main( int argc, char** argv )
 {
+	signal( SIGTERM, sig_handler );
+	signal( SIGINT, sig_handler );
+
 	path xmlPath( "/usr/etc/E-LinkStatusConfig.xml" );
 
 	// gpio
@@ -65,12 +68,8 @@ int main( int argc, char** argv )
 	statusManager.add( make_unique< StatusPing >( xmlPath ) );
 	statusManager.setPage( 0, 0 );
 
-	signal( SIGTERM, sig_handler );
-	signal( SIGINT, sig_handler );
-
 	std::unique_lock< std::mutex > lk( m );
 	cv.wait( lk );
-	// std::this_thread::sleep_for( 5s );
 
 	std::cout << "close" << endl;
 	statusManager.close();
