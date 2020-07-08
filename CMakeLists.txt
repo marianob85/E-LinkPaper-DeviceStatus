@@ -54,7 +54,7 @@ set( CMAKE_CXX_VISIBILITY_PRESET hidden )
 set( CMAKE_VISIBILITY_INLINES_HIDDEN ON )
 
 set(CMAKE_CXX_STANDARD 17)
-add_compile_options(-Wall -Wno-psabi -Wno-dev -Wno-unused-function -Wno-switch-bool -Wno-sign-conversion -Wno-conversion -Wno-switch-bool -Wno-unused-result)
+add_compile_options(-Wall -Wno-psabi -Wno-unused-function -Wno-switch-bool -Wno-sign-conversion -Wno-conversion -Wno-switch-bool -Wno-unused-result)
 set_source_files_properties( src/lib/wiringPi/wiringPi/pseudoPins.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
 set_source_files_properties( src/lib/wiringNPi/wiringPi.c PROPERTIES COMPILE_FLAGS "-Wno-int-to-pointer-cast -Wno-pointer-to-int-cast" )
 add_compile_options($<$<CONFIG:RELEASE>:-O3>)
@@ -148,6 +148,7 @@ endif()
 
 # Add an executable with the above sources
 add_executable( eLinkDisplayStatus 
+  src/gpioPooling.cpp
   src/StatusLed.cpp 
   src/StatusManager.cpp 
   src/StatusPing.cpp 
@@ -181,7 +182,8 @@ add_executable( eLinkDisplayStatus
   src/SI7021/SI7021.cpp 
   src/lib/libi2c/i2c.c
   src/lib/influxDB/influxdb.cpp
-  src/lib/pugi/pugixml.cpp 
+  src/lib/pugi/pugixml.cpp
+  src/Utils/Task.cpp
 )
 
 target_include_directories( eLinkDisplayStatus PRIVATE 
@@ -194,7 +196,8 @@ target_include_directories( eLinkDisplayStatus PRIVATE
 		src/SI7021
 		src/lib/pugi
 		src/lib/libi2c
-		src/lib/influxDB
+    src/lib/influxDB
+    src/Utils
 )
 
 target_link_libraries( eLinkDisplayStatus 

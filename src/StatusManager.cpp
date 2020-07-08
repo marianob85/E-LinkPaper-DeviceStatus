@@ -88,7 +88,7 @@ bool StatusManager::setPage( unsigned page, unsigned subPage )
 
 void StatusManager::close()
 {
-	// m_epd->init();
+	m_epd->init();
 	m_painter->clear( Color::White );
 	auto image = make_unique< ImageXX >( avatar );
 	m_painter->merge( 179, 39, move( image ) );

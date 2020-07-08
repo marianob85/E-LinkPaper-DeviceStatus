@@ -13,6 +13,7 @@
 #include <KS0108.hpp>
 #include "StatusLed.hpp"
 #include "InfluxWriter.hpp"
+#include "gpioPooling.hpp"
 
 using namespace std;
 using namespace std::experimental::filesystem;
@@ -46,15 +47,11 @@ int main( int argc, char** argv )
 	// gpio
 	wiringPiSetupPhys();
 
-	/*
-	pinMode( 18, INPUT );
-	pullUpDnControl(18,PUD_UP );
-	while(1)
-	{
-		cout << digitalRead(18) << endl;
-		std::this_thread::sleep_for(100ms);
-	}
-	*/
+	// GpioPooling test;
+	// test.registerEvent( 22, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
+	// ); test.registerEvent( 18, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
+	// ); test.registerEvent( 16, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
+	// );
 
 	if( argc > 1 )
 		xmlPath = argv[ 1 ];
