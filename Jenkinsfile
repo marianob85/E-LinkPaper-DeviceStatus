@@ -13,7 +13,7 @@ pipeline
 		stage( 'Build CMake cross-compilation gcc armhf RaspberryPi') {
 			agent {
 				node {
-					label 'linux && stretch'
+					label 'linux && ubuntu18'
 				}
 			}
 			steps {
@@ -35,7 +35,7 @@ pipeline
 		stage( 'Build CMake cross-compilation gcc armhf NanoPiNeo') {
 			agent {
 				node {
-					label 'linux && stretch'
+					label 'linux && ubuntu18'
 				}
 			}
 			steps {
