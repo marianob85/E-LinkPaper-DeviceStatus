@@ -6,12 +6,14 @@
 #include <mutex>
 #include <condition_variable>
 #include <iomanip>
+#include <wiringPi.h>
 #include <experimental/filesystem>
 #include "StatusManager.hpp"
 #include "StatusPing.hpp"
 #include <KS0108.hpp>
 #include "StatusLed.hpp"
 #include "InfluxWriter.hpp"
+#include "gpioPooling.hpp"
 
 using namespace std;
 using namespace std::experimental::filesystem;
@@ -35,11 +37,21 @@ void sig_handler( int sig )
 	}
 }
 
-
-
 int main( int argc, char** argv )
 {
-	path xmlPath( "/usr/local/etc/E-LinkStatusConfig.xml" );
+	signal( SIGTERM, sig_handler );
+	signal( SIGINT, sig_handler );
+
+	path xmlPath( "/usr/etc/E-LinkStatusConfig.xml" );
+
+	// gpio
+	wiringPiSetupPhys();
+
+	// GpioPooling test;
+	// test.registerEvent( 22, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
+	// ); test.registerEvent( 18, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
+	// ); test.registerEvent( 16, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
+	// );
 
 	if( argc > 1 )
 		xmlPath = argv[ 1 ];
@@ -52,9 +64,6 @@ int main( int argc, char** argv )
 
 	statusManager.add( make_unique< StatusPing >( xmlPath ) );
 	statusManager.setPage( 0, 0 );
-
-	signal( SIGTERM, sig_handler );
-	signal( SIGINT, sig_handler );
 
 	std::unique_lock< std::mutex > lk( m );
 	cv.wait( lk );

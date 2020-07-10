@@ -8,8 +8,6 @@ using namespace std;
 
 LedStatus::LedStatus( std::experimental::filesystem::path xmlPath )
 {
-	wiringPiSetupPhys();
-
 	pugi::xml_document doc;
 	pugi::xml_parse_result result = doc.load_file( xmlPath.string().c_str() );
 
@@ -35,7 +33,6 @@ LedStatus::LedStatus( std::experimental::filesystem::path xmlPath )
 
 LedStatus::~LedStatus()
 {
-
 	m_threadLoop = false;
 	m_led.join();
 	digitalWrite( m_gpioPin, LOW );

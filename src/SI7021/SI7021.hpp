@@ -21,4 +21,6 @@ protected:
 private:
 	static std::mutex m_refreshMutex;
 	std::string m_dev;
+	float m_hOffset{ 0 };
+	float m_tOffset{ 0 };
 };
