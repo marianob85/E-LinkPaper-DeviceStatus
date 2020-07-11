@@ -184,6 +184,7 @@ add_executable( eLinkDisplayStatus
   src/lib/influxDB/influxdb.cpp
   src/lib/pugi/pugixml.cpp
   src/Utils/Task.cpp
+  src/bluetooth.cpp
 )
 
 target_include_directories( eLinkDisplayStatus PRIVATE 

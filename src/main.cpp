@@ -14,6 +14,7 @@
 #include "StatusLed.hpp"
 #include "InfluxWriter.hpp"
 #include "gpioPooling.hpp"
+#include "bluetooth.hpp"
 
 using namespace std;
 using namespace std::experimental::filesystem;
@@ -42,15 +43,27 @@ int main( int argc, char** argv )
 	signal( SIGTERM, sig_handler );
 	signal( SIGINT, sig_handler );
 
+	// btSetDiscoverable();
+	// return 0;
+
 	path xmlPath( "/usr/etc/E-LinkStatusConfig.xml" );
 
 	// gpio
 	wiringPiSetupPhys();
 
+	GpioPooling gpioEvents;
+
+	gpioEvents.registerEvent( 22, []( int pin, bool pressed ) {
+		if( pressed )
+			btSetDiscoverable();
+	} );
+
 	// GpioPooling test;
 	// test.registerEvent( 22, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
-	// ); test.registerEvent( 18, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
-	// ); test.registerEvent( 16, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl; }
+	// ); test.registerEvent( 18, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl;
+	// }
+	// ); test.registerEvent( 16, []( int pin, bool pressed ) { std::cout << pin << " event: " << pressed << std::endl;
+	// }
 	// );
 
 	if( argc > 1 )
